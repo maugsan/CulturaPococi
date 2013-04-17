@@ -25,7 +25,7 @@
         
         <h3><bean:message key="welcome.heading"/></h3>
         <p><bean:message key="welcome.message"/></p>
-        <h1>HOLA</h1>
+        <h1>Adiós</h1>
         
     </body>
 </html:html>
