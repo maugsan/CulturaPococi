@@ -9,7 +9,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title><bean:message key="welcome.title"/></title>
-        <link rel="stylesheet" href="estilos.css" type="text/csscss">
+        <link rel="stylesheet" href="./assets/css/estilos.css" type="text/css" />
         <html:base/>
     </head>
     <body>
@@ -23,8 +23,6 @@
         
         </div>
             
-            
-        </div>>
-        
+      
     </body>
 </html:html>
