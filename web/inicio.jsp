@@ -10,17 +10,21 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title><bean:message key="welcome.title"/></title>
         <link rel="stylesheet" href="./assets/css/estilos.css" type="text/css" />
+        <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
         <html:base/>
     </head>
     <body>
         
         <div id="contendor">
            
-            <header> <div id="contendor-interno"> </div> </header>
+            <header> <div id="contendor-interno">
+                
+                 <%@include file="includes/menu.jsp" %>
+                
+                </div> </header>
              <section> <div id="contendor-interno"> </div> </section>
               <footer> <div id="contendor-interno"> </div> </footer>
-           
-        
+          
         </div>
             
       
