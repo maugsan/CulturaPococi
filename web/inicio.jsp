@@ -14,19 +14,21 @@
         <html:base/>
     </head>
     <body>
-        
+
         <div id="contendor">
-           
-            <header> <div id="contendor-interno">
-                
-                 <%@include file="includes/menu.jsp" %>
-                
-                </div> </header>
-             <section> <div id="contendor-interno"> </div> </section>
-              <footer> <div id="contendor-interno"> </div> </footer>
-          
+
+            <header>
+                <div id="contendor-interno">
+
+                    <%@include file="includes/menu.jsp" %>
+                    
+                </div>
+            </header>
+            <section> <div id="contendor-interno"> </div> </section>
+            <footer> <div id="contendor-interno"> </div> </footer>
+
         </div>
-            
-      
+
+
     </body>
 </html:html>

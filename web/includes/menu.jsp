@@ -32,11 +32,9 @@
                 <li><a href="#">LIMPIEZA DE RIOS Y PLAYAS</a></li>
                 <li><a href="#">VIDA SILVESTRE</a></li>
 
-
             </ul>
 
         </li>
-        <li><a href="#">ACTIVIDADES</a></li>
         <li><a href="#">PUBLICIDAD</a></li>
         <li><a href="#">BIEN SOCIAL</a></li>
         <li><a href="#">RECREACION</a>
@@ -48,10 +46,10 @@
                 <li><a href="#">MOTORES</a></li>
                 <li><a href="#">MONTAIN BIKE</a></li>
 
-
             </ul>
 
         </li>
 
     </ul>
+      <button>Entrar</button>
 </nav>
