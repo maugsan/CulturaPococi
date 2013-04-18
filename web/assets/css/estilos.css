@@ -1,0 +1,16 @@
+/* 
+    Document   : estilos
+    Created on : 17/04/2013, 08:19:46 PM
+    Author     : Mac
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+body {
+    
+    background-color: black;
+}
