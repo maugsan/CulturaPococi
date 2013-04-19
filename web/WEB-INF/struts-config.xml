@@ -19,6 +19,30 @@
     </global-forwards>
 
     <action-mappings>
+        <action path="/modificar_programa_radio" type="com.culturaPococi.accion.programaradio.ModificarProgramaRadioAction"/>
+        <action path="/eliminar_programa_radio" type="com.culturaPococi.accion.programaradio.EliminarProgramaRadioAction"/>
+        <action path="/crear_programa_radio" type="com.culturaPococi.accion.programaradio.CrearProgramaRadioAction"/>
+        <action path="/eliminar_usuario_normal" type="com.culturaPococi.accion.usuarioNormal.EliminarUsuarioNormalAction"/>
+        <action path="/modificar_usuario_normal" type="com.culturaPococi.accion.usuarioNormal.ModificarUsuarioNormalAction"/>
+        <action path="/crear_usuario_normal" type="com.culturaPococi.accion.usuarioNormal.CrearUsuarioNormalAction"/>
+        <action path="/eliminar_evento" type="com.culturaPococi.accion.evento.EliminarEventoAction"/>
+        <action path="/modificar_evento" type="com.culturaPococi.accion.evento.ModificarEventoAction"/>
+        <action path="/crear_evento" type="com.culturaPococi.accion.evento.CrearEventoAction"/>
+        <action path="/eliminar_perfil" type="com.culturaPococi.accion.perfil.EliminarPerfilAction"/>
+        <action path="/modificar_perfil" type="com.culturaPococi.accion.perfil.ModificarPerfilAction"/>
+        <action path="/crear_perfil" type="com.culturaPococi.accion.perfil.CrearPerfilAction"/>
+        <action path="/eliminar_boletin" type="com.culturaPococi.accion.boletin.EliminarBoletinAction"/>
+        <action path="/crear_boletin" type="com.culturaPococi.accion.boletin.CrearBoletinAction"/>
+        <action path="/eliminar_anuncio" type="com.culturaPococi.accion.anuncio.EliminarAnuncioAction"/>
+        <action path="/crear_anuncio" type="com.culturaPococi.accion.anuncio.CrearAnuncioAction"/>
+        <action path="/eliminar_articulo" type="com.culturaPococi.accion.articulo.EliminarArticuloAction"/>
+        <action path="/modificar_articulo" type="com.culturaPococi.accion.articulo.ModificarArticuloAction"/>
+        <action path="/crear_articulo" type="com.culturaPococi.accion.articulo.CrearArticulaAction"/>
+        <action path="/eliminar_publicacion" type="com.culturaPococi.accion.publicacion.EliminarPublicacionAction"/>
+        <action path="/modificar_publicacion" type="com.culturaPococi.accion.publicacion.ModificarPublicacionAction"/>
+        <action path="/crear_publicacion" type="com.culturaPococi.accion.publicacion.CrearPublicacionAction"/>
+        <action path="/eliminar_categoria" type="com.culturaPococi.accion.categoria.EliminarCategoriaAction"/>
+        <action path="/crear_categoria" type="com.culturaPococi.accion.categoria.CrearCategoriaAction"/>
         <action path="/Inicio" forward="/inicio.jsp"/>
     </action-mappings>
     
