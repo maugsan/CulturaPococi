@@ -17,18 +17,19 @@
 
         <div id="contendor">
 
-            <header>
-                <div id="contendor-interno">
-
-                    <%@include file="includes/menu.jsp" %>
-                    
-                </div>
-            </header>
-            <section> <div id="contendor-interno"> </div> </section>
-            <footer> <div id="contendor-interno"> </div> </footer>
-
+            <%@include file="includes/header.jsp" %>
+            <section>
+                
+                
+                <div id="contendor-interno"> </div> 
+            
+            
+            
+            </section>
+            <%@include file="includes/footer.jsp" %>
+            
+          
         </div>
-
 
     </body>
 </html:html>

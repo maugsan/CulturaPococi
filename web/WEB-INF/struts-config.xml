@@ -19,6 +19,7 @@
     </global-forwards>
 
     <action-mappings>
+        <action path="/nuevologin" type="com.culturaPococi.accion.login.nuevoLoginAction"/>
         <action path="/modificar_programa_radio" type="com.culturaPococi.accion.programaradio.ModificarProgramaRadioAction"/>
         <action path="/eliminar_programa_radio" type="com.culturaPococi.accion.programaradio.EliminarProgramaRadioAction"/>
         <action path="/crear_programa_radio" type="com.culturaPococi.accion.programaradio.CrearProgramaRadioAction"/>
