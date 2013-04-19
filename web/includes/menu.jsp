@@ -1,3 +1,8 @@
+<div id="header-logo">
+
+</div>
+
+
 <nav>
     <ul>
       
@@ -54,4 +59,7 @@
     </ul>
      
 </nav>
+<div id="header-opciones">
  <button id="boton-entrar">Entrar</button>
+  <button id="boton-buscar">Buscar</button>
+</div>
