@@ -7,6 +7,12 @@
 
 <struts-config>
     <form-beans>
+        <form-bean 
+            name="nuevoLoginActionForm" 
+            type="com.culturaPococi.accion.login.nuevoLoginActionForm"
+        
+        
+        />
     
     </form-beans>
     
