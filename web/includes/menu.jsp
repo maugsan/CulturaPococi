@@ -8,8 +8,8 @@
         <li><a href="#">PERIODISMO</a>
             <ul>
 
-                <li><a href="#">BOLETIN</a></li>
-                <li><a href="#">ARTICULOS</a></li>
+                <li><a href="#">BOLETÍN</a></li>
+                <li><a href="#">ARTÍCULOS</a></li>
 
             </ul>
         </li>
@@ -17,8 +17,8 @@
 
             <ul>
                 <li><a href="#">LITERATURA</a></li>
-                <li><a href="#">PLASTICAS</a></li>
-                <li><a href="#">MUSICA</a></li>
+                <li><a href="#">PLÁSTICAS</a></li>
+                <li><a href="#">MÚSICA</a></li>
                 <li><a href="#">DANZA</a></li>
                 <li><a href="#">TEATRO</a></li>
                 <li><a href="#">ARTE URBANO</a></li>
@@ -28,12 +28,12 @@
 
         <li><a href="#">NUESTRO ARTE</a></li>
         <li><a href="#">ACTIVIDADES</a></li>
-        <li><a href="#">ECOLOGIA</a>
+        <li><a href="#">ECOLOGÍA</a>
 
             <ul>
-                <li><a href="#">REFORESTACION</a></li>
+                <li><a href="#">REFORESTACIÓN</a></li>
                 <li><a href="#">EDUCACION AMBIENTAL</a></li>
-                <li><a href="#">LIMPIEZA DE RIOS Y PLAYAS</a></li>
+                <li><a href="#">LIMPIEZA DE RÍOS Y PLAYAS</a></li>
                 <li><a href="#">VIDA SILVESTRE</a></li>
 
             </ul>
@@ -41,11 +41,11 @@
         </li>
         <li><a href="#">PUBLICIDAD</a></li>
         <li><a href="#">BIEN SOCIAL</a></li>
-        <li><a href="#">RECREACION</a>
+        <li><a href="#">RECREACIÓN</a>
 
             <ul>
                 <li><a href="#">DEPORTES</a></li>
-                <li><a href="#">MONTA&Ntilde;ISMO</a></li>
+                <li><a href="#">MONTAÑISMO</a></li>
                 <li><a href="#">CAMINATAS</a></li>
                 <li><a href="#">MOTORES</a></li>
                 <li><a href="#">MONTAIN BIKE</a></li>
