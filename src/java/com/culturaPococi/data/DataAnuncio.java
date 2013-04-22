@@ -17,8 +17,7 @@ import java.util.LinkedList;
 public class DataAnuncio extends DataBase{
     
     public void selectPeliculas() throws SQLException{
-        String sql = "Select codPelicula, titulo, totalPeliculas,subtitulada, estreno, g.codGenero, nombreGenero \n" +
-                    "from pelicula_yuliana p inner join genero_yuliana g on p.codGenero=g.codGenero;";
+        String sql = "Select * from usuarioNormal;";
         ResultSet resultado;
         Connection conexion = super.getConexion();
     
@@ -36,3 +35,5 @@ public class DataAnuncio extends DataBase{
         conexion.close();
     }//fin selectPeliculas
 }
+
+//<jsp:forward page="Inicio.do"/>

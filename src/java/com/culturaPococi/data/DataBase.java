@@ -27,7 +27,7 @@ public class DataBase {
         this.usuario="cultura_pococi13";
         this.contra="grupo_3";
         this.baseDatos="cultura_pococi2013";
-        this.host= "jdbc:mysql://184.168.194.14:3306/"+baseDatos;
+        this.host= "jdbc:mysql://movilatlanticocom.ipagemysql.com"+baseDatos;
         
         try {
             Class.forName("com.mysql.jdbc.Driver");
