@@ -24,10 +24,10 @@ public class DataBase {
     
     
     public Connection getConexion()throws SQLException{
-        this.usuario="videoclub2";
-        this.contra="VideoClub2!";
-        this.baseDatos="videoclub2";
-        this.host= "jdbc:mysql://184.168.194.14:3306/videoclub2";
+        this.usuario="cultura_pococi13";
+        this.contra="grupo_3";
+        this.baseDatos="cultura_pococi2013";
+        this.host= "jdbc:mysql://184.168.194.14:3306/"+baseDatos;
         
         try {
             Class.forName("com.mysql.jdbc.Driver");
