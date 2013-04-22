@@ -8,6 +8,6 @@ package com.culturaPococi.data;
  *
  * @author jonathan
  */
-public class DataPerfil {
+public class DataPerfil extends DataBase{
     
 }

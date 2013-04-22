@@ -2,12 +2,12 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.culturaPococi.data;
+package com.culturaPococi.negocio;
 
 /**
  *
  * @author jonathan
  */
-public class DataUsuarioNormal extends DataBase{
+public class NegocioProgramaRadio {
     
 }
