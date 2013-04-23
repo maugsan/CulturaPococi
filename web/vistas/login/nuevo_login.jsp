@@ -17,38 +17,12 @@
     <body>
 
         <html:errors/>
-        <html:form action="/login">
+        <html:form action="/nuevologin">
 
-            <table border="0" width="100%">
-                <tr>
-                    <th class="right">
-                        <bean:message key=""/>
-                    </th>
-                    <td class="left">
-                        <html:text  property="" size="16"/>
-                    </td>
-                </tr>
-                <tr>
-                    <th class="right">
-                        <bean:message key=""/>
-                    </th>
-                    <td class="left">
-                        <html:password property="" size="16"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="right">
-                        <html:submit>
-                            <bean:message key=""/>
-                        </html:submit>
-                    </td>
-                    <td class="right">
-                        <html:reset>
-                            <bean:message key=""/>
-                        </html:reset>
-                    </td>
-                </tr>
-            </table>
+
+            <html:text  name="NuevoLoginForm" property="correo" size="16"/>
+            <html:password  name="NuevoLoginForm" property="contrasenia" size="16"/>
+            <html:submit value="Entrar" />
 
         </html:form>
 

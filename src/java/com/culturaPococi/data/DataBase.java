@@ -24,12 +24,13 @@ public class DataBase {
     
     
     public Connection getConexion()throws SQLException{
-        this.usuario="cultura_pococi13";
-        this.contra="grupo_3";
-        this.baseDatos="cultura_pococi2013";
-        this.host= "jdbc:mysql://movilatlanticocom.ipagemysql.com"+baseDatos;
+        this.usuario="cultura_13";
+        this.contra="cultura_13";
+        this.baseDatos="culturapococi_2013";
+        this.host= "jdbc:mysql://movilatlanticocom.ipagemysql.com";
         
         try {
+             Class.forName("com.mysql.jdbc.Driver");
             Class.forName("com.mysql.jdbc.Driver");
             this.con = (Connection)DriverManager.getConnection(host, usuario,contra);
             System.out.println("Conecto");

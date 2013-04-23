@@ -8,8 +8,8 @@
 <struts-config>
     <form-beans>
         <form-bean 
-            name="nuevoLoginActionForm" 
-            type="com.culturaPococi.accion.login.nuevoLoginActionForm"
+            name="NuevoLoginForm" 
+            type="com.culturaPococi.accion.login.NuevoLoginForm"
         
         
         />
@@ -21,11 +21,23 @@
     </global-exceptions>
 
     <global-forwards>
+        
         <forward name="inicio"  path="/Inicio.do"/>
+        <forward name="dashboard"  path="/Inicio.do"/>
+        
     </global-forwards>
 
     <action-mappings>
-        <action path="/nuevologin" type="com.culturaPococi.accion.login.nuevoLoginAction"/>
+        <action path="/nuevologin" 
+                type="com.culturaPococi.accion.login.NuevoLoginAction"
+                input="/vistas/login/nuevo_login.jsp"
+                name="NuevoLoginForm"
+                scope="session">
+                
+                <forward name="exitoso" path="/vistas/dashboard.jsp" />
+                <forward name="failure" path="/failure.jsp" />
+       
+        </action>
         <action path="/modificar_programa_radio" type="com.culturaPococi.accion.programaradio.ModificarProgramaRadioAction"/>
         <action path="/eliminar_programa_radio" type="com.culturaPococi.accion.programaradio.EliminarProgramaRadioAction"/>
         <action path="/crear_programa_radio" type="com.culturaPococi.accion.programaradio.CrearProgramaRadioAction"/>
