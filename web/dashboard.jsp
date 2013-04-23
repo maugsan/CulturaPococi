@@ -31,13 +31,13 @@
 
             </section>
 
-            <%@include file="../includes/anuncios-eventos.jsp" %>
+            <%@include file="/includes/espacios.jsp" %>
             <section id="seccion-inferior">
 
                 <div id="contendor-interno"> </div>
 
             </section>
-            <%@include file="../includes/footer.jsp" %>
+            <%@include file="/includes/footer.jsp" %>
 
 
         </div>

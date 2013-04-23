@@ -10,8 +10,7 @@
         <form-bean 
             name="NuevoLoginForm" 
             type="com.culturaPococi.accion.login.NuevoLoginForm"
-        
-        
+       
         />
     
     </form-beans>
@@ -23,7 +22,7 @@
     <global-forwards>
         
         <forward name="inicio"  path="/Inicio.do"/>
-        <forward name="dashboard"  path="/dashboard.do"/>
+        <forward name="dashboard"  path="/dashboard.jsp" />
         <forward name="login"  path="/login/index.jsp"/>
 
         
@@ -37,8 +36,8 @@
                 scope="session"
                 >
                 
-                <forward name="exitoso" path="/dashboard.jsp" />
-                <forward name="failure" path="/failure.jsp" />
+                <forward name="exitoso" path="/includes/exitoso.jsp" />
+                <forward name="denegado" path="/includes/denegado.jsp" />
        
         </action>
      
