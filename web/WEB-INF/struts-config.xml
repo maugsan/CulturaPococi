@@ -24,7 +24,7 @@
         
         <forward name="inicio"  path="/Inicio.do"/>
         <forward name="dashboard"  path="/dashboard.do"/>
-        <forward name="login"  path="vistas/login/index.jsp"/>
+        <forward name="login"  path="/login/index.jsp"/>
 
         
     </global-forwards>
@@ -32,15 +32,16 @@
     <action-mappings>
         <action path="/nuevologin" 
                 type="com.culturaPococi.accion.login.NuevoLoginAction"
-                input="/vistas/login/nuevo_login.jsp"
+                input="/login/nuevo_login.jsp"
                 name="NuevoLoginForm"
                 scope="session"
                 >
                 
-                <forward name="exitoso" path="/vistas/dashboard.jsp" />
+                <forward name="exitoso" path="/dashboard.jsp" />
                 <forward name="failure" path="/failure.jsp" />
        
         </action>
+       
         <action path="/modificar_programa_radio" type="com.culturaPococi.accion.programaradio.ModificarProgramaRadioAction"/>
         <action path="/eliminar_programa_radio" type="com.culturaPococi.accion.programaradio.EliminarProgramaRadioAction"/>
         <action path="/crear_programa_radio" type="com.culturaPococi.accion.programaradio.CrearProgramaRadioAction"/>

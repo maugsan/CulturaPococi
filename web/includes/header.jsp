@@ -7,7 +7,7 @@
         <%@include file="../includes/menu.jsp" %>
 
         <div id="header-opciones">
-            <a href="/PocociCultura/vistas/login/nuevo_login.jsp"><button id="boton-entrar">Entrar</button></a>
+            <a href="/PocociCultura/login/nuevo_login.jsp"><button id="boton-entrar">Entrar</button></a>
             <a href=""><button id="boton-buscar">Buscar</button></a>
             
         
