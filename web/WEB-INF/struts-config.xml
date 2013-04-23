@@ -41,7 +41,7 @@
                 <forward name="failure" path="/failure.jsp" />
        
         </action>
-        <action input="/" name="NuevoLoginForm" path="/nuevologin" scope="session" type="com.culturaPococi.accion.login.NuevoLoginAction"/>
+     
        
         <action path="/modificar_programa_radio" type="com.culturaPococi.accion.programaradio.ModificarProgramaRadioAction"/>
         <action path="/eliminar_programa_radio" type="com.culturaPococi.accion.programaradio.EliminarProgramaRadioAction"/>

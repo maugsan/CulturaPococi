@@ -17,23 +17,29 @@ import org.apache.struts.action.ActionMapping;
 public class NuevoLoginAction extends org.apache.struts.action.Action {
 
     /* forward name="success" path="" */
-    private static final String SUCCESS = "success";
+  private static final String EXITOSO = "exitoso";
+    private static final String DENEGADO = "denegado";
 
-    /**
-     * This is the action called from the Struts framework.
-     *
-     * @param mapping The ActionMapping used to select this instance.
-     * @param form The optional ActionForm bean for this request.
-     * @param request The HTTP Request we are processing.
-     * @param response The HTTP Response we are processing.
-     * @throws java.lang.Exception
-     * @return
-     */
     @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         
-        return mapping.findForward(SUCCESS);
+         System.out.println("ENTRO A ACTION-------------------------------------------------------------------");
+        
+      
+        
+        NuevoLoginForm login = (NuevoLoginForm) form;
+        
+        
+        if (login.getCorreo().equals(login.getContrasenia())  ) {
+             System.out.println("ENTRO----------------------------------------------------------------");
+          return mapping.findForward(EXITOSO);
+        } else {
+            
+           System.out.println("NO ENTRO----------------------------------------------------------------");
+          return mapping.findForward(DENEGADO);
+        }
+      
     }
 }
