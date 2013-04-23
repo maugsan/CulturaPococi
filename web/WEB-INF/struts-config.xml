@@ -23,7 +23,9 @@
     <global-forwards>
         
         <forward name="inicio"  path="/Inicio.do"/>
-        <forward name="dashboard"  path="/Inicio.do"/>
+        <forward name="dashboard"  path="/dashboard.do"/>
+        <forward name="login"  path="vistas/login/index.jsp"/>
+
         
     </global-forwards>
 
@@ -32,7 +34,8 @@
                 type="com.culturaPococi.accion.login.NuevoLoginAction"
                 input="/vistas/login/nuevo_login.jsp"
                 name="NuevoLoginForm"
-                scope="session">
+                scope="session"
+                >
                 
                 <forward name="exitoso" path="/vistas/dashboard.jsp" />
                 <forward name="failure" path="/failure.jsp" />

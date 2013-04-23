@@ -1,6 +1,6 @@
 <%-- 
-    Document   : dashboard
-    Created on : 22/04/2013, 07:30:17 PM
+    Document   : index
+    Created on : 23/04/2013, 10:30:48 AM
     Author     : Mac
 --%>
 
@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World! Soy Dashboard</h1>
+        <h1>Hello World! Index Login</h1>
     </body>
 </html>
