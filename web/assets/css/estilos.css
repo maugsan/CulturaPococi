@@ -238,13 +238,38 @@ button {
     margin-left: 10px;
     background-color: #609120;
 }
+#boton-salir {
+    
+    margin-top: 30px;
+    float: right;
+    width: 70px;
+    margin-left: 10px;
+    background-color: #609120;
+}
 /* 
 ========================================= 
   Formularios
 ========================================= */
 
-form {
+.form {
     
     background-color: #684e24;
     
 }
+/* 
+========================================= 
+  Sitio administrativo
+========================================= */
+
+.modulo {
+    
+    width: 270px;
+    height: 100px;
+    background-color: white;
+    float: left;
+    margin: 20px;
+    text-align: center;
+    display: inline-block;
+    
+}
+

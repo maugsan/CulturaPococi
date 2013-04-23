@@ -23,9 +23,37 @@
 
                 
                 <div id="contendor-interno"> 
+                     
+                   <section id="controles">
+                         <a href="./"><button id="boton-salir">Salir</button></a>
+                     <h1>Pagina Administrativa</h1>
                    
+                     
+                   </section>
+                  <aside>
+                    
                   
-                    <h1>Pagina Administrativa</h1>
+                    
+                    <a href="./usuario/"><section class="modulo">
+                        <h2>Usuario</h2>
+                    </section></a>
+                    <a href="./perfil/"><section class="modulo">
+                        <h2>Perfil</h2>
+                    </section></a>
+                    <a href="./evento/"><section class="modulo">
+                        <h2>Evento</h2>
+                    </section></a>
+                    <a href="./categoria/"><section class="modulo">
+                        <h2>Categoria</h2>
+                    </section></a>
+                    <a href="./boletin/"><section class="modulo">
+                        <h2>Boletin</h2>
+                    </section></a>
+                    <a href="./anuncio/"> <section class="modulo">
+                        <h2>Anuncio</h2>
+                    </section></a>
+                    
+                  </aside>
                     
                 </div> 
 
