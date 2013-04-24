@@ -10,7 +10,7 @@
         </section>
         <section id="eventos">
 
-            <h3>Proximos Eventos</h3>
+            <h3>Proximos<br> Eventos</h3>
 
         </section>
 

@@ -2,7 +2,7 @@
 
     <div id="contendor-interno">
         <div id="header-logo">
-
+            
         </div>
         <%@include file="../includes/menu.jsp" %>
 

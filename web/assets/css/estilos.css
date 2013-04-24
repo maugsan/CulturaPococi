@@ -31,38 +31,43 @@ body {
 
     width: 940px;
     height: auto;
-    border: solid 1px blue;
+   /* border: solid 1px blue; */
     margin: 0 auto;
 
 }
 header {
+    
 
-    border: solid 1px yellow;
+     
+    background: #333;
+    /* border: solid 1px yellow; */
     height: 80px;
     width: 100%;
-    background-color: #3a3938;
+  
     position: fixed;
  
 
 }
 #header-logo {
     
+    background-image: url('../img/logo.png') ;
+    background-size: 80px;
     height: 80px;
     width: 80px;
-    border: solid 1px yellow;
+    /* border: solid 1px yellow; */
     float: left;
         
 }
 #header-opciones {
     
-    border: solid 1px yellow;
+   /* border: solid 1px yellow; */
     float: right;
     
 }
 
 section {
 
-    border: solid 1px green;
+  /*   border: solid 1px green; */
    
 }
 
@@ -90,21 +95,27 @@ section {
 #publicidad {
 
     width: 600px;
-    height: 60px;
+    height: 80px;
     margin: 20px;
     float: left;
     background-color: #3f7476;
     text-align: center;
+     -webkit-border-radius: 10px;
+    
+    border-radius: 10px;
 
 }
 #eventos {
 
     width: 250px;
-    height: 60px;
+    height: 80px;
     margin: 20px;
     float: left;
     background-color: #609120;
     text-align: center;
+         -webkit-border-radius: 10px;
+    
+    border-radius: 10px;
     
 
 }
@@ -127,7 +138,7 @@ nav {
     float: left;
     margin:  30px 0 0 0;
     width: auto;
-    border: solid blueviolet 1px;
+    /* border: solid blueviolet 1px; */
 }
 /* 
    1 - Elimina todos los espacios entre elementos (especialmente entre li) reduciendo el texto
@@ -156,6 +167,7 @@ nav ul li a{
     font-size: 8px;
     text-decoration: none;
     color: white;
+   
     display: block;
     padding: 10px 3px;
     text-align: center;
@@ -166,6 +178,7 @@ nav ul li a{
        1 - cambia el color del fondo de el botón */
 ul li a:hover{
     background: lightgray;
+    
 }
 
 
@@ -184,6 +197,7 @@ nav ul ul {
     text-wrap: normal;
     display: none;
     background: gray;
+    
 }
 
 /* 
@@ -267,9 +281,12 @@ button {
     height: 100px;
     background-color: white;
     float: left;
-    margin: 20px;
+    margin: 10px 20px 10px 20px;
     text-align: center;
     display: inline-block;
+    -webkit-border-radius: 10px;
+    
+    border-radius: 10px;
     
 }
 
