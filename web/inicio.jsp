@@ -11,7 +11,7 @@
         <title><bean:message key="welcome.title"/></title>
         <link rel="stylesheet" href="./assets/css/estilos.css" type="text/css" />
         <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
-        <link rel="stylesheet" href="./assets/css/estilosId.css" type="text/css" />
+        <link rel="stylesheet" href="./assets/css/estilosld.css" type="text/css" />
         
         <script type="text/javascript" src="./assets/js/jq.js"></script>
 		<script type="text/javascript" src="./assets/js/jqGeneral.js" ></script>
@@ -45,9 +45,8 @@
                             <ul id="slides">  
                                 
                                 <li> <a href = "#">  <img src="./assets/img/inicio.png" > </a> </li>
-                                <li> <a href = "#">   <img src="./assets/img/inicio.png" > </a> </li>
-                                <li> <a href = "#">   <img src="./assets/img/inicio.png" > </a> </li>
-                                <li> <a href = "#">   <img src="./assets/img/inicio.png" > </a> </li>
+                                <li> <a href = "#">   <img src="./assets/img/inicio1.png" > </a> </li>
+                               
 
                             </ul>
                         </div>

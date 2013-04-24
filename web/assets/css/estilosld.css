@@ -36,11 +36,11 @@ div#slideshow ul#controles li a {
 	/*border: 1px solid pink;*/
 }
 div#slideshow ul#controles li#cAtras a {
-	background: url(../resources/images/flechaIzq.png);
+	background: url(./assets/img/flechaIzq.png);
 	border-radius: 0px 60px 60px 0px;
 }
 div#slideshow ul#controles li#cAdelante a {
-	background: url(../resources/images/flechaDer.png);
+	background: url(./assets/img/flechaDer.png);
 	border-radius: 60px 0px 0px 60px;
 }
 
