@@ -14,7 +14,7 @@ root {
 }
 
 html {
-   
+
 }
 body {
 
@@ -31,51 +31,51 @@ body {
 
     width: 940px;
     height: auto;
-   /* border: solid 1px blue; */
+    /* border: solid 1px blue; */
     margin: 0 auto;
 
 }
 header {
-    
 
-     
+
+
     background: #333;
     /* border: solid 1px yellow; */
     height: 80px;
     width: 100%;
-  
+
     position: fixed;
- 
+
 
 }
 #header-logo {
-    
+
     background-image: url('../img/logo.png') ;
     background-size: 80px;
     height: 80px;
     width: 80px;
     /* border: solid 1px yellow; */
     float: left;
-        
+
 }
 #header-opciones {
-    
-   /* border: solid 1px yellow; */
+
+    /* border: solid 1px yellow; */
     float: right;
-    
+
 }
 
 section {
 
-  /*   border: solid 1px green; */
-   
+    /*   border: solid 1px green; */
+
 }
 
 #seccion-principal {
 
-     padding-top: 80px;
-     min-height: 480px;
-   
+    padding-top: 80px;
+    min-height: 480px;
+
 
 }
 #seccion-media {
@@ -87,8 +87,21 @@ section {
 }
 #seccion-inferior {
 
+    margin-top: 20px;
     height: 200px;
     background-color: #e1e1e1;
+    padding: 20px;
+
+
+}
+#articulo {
+
+
+    width: 600px;
+    height: 80px;
+    margin-right: 30px;
+    float: right;
+
 
 
 }
@@ -98,10 +111,10 @@ section {
     height: 80px;
     margin: 20px;
     float: left;
-    background-color: #3f7476;
+    background-color: #0097ca;
     text-align: center;
-     -webkit-border-radius: 10px;
-    
+    -webkit-border-radius: 10px;
+
     border-radius: 10px;
 
 }
@@ -113,10 +126,10 @@ section {
     float: left;
     background-color: #609120;
     text-align: center;
-         -webkit-border-radius: 10px;
-    
+    -webkit-border-radius: 10px;
+
     border-radius: 10px;
-    
+
 
 }
 footer {
@@ -167,7 +180,7 @@ nav ul li a{
     font-size: 8px;
     text-decoration: none;
     color: white;
-   
+
     display: block;
     padding: 10px 3px;
     text-align: center;
@@ -178,7 +191,7 @@ nav ul li a{
        1 - cambia el color del fondo de el botón */
 ul li a:hover{
     background: lightgray;
-    
+
 }
 
 
@@ -197,7 +210,7 @@ nav ul ul {
     text-wrap: normal;
     display: none;
     background: gray;
-    
+
 }
 
 /* 
@@ -229,23 +242,24 @@ nav ul ul ul{
 ========================================= */
 
 button {
-    
+
     width: 60px;
     height: 25px;
     background-color: #684e24;
     border: none;
     font-size: 10px;
-   
+    background-color: #0097ca;
+
 }
 #boton-entrar {
-    
+
     margin-top: 30px;
     float: left;
-    
+
 }
 
 #boton-buscar {
-    
+
     margin-top: 30px;
     float: left;
     width: 70px;
@@ -253,12 +267,26 @@ button {
     background-color: #609120;
 }
 #boton-salir {
-    
+
     margin-top: 30px;
     float: right;
     width: 70px;
     margin-left: 10px;
     background-color: #609120;
+}
+#boton-unir {
+
+    margin-top: 30px;
+    float: left;
+    width: 200px;
+    margin-left: 25px;
+    height: 80px;
+    background-color: #333;
+    color: whitesmoke;
+             -webkit-border-radius: 10px;
+    
+    border-radius: 10px;
+
 }
 /* 
 ========================================= 
@@ -266,9 +294,9 @@ button {
 ========================================= */
 
 .form {
-    
+
     background-color: #684e24;
-    
+
 }
 /* 
 ========================================= 
@@ -276,7 +304,7 @@ button {
 ========================================= */
 
 .modulo {
-    
+
     width: 270px;
     height: 100px;
     background-color: white;
@@ -285,8 +313,8 @@ button {
     text-align: center;
     display: inline-block;
     -webkit-border-radius: 10px;
-    
+
     border-radius: 10px;
-    
+
 }
 
