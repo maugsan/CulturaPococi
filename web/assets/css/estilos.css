@@ -43,7 +43,7 @@ header {
     /* border: solid 1px yellow; */
     height: 80px;
     width: 100%;
-
+    z-index: 2;
     position: fixed;
 
 

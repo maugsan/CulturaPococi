@@ -1,25 +1,24 @@
 
-$(document).ready(function(){
+$(document).ready(function() {
 
 // SLIDE BANNER
 
-	$("#slideshow").css("overflow", "hidden");
-	
-	$("ul#slides").cycle({
-		fx: 'scrollHorz',
-		pause: 1,
-		speed: 400,
-		timeout: 4000,
-		prev: '#cAtras',
-		next: '#cAdelante'
-	});
-	
-	$("#slideshow").hover(function() {
-		//$("ul#controles").fadeIn();
-		$("ul#slides").cycle("pause");
-	},function() {
-		//$("ul#controles").fadeOut();
-		$("ul#slides").cycle("resume");
-	});
-	
+    $("#slideshow").css("overflow", "hidden");
+
+    $('#slides').cycle({
+        fx: 'scrollRight',
+        next: '#right',
+        timeout: 0,
+        easing: 'easeInOutBack'
+    });
+
+    $("#slideshow").hover(function() {
+        //$("ul#controles").fadeIn();
+        $("#slides").cycle("pause");
+    }, function() {
+        //$("ul#controles").fadeOut();
+        $("#slides").cycle("resume");
+    });
+
 });
+    

@@ -13,11 +13,10 @@
         <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
         <link rel="stylesheet" href="./assets/css/estilosld.css" type="text/css" />
         
-        <script type="text/javascript" src="./assets/js/jq.js"></script>
-		<script type="text/javascript" src="./assets/js/jqGeneral.js" ></script>
-		<script type="text/javascript" src="./assets/js/jq-ui.js"></script>
-                <script type="text/javascript" src="./assets/js/jq/jqcy.js"> </script>
-		<script type="text/javascript" src="./assets/js/jq/jqSlide.js"> </script>
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		
+		
+            
         
         <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
         <html:base/>
@@ -31,8 +30,6 @@
 
 
                 <div id="contendor-interno"> 
-
-
 
 
                     <div id="contentSlide">
@@ -80,8 +77,11 @@
             </section>
             <%@include file="includes/footer.jsp" %>
 
+            
 
         </div>
+                <script type="text/javascript" src="./assets/js/jqcy.js"> </script>
+		<script type="text/javascript" src="./assets/js/jqSlide.js"> </script>
 
     </body>
 </html:html>
