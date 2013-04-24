@@ -11,6 +11,14 @@
         <title><bean:message key="welcome.title"/></title>
         <link rel="stylesheet" href="./assets/css/estilos.css" type="text/css" />
         <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
+        <link rel="stylesheet" href="./assets/css/estilosId.css" type="text/css" />
+        
+        <script type="text/javascript" src="./assets/js/jq.js"></script>
+		<script type="text/javascript" src="./assets/js/jqGeneral.js" ></script>
+		<script type="text/javascript" src="./assets/js/jq-ui.js"></script>
+                <script type="text/javascript" src="./assets/js/jq/jqcy.js"> </script>
+		<script type="text/javascript" src="./assets/js/jq/jqSlide.js"> </script>
+        
         <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
         <html:base/>
     </head>
@@ -21,10 +29,32 @@
             <%@include file="includes/header.jsp" %>
             <section  id="seccion-principal">
 
-                
+
                 <div id="contendor-interno"> 
-                   
-                    <img src="./assets/img/inicio.png" >
+
+
+
+
+                    <div id="contentSlide">
+
+                        <div id="slideshow">
+                            <ul id="controles">  	
+                                <li id="cAtras"> <a href = "#" ></a> </li>
+                                <li id="cAdelante"> <a href = "#" ></a> </li>
+                            </ul>
+                            <ul id="slides">  
+                                
+                                <li> <a href = "#">  <img src="./assets/img/inicio.png" > </a> </li>
+                                <li> <a href = "#">   <img src="./assets/img/inicio.png" > </a> </li>
+                                <li> <a href = "#">   <img src="./assets/img/inicio.png" > </a> </li>
+                                <li> <a href = "#">   <img src="./assets/img/inicio.png" > </a> </li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+
+                  
                 </div> 
 
             </section>
@@ -32,11 +62,11 @@
             <%@include file="includes/espacios.jsp" %>
             <section id="seccion-inferior">
 
-                
-                
+
+
                 <div id="contendor-interno">
-                    <a href=""><button id="boton-unir">Unirse</button></a>
-                
+                    <a href=""><button id="boton-unir">Únete</button></a>
+
                     <p id="articulo">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
                         Nam cursus. Morbi ut mi. Nullam enim leo, egestas id,
                         condimentum at, laoreet mattis, massa. Sed eleifend 
@@ -45,7 +75,7 @@
                         lectus quis dui viverra vestibulum. Suspendisse 
                         vulputate aliquam dui. Nulla elementum dui ut augue.
                     </p>
-                
+
                 </div>
 
             </section>
