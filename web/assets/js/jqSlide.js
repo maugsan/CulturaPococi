@@ -6,10 +6,11 @@ $(document).ready(function() {
     $("#slideshow").css("overflow", "hidden");
 
     $('#slides').cycle({
-        fx: 'scrollRight',
-        next: '#right',
-        timeout: 0,
-        easing: 'easeInOutBack'
+        delay: 2000,
+        speed: 500,
+        prev: '#cAtras',
+        next: '#cAdelante',
+        timeout: 0
     });
 
     $("#slideshow").hover(function() {

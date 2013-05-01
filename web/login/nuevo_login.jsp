@@ -17,7 +17,7 @@
 
         <link rel="stylesheet" href="../assets/css/estilos.css" type="text/css" />
         <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" />
-        <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+          <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
     </head>
 </head>
 <body>

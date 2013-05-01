@@ -8,6 +8,7 @@
         z-index: 1;
 }
 
+
 ul, li {
 	margin: 0; padding: 0; border: 0;
 }
@@ -21,26 +22,30 @@ div#slideshow ul#controles {
 	
 	list-style: none;
 	position: relative; 
-	top: 100px; 
+	top: 150px; 
+        opacity: 0.1;
 	z-index: 15;
 }
-div#slideshow ul#controles li#cAtras {
+div#slideshow #controles li#cAtras {
 	float: left; margin: 0;
 }
-div#slideshow ul#controles li#cAdelante {
+div#slideshow #controles li#cAdelante {
 	float: right; margin: 0;
 }
-div#slideshow ul#controles li a {
-	display: block; width: 60px; height: 101px;
-	/*border: 1px solid pink;*/
+div#slideshow #controles li a {
+	display: block;
+        width: 60px;
+        height: 60px;
+        opacity: 0.5;
 }
-div#slideshow ul#controles li#cAtras a {
-	background: url(./assets/img/flechaIzq.png);
-	border-radius: 0px 60px 60px 0px;
+div#slideshow #controles li#cAtras a {
+        background-image: url('../img/Arrows-Left-circular-icon.png') ;
+	
+	
 }
-div#slideshow ul#controles li#cAdelante a {
-	background: url(./assets/img/flechaDer.png);
-	border-radius: 60px 0px 0px 60px;
+div#slideshow #controles li#cAdelante a {
+	 background-image: url('../img/Arrows-Right-circular-icon.png')  ;
+	
 }
 
 div#slideshow ul#slides {

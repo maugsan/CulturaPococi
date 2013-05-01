@@ -9,17 +9,23 @@
   ========================================= 
         Globales
   ========================================= */
+* {
+  font-family: "Roboto Condensed"
+}
+
 root { 
     display: block;
 }
 
 html {
 
+    background-color: #e1e1e1;
 }
 body {
 
     background-color: #e1e1e1;
-    font-family: 'Montserrat', sans-serif;
+
+    color: #333;
 }
 
 #contendor {
@@ -73,8 +79,9 @@ section {
 
 #seccion-principal {
 
-    padding-top: 80px;
+    padding-top: 125px;
     min-height: 480px;
+
 
 }
 #seccion-media {
@@ -87,7 +94,7 @@ section {
 #seccion-inferior {
 
     margin-top: 20px;
-    height: 200px;
+    height: 300px;
     background-color: #ccc;
     padding: 20px;
 
@@ -102,10 +109,11 @@ section {
 }
 #publicidad {
 
-    width: 600px;
-    height: 80px;
+    width: 580px;
+    height: 60px;
     margin: 20px;
     float: left;
+    padding: 10px;
     background-color: #0097ca;
     text-align: center;
     -webkit-border-radius: 10px;
@@ -114,10 +122,11 @@ section {
 }
 #eventos {
 
-    width: 250px;
-    height: 80px;
+    width: 230px;
+    height: 60px;
     margin: 20px;
     float: left;
+    padding: 10px;
     background-color: #609120;
     text-align: center;
     -webkit-border-radius: 10px;
@@ -169,7 +178,7 @@ nav ul li {
 */
 nav ul li a{
     width: 70px;
-    font-size: 8px;
+    font-size: 10px;
     text-decoration: none;
     color: white;
 
@@ -198,7 +207,7 @@ ul li a:hover{
 */
 nav ul ul {
     font-size: 7px;
-    width: 87px;
+    width: 76px;
     text-wrap: normal;
     display: none;
     background: gray;
@@ -235,12 +244,15 @@ nav ul ul ul{
 
 button {
 
-    width: 60px;
-    height: 25px;
+    width: 80px;
+    height: 30px;
     background-color: #684e24;
     border: none;
     font-size: 10px;
     background-color: #0097ca;
+     -webkit-border-radius: 5px;
+   
+    border-radius: 5px;
 
 }
 #boton-entrar {
@@ -297,16 +309,98 @@ button {
 
 .modulo {
 
-    width: 270px;
-    height: 100px;
-    background-color: white;
+    
+    width: 230px;
+    height: 60px;
     float: left;
     margin: 10px 20px 10px 20px;
     text-align: center;
+    color: black;
+    background: #ccc;
     display: inline-block;
-    -webkit-border-radius: 10px;
-
-    border-radius: 10px;
+    -webkit-border-radius: 5px;
+   
+    border-radius: 5px;
+     padding: 20px;
 
 }
+
+.modulo:hover {
+
+  
+    background: #aaa;
+   
+
+}
+.modulo a {
+
+    
+   color: black;
+   
+
+}
+
+#icono {
+    
+    
+    float: left;
+}
+/* 
+========================================= 
+  Formularios
+========================================= */
+
+form input {
+	font-size: 12px;
+	width:340px;
+	height:50px;
+	background:#fefefe;
+	border:1px dashed #dedede;
+	margin-top:3px;
+	margin-bottom: 4px;
+	font-size:0.9em;
+	color:#3a3a3a;
+	border: none;
+         -webkit-border-radius: 5px;
+   
+    border-radius: 5px;
+        
+}
+
+input[type="submit"] {
+	width:127px;
+    height: 45px;
+    border: 1px solid #1ba9df;
+    background-color: #1397c9;
+    margin-top:20px;
+    cursor: pointer;
+    color: #fff; 
+  
+
+}
+
+input[type="file"]  {
+
+    height: 45px;
+    border: none;
+    background: none;
+    margin-top:20px;
+    cursor: pointer;
+    color: #ccc; 
+    
+  /* In IE7, the height of the select element cannot be changed by height, only font-size */
+
+  *margin-top: 4px;
+  /* For IE7, add top margin to align select with labels */
+
+  line-height: 30px;
+  
+
+}
+
+input[type="text_area"] {
+
+	background: #ccc;
+}
+
 

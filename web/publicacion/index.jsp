@@ -10,7 +10,7 @@
         <title><bean:message key="welcome.title"/></title>
         <link rel="stylesheet" href="../assets/css/estilos.css" type="text/css" />
         <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" />
-        <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+       <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
         <html:base/>
     </head>
     <body>

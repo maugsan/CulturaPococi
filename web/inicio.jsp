@@ -18,12 +18,20 @@
 		
             
         
-        <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+         <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
         <html:base/>
-    </head>
+
+
+
+
+</head>
+
+
     <body>
 
+        
         <div id="contendor">
+           
 
             <%@include file="includes/header.jsp" %>
             <section  id="seccion-principal">
@@ -42,7 +50,8 @@
                             <ul id="slides">  
                                 
                                 <li> <a href = "#">  <img src="./assets/img/inicio.png" > </a> </li>
-                                <li> <a href = "#">   <img src="./assets/img/inicio1.png" > </a> </li>
+                                <li> <a href = "#">   <img src="./assets/img/banner1.jpg" > </a> </li>
+                                <li> <a href = "#">   <img src="./assets/img/banner2.jpg" > </a> </li>
                                
 
                             </ul>

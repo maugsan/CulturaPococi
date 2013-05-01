@@ -12,7 +12,7 @@
         <title>Dashboard</title>
         <link rel="stylesheet" href="./assets/css/estilos.css" type="text/css" />
         <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
-        <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+         <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
     </head>
     <body>
 
@@ -67,27 +67,35 @@
 
 
                                     <a href="./usuario/"><section class="modulo">
+                                            <img id="icono" src="assets/img/user-icon.png" width="60">
                                             <h2>Usuario</h2>
                                         </section></a>
                                     <a href="./perfil/"><section class="modulo">
+                                            <img id="icono" src="assets/img/perfil-icon.png" width="60">
                                             <h2>Perfil</h2>
                                         </section></a>
                                     <a href="./evento/"><section class="modulo">
+                                            <img id="icono" src="assets/img/evento-icon.png" width="60">
                                             <h2>Evento</h2>
                                         </section></a>
                                     <a href="./categoria/"><section class="modulo">
+                                            <img id="icono" src="assets/img/category-icon.png" width="60">
                                             <h2>Categoria</h2>
                                         </section></a>
                                     <a href="./boletin/"><section class="modulo">
+                                            <img id="icono" src="assets/img/boletin-icon.png" width="60">
                                             <h2>Boletín</h2>
                                         </section></a>
                                     <a href="./anuncio/"> <section class="modulo">
+                                            <img id="icono" src="assets/img/anuncio-icon.png" width="60">
                                             <h2>Anuncio</h2>
                                         </section></a>
                                     <a href="./programaradio/"> <section class="modulo">
+                                            <img id="icono" src="assets/img/radio-icon.png" width="60">
                                             <h2>Programas de Radio</h2>
                                         </section></a>
                                     <a href="./publicacion/"> <section class="modulo">
+                                            <img id="icono" src="assets/img/publicacion-icon.png" width="60">
                                             <h2>Publicación</h2>
                                         </section></a>
 

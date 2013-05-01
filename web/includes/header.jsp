@@ -1,9 +1,9 @@
 <header>
 
     <div id="contendor-interno">
-        <div id="header-logo">
+        <a href="./index.jsp"><div id="header-logo">
             
-        </div>
+        </div></a>
         <%@include file="../includes/menu.jsp" %>
 
         <div id="header-opciones">
