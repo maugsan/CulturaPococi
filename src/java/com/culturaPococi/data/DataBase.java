@@ -9,6 +9,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -22,23 +23,23 @@ public class DataBase {
     private String baseDatos;
     private Connection con;
     
-    
-    public Connection getConexion()throws SQLException{
-        this.usuario="cultura_13";
-        this.contra="cultura_13";
-        this.baseDatos="culturapococi_2013";
-        this.host= "jdbc:mysql://movilatlanticocom.ipagemysql.com";
-        
+    public Connection getConexion() throws SQLException {
+        JOptionPane.showMessageDialog(null, "getConexion!!");
+        this.usuario = "root";
+        this.contra = "";
+        this.baseDatos = "cultura_pococi2013";
+        this.host = "jdbc:mysql://localhost:3306/" + baseDatos;
+
         try {
-             Class.forName("com.mysql.jdbc.Driver");
+
             Class.forName("com.mysql.jdbc.Driver");
-            this.con = (Connection)DriverManager.getConnection(host, usuario,contra);
-            System.out.println("Conecto");
+            this.con = (Connection) DriverManager.getConnection(host, usuario, contra);
+            JOptionPane.showMessageDialog(null, "Conecto");
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(DataBase.class.getName()).log(Level.SEVERE,null,ex);
+            JOptionPane.showMessageDialog(null, "INCORRECTO!!");
+            Logger.getLogger(DataBase.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-    return con;
+        return con;
     }
-    
 }
