@@ -4,6 +4,7 @@
  */
 package com.culturaPococi.data;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -39,5 +40,35 @@ public class DataUsuarioNormal extends DataBase{
         resultado.close();
         System.out.println("exito");
         return encontrado;
+    }
+     
+     public void insertarUsuarioNormal() throws SQLException {
+         
+        String sql = "call pInsertarUsuarioNormal(?,?,?,?);";
+        Connection conexion = super.getConexion();
+        
+        CallableStatement call=conexion.prepareCall(sql);
+        
+//        call.setString("pcorreo",);
+//        call.setString("pnombre", );
+//        call.setString("pcontrasenia", );
+//        call.setString("pcolaborador", );
+        call.executeUpdate();
+        call.close();
+        conexion.close();
+    }
+     
+     /*Elimina a un usuario de la base de datos por medio del correo*/
+    public void eliminarUsuarioNormal() throws SQLException {
+         
+        String sql = "call pEliminarUsuarioNormal(?);";
+        Connection conexion = super.getConexion();
+        
+        CallableStatement call=conexion.prepareCall(sql);
+        
+//        call.setString("pcorreo",);
+        call.executeUpdate();
+        call.close();
+        conexion.close();
     }
 }
