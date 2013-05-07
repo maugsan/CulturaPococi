@@ -9,9 +9,6 @@
   ========================================= 
         Globales
   ========================================= */
-* {
-  font-family: "Roboto Condensed"
-}
 
 root { 
     display: block;
@@ -25,7 +22,7 @@ body {
 
     background-color: #e1e1e1;
 
-    color: #333;
+     color: #444;
 }
 
 #contendor {
@@ -45,13 +42,22 @@ header {
 
 
 
-    background: #333;
-    /* border: solid 1px yellow; */
+   background: #333333; /* Old browsers */
+background: -moz-linear-gradient(top,  #333333 0%, #555555 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#333333), color-stop(100%,#555555)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #333333 0%,#555555 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #333333 0%,#555555 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #333333 0%,#555555 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #333333 0%,#555555 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#555555',GradientType=0 ); /* IE6-9 */
+
+     border: solid 1px black; 
     height: 80px;
     width: 100%;
     z-index: 2;
     position: fixed;
 
+    font-size: 8px;
 
 }
 #header-logo {
@@ -68,6 +74,7 @@ header {
 
     /* border: solid 1px yellow; */
     float: right;
+    padding: 10px;
 
 }
 
@@ -150,6 +157,8 @@ footer {
 nav {
 
     float: left;
+    width: 800px;
+
     margin:  30px 0 0 0;
     width: auto;
     /* border: solid blueviolet 1px; */
@@ -178,7 +187,7 @@ nav ul li {
 */
 nav ul li a{
     width: 70px;
-    font-size: 10px;
+    font-size: 8px;
     text-decoration: none;
     color: white;
 
@@ -257,30 +266,29 @@ button {
 }
 #boton-entrar {
 
-    margin-top: 30px;
+    margin-top: 20px;
     float: left;
 
 }
 
 #boton-buscar {
 
-    margin-top: 30px;
-    float: left;
-    width: 70px;
+    margin-top: 20px;
+    float: right;
+     width: 60px;
     margin-left: 10px;
     background-color: #609120;
 }
 #boton-salir {
 
-    margin-top: 30px;
+    margin-top: 20px;
     float: right;
-    width: 70px;
+    width: 60px;
     margin-left: 10px;
     background-color: #609120;
 }
 #boton-unir {
-
-    margin-top: 30px;
+     margin-top: 20px;
     float: left;
     width: 200px;
     margin-left: 25px;
@@ -402,5 +410,16 @@ input[type="text_area"] {
 
 	background: #ccc;
 }
+/* 
+  ========================================= 
+        Errores
+  ========================================= */
 
+#error1 { 
+
+    width: 100%;
+    color: red;
+
+
+}
 
