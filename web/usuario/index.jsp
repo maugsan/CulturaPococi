@@ -21,10 +21,15 @@
             
             <section  id="seccion-principal">
 
-                
+
                 <div id="contendor-interno"> 
-                   
+
+
                     <h1>Usuarios</h1>
+
+                    <%-- 
+                   aqui es donde va el codigo
+                    --%>
                 </div> 
 
             </section>

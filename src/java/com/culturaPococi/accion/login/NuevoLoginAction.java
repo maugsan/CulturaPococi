@@ -4,7 +4,7 @@
  */
 package com.culturaPococi.accion.login;
 
-import com.culturaPococi.negocio.NegocioUsuarioNOrmal;
+import com.culturaPococi.negocio.NegocioUsuarioAdministrador;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.swing.JOptionPane;
@@ -22,7 +22,7 @@ public class NuevoLoginAction extends DispatchAction {
     /* forward name="success" path="" */
     private static final String EXITOSO = "exitoso";
     private static final String DENEGADO = "denegado";
-    NegocioUsuarioNOrmal nun = new NegocioUsuarioNOrmal();
+    NegocioUsuarioAdministrador nua = new NegocioUsuarioAdministrador();
 
     @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form,
@@ -34,7 +34,7 @@ public class NuevoLoginAction extends DispatchAction {
         NuevoLoginForm login = (NuevoLoginForm) form;
 
 
-        if (nun.verificarUsuarioNormal(login.getCorreo(), login.getContrasenia())) {
+        if (nua.verificarUsuarioAdministrador(login.getCorreo(), login.getContrasenia())) {
             System.out.println("ENTRO----------------------------------------------------------------");
             return mapping.findForward(EXITOSO);
         } else {

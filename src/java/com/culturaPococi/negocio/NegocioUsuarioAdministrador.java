@@ -4,10 +4,26 @@
  */
 package com.culturaPococi.negocio;
 
+import com.culturaPococi.data.DataUsuarioAdministrador;
+import java.sql.SQLException;
+
 /**
  *
  * @author jonathan
  */
 public class NegocioUsuarioAdministrador {
+      
+    DataUsuarioAdministrador dua;
+
+    public NegocioUsuarioAdministrador() {
+        dua=new DataUsuarioAdministrador();
+    }
+    
+    
+     public boolean verificarUsuarioAdministrador(String correo, String contrasenia) throws SQLException {
+
+        return dua.verificarUsuarioAdministrador(correo, contrasenia);
+
+    }
     
 }
