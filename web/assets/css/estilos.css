@@ -450,20 +450,24 @@ input[type="text_area"] {
     padding: 10px;
 }
 
-#accion-borrar{
 
+#elemento-icon {
+    
+   
      width: 30px;
      height: 30px;
      float: right;
+     opacity: 0.9;
     
     
 }
-#accion-modificar {
+#elemento-icon:hover {
     
    
-      width: 30px;
+     width: 30px;
      height: 30px;
      float: right;
+     opacity: 1;
     
     
 }

@@ -33,46 +33,37 @@
 
                     <section id="lista-elementos">
 
-                        <%-- Inicio Elemento  --%>
+                   
+                           <%-- Inicio Elemento  --%>
                         <div id="elemento">
 
                             <div id="elemento-imagen"><img src="../assets/img/user-icon.png" width="30"/></div>
                             <p id="elemento-nombre">Elemento</p>
-                            <div id="accion-borrar"><img src="../assets/img/delete-icon.png" width="30"/></div>   
-                            <div id="accion-modificar"><img src="../assets/img/editar-icon.png" width="30"/></div>   
+                            <div id="elemento-icon"><img src="../assets/img/delete-icon.png" width="30"/></div>   
+                            <div id="elemento-icon"><img src="../assets/img/editar-icon.png" width="30"/></div>   
 
                         </div>
                         <%-- Fin Elemento  --%>
-                        <%-- Inicio Elemento  --%>
+                           <%-- Inicio Elemento  --%>
                         <div id="elemento">
 
                             <div id="elemento-imagen"><img src="../assets/img/user-icon.png" width="30"/></div>
                             <p id="elemento-nombre">Elemento</p>
-                            <div id="accion-borrar"><img src="../assets/img/delete-icon.png" width="30"/></div>   
-                            <div id="accion-modificar"><img src="../assets/img/editar-icon.png" width="30"/></div>   
+                            <div id="elemento-icon"><img src="../assets/img/delete-icon.png" width="30"/></div>   
+                            <div id="elemento-icon"><img src="../assets/img/editar-icon.png" width="30"/></div>   
 
                         </div>
                         <%-- Fin Elemento  --%>
-                        <%-- Inicio Elemento  --%>
+                           <%-- Inicio Elemento  --%>
                         <div id="elemento">
 
                             <div id="elemento-imagen"><img src="../assets/img/user-icon.png" width="30"/></div>
                             <p id="elemento-nombre">Elemento</p>
-                            <div id="accion-borrar"><img src="../assets/img/delete-icon.png" width="30"/></div>   
-                            <div id="accion-modificar"><img src="../assets/img/editar-icon.png" width="30"/></div>   
+                            <div id="elemento-icon"><img src="../assets/img/delete-icon.png" width="30"/></div>   
+                            <div id="elemento-icon"><img src="../assets/img/editar-icon.png" width="30"/></div>   
 
                         </div>
                         <%-- Fin Elemento  --%>
-                        <%-- Inicio Elemento  --%>
-                        <div id="elemento">
-                        
-                        <div id="elemento-imagen"><img src="../assets/img/user-icon.png" width="30"/></div>
-                        <p id="elemento-nombre">Elemento</p>
-                    <div id="accion-borrar"><img src="../assets/img/delete-icon.png" width="30"/></div>   
-                    <div id="accion-modificar"><img src="../assets/img/editar-icon.png" width="30"/></div>   
-                        
-                    </div>
-                     <%-- Fin Elemento  --%>
                     </section>
                     
                     
