@@ -40,6 +40,11 @@
                 <forward name="denegado" path="/includes/denegado.jsp" />
        
         </action>
+        <action input="/index.jsp"  
+                path="/listar_evento" 
+                scope="request" 
+                type="com.culturaPococi.accion.evento.ListarEventoAction"
+        />
      
        
         <action path="/modificar_programa_radio" type="com.culturaPococi.accion.programaradio.ModificarProgramaRadioAction"/>

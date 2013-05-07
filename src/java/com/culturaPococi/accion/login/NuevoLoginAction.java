@@ -7,7 +7,6 @@ package com.culturaPococi.accion.login;
 import com.culturaPococi.negocio.NegocioUsuarioAdministrador;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.JOptionPane;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
@@ -24,7 +23,7 @@ public class NuevoLoginAction extends DispatchAction {
     private static final String DENEGADO = "denegado";
     NegocioUsuarioAdministrador nua = new NegocioUsuarioAdministrador();
 
-    @Override
+   
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
