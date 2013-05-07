@@ -83,6 +83,7 @@
 
                 </div>
 
+                <a href="./player.html" target="_blank">Escuchar Radio!</a> 
             </section>
             <%@include file="includes/footer.jsp" %>
 
