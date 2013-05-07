@@ -19,6 +19,6 @@ public class Publicacion {
     private String musica;
     private String video;
     private String texto;
-    //imagen blob,
+    //string imagen blob,
     private int idCategoria;
 }

@@ -12,10 +12,10 @@ public class Perfil {
 
     private String nombrePerfil;
     private int idCategoria;
-    //private fechaDeCreacion datetime,
+    //private String fechaDeCreacion datetime, usar libreria
     private String distrito;
     private String biografia;
-    //imagenDePortada;
+    //imagenDePortada; /string
     private String correo;
     private String nombreDistrito;
 }

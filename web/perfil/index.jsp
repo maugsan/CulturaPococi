@@ -26,13 +26,34 @@
         <%@include file="/includes/header_administrativo.jsp" %>
         <div id="contendor">
 
-            
+
             <section  id="seccion-principal">
 
-                
+
                 <div id="contendor-interno"> 
-                   
+
                     <h1>Perfiles</h1>
+                    <%-- 
+   
+                    TABLA CON TODOS LOS PERFILES
+                    TABLA DE UNA SOLA COLUMNA DIV!!
+                    
+                    --%>
+
+                    <section id="lista-elementos">
+
+                        <%-- Inicio Elemento  --%>
+                        <div id="elemento">
+
+                            <div id="elemento-imagen"><img src="../assets/img/perfil-icon.png" width="30"/></div>
+                            <p id="elemento-nombre">Elemento</p>
+                            <div id="accion-borrar"><img src="../assets/img/delete-icon.png" width="30"/></div>   
+                            
+                        </div>
+                        <%-- FIN Elemento  --%>
+
+                    </section>
+
                 </div> 
 
             </section>
