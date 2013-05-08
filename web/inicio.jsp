@@ -66,8 +66,8 @@
 
             <%@include file="includes/espacios.jsp" %>
             <section id="seccion-inferior">
-
-
+                 
+                
 
                 <div id="contendor-interno">
                     <a href=""><button id="boton-unir">Únete</button></a>
@@ -83,8 +83,10 @@
 
                 </div>
 
-                <a href="./player.html" target="_blank">Escuchar Radio!</a> 
+              
             </section>
+            
+            
             <%@include file="includes/footer.jsp" %>
 
             

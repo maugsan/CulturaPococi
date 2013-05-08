@@ -13,7 +13,6 @@
 root { 
     display: block;
 }
-
 html {
 
     background-color: #e1e1e1;
@@ -21,8 +20,7 @@ html {
 body {
 
     background-color: #e1e1e1;
-
-     color: #444;
+    color: #444;
 }
 
 #contendor {
@@ -42,7 +40,7 @@ header {
 
 
 
-   background: #333333; /* Old browsers */
+background: #333333; /* Old browsers */
 background: -moz-linear-gradient(top,  #333333 0%, #555555 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#333333), color-stop(100%,#555555)); /* Chrome,Safari4+ */
 background: -webkit-linear-gradient(top,  #333333 0%,#555555 100%); /* Chrome10+,Safari5.1+ */
@@ -51,12 +49,11 @@ background: -ms-linear-gradient(top,  #333333 0%,#555555 100%); /* IE10+ */
 background: linear-gradient(to bottom,  #333333 0%,#555555 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#555555',GradientType=0 ); /* IE6-9 */
 
-     border: solid 1px black; 
+    border: solid 1px black; 
     height: 80px;
     width: 100%;
     z-index: 2;
     position: fixed;
-
     font-size: 8px;
 
 }
@@ -78,6 +75,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', end
 
 }
 
+#header-herramientase {
+
+    border: solid 1px yellow; 
+    float: right;
+    padding: 10px;
+    background: #333;
+    width: 100%;
+    height: 50px;
+
+}
+
 section {
 
     /*   border: solid 1px green; */
@@ -87,23 +95,23 @@ section {
 #seccion-principal {
 
     padding-top: 125px;
-    min-height: 480px;
+    min-height: 400px;
 
 
 }
 #seccion-media {
 
-    height: 100px;
+    height: 120px;
     background-color: #e1e1e1;
 
 
 }
 #seccion-inferior {
 
-    margin-top: 20px;
-    height: 300px;
-    background-color: #ccc;
+    height: 150px;
+    background-color: #f0f0f0;
     padding: 20px;
+    border: solid 1px #ccc;
 
 }
 #articulo {
@@ -190,7 +198,6 @@ nav ul li a{
     font-size: 8px;
     text-decoration: none;
     color: white;
-
     display: block;
     padding: 10px 3px;
     text-align: center;
@@ -288,15 +295,14 @@ button {
     background-color: #609120;
 }
 #boton-unir {
-     margin-top: 20px;
+    margin-top: 20px;
     float: left;
     width: 200px;
     margin-left: 25px;
     height: 80px;
     background-color: #333;
     color: whitesmoke;
-             -webkit-border-radius: 10px;
-    
+    -webkit-border-radius: 10px;
     border-radius: 10px;
 
 }
@@ -327,9 +333,8 @@ button {
     background: #ccc;
     display: inline-block;
     -webkit-border-radius: 5px;
-   
     border-radius: 5px;
-     padding: 20px;
+    padding: 20px;
 
 }
 
@@ -376,7 +381,8 @@ form input {
 }
 
 input[type="submit"] {
-	width:127px;
+    
+    width:127px;
     height: 45px;
     border: 1px solid #1ba9df;
     background-color: #1397c9;
@@ -425,7 +431,8 @@ input[type="text_area"] {
 
 #radio {
     
-    margin: 0 auto;
+    background: darkorange;
+    
     
 }
 

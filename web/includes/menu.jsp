@@ -3,7 +3,17 @@
 <nav>
     <ul>
      
-        <li><a href="#">RADIO</a></li>
+        
+       
+        <li id="radio"><a href="./player.jsp" target="_blank">RADIO</a>
+        
+         <ul>
+
+                <li><a href="#">PROGRAMACIÓN</a></li>
+               
+
+            </ul>
+        </li>
         <li><a href="#">PERIODISMO</a>
             <ul>
 
