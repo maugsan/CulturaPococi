@@ -39,9 +39,6 @@
                     TABLA DE UNA SOLA COLUMNA DIV!!
                     
                     --%>
-                    
-                    
-                    
 
                     <section id="lista-elementos">
                         

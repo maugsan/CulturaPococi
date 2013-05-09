@@ -460,14 +460,11 @@ input[type="text_area"] {
 
 
 #elemento-icon {
-    
-   
-     width: 30px;
-     height: 30px;
-     float: right;
-     opacity: 0.9;
-    border:solid 1px chocolate;
-    
+    width: 30px;
+    height: 30px;
+    float: right;
+    opacity: 0.9;
+
 }
 #elemento-icon:hover {
     
@@ -482,14 +479,14 @@ input[type="text_area"] {
 
 
 #elemento-imagen {
-    
-       width: 70px;
-     height: 70px;
-     float: left;
-    
+
+    width: 70px;
+    height: 70px;
+    float: left;
+
 }
 #elemento-nombre {
-    
+
     font-size: 25px;
     float:left;
     margin-top: 0;
@@ -498,6 +495,5 @@ input[type="text_area"] {
 #link-detalle-elemento{
     width: 300px;
     height:50px;
-    border:solid 1px #1ba9df;
     float: left;
 }
