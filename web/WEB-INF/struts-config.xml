@@ -41,6 +41,13 @@
                 <forward name="denegado" path="/includes/denegado.jsp" />
        
         </action>
+        <action path="/mostrarperfiles" 
+                type="com.culturaPococi.accion.perfil.MostrarPerfilesAction"
+                scope="request"
+                input="/perfil/index.jsp"
+                validate="false"/>
+       
+        
         <action input="/evento/index.jsp"  
                 path="/listar_evento" 
                 scope="request" 
@@ -82,7 +89,12 @@
         <action path="/crear_usuario_normal" type="com.culturaPococi.accion.usuarioNormal.CrearUsuarioNormalAction"/>
         
         
-        <action path="/eliminar_perfil" type="com.culturaPococi.accion.perfil.EliminarPerfilAction"/>
+        <action path="/eliminar_perfil" 
+                type="com.culturaPococi.accion.perfil.EliminarPerfilAction"
+                
+        />
+        
+        
         <action path="/modificar_perfil" type="com.culturaPococi.accion.perfil.ModificarPerfilAction"/>
         <action path="/crear_perfil" type="com.culturaPococi.accion.perfil.CrearPerfilAction"/>
         <action path="/eliminar_boletin" type="com.culturaPococi.accion.boletin.EliminarBoletinAction"/>

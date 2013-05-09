@@ -70,7 +70,7 @@
                                             <img id="icono" src="assets/img/user-icon.png" width="60">
                                             <h2>Usuario</h2>
                                         </section></a>
-                                    <a href="./perfil/"><section class="modulo">
+                                    <a href="./mostrarperfiles.do"><section class="modulo">
                                             <img id="icono" src="assets/img/perfil-icon.png" width="60">
                                             <h2>Perfil</h2>
                                         </section></a>

@@ -6,6 +6,7 @@ package com.culturaPococi.accion.perfil;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
@@ -33,6 +34,10 @@ public class EliminarPerfilAction extends org.apache.struts.action.Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
+        
+         int id = Integer.parseInt(request.getParameter("id"));
+         
+         JOptionPane.showMessageDialog(null, id);
         
         return mapping.findForward(SUCCESS);
     }

@@ -24,8 +24,7 @@ body {
 }
 
 #contendor {
-
-    height: 100%;
+ height: auto;
 }
 
 #contendor-interno {
@@ -96,9 +95,11 @@ section {
 
     padding-top: 125px;
     min-height: 400px;
-
+    height: auto;
 
 }
+
+
 #seccion-media {
 
     height: 120px;
@@ -449,7 +450,7 @@ input[type="text_area"] {
 
 #elemento {
     width:400px; 
-    height: 100px;
+    height: 50px;
     color: #333;
     border: solid 1px #ccc;
     background: #f0f0f0;
@@ -465,7 +466,7 @@ input[type="text_area"] {
      height: 30px;
      float: right;
      opacity: 0.9;
-    
+    border:solid 1px chocolate;
     
 }
 #elemento-icon:hover {
@@ -492,4 +493,11 @@ input[type="text_area"] {
     font-size: 25px;
     float:left;
     margin-top: 0;
+}
+
+#link-detalle-elemento{
+    width: 300px;
+    height:50px;
+    border:solid 1px #1ba9df;
+    float: left;
 }
