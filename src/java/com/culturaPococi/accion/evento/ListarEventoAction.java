@@ -4,8 +4,12 @@
  */
 package com.culturaPococi.accion.evento;
 
+import com.culturaPococi.dominio.Evento;
+import com.culturaPococi.negocio.NegocioEvento;
+import java.util.LinkedList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
@@ -18,6 +22,7 @@ public class ListarEventoAction extends org.apache.struts.action.Action {
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
+    NegocioEvento nEvento=new NegocioEvento();
 
     /**
      * This is the action called from the Struts framework.
@@ -33,7 +38,13 @@ public class ListarEventoAction extends org.apache.struts.action.Action {
     public ActionForward listarEventos(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        
+        JOptionPane.showMessageDialog(null, "INCORRECTO!!");
+        LinkedList <Evento> listaEventos;
+        listaEventos=nEvento.listarEventosDB();
+        request.setAttribute("listaEventos", listaEventos);
         return mapping.getInputForward();
     }
 }
+
+
+//<a href="./evento/"><section class="modulo">

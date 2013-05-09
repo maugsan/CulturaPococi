@@ -39,7 +39,6 @@ public class DataBase {
             JOptionPane.showMessageDialog(null, "INCORRECTO!!");
             Logger.getLogger(DataBase.class.getName()).log(Level.SEVERE, null, ex);
         }
-
         return con;
     }
 }

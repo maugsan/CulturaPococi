@@ -40,10 +40,12 @@
                 <forward name="denegado" path="/includes/denegado.jsp" />
        
         </action>
-        <action input="/index.jsp"  
+        <action input="/evento/index.jsp"  
                 path="/listar_evento" 
                 scope="request" 
                 type="com.culturaPococi.accion.evento.ListarEventoAction"
+                parameter="metodo"
+                validate="false"
         />
      
        
