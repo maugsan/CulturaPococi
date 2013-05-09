@@ -7,6 +7,7 @@
 
 <struts-config>
     <form-beans>
+        <form-bean name="EventoForm" type="com.culturaPococi.accion.evento.EventoForm"/>
         <form-bean 
             name="NuevoLoginForm" 
             type="com.culturaPococi.accion.login.NuevoLoginForm"
@@ -46,6 +47,30 @@
                 type="com.culturaPococi.accion.evento.ListarEventoAction"
                 parameter="metodo"
                 validate="false"
+                
+        />
+        <action path="/eliminar_evento" 
+                type="com.culturaPococi.accion.evento.EliminarEventoAction"
+                input="/evento/index.jsp" 
+                scope="request"
+                parameter="metodo"
+                validate="false" 
+        />
+        <action path="/modificar_evento" 
+                type="com.culturaPococi.accion.evento.ModificarEventoAction"
+                input="/evento/index.jsp" 
+                scope="request"
+                parameter="metodo"
+                validate="true" 
+                name="EventoForm"
+        />
+        <action path="/crear_evento" 
+                type="com.culturaPococi.accion.evento.CrearEventoAction"
+                input="/evento/index.jsp" 
+                scope="request"
+                parameter="metodo"
+                validate="true" 
+                name="EventoForm"
         />
      
        
@@ -55,9 +80,8 @@
         <action path="/eliminar_usuario_normal" type="com.culturaPococi.accion.usuarioNormal.EliminarUsuarioNormalAction"/>
         <action path="/modificar_usuario_normal" type="com.culturaPococi.accion.usuarioNormal.ModificarUsuarioNormalAction"/>
         <action path="/crear_usuario_normal" type="com.culturaPococi.accion.usuarioNormal.CrearUsuarioNormalAction"/>
-        <action path="/eliminar_evento" type="com.culturaPococi.accion.evento.EliminarEventoAction"/>
-        <action path="/modificar_evento" type="com.culturaPococi.accion.evento.ModificarEventoAction"/>
-        <action path="/crear_evento" type="com.culturaPococi.accion.evento.CrearEventoAction"/>
+        
+        
         <action path="/eliminar_perfil" type="com.culturaPococi.accion.perfil.EliminarPerfilAction"/>
         <action path="/modificar_perfil" type="com.culturaPococi.accion.perfil.ModificarPerfilAction"/>
         <action path="/crear_perfil" type="com.culturaPococi.accion.perfil.CrearPerfilAction"/>

@@ -13,12 +13,13 @@ import javax.swing.JOptionPane;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import org.apache.struts.actions.DispatchAction;
 
 /**
  *
  * @author Personal
  */
-public class ListarEventoAction extends org.apache.struts.action.Action {
+public class ListarEventoAction extends DispatchAction {
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
@@ -48,3 +49,5 @@ public class ListarEventoAction extends org.apache.struts.action.Action {
 
 
 //<a href="./evento/"><section class="modulo">
+//<a href="./listar_evento.do?metodo=listarEventos"><section class="modulo">
+//input="/evento/index.jsp"

@@ -74,7 +74,8 @@
                                             <img id="icono" src="assets/img/perfil-icon.png" width="60">
                                             <h2>Perfil</h2>
                                         </section></a>
-                                    <a href="./listar_evento.do?metodo=listarEventos"><section class="modulo">
+                                    
+                                        <a href="./evento/"><section class="modulo">
                                             <img id="icono" src="assets/img/evento-icon.png" width="60">
                                             <h2>Evento</h2>
                                         </section></a>

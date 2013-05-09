@@ -5,6 +5,7 @@
 package com.culturaPococi.data;
 
 import com.culturaPococi.dominio.Evento;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -29,20 +30,66 @@ public class DataEvento extends DataBase{
         resultado=statement.executeQuery(sql);
 
         while (resultado.next()) { 
-            evento=new Evento(resultado.getInt("idEvento"),resultado.getString("nombreCategoria"),
+            evento=new Evento(resultado.getInt("idEvento"),resultado.getInt("idCategoria"),
                     resultado.getString("lugar"),resultado.getString("nombre"),  
                     resultado.getString("fecha"),resultado.getString("hora"), 
                     resultado.getString("informacion"), 
-                    resultado.getString("correo"),"");
-            System.out.println("idEvento "+resultado.getInt("idEvento")+"nomc"+resultado.getString("nombreCategoria")+
-                    "LUGAR "+resultado.getString("lugar")+"nombree"+resultado.getString("nombre")+"fecha"+  
-                    resultado.getString("fecha")+"hora"+resultado.getString("hora")+"info "+ 
-                    resultado.getString("informacion")+"correo"+
-                    resultado.getString("correo"));
+                    resultado.getString("correo"),"",resultado.getString("nombreCategoria"));
             listaEventos.add(evento);
         }//fin while
         statement.close();
         conexion.close();
         return listaEventos;
-    }//fin selectPeliculas
+    }//fin selectEventos
+    
+    public void EliminarEvento(int idEvento) throws SQLException{
+        String sql = "call pEliminarEvento("+idEvento+");" ;
+       
+        Connection conexion = super.getConexion();
+
+        Statement statement = conexion.createStatement(); 
+        statement.executeQuery(sql);
+        statement.close();
+        conexion.close();
+    }//fin eliminarEventos 
+
+     public void  actualizarEvento(Evento evento) throws SQLException{
+    
+        String sql = "call pActualizarEvento(?,?,?,?,?,?,?,?);";
+        Connection conexion = super.getConexion();
+        CallableStatement call=conexion.prepareCall(sql);
+        
+        call.setInt("pidEvento", evento.getIdEvento());
+        call.setString("pnombre",evento.getNombre());
+        call.setString("plugar",evento.getLugar());
+        //call.setTime("phora", evento.getFecha());
+        //call.setDate("pfecha", null);
+        call.setString("pinformacion",evento.getInformacion());
+        call.setString("pcorreo",evento.getCorreo());
+        call.setInt("pidCategoria", evento.getIdCategoria());
+                
+        call.executeUpdate();
+        call.close();
+        conexion.close();
+    }
+     
+     public void  crearEvento(Evento evento) throws SQLException{
+    
+        String sql = "call pCrearEventos(?,?,?,?,?,?,?);";
+        Connection conexion = super.getConexion();
+        CallableStatement call=conexion.prepareCall(sql);
+        
+        
+        call.setString("pnombre",evento.getNombre());
+        call.setString("plugar",evento.getLugar());
+        //call.setTime("phora", evento.getFecha());
+        //call.setDate("pfecha", null);
+        call.setString("pinformacion",evento.getInformacion());
+        call.setString("pcorreo",evento.getCorreo());
+        call.setInt("pidCategoria", evento.getIdCategoria());
+                
+        call.executeUpdate();
+        call.close();
+        conexion.close();
+    }
 }

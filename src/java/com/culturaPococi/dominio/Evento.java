@@ -12,7 +12,8 @@ package com.culturaPococi.dominio;
 public class Evento {
 
     private int idEvento;
-    private String idCategoria;
+    private int idCategoria;
+    private String nombreCategoria;
     private String lugar;
     private String nombre;
     private String  fecha;
@@ -23,9 +24,10 @@ public class Evento {
 
     public Evento() {}
 
-    public Evento(int idEvento, String idCategoria, String lugar, String nombre, String fecha, String hora, String informacion, String correo, String imagen) {
+    public Evento(int idEvento, int idCategoria, String nombreCategoria, String lugar, String nombre, String fecha, String hora, String informacion, String correo, String imagen) {
         this.idEvento = idEvento;
         this.idCategoria = idCategoria;
+        this.nombreCategoria = nombreCategoria;
         this.lugar = lugar;
         this.nombre = nombre;
         this.fecha = fecha;
@@ -35,12 +37,22 @@ public class Evento {
         this.imagen = imagen;
     }
 
+    
+
     public String getNombre() {
         return nombre;
     }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getNombreCategoria() {
+        return nombreCategoria;
+    }
+
+    public void setNombreCategoria(String nombreCategoria) {
+        this.nombreCategoria = nombreCategoria;
     }
 
     
@@ -55,11 +67,11 @@ public class Evento {
         this.idEvento = idEvento;
     }
 
-    public String getIdCategoria() {
+    public int getIdCategoria() {
         return idCategoria;
     }
 
-    public void setIdCategoria(String idCategoria) {
+    public void setIdCategoria(int idCategoria) {
         this.idCategoria = idCategoria;
     }
 

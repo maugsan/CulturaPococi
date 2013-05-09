@@ -22,4 +22,16 @@ public class NegocioEvento {
         listaEventos=dEvento.selectEventos();
         return listaEventos;
     }//fin listarEventos
+    
+    public void eliminarEventosDB(int idEvento) throws SQLException{
+        dEvento.EliminarEvento(idEvento);
+    }//fin listarEventos
+    
+    public void actualizarEventosDB(Evento evento) throws SQLException{
+        dEvento.actualizarEvento(evento);
+    }//fin listarEventos
+    
+    public void crearEventosDB(Evento evento) throws SQLException{
+        dEvento.crearEvento(evento);
+    }//fin listarEventos
 }

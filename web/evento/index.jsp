@@ -33,10 +33,25 @@
                 <div id="contendor-interno"> 
                    
                     <h1>Eventos</h1>
+                    
+                    <section id="lista-elementos">
+
+                        <%-- Inicio Elemento  --%>
+                        <div id="elemento">
+
+                            <div id="elemento-imagen"><img src="../assets/img/perfil-icon.png" width="30"/></div>
+                            <p id="elemento-nombre">Elemento</p>
+                            <div id="accion-borrar"><img src="../assets/img/delete-icon.png" width="30"/></div>   
+                            
+                        </div>
+                        <%-- FIN Elemento  --%>
+
+                    </section>
+                        
                 </div> 
-
             </section>
-
+            
+            
             <%@include file="/includes/espacios.jsp" %>
             <section id="seccion-inferior">
 
