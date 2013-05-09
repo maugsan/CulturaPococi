@@ -31,10 +31,11 @@ public class DataEvento extends DataBase{
 
         while (resultado.next()) { 
             evento=new Evento(resultado.getInt("idEvento"),resultado.getInt("idCategoria"),
+                    resultado.getString("nombreCategoria"),
                     resultado.getString("lugar"),resultado.getString("nombre"),  
                     resultado.getString("fecha"),resultado.getString("hora"), 
                     resultado.getString("informacion"), 
-                    resultado.getString("correo"),"",resultado.getString("nombreCategoria"));
+                    resultado.getString("correo"),"");
             listaEventos.add(evento);
         }//fin while
         statement.close();

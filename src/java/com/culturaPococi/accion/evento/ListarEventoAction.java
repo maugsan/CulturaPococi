@@ -36,12 +36,15 @@ public class ListarEventoAction extends DispatchAction {
      * @return
      */
     
-    public ActionForward listarEventos(ActionMapping mapping, ActionForm form,
+    public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         JOptionPane.showMessageDialog(null, "INCORRECTO!!");
         LinkedList <Evento> listaEventos;
         listaEventos=nEvento.listarEventosDB();
+        for(int i=0; i<listaEventos.size();i++){
+            JOptionPane.showMessageDialog(null, listaEventos.get(i).getIdEvento());
+        }
         request.setAttribute("listaEventos", listaEventos);
         return mapping.getInputForward();
     }

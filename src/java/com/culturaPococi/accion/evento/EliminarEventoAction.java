@@ -7,6 +7,7 @@ package com.culturaPococi.accion.evento;
 import com.culturaPococi.negocio.NegocioEvento;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
@@ -33,11 +34,12 @@ public class EliminarEventoAction extends DispatchAction {
      * @return
      */
     
-    public ActionForward eliminarEvento(ActionMapping mapping, ActionForm form,
+    public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         int idEvento=2;
-        //idEvento=Integer.parseInt(request.getParameter("idEvento"));
+        idEvento=Integer.parseInt(request.getParameter("idEvento"));
+        JOptionPane.showMessageDialog(null, idEvento);
         nEvento.eliminarEventosDB(idEvento);
         return mapping.getInputForward();
     }
