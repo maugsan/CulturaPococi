@@ -22,7 +22,7 @@ public class DataPerfil extends DataBase {
 
     public void eliminarPerfil(String nombrePerfil) throws SQLException {
 
-        String sql = "call eliminar_perfiles('" + nombrePerfil + "');";
+        String sql = "call pEliminar_perfiles('" + nombrePerfil + "');";
                     //call eliminar_perfiles("Meli");
          
         JOptionPane.showMessageDialog(null, " sql :" + sql);
@@ -51,7 +51,7 @@ public class DataPerfil extends DataBase {
         String nombreDistrito;
 
 
-        String sql = "call listaPerfil();";
+        String sql = "call  pListaPerfil();";
         ResultSet resultado;
         Connection conexion = super.getConexion();
 
