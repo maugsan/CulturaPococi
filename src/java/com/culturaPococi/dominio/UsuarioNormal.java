@@ -13,14 +13,20 @@ public class UsuarioNormal {
     private String correo;
     private String nombre;
     private String contrasenia;
-    private char colaborador;
+    private String colaborador;
 
-    public UsuarioNormal(String correo, String nombre, String contrasenia, char colaborador) {
+    public UsuarioNormal(String correo, String nombre,
+            String contrasenia, String colaborador) {
         this.correo = correo;
         this.nombre = nombre;
         this.contrasenia = contrasenia;
         this.colaborador = colaborador;
     }
+
+    public UsuarioNormal() {
+    }
+    
+    
 
     public String getCorreo() {
         return correo;
@@ -46,11 +52,11 @@ public class UsuarioNormal {
         this.contrasenia = contrasenia;
     }
 
-    public char getColaborador() {
+    public String getColaborador() {
         return colaborador;
     }
 
-    public void setColaborador(char colaborador) {
+    public void setColaborador(String colaborador) {
         this.colaborador = colaborador;
     }
 }
