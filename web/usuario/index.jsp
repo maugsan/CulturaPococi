@@ -7,9 +7,13 @@
 <html:html lang="true">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
+<%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
+
         <title><bean:message key="welcome.title"/></title>
-        <link rel="stylesheet" href="../assets/css/estilos.css" type="text/css" />
-        <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" />
+        <link rel="stylesheet" href="./assets/css/estilos.css" type="text/css" />
+        <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
         <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
         <html:base/>
     </head>
@@ -39,11 +43,11 @@
                         <div id="elemento">
 
                             
-                            <a href=""> <div id="link-detalle-elemento"><div id="elemento-imagen"><img src="../assets/img/perfil-icon.png" width="30"/></div>
-                           <p  value="${usuarioTemporal.nombrePerfil}" id="elemento-nombre"> 
-                                ${usuarioTemporal.nombrePerfil}
+                            <a href=""> <div id="link-detalle-elemento"><div id="elemento-imagen"><img src="./assets/img/perfil-icon.png" width="30"/></div>
+                           <p  value="${usuarioTemporal.correo}" id="elemento-nombre"> 
+                                ${usuarioTemporal.correo}
                            </p></div></a>
-                            <a href="../eliminar_perfil.do?id=3"><div id="elemento-icon"><img src="../assets/img/delete-icon.png" width="30"/></div></a>   
+                            <a href="../eliminar_perfil.do?id=3"><div id="elemento-icon"><img src="./assets/img/delete-icon.png" width="30"/></div></a>   
                             
                         </div>
                         <%-- FIN Elemento  --%> 

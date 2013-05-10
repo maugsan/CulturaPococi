@@ -449,7 +449,7 @@ input[type="text_area"] {
 }
 
 #elemento {
-    width:400px; 
+    width:600px; 
     height: 50px;
     color: #333;
     border: solid 1px #ccc;
@@ -487,9 +487,10 @@ input[type="text_area"] {
 }
 #elemento-nombre {
 
-    font-size: 25px;
+    font-size: 15px;
     float:left;
     margin-top: 0;
+    color: #333;
 }
 
 #link-detalle-elemento{

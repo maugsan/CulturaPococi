@@ -41,6 +41,12 @@
                 <forward name="denegado" path="/includes/denegado.jsp" />
        
         </action>
+        <action path="/mostrar_usuario" 
+                type="com.culturaPococi.accion.usuarioNormal.MostrarUsuarioNormalAction"
+                input="/usuario/index.jsp"
+                scope="request"
+                validate="false"
+        />
         <action input="/" name="EventoForm" path="/mostrar_usuarios" scope="session" type="com.culturaPococi.accion.usuarioNormal.MostrarUsuariosAction"/>
         <action path="/mostrarperfiles" 
                 type="com.culturaPococi.accion.perfil.MostrarPerfilesAction"

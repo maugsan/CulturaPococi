@@ -66,7 +66,7 @@
                                 <aside>
 
 
-                                    <a href="./usuario/"><section class="modulo">
+                                    <a href="./mostrar_usuario.do"><section class="modulo">
                                             <img id="icono" src="assets/img/user-icon.png" width="60">
                                             <h2>Usuario</h2>
                                         </section></a>
@@ -75,7 +75,7 @@
                                             <h2>Perfil</h2>
                                         </section></a>
                                     
-                                        <a href="./listar_evento.do?"><section class="modulo">
+                                        <a href="./listar_evento.do"><section class="modulo">
                                             <img id="icono" src="assets/img/evento-icon.png" width="60">
                                             <h2>Evento</h2>
                                         </section></a>
