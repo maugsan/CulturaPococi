@@ -5,6 +5,7 @@
 package com.culturaPococi.negocio;
 
 import com.culturaPococi.data.DataEvento;
+import com.culturaPococi.dominio.Categoria;
 import com.culturaPococi.dominio.Evento;
 import java.sql.SQLException;
 import java.util.LinkedList;
@@ -34,4 +35,16 @@ public class NegocioEvento {
     public void crearEventosDB(Evento evento) throws SQLException{
         dEvento.crearEvento(evento);
     }//fin listarEventos
+    
+    public Evento selectEventoDB(int idEvento) throws SQLException{
+        Evento evento;
+        evento=dEvento.selectEvento(idEvento);
+        return evento;
+    }//fin selectEventoDB
+    
+    public LinkedList<Categoria> selectCategoriasDB() throws SQLException{
+        LinkedList <Categoria> listaCategoria;
+        listaCategoria=dEvento.selectCategorias();
+        return listaCategoria;
+    }//fin selectCategoriasDB
 }

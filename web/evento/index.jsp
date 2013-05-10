@@ -44,7 +44,7 @@
                             <a href="../eliminar_evento.do?idEvento=${eventoTemporal.idEvento}">
                                 <div id="elemento-icon"><img src="../assets/img/delete-icon.png" width="30"/></div>
                             </a> 
-                            <a href="../seleccionar_evento.do?idEvento=${eventoTemporal.idEvento}">
+                            <a href="../modificar_evento.do?idEvento=${eventoTemporal.idEvento}">
                                 <div id="elemento-icon"><img src="../assets/img/editar-icon.png" width="30"/></div>
                             </a>
                               

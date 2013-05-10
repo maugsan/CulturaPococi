@@ -38,31 +38,48 @@ public class ModificarEventoAction extends DispatchAction {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        EventoForm formu=(EventoForm) form;
-        //JOptionPane.showMessageDialog(null, "evento modificar "+formu.getIdEvento());
-//        Evento evento=new Evento(formu.getIdEvento(), 
-//                                formu.getIdCategoria(), 
-//                                formu.getNombreCategoria(), 
+        Evento evento=new Evento();
+        int idEvento;
+        JOptionPane.showMessageDialog(null, "evento modificar ");
+        idEvento=Integer.parseInt(request.getParameter("idEvento"));
+        evento=nEvento.selectEventoDB(idEvento);
+        System.out.println("nombre: "+evento.getNombre());
+        
+        request.setAttribute("evento", evento);
+        return mapping.getInputForward();
+    }
+    
+    
+    
+    
+//        public ActionForward execute(ActionMapping mapping, ActionForm form,
+//            HttpServletRequest request, HttpServletResponse response)
+//            throws Exception {
+//        EventoForm formu=(EventoForm) form;
+//        //JOptionPane.showMessageDialog(null, "evento modificar "+formu.getIdEvento());
+////        Evento evento=new Evento(formu.getIdEvento(), 
+////                                formu.getIdCategoria(), 
+////                                formu.getNombreCategoria(), 
+////                                formu.getLugar(), 
+////                                formu.getNombre(), "fecha","hora",
+////                                //formu.getFecha(),
+////                                //formu.getHora(),
+////                                formu.getInformacion(), 
+////                                formu.getCorreo(),"imagen");
+//        Evento evento=new Evento(0, 
+//                                0, 
+//                                "nombreCategoria", 
 //                                formu.getLugar(), 
 //                                formu.getNombre(), "fecha","hora",
 //                                //formu.getFecha(),
 //                                //formu.getHora(),
 //                                formu.getInformacion(), 
-//                                formu.getCorreo(),"imagen");
-        Evento evento=new Evento(0, 
-                                0, 
-                                "nombreCategoria", 
-                                formu.getLugar(), 
-                                formu.getNombre(), "fecha","hora",
-                                //formu.getFecha(),
-                                //formu.getHora(),
-                                formu.getInformacion(), 
-                                "correo","imagen");
-                                
-                                //formu.getImagen()
-        //nEvento.actualizarEventosDB(evento);
-        return mapping.getInputForward();
-    }
+//                                "correo","imagen");
+//                                
+//                                //formu.getImagen()
+//        //nEvento.actualizarEventosDB(evento);
+//        return mapping.getInputForward();
+//    }
     
     
 }

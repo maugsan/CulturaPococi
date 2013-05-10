@@ -31,16 +31,16 @@
                 
                 
                 
-                <h1><bean:message key="form"/></h1>
+                <h1><bean:message key="form.evento.modificar"/></h1>
                 
                 <h2><bean:message key="form.nombre"/></h2>
-                <html:text  name="EventoForm" property="nombre" size="16"/><br>
+                <html:text  name="EventoForm" property="nombre" size="16" value="${evento.nombre}"/><br>
                 
                 <h2><bean:message key="form.lugar"/></h2>
-                <html:text  name="EventoForm" property="lugar" size="16"/><br>
+                <html:text  name="EventoForm" property="lugar" size="16" value="${evento.lugar}"/><br>
                 
                 <h2><bean:message key="form.informacion"/></h2>
-                <html:text  name="EventoForm" property="informacion" size="16"/><br>
+                <html:text  name="EventoForm" property="informacion" size="16" value="${evento.informacion}"/><br>
                 
                 <html:hidden  name="EventoForm" property="idEvento" value="${evento.idEvento}"/>
                 <html:hidden  name="EventoForm" property="correo" value="${evento.correo}"/>

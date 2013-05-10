@@ -97,20 +97,32 @@ public class DataEvento extends DataBase{
     }
      
      public Evento selectEvento(int idEvento) throws SQLException{
+        LinkedList<Evento> listaEventos=new LinkedList<Evento>();
         Evento evento=new Evento();
-        String sql = "call pListaEvento("+idEvento+");";
+        String sql = "call pListaEventos();" ;
         ResultSet resultado;
         Connection conexion = super.getConexion();
 
         Statement statement = conexion.createStatement(); 
         resultado=statement.executeQuery(sql);
-        System.out.println("id: "+resultado.getInt("idEvento"));
-        evento=new Evento(resultado.getInt("idEvento"),resultado.getInt("idCategoria"),
+
+        while (resultado.next()) { 
+            System.out.println("porque "+resultado.getInt("idEvento"));
+            evento=new Evento(resultado.getInt("idEvento"),resultado.getInt("idCategoria"),
                     resultado.getString("nombreCategoria"),
                     resultado.getString("lugar"),resultado.getString("nombre"),  
                     resultado.getString("fecha"),resultado.getString("hora"), 
                     resultado.getString("informacion"), 
                     resultado.getString("correo"),"");
+            listaEventos.add(evento);
+        }//fin while
+        
+        for(int i=0; i<listaEventos.size();i++){
+            if(listaEventos.get(i).getIdEvento()==idEvento){
+                evento=listaEventos.get(i);
+                 i=listaEventos.size();
+            }//fin if
+        }//fin for
         statement.close();
         conexion.close();
         

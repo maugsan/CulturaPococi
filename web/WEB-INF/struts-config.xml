@@ -73,14 +73,6 @@
                 validate="false" 
         />
         
-        <action input="/evento/modificar_evento.jsp" 
-                name="EventoForm" 
-                path="/seleccionar_evento" 
-                scope="request" 
-                type="com.culturaPococi.accion.evento.SeleccionarEventoAction"
-                parameter="metodo"
-                validate="false" 
-        />
         <action path="/modificar_evento" 
                 type="com.culturaPococi.accion.evento.ModificarEventoAction"
                 input="/evento/modificar_evento.jsp" 
