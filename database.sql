@@ -110,7 +110,7 @@ create table evento(
 	idEvento int auto_increment,
 	nombre varchar(255),
 	lugar varchar(255),
-	fecha datetime,   -- año, mes, día
+	fecha datetime,   -- aï¿½o, mes, dï¿½a
 	hora time,
 	informacion varchar(1000),
 	correo varchar(20),
@@ -257,7 +257,7 @@ delimiter ;
 
 call pEliminarUsuarioNormal("ybarboza27@gmail.com");
 
--- Lista todos los evento con su respectiva información
+-- Lista todos los evento con su respectiva informaciï¿½n
 drop procedure if exists pListaUsuarios;
 delimiter $$
 create procedure pListaUsuarios()
@@ -280,7 +280,7 @@ insert into evenTieneCat (idEvento,idCategoria) values (2,1);
 insert into evenTieneCat (idEvento,idCategoria) values (3,1);
 
 
--- Lista todos los evento con su respectiva información
+-- Lista todos los evento con su respectiva informaciï¿½n
 drop procedure if exists pListaEventos;
 delimiter $$
 create procedure pListaEventos()
@@ -313,7 +313,7 @@ create procedure pActualizarEvento(
 	in pidEvento int,
 	in pnombre varchar(255),
 	in plugar varchar(255),
-	in pfecha datetime,   -- año, mes, día
+	in pfecha datetime,   -- aï¿½o, mes, dï¿½a
 	in phora time,
 	in pinformacion varchar(1000),
 	in pcorreo varchar(20),
@@ -343,7 +343,7 @@ delimiter $$
 create procedure pCrearEventos(
 	in pnombre varchar(255),
 	in plugar varchar(255),
-	in pfecha datetime,   -- año, mes, día
+	in pfecha datetime,   -- aï¿½o, mes, dï¿½a
 	in phora time,
 	in pinformacion varchar(1000),
 	in pcorreo varchar(20),
@@ -358,7 +358,7 @@ end $$
 delimiter ;
 call pCrearEventos("Karaoke","La Merced",'12/04/20','07:40:00',"Concierto","ybarboza27@gmail.com",1);
 
--- Lista un evento de acuerdo al id que recibe con su respectiva información
+-- Lista un evento de acuerdo al id que recibe con su respectiva informaciï¿½n
 drop procedure if exists pListaEvento;
 delimiter $$
 create procedure pListaEvento(
@@ -372,3 +372,32 @@ begin
 end $$
 delimiter ;
 call pListaEvento(7);
+
+
+-- ************  PERFILES  ************
+
+drop procedure if exists pEliminar_perfiles;
+delimiter $$
+create procedure pEliminar_perfiles(
+	in nombre varchar(255)
+)
+begin
+	delete from publicacion  where nombrePerfil=nombre;
+    delete from perfil  where nombrePerfil=nombre;
+end $$
+delimiter ;
+
+drop procedure if exists pListaPerfil;
+
+delimiter $$
+create procedure pListaPerfil()
+begin
+	select p.nombrePerfil, p.fechaDeCreacion,p.biografia,p.imagenDePortada,p.correo,p.nombreDistrito,c.nombreCategoria
+    from perfil p inner join categoria c
+	where p.idCategoria=c.idCategoria;
+end $$
+delimiter ;
+
+
+
+-- ************   FIN PERFILES  ************
