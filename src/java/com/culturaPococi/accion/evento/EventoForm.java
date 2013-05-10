@@ -24,18 +24,19 @@ public class EventoForm extends org.apache.struts.action.ActionForm {
     private String informacion;
     private String correo;
     private int idEvento;
-    private String nombreCategoria;
+    //private String nombreCategoria;
 
     //private String imagen;
-    public String getNombreCategoria() {
-        return nombreCategoria;
-    }
-
-    public void setNombreCategoria(String nombreCategoria) {
-        this.nombreCategoria = nombreCategoria;
-    }
     
-    
+//    public String getNombreCategoria() {
+//        return nombreCategoria;
+//    }
+//
+//    public void setNombreCategoria(String nombreCategoria) {
+//        this.nombreCategoria = nombreCategoria;
+//    }
+//    
+//    
     public int getIdEvento() {
         return idEvento;
     }
@@ -103,7 +104,7 @@ public class EventoForm extends org.apache.struts.action.ActionForm {
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
         ActionErrors errors = new ActionErrors();
         if (getNombre() == null || getNombre().length() < 1) {
-            errors.add("name", new ActionMessage("error.name.required"));
+            errors.add("nombre", new ActionMessage("Falta nombre"));  //arreglar
             // TODO: add 'error.name.required' key to your resources
         }
         return errors;

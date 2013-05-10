@@ -8,6 +8,7 @@ import com.culturaPococi.dominio.Evento;
 import com.culturaPococi.negocio.NegocioEvento;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
@@ -34,22 +35,34 @@ public class ModificarEventoAction extends DispatchAction {
      * @return
      */
     
-    public ActionForward actualizarEvento(ActionMapping mapping, ActionForm form,
+    public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         EventoForm formu=(EventoForm) form;
-        Evento evento=new Evento(formu.getIdEvento(), 
-                                formu.getIdCategoria(), 
-                                formu.getNombreCategoria(), 
+        //JOptionPane.showMessageDialog(null, "evento modificar "+formu.getIdEvento());
+//        Evento evento=new Evento(formu.getIdEvento(), 
+//                                formu.getIdCategoria(), 
+//                                formu.getNombreCategoria(), 
+//                                formu.getLugar(), 
+//                                formu.getNombre(), "fecha","hora",
+//                                //formu.getFecha(),
+//                                //formu.getHora(),
+//                                formu.getInformacion(), 
+//                                formu.getCorreo(),"imagen");
+        Evento evento=new Evento(0, 
+                                0, 
+                                "nombreCategoria", 
                                 formu.getLugar(), 
                                 formu.getNombre(), "fecha","hora",
                                 //formu.getFecha(),
                                 //formu.getHora(),
                                 formu.getInformacion(), 
-                                formu.getCorreo(),"imagen");
+                                "correo","imagen");
                                 
                                 //formu.getImagen()
-        nEvento.actualizarEventosDB(evento);
+        //nEvento.actualizarEventosDB(evento);
         return mapping.getInputForward();
     }
+    
+    
 }

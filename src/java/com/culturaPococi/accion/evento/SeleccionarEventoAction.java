@@ -5,8 +5,6 @@
 package com.culturaPococi.accion.evento;
 
 import com.culturaPococi.dominio.Evento;
-import com.culturaPococi.negocio.NegocioEvento;
-import java.util.LinkedList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.swing.JOptionPane;
@@ -17,13 +15,12 @@ import org.apache.struts.actions.DispatchAction;
 
 /**
  *
- * @author Moa
+ * @author Personal
  */
-public class EliminarEventoAction extends DispatchAction {
+public class SeleccionarEventoAction extends DispatchAction {
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
-    private NegocioEvento nEvento=new NegocioEvento();
 
     /**
      * This is the action called from the Struts framework.
@@ -35,19 +32,21 @@ public class EliminarEventoAction extends DispatchAction {
      * @throws java.lang.Exception
      * @return
      */
-    
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        int idEvento=0;
-        LinkedList <Evento> listaEventos;
+        int idEvento;
         idEvento=Integer.parseInt(request.getParameter("idEvento"));
-        
-        nEvento.eliminarEventosDB(idEvento);
-        listaEventos=nEvento.listarEventosDB();
-        
-        request.setAttribute("listaEventos", listaEventos);
-        
+        Evento evento;
+        JOptionPane.showMessageDialog(null, "idEvento: "+idEvento);
+        //evento=nEvento.selectEventoDB(idEvento);
+        evento=new Evento(6,1,
+                    "Musica",
+                    "Pangola","Baile",  
+                    "fecha","hora", 
+                    "Concierto", 
+                    "ybarboza27","");
+        request.setAttribute("evento", evento);
         return mapping.getInputForward();
     }
 }

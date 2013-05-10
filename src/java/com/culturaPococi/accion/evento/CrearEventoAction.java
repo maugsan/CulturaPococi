@@ -38,18 +38,18 @@ public class CrearEventoAction extends DispatchAction {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         EventoForm formu=(EventoForm) form;
-        Evento evento=new Evento(formu.getIdEvento(), 
-                                formu.getIdCategoria(), 
-                                formu.getNombreCategoria(), 
-                                formu.getLugar(), 
-                                formu.getNombre(), "fecha","hora",
-                                //formu.getFecha(),
-                                //formu.getHora(),
-                                formu.getInformacion(), 
-                                formu.getCorreo(),"imagen");
+//        Evento evento=new Evento(formu.getIdEvento(), 
+//                                formu.getIdCategoria(), 
+//                                formu.getNombreCategoria(), 
+//                                formu.getLugar(), 
+//                                formu.getNombre(), "","",
+//                                //formu.getFecha(),
+//                                //formu.getHora(),
+//                                formu.getInformacion(), 
+//                                formu.getCorreo(),"");
                                 
                                 //formu.getImagen()
-        nEvento.crearEventosDB(evento);
+        //nEvento.crearEventosDB(evento);
         return mapping.getInputForward();
     }
 }

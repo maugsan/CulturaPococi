@@ -4,6 +4,7 @@
  */
 package com.culturaPococi.data;
 
+import com.culturaPococi.dominio.Categoria;
 import com.culturaPococi.dominio.Evento;
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -11,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.LinkedList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -93,4 +95,52 @@ public class DataEvento extends DataBase{
         call.close();
         conexion.close();
     }
+     
+     public Evento selectEvento(int idEvento) throws SQLException{
+        Evento evento=new Evento();
+        String sql = "call pListaEvento("+idEvento+");";
+        ResultSet resultado;
+        Connection conexion = super.getConexion();
+
+        Statement statement = conexion.createStatement(); 
+        resultado=statement.executeQuery(sql);
+        System.out.println("id: "+resultado.getInt("idEvento"));
+        evento=new Evento(resultado.getInt("idEvento"),resultado.getInt("idCategoria"),
+                    resultado.getString("nombreCategoria"),
+                    resultado.getString("lugar"),resultado.getString("nombre"),  
+                    resultado.getString("fecha"),resultado.getString("hora"), 
+                    resultado.getString("informacion"), 
+                    resultado.getString("correo"),"");
+        statement.close();
+        conexion.close();
+        
+        return evento;
+    }//fin selectEventos
+     
+     
+     public LinkedList<Categoria> selectCategorias() throws SQLException{
+        LinkedList<Categoria> listaCategorias=new LinkedList<Categoria>();
+        Categoria categoria=new Categoria();
+        String sql = "call pListaCategorias();" ;
+        ResultSet resultado;
+        Connection conexion = super.getConexion();
+
+        Statement statement = conexion.createStatement(); 
+        resultado=statement.executeQuery(sql);
+
+        while (resultado.next()) { 
+            categoria=new Categoria(resultado.getString("nombreCategoria"),resultado.getInt("idCategoria"));
+            listaCategorias.add(categoria);
+        }//fin while
+
+        conexion.close();
+        return listaCategorias;
+    }//fin selectCategoria
+     
 }
+//+"idcate: "+resultado.getInt("idCategoria")+
+//                    "nombreCate"+resultado.getString("nombreCategoria")+"lugar: "+
+//                    resultado.getString("lugar")+"nombre: "+resultado.getString("nombre")+"fecha: "+  
+//                    resultado.getString("fecha")+"hora: "+resultado.getString("hora")+"info: "+ 
+//                    resultado.getString("informacion")+"correo"+ 
+//                    resultado.getString("correo")

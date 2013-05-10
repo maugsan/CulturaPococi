@@ -41,8 +41,12 @@
 
                             <div id="elemento-imagen"><img src="../assets/img/evento-icon.png" width="30"/></div>
                             <p id="elemento-nombre">${eventoTemporal.nombre}</p>
-                            <a href="../eliminar_evento.do?idEvento=${eventoTemporal.idEvento}"><div id="elemento-icon"><img src="../assets/img/delete-icon.png" width="30"/></div></a> 
-                            <div id="elemento-icon"><img src="../assets/img/editar-icon.png" width="30"/></div>
+                            <a href="../eliminar_evento.do?idEvento=${eventoTemporal.idEvento}">
+                                <div id="elemento-icon"><img src="../assets/img/delete-icon.png" width="30"/></div>
+                            </a> 
+                            <a href="../seleccionar_evento.do?idEvento=${eventoTemporal.idEvento}">
+                                <div id="elemento-icon"><img src="../assets/img/editar-icon.png" width="30"/></div>
+                            </a>
                               
                             
                         </div>
