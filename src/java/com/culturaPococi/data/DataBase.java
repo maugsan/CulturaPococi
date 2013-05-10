@@ -26,7 +26,7 @@ public class DataBase {
     public Connection getConexion() throws SQLException {
       
         this.usuario = "root";
-        this.contra = "root";
+        this.contra = "";
         this.baseDatos = "cultura_pococi2013";
         this.host = "jdbc:mysql://localhost:3306/" + baseDatos;
 

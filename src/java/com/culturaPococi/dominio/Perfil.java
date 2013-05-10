@@ -11,7 +11,7 @@ package com.culturaPococi.dominio;
 public class Perfil {
 
     private String nombrePerfil;
-    private int idCategoria;
+    private String nombreCategoria;
     private String fechaDeCreacion;
     private String distrito;
     private String biografia;
@@ -19,9 +19,9 @@ public class Perfil {
     private String correo;
     private String nombreDistrito;
 
-    public Perfil(String nombrePerfil, int idCategoria, String fechaDeCreacion, String distrito, String biografia, String imagenDePortada, String correo, String nombreDistrito) {
+    public Perfil(String nombrePerfil, String nombreCategoria, String fechaDeCreacion, String distrito, String biografia, String imagenDePortada, String correo, String nombreDistrito) {
         this.nombrePerfil = nombrePerfil;
-        this.idCategoria = idCategoria;
+        this.nombreCategoria = nombreCategoria;
         this.fechaDeCreacion = fechaDeCreacion;
         this.distrito = distrito;
         this.biografia = biografia;
@@ -38,12 +38,12 @@ public class Perfil {
         this.nombrePerfil = nombrePerfil;
     }
 
-    public int getIdCategoria() {
-        return idCategoria;
+    public String getIdCategoria() {
+        return nombreCategoria;
     }
 
-    public void setIdCategoria(int idCategoria) {
-        this.idCategoria = idCategoria;
+    public void setIdCategoria(String nombreCategoria) {
+        this.nombreCategoria = nombreCategoria;
     }
 
     public String getFechaDeCreacion() {

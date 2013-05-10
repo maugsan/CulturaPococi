@@ -49,11 +49,12 @@
       
         <action input="/" name="EventoForm" path="/mostrar_usuarios" scope="session" type="com.culturaPococi.accion.usuarioNormal.MostrarUsuariosAction"/>
         
-        <action path="/mostrarperfiles" 
+       <action path="/mostrarperfiles" 
                 type="com.culturaPococi.accion.perfil.MostrarPerfilesAction"
                 scope="request"
                 input="/perfil/index.jsp"
                 validate="false"/>
+       
        
         
         <action input="/evento/index.jsp"  

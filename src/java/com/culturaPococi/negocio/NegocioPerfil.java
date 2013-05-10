@@ -4,10 +4,25 @@
  */
 package com.culturaPococi.negocio;
 
+import com.culturaPococi.data.DataPerfil;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author jonathan
  */
 public class NegocioPerfil {
     
+    DataPerfil dp;
+
+    public NegocioPerfil() {
+        dp=new DataPerfil();
+    }
+
+    public void eliminarPerfil(String nombrePerfil) throws SQLException{
+        JOptionPane.showMessageDialog(null, " negocio "+nombrePerfil);
+        dp.eliminarPerfil(nombrePerfil);
+        
+}
 }

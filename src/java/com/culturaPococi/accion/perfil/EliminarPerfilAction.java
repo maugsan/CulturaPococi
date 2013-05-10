@@ -4,18 +4,22 @@
  */
 package com.culturaPococi.accion.perfil;
 
+import com.culturaPococi.negocio.NegocioPerfil;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.swing.JOptionPane;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import org.apache.struts.actions.DispatchAction;
 
 /**
  *
  * @author Moa
  */
-public class EliminarPerfilAction extends org.apache.struts.action.Action {
+public class EliminarPerfilAction extends DispatchAction {
+
+    NegocioPerfil np;
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
@@ -34,11 +38,13 @@ public class EliminarPerfilAction extends org.apache.struts.action.Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
+        np = new NegocioPerfil();
+        String nombre = request.getParameter("nombrePerfil");
+
+        JOptionPane.showMessageDialog(null, nombre);
         
-         int id = Integer.parseInt(request.getParameter("id"));
-         
-         JOptionPane.showMessageDialog(null, id);
-        
+        np.eliminarPerfil(nombre);
+
         return mapping.findForward(SUCCESS);
     }
 }

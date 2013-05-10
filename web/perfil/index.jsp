@@ -34,34 +34,30 @@
 
                     <h1>Perfiles</h1>
                     <%-- 
-   
-                    TABLA CON TODOS LOS PERFILES
-                    TABLA DE UNA SOLA COLUMNA DIV!!
-                    
+
+    TABLA CON TODOS LOS PERFILES
+    TABLA DE UNA SOLA COLUMNA DIV!!
+    
                     --%>
 
                     <section id="lista-elementos">
-                        
+
                         <logic:iterate  name="listaPerfil" id="perfilTemporal" >
 
-                          <%-- Inicio Elemento  --%>
-                        <div id="elemento">
+                            <%-- Inicio Elemento  --%>
+                            <div id="elemento">
 
-                            <%-- href="action.do?metodo(mostrar)= ${perfilTemporal.idPerfil}" --%>
-                            <a href=""> <div id="link-detalle-elemento"><div id="elemento-imagen"><img src="../assets/img/perfil-icon.png" width="30"/></div>
-                           <p  value="${perfilTemporal.nombrePerfil}" id="elemento-nombre"> 
-                                ${perfilTemporal.nombrePerfil}
-                           </p></div></a>
-                            <a href="../eliminar_perfil.do?id=3"><div id="elemento-icon"><img src="../assets/img/delete-icon.png" width="30"/></div></a>   
-                            
-                        </div>
-                        <%-- FIN Elemento  --%> 
-                        
-              
-                        
-                       </logic:iterate>
+                                <%-- href="action.do?metodo(mostrar)= ${perfilTemporal.idPerfil}" --%>
+                                <a href=""> <div id="link-detalle-elemento"><div id="elemento-imagen"><img src="../assets/img/perfil-icon.png" width="30"/></div>
+                                        <p  value="${perfilTemporal.nombrePerfil}" id="elemento-nombre"> 
+                                            ${perfilTemporal.nombrePerfil}
+                                        </p></div></a>
+                                <a href="../eliminar_perfil.do?nombrePerfil=Carolina"><div id="elemento-icon"><img src="../assets/img/delete-icon.png" width="30"/></div></a>   
 
-                     
+                            </div>
+                            <%-- FIN Elemento   ${perfilTemporal.nombrePerfil} --%> 
+
+                        </logic:iterate>
 
                     </section>
 
@@ -75,9 +71,6 @@
 
             </section>
             <%@include file="/includes/footer.jsp" %>
-
-
         </div>
-
     </body>
 </html:html>
