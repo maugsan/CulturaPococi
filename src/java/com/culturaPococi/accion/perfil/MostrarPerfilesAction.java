@@ -4,6 +4,7 @@
  */
 package com.culturaPococi.accion.perfil;
 
+import com.culturaPococi.data.DataPerfil;
 import com.culturaPococi.dominio.Perfil;
 import java.util.LinkedList;
 import javax.servlet.http.HttpServletRequest;
@@ -17,8 +18,9 @@ import org.apache.struts.actions.DispatchAction;
  *
  * @author jonathan
  */
-public class MostrarPerfilesAction extends DispatchAction{
+public class MostrarPerfilesAction extends DispatchAction {
 
+    DataPerfil dp = new DataPerfil();
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
 
@@ -36,19 +38,9 @@ public class MostrarPerfilesAction extends DispatchAction{
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        
-        
-        LinkedList<Perfil> listaPerfil = new LinkedList<Perfil>();
 
-        listaPerfil.add(new Perfil("PERFIL 1", "musica", "HOY", "GUAPILES", "BIOGRAFIA", "IMAGEN", "CORREO PERFIL"));
-        listaPerfil.add(new Perfil("PERFIL 2","musica", "HOY", "GUAPILES", "BIOGRAFIA", "IMAGEN", "CORREO PERFIL"));
-        listaPerfil.add(new Perfil("PERFIL 3","musica", "HOY", "GUAPILES", "BIOGRAFIA", "IMAGEN", "CORREO PERFIL"));
-        listaPerfil.add(new Perfil("PERFIL 4","musica", "HOY", "GUAPILES", "BIOGRAFIA", "IMAGEN", "CORREO PERFIL"));
-        listaPerfil.add(new Perfil("PERFIL 5", "musica", "HOY", "GUAPILES", "BIOGRAFIA", "IMAGEN", "CORREO PERFIL"));
-        listaPerfil.add(new Perfil("PERFIL 6","musica", "HOY", "GUAPILES", "BIOGRAFIA", "IMAGEN", "CORREO PERFIL"));
-
-        request.setAttribute("listaPerfil", listaPerfil);
+        request.setAttribute("listaPerfil", dp.getListaPerfil());
         return mapping.getInputForward();
- 
+
     }
 }

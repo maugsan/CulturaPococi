@@ -5,7 +5,9 @@
 package com.culturaPococi.negocio;
 
 import com.culturaPococi.data.DataPerfil;
+import com.culturaPococi.dominio.Perfil;
 import java.sql.SQLException;
+import java.util.LinkedList;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,16 +15,20 @@ import javax.swing.JOptionPane;
  * @author jonathan
  */
 public class NegocioPerfil {
-    
+
     DataPerfil dp;
 
     public NegocioPerfil() {
-        dp=new DataPerfil();
+        dp = new DataPerfil();
     }
 
-    public void eliminarPerfil(String nombrePerfil) throws SQLException{
-        JOptionPane.showMessageDialog(null, " negocio "+nombrePerfil);
+    public void eliminarPerfil(String nombrePerfil) throws SQLException {
+        JOptionPane.showMessageDialog(null, " negocio " + nombrePerfil);
         dp.eliminarPerfil(nombrePerfil);
-        
-}
+
+    }
+    
+    public LinkedList<Perfil> getListaPerfil() throws SQLException{
+    return dp.getListaPerfil();
+    }
 }

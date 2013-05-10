@@ -51,8 +51,14 @@
                                 <a href=""> <div id="link-detalle-elemento"><div id="elemento-imagen"><img src="../assets/img/perfil-icon.png" width="30"/></div>
                                         <p  value="${perfilTemporal.nombrePerfil}" id="elemento-nombre"> 
                                             ${perfilTemporal.nombrePerfil}
+                                            ${perfilTemporal.nombreCategoria}
+                                            ${perfilTemporal.fechaDeCreacion}
+                                            ${perfilTemporal.biografia}
+                                            ${perfilTemporal.imagenDePortada}
+                                            ${perfilTemporal.correo}
+                                            ${perfilTemporal.nombreDistrito}
                                         </p></div></a>
-                                <a href="../eliminar_perfil.do?nombrePerfil=Carolina"><div id="elemento-icon"><img src="../assets/img/delete-icon.png" width="30"/></div></a>   
+                                <a href="../eliminar_perfil.do?nombrePerfil=${perfilTemporal.nombrePerfil}"><div id="elemento-icon"><img src="../assets/img/delete-icon.png" width="30"/></div></a>   
 
                             </div>
                             <%-- FIN Elemento   ${perfilTemporal.nombrePerfil} --%> 

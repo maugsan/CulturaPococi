@@ -6,6 +6,7 @@
 package com.culturaPococi.data;
 
 import com.culturaPococi.dominio.Perfil;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -21,28 +22,26 @@ public class DataPerfil extends DataBase {
 
     public void eliminarPerfil(String nombrePerfil) throws SQLException {
 
-        JOptionPane.showMessageDialog(null, " DataPerfil " + nombrePerfil);
-
-        String sql = "call eliminar_perfiles(" + nombrePerfil + ");";
-
+        String sql = "call eliminar_perfiles('" + nombrePerfil + "');";
+                    //call eliminar_perfiles("Meli");
+         
         JOptionPane.showMessageDialog(null, " sql :" + sql);
-
-        ResultSet resultado;
+        
         Connection conexion = super.getConexion();
-
-        Statement statement = conexion.createStatement();
+        
+        Statement statement = conexion.createStatement(); 
         statement.executeQuery(sql);
-        //resultado = statement.executeQuery(sql);
-
-        // resultado.close();
+        
+        statement.close();
+        conexion.close();
     }
 
     public LinkedList<Perfil> getListaPerfil() throws SQLException {
 
         LinkedList<Perfil> listaPerfil = new LinkedList<Perfil>();
-        String titulo;
+        
         Perfil p;
-
+        
         String nombrePerfil;
         String nombreCategoria;
         String fechaDeCreacion;
