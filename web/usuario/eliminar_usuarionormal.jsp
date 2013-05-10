@@ -10,8 +10,28 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link rel="stylesheet" href="./assets/css/estilos.css" type="text/css" />
+        <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
+        
+        <script src="jquery.modal.js" type="text/javascript" charset="utf-8"></script>
+        <meta http-equiv="refresh" content="1; url=http://localhost:8082/PocociCultura/mostrar_usuario.do"> 
+        
+        
+
+
     </head>
     <body>
-        <h1>Hello World!</h1>
-    </body>
+        
+        
+        <div id="contendor">
+            <section  id="seccion-principal">
+
+
+                <div id="exitoso">
+                    <h1>Usuario Borrado</h1>
+                </div>
+            </section>
+        </div>
+
+    </body
 </html>

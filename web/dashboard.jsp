@@ -109,7 +109,16 @@
                         <%@include file="/includes/espacios.jsp" %>
                         <section id="seccion-inferior">
 
-                            <div id="contendor-interno"> </div>
+                            <div id="contendor-interno"> 
+                            
+                            
+                            <%
+HttpSession sesion=request.getSession();
+
+%>
+                            
+           <p><%= sesion %></p>          
+                            </div>
 
                         </section>
                         <%@include file="/includes/footer.jsp" %>

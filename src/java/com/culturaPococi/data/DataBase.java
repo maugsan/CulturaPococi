@@ -24,7 +24,7 @@ public class DataBase {
     private Connection con;
     
     public Connection getConexion() throws SQLException {
-        JOptionPane.showMessageDialog(null, "getConexion!!");
+      
         this.usuario = "root";
         this.contra = "root";
         this.baseDatos = "cultura_pococi2013";
@@ -34,7 +34,7 @@ public class DataBase {
 
             Class.forName("com.mysql.jdbc.Driver");
             this.con = (Connection) DriverManager.getConnection(host, usuario, contra);
-            JOptionPane.showMessageDialog(null, "Conecto");
+           
         } catch (ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(null, "INCORRECTO!!");
             Logger.getLogger(DataBase.class.getName()).log(Level.SEVERE, null, ex);

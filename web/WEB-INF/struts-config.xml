@@ -7,6 +7,7 @@
 
 <struts-config>
     <form-beans>
+       
         <form-bean name="EventoForm" type="com.culturaPococi.accion.evento.EventoForm"/>
         <form-bean 
             name="NuevoLoginForm" 
@@ -41,12 +42,7 @@
                 <forward name="denegado" path="/includes/denegado.jsp" />
        
         </action>
-        <action path="/mostrar_usuario" 
-                type="com.culturaPococi.accion.usuarioNormal.MostrarUsuarioNormalAction"
-                input="/usuario/index.jsp"
-                scope="request"
-                validate="false"
-        />
+      
         <action input="/" name="EventoForm" path="/mostrar_usuarios" scope="session" type="com.culturaPococi.accion.usuarioNormal.MostrarUsuariosAction"/>
         <action path="/mostrarperfiles" 
                 type="com.culturaPococi.accion.perfil.MostrarPerfilesAction"
@@ -91,9 +87,41 @@
         <action path="/modificar_programa_radio" type="com.culturaPococi.accion.programaradio.ModificarProgramaRadioAction"/>
         <action path="/eliminar_programa_radio" type="com.culturaPococi.accion.programaradio.EliminarProgramaRadioAction"/>
         <action path="/crear_programa_radio" type="com.culturaPococi.accion.programaradio.CrearProgramaRadioAction"/>
-        <action path="/eliminar_usuario_normal" type="com.culturaPococi.accion.usuarioNormal.EliminarUsuarioNormalAction"/>
-        <action path="/modificar_usuario_normal" type="com.culturaPococi.accion.usuarioNormal.ModificarUsuarioNormalAction"/>
-        <action path="/crear_usuario_normal" type="com.culturaPococi.accion.usuarioNormal.CrearUsuarioNormalAction"/>
+        
+        
+        
+        <!-- MAPPING PARA ACIONES PARA USUARIO NORMAL  -->
+        
+        
+          <action path="/mostrar_usuario" 
+                type="com.culturaPococi.accion.usuarioNormal.MostrarUsuarioNormalAction"
+                input="/usuario/index.jsp"
+                scope="request"
+                validate="false"
+        />
+          
+          
+     
+        <action path="/eliminar_usuario_normal" 
+                type="com.culturaPococi.accion.usuarioNormal.EliminarUsuarioNormalAction"
+            
+        >
+            
+        <forward name="success" path="/usuario/eliminar_usuarionormal.jsp"/>    
+        </action>
+        
+        <action path="/modificar_usuario" type="com.culturaPococi.accion.usuarioNormal.ModificarUsuarioNormalAction"/>
+        <action path="/crear_usuario" 
+                type="com.culturaPococi.accion.usuarioNormal.CrearUsuarioNormalAction"
+                input="/usuario/crear_usuarionormal.jsp"
+        
+        
+        />
+        
+        
+        
+        
+        
         
         
         <action path="/eliminar_perfil" 

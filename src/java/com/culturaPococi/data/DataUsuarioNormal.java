@@ -61,9 +61,9 @@ public class DataUsuarioNormal extends DataBase{
     }
      
      /*Elimina a un usuario de la base de datos por medio del correo*/
-    public void eliminarUsuarioNormal() throws SQLException {
+    public void eliminarUsuarioNormal(String correo) throws SQLException {
          
-        String sql = "call pEliminarUsuarioNormal(?);";
+        String sql = "call pEliminarUsuarioNormal('"+correo+"');";
         Connection conexion = super.getConexion();
         
         CallableStatement call=conexion.prepareCall(sql);

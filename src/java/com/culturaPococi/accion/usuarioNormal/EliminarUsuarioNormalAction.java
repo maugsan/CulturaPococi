@@ -4,8 +4,10 @@
  */
 package com.culturaPococi.accion.usuarioNormal;
 
+import com.culturaPococi.negocio.NegocioUsuarioNormal;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
@@ -18,6 +20,7 @@ public class EliminarUsuarioNormalAction extends org.apache.struts.action.Action
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
+    private NegocioUsuarioNormal nUsuario = new NegocioUsuarioNormal();
 
     /**
      * This is the action called from the Struts framework.
@@ -33,6 +36,11 @@ public class EliminarUsuarioNormalAction extends org.apache.struts.action.Action
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
+        
+        String correo = (String)request.getParameter("c");
+        JOptionPane.showMessageDialog(null,correo );
+        nUsuario.eliminarUsuariosDB(correo);
+        
         
         return mapping.findForward(SUCCESS);
     }

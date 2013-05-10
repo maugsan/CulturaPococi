@@ -31,10 +31,10 @@ public class NegocioUsuarioNormal {
     }//fin listarEventos
     
     public void eliminarUsuariosDB(String correo) throws SQLException{
-        dusuario.eliminarUsuarioNormal();
-    }//fin listarEventos
+        dusuario.eliminarUsuarioNormal(correo);
+    }
     
     public void crearUsuariosDB(UsuarioNormal usuario) throws SQLException{
         dusuario.crearUsuarioNormal();
-    }//fin listarEventos
+    }
 }
