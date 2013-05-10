@@ -40,12 +40,12 @@ public class MostrarPerfilesAction extends DispatchAction{
         
         LinkedList<Perfil> listaPerfil = new LinkedList<Perfil>();
 
-        listaPerfil.add(new Perfil("PERFIL 1", "musica", "HOY", "GUAPILES", "BIOGRAFIA", "IMAGEN", "CORREO PERFIL", "GUAPILES"));
-        listaPerfil.add(new Perfil("PERFIL 2","musica", "HOY", "GUAPILES", "BIOGRAFIA", "IMAGEN", "CORREO PERFIL", "GUAPILES"));
-        listaPerfil.add(new Perfil("PERFIL 3","musica", "HOY", "GUAPILES", "BIOGRAFIA", "IMAGEN", "CORREO PERFIL", "GUAPILES"));
-        listaPerfil.add(new Perfil("PERFIL 4","musica", "HOY", "GUAPILES", "BIOGRAFIA", "IMAGEN", "CORREO PERFIL", "GUAPILES"));
-        listaPerfil.add(new Perfil("PERFIL 5", "musica", "HOY", "GUAPILES", "BIOGRAFIA", "IMAGEN", "CORREO PERFIL", "GUAPILES"));
-        listaPerfil.add(new Perfil("PERFIL 6","musica", "HOY", "GUAPILES", "BIOGRAFIA", "IMAGEN", "CORREO PERFIL", "GUAPILES"));
+        listaPerfil.add(new Perfil("PERFIL 1", "musica", "HOY", "GUAPILES", "BIOGRAFIA", "IMAGEN", "CORREO PERFIL"));
+        listaPerfil.add(new Perfil("PERFIL 2","musica", "HOY", "GUAPILES", "BIOGRAFIA", "IMAGEN", "CORREO PERFIL"));
+        listaPerfil.add(new Perfil("PERFIL 3","musica", "HOY", "GUAPILES", "BIOGRAFIA", "IMAGEN", "CORREO PERFIL"));
+        listaPerfil.add(new Perfil("PERFIL 4","musica", "HOY", "GUAPILES", "BIOGRAFIA", "IMAGEN", "CORREO PERFIL"));
+        listaPerfil.add(new Perfil("PERFIL 5", "musica", "HOY", "GUAPILES", "BIOGRAFIA", "IMAGEN", "CORREO PERFIL"));
+        listaPerfil.add(new Perfil("PERFIL 6","musica", "HOY", "GUAPILES", "BIOGRAFIA", "IMAGEN", "CORREO PERFIL"));
 
         request.setAttribute("listaPerfil", listaPerfil);
         return mapping.getInputForward();

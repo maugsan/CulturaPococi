@@ -41,11 +41,11 @@ public class DataPerfil extends DataBase {
 
         LinkedList<Perfil> listaPerfil = new LinkedList<Perfil>();
         String titulo;
+        Perfil p;
 
         String nombrePerfil;
-        int idCategoria;
+        String nombreCategoria;
         String fechaDeCreacion;
-        String distrito;
         String biografia;
         String imagenDePortada;
         String correo;
@@ -61,18 +61,26 @@ public class DataPerfil extends DataBase {
 
 
         while (resultado.next()) {
-            titulo = resultado.getString(1);
+            p = new Perfil("", "", "", "", "", "", "");
 
-            /* String nombrePerfil;
-             int idCategoria;
-             String fechaDeCreacion;
-             String distrito;
-             String biografia;
-             String imagenDePortada;
-             String correo;
-             String nombreDistrito;*/
+            nombrePerfil = resultado.getString(1);
+            fechaDeCreacion = resultado.getString(2);
+            biografia = resultado.getString(3);
+            imagenDePortada = resultado.getString(4);
+            correo = resultado.getString(5);
+            nombreDistrito = resultado.getString(6);
+            nombreCategoria = resultado.getString(7);
 
-            JOptionPane.showMessageDialog(null, "titulo=" + titulo);
+            p.setNombrePerfil(nombrePerfil);
+            p.setFechaDeCreacion(fechaDeCreacion);
+            p.setBiografia(biografia);
+            p.setImagenDePortada(imagenDePortada);
+            p.setCorreo(correo);
+            p.setNombreDistrito(nombreDistrito);
+            p.setNombreCategoria(nombreCategoria);
+
+            listaPerfil.add(p);
+
         }
         resultado.close();
         System.out.println("exito");

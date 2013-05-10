@@ -13,17 +13,15 @@ public class Perfil {
     private String nombrePerfil;
     private String nombreCategoria;
     private String fechaDeCreacion;
-    private String distrito;
     private String biografia;
     private String imagenDePortada;
     private String correo;
     private String nombreDistrito;
 
-    public Perfil(String nombrePerfil, String nombreCategoria, String fechaDeCreacion, String distrito, String biografia, String imagenDePortada, String correo, String nombreDistrito) {
+    public Perfil(String nombrePerfil, String nombreCategoria, String fechaDeCreacion,String biografia, String imagenDePortada, String correo, String nombreDistrito) {
         this.nombrePerfil = nombrePerfil;
         this.nombreCategoria = nombreCategoria;
         this.fechaDeCreacion = fechaDeCreacion;
-        this.distrito = distrito;
         this.biografia = biografia;
         this.imagenDePortada = imagenDePortada;
         this.correo = correo;
@@ -38,11 +36,11 @@ public class Perfil {
         this.nombrePerfil = nombrePerfil;
     }
 
-    public String getIdCategoria() {
+    public String getNombreCategoria() {
         return nombreCategoria;
     }
 
-    public void setIdCategoria(String nombreCategoria) {
+    public void setNombreCategoria(String nombreCategoria) {
         this.nombreCategoria = nombreCategoria;
     }
 
@@ -52,14 +50,6 @@ public class Perfil {
 
     public void setFechaDeCreacion(String fechaDeCreacion) {
         this.fechaDeCreacion = fechaDeCreacion;
-    }
-
-    public String getDistrito() {
-        return distrito;
-    }
-
-    public void setDistrito(String distrito) {
-        this.distrito = distrito;
     }
 
     public String getBiografia() {
