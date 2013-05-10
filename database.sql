@@ -257,41 +257,29 @@ delimiter ;
 
 call pEliminarUsuarioNormal("ybarboza27@gmail.com");
 
--- Lista todos los evento con su respectiva informaci�n
-drop procedure if exists pListaUsuarios;
-delimiter $$
-create procedure pListaUsuarios()
-begin
-	select * from usuarionormal;
-end $$
-delimiter ;
-call pListaUsuarios();
-
 insert into evento (nombre, lugar,fecha, hora, informacion,correo) values ("Fiesta","Pital",'12/05/21','01:20:00',"Concierto","ybarboza27@gmail.com");
 insert into evento (nombre,lugar,fecha, hora, informacion,correo) values ("Baile","Veracruz",'12/04/20','07:40:00',"Concierto","ybarboza27@gmail.com");
 insert into evento (nombre,lugar,fecha, hora, informacion,correo) values ("Bingo","La Victoria",'12/05/21','09:30:00',"Concierto","ybarboza27@gmail.com");
 
+insert into evenTieneCat (idEvento,idCategoria) values (17,1);
+insert into evenTieneCat (idEvento,idCategoria) values (18,1);
+insert into evenTieneCat (idEvento,idCategoria) values (19,1);
+
 insert into categoria(nombreCategoria) values ("Musica");
+insert into categoria(nombreCategoria) values ("Teatro");
+insert into categoria(nombreCategoria) values ("Danza");
 
-
-
-insert into evenTieneCat (idEvento,idCategoria) values (1,1);
-insert into evenTieneCat (idEvento,idCategoria) values (2,1);
-insert into evenTieneCat (idEvento,idCategoria) values (3,1);
-
-
--- Lista todos los evento con su respectiva informaci�n
+-- Lista todos los evento con su respectiva información
 drop procedure if exists pListaEventos;
 delimiter $$
 create procedure pListaEventos()
 begin
-	select e.idEvento,e.nombre,e.lugar,e.fecha,e.hora,e.informacion,e.correo, c.nombreCategoria from evento e 
+	select e.idEvento,e.nombre,e.lugar,e.fecha,e.hora,e.informacion,e.correo, c.nombreCategoria, c.idCategoria from evento e 
 		inner join evenTieneCat et on e.idEvento=et.idEvento inner join categoria c on c.idCategoria=et.idCategoria;
 	
 end $$
 delimiter ;
 call pListaEventos();
-
 
 -- Elimina un evento con el id del evento
 drop procedure if exists pEliminarEvento;
@@ -313,7 +301,7 @@ create procedure pActualizarEvento(
 	in pidEvento int,
 	in pnombre varchar(255),
 	in plugar varchar(255),
-	in pfecha datetime,   -- a�o, mes, d�a
+	in pfecha datetime,   -- año, mes, día
 	in phora time,
 	in pinformacion varchar(1000),
 	in pcorreo varchar(20),
@@ -343,7 +331,7 @@ delimiter $$
 create procedure pCrearEventos(
 	in pnombre varchar(255),
 	in plugar varchar(255),
-	in pfecha datetime,   -- a�o, mes, d�a
+	in pfecha datetime,   -- año, mes, día
 	in phora time,
 	in pinformacion varchar(1000),
 	in pcorreo varchar(20),
@@ -358,7 +346,7 @@ end $$
 delimiter ;
 call pCrearEventos("Karaoke","La Merced",'12/04/20','07:40:00',"Concierto","ybarboza27@gmail.com",1);
 
--- Lista un evento de acuerdo al id que recibe con su respectiva informaci�n
+-- Lista un evento de acuerdo al id que recibe con su respectiva información
 drop procedure if exists pListaEvento;
 delimiter $$
 create procedure pListaEvento(
@@ -371,8 +359,18 @@ begin
 	
 end $$
 delimiter ;
-call pListaEvento(7);
+call pListaEvento(6);
 
+-- Lista de Categorías
+drop procedure if exists pListaCategorias;
+delimiter $$
+create procedure pListaCategorias()
+begin
+	select nombreCategoria, idCategoria from categoria order by 1;
+	
+end $$
+delimiter ;
+call pListaCategorias();
 
 -- ************  PERFILES  ************
 

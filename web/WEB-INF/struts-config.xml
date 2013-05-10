@@ -47,7 +47,11 @@
        
         </action>
       
-        <action input="/" name="EventoForm" path="/mostrar_usuarios" scope="session" type="com.culturaPococi.accion.usuarioNormal.MostrarUsuariosAction"/>
+        <action input="/evento/index.jsp" 
+                name="EventoForm" 
+                path="/mostrar_usuarios" 
+                scope="request" 
+                type="com.culturaPococi.accion.usuarioNormal.MostrarUsuariosAction"/>
         
        <action path="/mostrarperfiles" 
                 type="com.culturaPococi.accion.perfil.MostrarPerfilesAction"
@@ -89,6 +93,13 @@
                 validate="true" 
                 name="EventoForm"
         />
+        
+        <action input="/" 
+                name="EventoForm" 
+                path="/actualizar_evento" 
+                scope="request" 
+                type="com.culturaPococi.accion.evento.ActualizarEventoAction"
+        />
      
        
         <action path="/modificar_programa_radio" type="com.culturaPococi.accion.programaradio.ModificarProgramaRadioAction"/>
@@ -116,6 +127,7 @@
             
         <forward name="success" path="/usuario/eliminar_usuarionormal.jsp"/>    
         </action>
+        
         <action input="/" name="EventoForm" path="/seleccionar_evento" scope="session" type="com.culturaPococi.accion.evento.SeleccionarEventoAction"/>
         
         <action path="/modificar_usuario" type="com.culturaPococi.accion.usuarioNormal.ModificarUsuarioNormalAction"/>
