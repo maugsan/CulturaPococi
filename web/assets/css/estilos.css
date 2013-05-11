@@ -15,7 +15,7 @@ root {
 }
 html {
 
-    background-color: #e1e1e1;
+    background-color: #333;
 }
 body {
 
@@ -24,7 +24,8 @@ body {
 }
 
 #contendor {
- height: auto;
+    height: auto;
+
 }
 
 #contendor-interno {
@@ -39,16 +40,16 @@ header {
 
 
 
-background: #333333; /* Old browsers */
-background: -moz-linear-gradient(top,  #333333 0%, #555555 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#333333), color-stop(100%,#555555)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  #333333 0%,#555555 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  #333333 0%,#555555 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  #333333 0%,#555555 100%); /* IE10+ */
-background: linear-gradient(to bottom,  #333333 0%,#555555 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#555555',GradientType=0 ); /* IE6-9 */
+    background: #333333; /* Old browsers */
+    background: -moz-linear-gradient(top,  #333333 0%, #555555 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#333333), color-stop(100%,#555555)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #333333 0%,#555555 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #333333 0%,#555555 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #333333 0%,#555555 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #333333 0%,#555555 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#555555',GradientType=0 ); /* IE6-9 */
 
-    border: solid 1px black; 
+
     height: 80px;
     width: 100%;
     z-index: 2;
@@ -68,9 +69,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', end
 }
 #header-opciones {
 
-    /* border: solid 1px yellow; */
+
     float: right;
     padding: 10px;
+    display: inline-blockn
 
 }
 
@@ -93,8 +95,8 @@ section {
 
 #seccion-principal {
 
-    padding-top: 125px;
-    min-height: 400px;
+    padding-top: 110px;
+    min-height: 350px;
     height: auto;
 
 }
@@ -102,7 +104,8 @@ section {
 
 #seccion-media {
 
-    height: 120px;
+    padding: 30px;
+    height: 100px;
     background-color: #e1e1e1;
 
 
@@ -116,12 +119,12 @@ section {
 
 }
 #articulo {
-    
+
     width: 600px;
     height: 80px;
     margin-right: 30px;
     float: right;
-    
+
 }
 #publicidad {
 
@@ -152,12 +155,58 @@ section {
 }
 footer {
 
-   /* border: solid 1px red; */
-    height: 300px;
+    /* border: solid 1px red; */
+    height: 360px;
     background-color: #9a9a9a;
 
 }
 
+#footer-izquierdo {
+
+    width: 300px;
+    border: solid 1px red;
+    height: 300px;
+    display: inline-block;
+    float: left;
+
+}
+
+#footer-centro {
+
+    width: 300px;
+    border: solid 1px red;
+    height: 300px;
+    display: inline-block;
+    float: left;
+    margin: 0 15px 0 15px;
+
+}
+
+#footer-derecho {
+
+    width: 300px;
+    border: solid 1px red;
+    height: 300px;
+    display: inline-block;
+    float: left;
+
+
+}
+
+#footer-inferior {
+
+    width: 100%;
+    border: solid 1px red;
+    height: 50px;
+    background: #333;
+    color: whitesmoke;
+    float: left;
+
+}
+#footer-terms {
+    
+    float: right;
+}
 /* 
   ========================================= 
         Menú Básico
@@ -165,12 +214,12 @@ footer {
 
 nav {
 
-    float: left;
-    width: 800px;
-
+    float: right;
+    width: auto;
     margin:  30px 0 0 0;
     width: auto;
-    /* border: solid blueviolet 1px; */
+    z-index: 10;
+    display: inline-block;
 }
 /* 
    1 - Elimina todos los espacios entre elementos (especialmente entre li) reduciendo el texto
@@ -195,20 +244,21 @@ nav ul li {
        5 - Cambia el tamaño de los botones del menú (requiere display: block)
 */
 nav ul li a{
-    width: 70px;
-    font-size: 8px;
+    width: 100px;
+    font-size: 12px;
     text-decoration: none;
-    color: white;
+    color: #ccc;
     display: block;
     padding: 10px 3px;
     text-align: center;
+
 
 }
 /* 
    Evento: Cuando el ratón pasa sobre un elemento a
        1 - cambia el color del fondo de el botón */
 ul li a:hover{
-    background: lightgray;
+    background: black;
 
 }
 
@@ -223,13 +273,20 @@ ul li a:hover{
   2 - Agrega color al submenú
 */
 nav ul ul {
-    font-size: 7px;
-    width: 76px;
-    text-wrap: normal;
+    font-size: 8px;
+    width: 105px;
     display: none;
     background: gray;
 
 }
+
+nav ul ul li a:hover{
+
+    background: whitesmoke;
+
+
+}
+
 
 /* 
       Evento: Cuando el ratón pasa sobre un elementó li
@@ -246,14 +303,23 @@ nav ul li:hover > ul{
 */
 nav ul ul li{
     display: block;
+
 }
 
 /* Permite que un submenú dentro de otro submenú se presente bien*/
 nav ul ul ul{
+    font-size: 8px;
+    background: whitesmoke;
     left: 100%; 
     top:0px;
 }
 
+
+nav ul ul ul li a:hover{
+
+    background: black;
+
+}
 /* 
 ========================================= 
   Botones
@@ -267,8 +333,8 @@ button {
     border: none;
     font-size: 10px;
     background-color: #0097ca;
-     -webkit-border-radius: 5px;
-   
+    -webkit-border-radius: 5px;
+
     border-radius: 5px;
 
 }
@@ -283,7 +349,7 @@ button {
 
     margin-top: 20px;
     float: right;
-     width: 60px;
+    width: 60px;
     margin-left: 10px;
     background-color: #609120;
 }
@@ -324,7 +390,7 @@ button {
 
 .modulo {
 
-    
+
     width: 230px;
     height: 60px;
     float: left;
@@ -341,22 +407,22 @@ button {
 
 .modulo:hover {
 
-  
+
     background: #aaa;
-   
+
 
 }
 .modulo a {
 
-    
-   color: black;
-   
+
+    color: black;
+
 
 }
 
 #icono {
-    
-    
+
+
     float: left;
 }
 /* 
@@ -365,24 +431,24 @@ button {
 ========================================= */
 
 form input {
-	font-size: 12px;
-	width:340px;
-	height:50px;
-	background:#fefefe;
-	border:1px dashed #dedede;
-	margin-top:3px;
-	margin-bottom: 4px;
-	font-size:0.9em;
-	color:#3a3a3a;
-	border: none;
-         -webkit-border-radius: 5px;
-   
+    font-size: 12px;
+    width:340px;
+    height:50px;
+    background:#fefefe;
+    border:1px dashed #dedede;
+    margin-top:3px;
+    margin-bottom: 4px;
+    font-size:0.9em;
+    color:#3a3a3a;
+    border: none;
+    -webkit-border-radius: 5px;
+
     border-radius: 5px;
-        
+
 }
 
 input[type="submit"] {
-    
+
     width:127px;
     height: 45px;
     border: 1px solid #1ba9df;
@@ -390,7 +456,7 @@ input[type="submit"] {
     margin-top:20px;
     cursor: pointer;
     color: #fff; 
-  
+
 
 }
 
@@ -402,20 +468,20 @@ input[type="file"]  {
     margin-top:20px;
     cursor: pointer;
     color: #ccc; 
-    
-  /* In IE7, the height of the select element cannot be changed by height, only font-size */
 
-  *margin-top: 4px;
-  /* For IE7, add top margin to align select with labels */
+    /* In IE7, the height of the select element cannot be changed by height, only font-size */
 
-  line-height: 30px;
-  
+    *margin-top: 4px;
+    /* For IE7, add top margin to align select with labels */
+
+    line-height: 30px;
+
 
 }
 
 input[type="text_area"] {
 
-	background: #ccc;
+    background: #ccc;
 }
 /* 
   ========================================= 
@@ -430,22 +496,15 @@ input[type="text_area"] {
 
 }
 
-#radio {
-    
-    background: darkorange;
-    
-    
-}
-
 /* 
   ========================================= 
        Lista de elementos
   ========================================= */
 
 #lista-elementos {
-    
+
     border: solid 1px #ccc;
-    
+
 }
 
 #elemento {
@@ -467,14 +526,14 @@ input[type="text_area"] {
 
 }
 #elemento-icon:hover {
-    
-   
-     width: 30px;
-     height: 30px;
-     float: right;
-     opacity: 1;
-    
-    
+
+
+    width: 30px;
+    height: 30px;
+    float: right;
+    opacity: 1;
+
+
 }
 
 
@@ -492,14 +551,14 @@ input[type="text_area"] {
     margin-top: 0;
     color: #333;
     text-decoration: none;
-  
+
 }
 
 #link-detalle-elemento{
     width: 400px;
     height:50px;
     float: left;
-    
+
 }
 
 /* 
@@ -508,8 +567,8 @@ input[type="text_area"] {
   ========================================= */
 
 #exitoso {
-    
-    
+
+
     border: solid 2px green;
     background: #CDF296;
     color: green;

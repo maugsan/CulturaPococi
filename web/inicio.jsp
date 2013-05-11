@@ -1,38 +1,37 @@
-<%@page contentType="text/html"%>
-<%@page pageEncoding="UTF-8"%>
 
-<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
-<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
-<%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
 
-<html:html lang="true">
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="true">
     <head>
+        
+        <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
+        <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
+        <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title><bean:message key="welcome.title"/></title>
+        <title>El frente.org</title>
+
+
         <link rel="stylesheet" href="./assets/css/estilos.css" type="text/css" />
         <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
         <link rel="stylesheet" href="./assets/css/estilosld.css" type="text/css" />
-        
+
+
         <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-		
-		
-            
-        
-         <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
-        <html:base/>
+
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
 
 
 
 
-</head>
+
+    </head>
 
 
     <body>
 
-        
-        <div id="contendor">
-           
 
+        <div id="contendor">
             <%@include file="includes/header.jsp" %>
             <section  id="seccion-principal">
 
@@ -48,26 +47,26 @@
                                 <li id="cAdelante"> <a href = "#" ></a> </li>
                             </ul>
                             <ul id="slides">  
-                                
+
                                 <li> <a href = "#">  <img src="./assets/img/inicio.png" > </a> </li>
                                 <li> <a href = "#">   <img src="./assets/img/banner1.jpg" > </a> </li>
                                 <li> <a href = "#">   <img src="./assets/img/banner2.jpg" > </a> </li>
-                               
+
 
                             </ul>
                         </div>
 
                     </div>
 
-                  
+
                 </div> 
 
             </section>
 
             <%@include file="includes/espacios.jsp" %>
             <section id="seccion-inferior">
-                 
-                
+
+
 
                 <div id="contendor-interno">
                     <a href=""><button id="boton-unir">Únete</button></a>
@@ -80,20 +79,20 @@
                         lectus quis dui viverra vestibulum. Suspendisse 
                         vulputate aliquam dui. Nulla elementum dui ut augue.
                     </p>
-                    
+
                 </div>
 
-              
+
             </section>
-            
-            
+
+
             <%@include file="includes/footer.jsp" %>
 
-            
+
 
         </div>
-                <script type="text/javascript" src="./assets/js/jqcy.js"> </script>
-		<script type="text/javascript" src="./assets/js/jqSlide.js"> </script>
+        <script type="text/javascript" src="./assets/js/jqcy.js"></script>
+        <script type="text/javascript" src="./assets/js/jqSlide.js"></script>
 
     </body>
-</html:html>
+</html>
