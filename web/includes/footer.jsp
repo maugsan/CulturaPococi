@@ -18,8 +18,11 @@
         <div id="footer-derecho">
             
             <p  >Derecho</p>
-            
-           
+            <%--
+            <img src="./assets/img/radio-icon.png"/>
+            <img src="../assets/img/radio-icon.png"/>
+            <img src="./assets/img/guitarra-icon.png"/>
+            --%>
         
         </div> 
         
