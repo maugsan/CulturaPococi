@@ -5,6 +5,7 @@
 package com.culturaPococi.accion.evento;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.swing.JOptionPane;
 
 import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionMapping;
@@ -22,7 +23,7 @@ public class EventoForm extends org.apache.struts.action.ActionForm {
     //private String  fecha;
     //private String hora;
     private String informacion;
-    private String correo;
+    //private String correo;
     private int idEvento;
     //private String nombreCategoria;
 
@@ -78,13 +79,13 @@ public class EventoForm extends org.apache.struts.action.ActionForm {
         this.informacion = informacion;
     }
 
-    public String getCorreo() {
-        return correo;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
+//    public String getCorreo() {
+//        return correo;
+//    }
+//
+//    public void setCorreo(String correo) {
+//        this.correo = correo;
+//    }
 
     
     
@@ -104,8 +105,9 @@ public class EventoForm extends org.apache.struts.action.ActionForm {
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
         ActionErrors errors = new ActionErrors();
         if (getNombre() == null || getNombre().length() < 1) {
-            errors.add("nombre", new ActionMessage("Falta nombre"));  //arreglar
+            //errors.add("nombre", new ActionMessage("Falta nombre"));  //arreglar
             // TODO: add 'error.name.required' key to your resources
+            JOptionPane.showMessageDialog(null, "formu");
         }
         return errors;
     }

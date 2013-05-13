@@ -31,7 +31,7 @@ public class NuevoLoginAction extends DispatchAction {
         System.out.println("ENTRO A ACTION-------------------------------------------------------------------");
 
         NuevoLoginForm login = (NuevoLoginForm) form;
-
+        String correo=login.getCorreo();
 
         if (nua.verificarUsuarioAdministrador(login.getCorreo(), login.getContrasenia())) {
             System.out.println("ENTRO----------------------------------------------------------------");

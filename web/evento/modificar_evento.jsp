@@ -27,7 +27,7 @@
 
         <div id="contendor-interno"> 
 
-            <html:form action="/modificar_evento">
+            <html:form action="/actualizar_evento" >
                 
                 
                 
@@ -36,17 +36,25 @@
                 <h2><bean:message key="form.nombre"/></h2>
                 <html:text  name="EventoForm" property="nombre" size="16" value="${evento.nombre}"/><br>
                 
+                <h2><bean:message key="form.categoria"/></h2>
+                <html:select property="idCategoria">
+                    <logic:iterate name="listaCategorias" id="numero" >
+                        <html:option value="${numero.idCategoria}"> <!-- esto es para que cuando elija el nombre me envie el numero !-->
+                            <bean:write name="numero" property="nombreCategoria"/>
+                        </html:option>
+                    </logic:iterate>
+                </html:select>
+                
                 <h2><bean:message key="form.lugar"/></h2>
                 <html:text  name="EventoForm" property="lugar" size="16" value="${evento.lugar}"/><br>
                 
-                <h2><bean:message key="form.informacion"/></h2>
-                <html:text  name="EventoForm" property="informacion" size="16" value="${evento.informacion}"/><br>
-                
+                <h2><bean:message key="form.informacion"/></h2>     
+                <html:textarea name="EventoForm" property="informacion" value="${evento.informacion}" /><br>
                 <html:hidden  name="EventoForm" property="idEvento" value="${evento.idEvento}"/>
                 <html:hidden  name="EventoForm" property="correo" value="${evento.correo}"/>
                 <html:hidden  name="EventoForm" property="idCategoria" value="${evento.idCategoria}"/>
                 
-                <html:submit value="Crear" />
+                <html:submit value="Actualizar" />
 
             </html:form>
             <html:errors/>

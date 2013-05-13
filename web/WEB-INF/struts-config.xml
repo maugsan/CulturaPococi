@@ -87,19 +87,29 @@
         />
         <action path="/crear_evento" 
                 type="com.culturaPococi.accion.evento.CrearEventoAction"
-                input="/evento/index.jsp" 
+                input="/evento/crear_evento.jsp"
                 scope="request"
-                parameter="metodo"
                 validate="true" 
                 name="EventoForm"
         />
         
-        <action input="/" 
-                name="EventoForm" 
-                path="/actualizar_evento" 
-                scope="request" 
-                type="com.culturaPococi.accion.evento.ActualizarEventoAction"
-        />
+         <action input="/evento/modificar_evento.jsp" 
+                 name="EventoForm" 
+                 path="/actualizar_evento" 
+                 scope="request" 
+                 validate="false" 
+                 type="com.culturaPococi.accion.evento.ActualizarEventoAction"/>
+         
+         <action path="/listar_categorias" 
+                 input="/evento/crear_evento.jsp" 
+                 name="EventoForm"
+                 scope="request" 
+                 validate="false" 
+                 type="com.culturaPococi.accion.evento.ListarCategoriasAction"/>
+       
+        
+        
+        
      
        
         <action path="/modificar_programa_radio" type="com.culturaPococi.accion.programaradio.ModificarProgramaRadioAction"/>

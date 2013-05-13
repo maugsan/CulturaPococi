@@ -52,6 +52,7 @@
                         </div>
                         <%-- FIN Elemento  --%>
                         </logic:iterate>
+                        <a href="../listar_categorias.do"><button id="boton-unir">Crear Evento</button></a>
                     </section>
                         
                 </div> 

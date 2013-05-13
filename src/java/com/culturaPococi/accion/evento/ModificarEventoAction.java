@@ -4,8 +4,11 @@
  */
 package com.culturaPococi.accion.evento;
 
+import com.culturaPococi.dominio.Categoria;
 import com.culturaPococi.dominio.Evento;
+import com.culturaPococi.negocio.NegocioCategoria;
 import com.culturaPococi.negocio.NegocioEvento;
+import java.util.LinkedList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.swing.JOptionPane;
@@ -23,6 +26,8 @@ public class ModificarEventoAction extends DispatchAction {
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
     NegocioEvento nEvento=new NegocioEvento();
+    NegocioCategoria nCategoria=new NegocioCategoria();
+    
 
     /**
      * This is the action called from the Struts framework.
@@ -40,11 +45,15 @@ public class ModificarEventoAction extends DispatchAction {
             throws Exception {
         Evento evento=new Evento();
         int idEvento;
+        LinkedList<Categoria> listaCategorias=new LinkedList<Categoria>();
+        
         JOptionPane.showMessageDialog(null, "evento modificar ");
         idEvento=Integer.parseInt(request.getParameter("idEvento"));
         evento=nEvento.selectEventoDB(idEvento);
-        System.out.println("nombre: "+evento.getNombre());
         
+        listaCategorias=nCategoria.selectCategoriasDB();
+        
+        request.setAttribute("listaCategorias", listaCategorias);
         request.setAttribute("evento", evento);
         return mapping.getInputForward();
     }

@@ -42,9 +42,5 @@ public class NegocioEvento {
         return evento;
     }//fin selectEventoDB
     
-    public LinkedList<Categoria> selectCategoriasDB() throws SQLException{
-        LinkedList <Categoria> listaCategoria;
-        listaCategoria=dEvento.selectCategorias();
-        return listaCategoria;
-    }//fin selectCategoriasDB
+   
 }

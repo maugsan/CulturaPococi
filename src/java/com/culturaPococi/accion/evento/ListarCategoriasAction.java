@@ -5,9 +5,7 @@
 package com.culturaPococi.accion.evento;
 
 import com.culturaPococi.dominio.Categoria;
-import com.culturaPococi.dominio.Evento;
 import com.culturaPococi.negocio.NegocioCategoria;
-import com.culturaPococi.negocio.NegocioEvento;
 import java.util.LinkedList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,13 +19,11 @@ import org.apache.struts.actions.DispatchAction;
  *
  * @author Personal
  */
-public class ActualizarEventoAction extends DispatchAction {
+public class ListarCategoriasAction extends DispatchAction {
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
-    NegocioEvento nEvento=new NegocioEvento();
     NegocioCategoria nCategoria=new NegocioCategoria();
-
     /**
      * This is the action called from the Struts framework.
      *
@@ -42,24 +38,11 @@ public class ActualizarEventoAction extends DispatchAction {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        JOptionPane.showMessageDialog(null, "actualizar");
+        JOptionPane.showMessageDialog(null, "listar");
         LinkedList<Categoria> listaCategorias=new LinkedList<Categoria>();
-        EventoForm formu=(EventoForm) form;
-       Evento evento=new Evento(formu.getIdEvento(), 
-                                formu.getIdCategoria(), 
-                                "", 
-                                formu.getLugar(), 
-                                formu.getNombre(), "","",
-                                //formu.getFecha(),
-                                //formu.getHora(),
-                                formu.getInformacion(), 
-                                "ybarboza27@gmail.com","");
-       nEvento.actualizarEventosDB(evento);
-       
-       listaCategorias=nCategoria.selectCategoriasDB();
+        listaCategorias=nCategoria.selectCategoriasDB();
         
         request.setAttribute("listaCategorias", listaCategorias);
-        request.setAttribute("evento", evento);
         return mapping.getInputForward();
     }
 }

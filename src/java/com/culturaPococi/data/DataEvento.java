@@ -58,7 +58,7 @@ public class DataEvento extends DataBase{
 
      public void  actualizarEvento(Evento evento) throws SQLException{
     
-        String sql = "call pActualizarEvento(?,?,?,?,?,?,?,?);";
+        String sql = "call pActualizarEventon(?,?,?,?,?,?);";
         Connection conexion = super.getConexion();
         CallableStatement call=conexion.prepareCall(sql);
         
@@ -70,7 +70,15 @@ public class DataEvento extends DataBase{
         call.setString("pinformacion",evento.getInformacion());
         call.setString("pcorreo",evento.getCorreo());
         call.setInt("pidCategoria", evento.getIdCategoria());
-                
+//        call.setInt("pidEvento", 17);
+//        call.setString("pnombre","Baile");
+//        call.setString("plugar","Pangola");
+//        //call.setTime("phora", evento.getFecha());
+//        //call.setDate("pfecha", null);
+//        call.setString("pinformacion","bingo");
+//        call.setString("pcorreo","ybarboza27@gmail.com");
+//        call.setInt("pidCategoria", 1);
+               
         call.executeUpdate();
         call.close();
         conexion.close();
@@ -78,19 +86,26 @@ public class DataEvento extends DataBase{
      
      public void  crearEvento(Evento evento) throws SQLException{
     
-        String sql = "call pCrearEventos(?,?,?,?,?,?,?);";
+        String sql = "call pCrearEventos(?,?,?,?);";
         Connection conexion = super.getConexion();
         CallableStatement call=conexion.prepareCall(sql);
         
         
         call.setString("pnombre",evento.getNombre());
         call.setString("plugar",evento.getLugar());
-        //call.setTime("phora", evento.getFecha());
-        //call.setDate("pfecha", null);
+//        //call.setTime("phora", evento.getFecha());
+//        //call.setDate("pfecha", null);
         call.setString("pinformacion",evento.getInformacion());
-        call.setString("pcorreo",evento.getCorreo());
+//        call.setString("pcorreo",evento.getCorreo());
         call.setInt("pidCategoria", evento.getIdCategoria());
-                
+        
+//        call.setString("pnombre","Karaoke");
+//        call.setString("plugar","La Merced");
+//        //call.setTime("phora", evento.getFecha());
+//        //call.setDate("pfecha", null);
+//        call.setString("pinformacion","Concierto");
+////        call.setString("pcorreo","ybarboza27@gmail.com");
+//        call.setInt("pidCategoria", 1);
         call.executeUpdate();
         call.close();
         conexion.close();
@@ -130,24 +145,7 @@ public class DataEvento extends DataBase{
     }//fin selectEventos
      
      
-     public LinkedList<Categoria> selectCategorias() throws SQLException{
-        LinkedList<Categoria> listaCategorias=new LinkedList<Categoria>();
-        Categoria categoria=new Categoria();
-        String sql = "call pListaCategorias();" ;
-        ResultSet resultado;
-        Connection conexion = super.getConexion();
-
-        Statement statement = conexion.createStatement(); 
-        resultado=statement.executeQuery(sql);
-
-        while (resultado.next()) { 
-            categoria=new Categoria(resultado.getString("nombreCategoria"),resultado.getInt("idCategoria"));
-            listaCategorias.add(categoria);
-        }//fin while
-
-        conexion.close();
-        return listaCategorias;
-    }//fin selectCategoria
+    
      
 }
 //+"idcate: "+resultado.getInt("idCategoria")+
