@@ -4,6 +4,9 @@
  */
 package com.culturaPococi.accion.anuncio;
 
+import com.culturaPococi.dominio.Anuncio;
+import com.culturaPococi.negocio.NegocioAnuncio;
+import java.util.LinkedList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.ActionForm;
@@ -18,7 +21,7 @@ public class EliminarAnuncioAction extends org.apache.struts.action.Action {
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
-
+    NegocioAnuncio nAnuncio= new NegocioAnuncio();
     /**
      * This is the action called from the Struts framework.
      *
@@ -34,6 +37,14 @@ public class EliminarAnuncioAction extends org.apache.struts.action.Action {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         
-        return mapping.findForward(SUCCESS);
+        int idAnuncio=Integer.parseInt(request.getParameter("idAnuncio"));
+        LinkedList<Anuncio> listaAnuncios;
+        
+        nAnuncio.eliminarAnuncioDB(idAnuncio);
+        
+        listaAnuncios=nAnuncio.listarAnunciosDB();
+        request.setAttribute("listaAnuncios", listaAnuncios);
+        
+        return mapping.getInputForward();
     }
 }

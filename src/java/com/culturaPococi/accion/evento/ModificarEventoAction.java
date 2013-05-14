@@ -51,8 +51,8 @@ public class ModificarEventoAction extends DispatchAction {
         idEvento=Integer.parseInt(request.getParameter("idEvento"));
         evento=nEvento.selectEventoDB(idEvento);
         
-        listaCategorias=nCategoria.selectCategoriasDB();
-        
+        //listaCategorias=nCategoria.selectCategoriasDB();
+        listaCategorias=nCategoria.selectCategoriasOrdenadasDB(evento.getIdCategoria());
         request.setAttribute("listaCategorias", listaCategorias);
         request.setAttribute("evento", evento);
         return mapping.getInputForward();

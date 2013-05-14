@@ -476,8 +476,29 @@ input[type="file"]  {
 }
 
 input[type="text_area"] {
+    font-size: 12px;
+    width:340px;
+    height:340px;
+    background:#fefefe;
+    border:1px dashed #dedede;
+    margin-top:3px;
+    margin-bottom: 4px;
+    font-size:0.9em;
+    color:#3a3a3a;
+    border: none;
+    -webkit-border-radius: 5px;
 
+    border-radius: 5px;
     background: #ccc;
+    
+    cursor: pointer;
+
+    /* In IE7, the height of the select element cannot be changed by height, only font-size */
+
+    *margin-top: 4px;
+    /* For IE7, add top margin to align select with labels */
+
+    line-height: 30px;
 }
 /* 
   ========================================= 

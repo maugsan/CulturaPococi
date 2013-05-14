@@ -7,6 +7,9 @@
 
 <struts-config>
     <form-beans>
+        <form-bean name="AnuncioForm" 
+                   type="com.culturaPococi.accion.anuncio.AnuncioForm"
+        />
        
         <form-bean 
             name="EventoForm" 
@@ -60,7 +63,7 @@
                 validate="false"/>
        
        
-        
+        <!-- INICIO EVENTO  -->
         <action input="/evento/index.jsp"  
                 path="/listar_evento" 
                 scope="request" 
@@ -107,9 +110,37 @@
                  validate="false" 
                  type="com.culturaPococi.accion.evento.ListarCategoriasAction"/>
        
+        <!-- FIN EVENTO  -->
         
+        <!-- INICIO ANUNCIOS  -->
+        <action input="/anuncio/index.jsp" 
+                path="/listar_anuncios" 
+                scope="request" 
+                validate="false"
+                type="com.culturaPococi.accion.anuncio.ListarAnunciosAction"/>
         
+        <action path="/eliminar_anuncio" 
+                input="/anuncio/index.jsp" 
+                scope="request" 
+                validate="false"
+                type="com.culturaPococi.accion.anuncio.EliminarAnuncioAction"
+        />
         
+        <action path="/crear_anuncio" 
+                scope="request" 
+                validate="true"
+                name="AnuncioForm" 
+                input="/anuncio/crear_anuncio.jsp" 
+                type="com.culturaPococi.accion.anuncio.CrearAnuncioAction"
+        />
+        
+        <action path="/listar_prioridades" 
+                scope="request" 
+                validate="false"
+                name="AnuncioForm" 
+                input="/anuncio/crear_anuncio.jsp" 
+                type="com.culturaPococi.accion.anuncio.ListarPrioridadesAction"/>
+        <!-- FIN ANUNCIOS  -->
      
        
         <action path="/modificar_programa_radio" type="com.culturaPococi.accion.programaradio.ModificarProgramaRadioAction"/>
@@ -138,6 +169,10 @@
         <forward name="success" path="/usuario/eliminar_usuarionormal.jsp"/>    
         </action>
         
+       
+        
+        
+        
         <action input="/" name="EventoForm" path="/seleccionar_evento" scope="session" type="com.culturaPococi.accion.evento.SeleccionarEventoAction"/>
         
         <action path="/modificar_usuario" type="com.culturaPococi.accion.usuarioNormal.ModificarUsuarioNormalAction"/>
@@ -164,8 +199,7 @@
         <action path="/crear_perfil" type="com.culturaPococi.accion.perfil.CrearPerfilAction"/>
         <action path="/eliminar_boletin" type="com.culturaPococi.accion.boletin.EliminarBoletinAction"/>
         <action path="/crear_boletin" type="com.culturaPococi.accion.boletin.CrearBoletinAction"/>
-        <action path="/eliminar_anuncio" type="com.culturaPococi.accion.anuncio.EliminarAnuncioAction"/>
-        <action path="/crear_anuncio" type="com.culturaPococi.accion.anuncio.CrearAnuncioAction"/>
+       
         <action path="/eliminar_articulo" type="com.culturaPococi.accion.articulo.EliminarArticuloAction"/>
         <action path="/modificar_articulo" type="com.culturaPococi.accion.articulo.ModificarArticuloAction"/>
         <action path="/crear_articulo" type="com.culturaPococi.accion.articulo.CrearArticulaAction"/>

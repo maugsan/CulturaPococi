@@ -87,7 +87,7 @@
                                             <img id="icono" src="assets/img/boletin-icon.png" width="60">
                                             <h2>Boletín</h2>
                                         </section></a>
-                                    <a href="./anuncio/"> <section class="modulo">
+                                    <a href="./listar_anuncios.do"> <section class="modulo">
                                             <img id="icono" src="assets/img/anuncio-icon.png" width="60">
                                             <h2>Anuncio</h2>
                                         </section></a>

@@ -36,4 +36,19 @@ public class DataCategoria extends DataBase{
         conexion.close();
         return listaCategorias;
     }//fin selectCategoria
+     
+     
+     public LinkedList<Categoria> ordenarPrimeraCategoria(int idCategoria) throws SQLException{
+        LinkedList<Categoria> listaCategorias=new LinkedList<Categoria>();
+        LinkedList<Categoria> listaOrdenadaCategorias=new LinkedList<Categoria>();
+        listaCategorias=selectCategorias();
+        for (int i=0; i<listaCategorias.size(); i++){
+            if(listaCategorias.get(i).getIdCategoria()==idCategoria){
+                listaOrdenadaCategorias.addFirst(listaCategorias.get(i));
+            }else{
+                listaOrdenadaCategorias.add(listaCategorias.get(i));
+            }//fin if
+        }//fin for
+        return listaOrdenadaCategorias;
+    }//fin ordenarPrimeraCategoria
 }

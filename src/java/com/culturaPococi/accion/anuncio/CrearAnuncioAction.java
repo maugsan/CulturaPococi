@@ -4,21 +4,25 @@
  */
 package com.culturaPococi.accion.anuncio;
 
+import com.culturaPococi.dominio.Anuncio;
+import com.culturaPococi.negocio.NegocioAnuncio;
+import java.util.LinkedList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import org.apache.struts.actions.DispatchAction;
 
 /**
  *
  * @author Moa
  */
-public class CrearAnuncioAction extends org.apache.struts.action.Action {
+public class CrearAnuncioAction extends DispatchAction {
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
-
+    NegocioAnuncio nAnuncio=new NegocioAnuncio();
     /**
      * This is the action called from the Struts framework.
      *
@@ -34,6 +38,15 @@ public class CrearAnuncioAction extends org.apache.struts.action.Action {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         
-        return mapping.findForward(SUCCESS);
+        AnuncioForm formu=(AnuncioForm) form;
+        Anuncio anuncio=new Anuncio(formu.getTitulo(),null,formu.getPrioridad(),formu.getIdAnuncio());
+        
+        LinkedList listaPrioridades = new LinkedList();
+        listaPrioridades = nAnuncio.listarPrioridadesDB();
+        
+        nAnuncio.crearAnuncioDB(anuncio);
+        
+        request.setAttribute("listaPrioridades", listaPrioridades);
+        return mapping.getInputForward();
     }
 }

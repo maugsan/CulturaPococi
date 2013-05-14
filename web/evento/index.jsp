@@ -32,7 +32,7 @@
                 
                 <div id="contendor-interno"> 
                    
-                    <h1>Eventos</h1>
+                    <h1><bean:message key="evento.titulo"/></h1>
                     
                     <section id="lista-elementos">
                         <logic:iterate  name="listaEventos" id="eventoTemporal" >

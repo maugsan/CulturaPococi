@@ -2,14 +2,12 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.culturaPococi.accion.evento;
+package com.culturaPococi.accion.anuncio;
 
-import com.culturaPococi.dominio.Categoria;
-import com.culturaPococi.negocio.NegocioCategoria;
+import com.culturaPococi.negocio.NegocioAnuncio;
 import java.util.LinkedList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.JOptionPane;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
@@ -19,11 +17,12 @@ import org.apache.struts.actions.DispatchAction;
  *
  * @author Personal
  */
-public class ListarCategoriasAction extends DispatchAction {
+public class ListarPrioridadesAction extends DispatchAction {
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
-    NegocioCategoria nCategoria=new NegocioCategoria();
+    NegocioAnuncio nAnuncio=new NegocioAnuncio();
+
     /**
      * This is the action called from the Struts framework.
      *
@@ -38,17 +37,10 @@ public class ListarCategoriasAction extends DispatchAction {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        JOptionPane.showMessageDialog(null, "listar");
-        LinkedList<Categoria> listaCategorias=new LinkedList<Categoria>();
-        listaCategorias=nCategoria.selectCategoriasDB();
-        
-        request.setAttribute("listaCategorias", listaCategorias);
+            LinkedList listaPrioridades=new LinkedList();
+            
+            listaPrioridades=nAnuncio.listarPrioridadesDB();
+            request.setAttribute("listaPrioridades", listaPrioridades);
         return mapping.getInputForward();
     }
 }
-
-//
-//anuncios.form=Modificar Anuncio
-//anuncios.form.prioridad=Prioridad
-//anuncios.form.imagen=Imagen
-//anuncios.form.titulo=Título

@@ -15,8 +15,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title><bean:message key="welcome.title"/></title>
-        <link rel="stylesheet" href="../assets/css/estilos.css" type="text/css" />
-        <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" />
+        <link rel="stylesheet" href="./assets/css/estilos.css" type="text/css" />
+        <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
         <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
         <html:base/>
     </head>
@@ -30,12 +30,30 @@
                 
                 <div id="contendor-interno"> 
                    
-                    <h1>Anuncios</h1>
-                </div> 
+                    <h1><bean:message key="anuncio.titulo"/></h1>
+                    <section id="lista-elementos">
+                        <logic:iterate  name="listaAnuncios" id="anuncioTemporal" >
+                        <%-- Inicio Elemento  --%>
+                        <div id="elemento">
 
+                            <div id="elemento-imagen"><img src="../assets/img/evento-icon.png" width="30"/></div>
+                            <p id="elemento-nombre">${anuncioTemporal.titulo}</p>
+                            <a href="../eliminar_anuncio.do?idAnuncio=${anuncioTemporal.idAnuncio}">
+                                <div id="elemento-icon"><img src="../assets/img/delete-icon.png" width="30"/></div>
+                            </a> 
+                              
+                            
+                        </div>
+                        <%-- FIN Elemento  --%>
+                        </logic:iterate>
+                        <a href="../listar_prioridades.do"><button id="boton-unir">Crear Anuncio</button></a>
             </section>
-
-            <%@include file="/includes/espacios.jsp" %>
+                        
+                </div> 
+            </section>
+            
+            
+            
             <section id="seccion-inferior">
 
                 <div id="contendor-interno"> </div>

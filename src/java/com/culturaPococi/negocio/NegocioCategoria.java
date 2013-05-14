@@ -23,4 +23,10 @@ public class NegocioCategoria {
         listaCategoria=dCategoria.selectCategorias();
         return listaCategoria;
     }//fin selectCategoriasDB
+     
+     public LinkedList<Categoria> selectCategoriasOrdenadasDB(int idCategoria) throws SQLException{
+        LinkedList <Categoria> listaCategoria;
+        listaCategoria=dCategoria.ordenarPrimeraCategoria(idCategoria);
+        return listaCategoria;
+    }//fin selectCategoriasDB
 }
