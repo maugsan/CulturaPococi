@@ -43,52 +43,27 @@ public class ModificarEventoAction extends DispatchAction {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        Evento evento=new Evento();
+        Evento evento;
         int idEvento;
         LinkedList<Categoria> listaCategorias=new LinkedList<Categoria>();
         
-        JOptionPane.showMessageDialog(null, "evento modificar ");
         idEvento=Integer.parseInt(request.getParameter("idEvento"));
-        evento=nEvento.selectEventoDB(idEvento);
         
-        //listaCategorias=nCategoria.selectCategoriasDB();
-        listaCategorias=nCategoria.selectCategoriasOrdenadasDB(evento.getIdCategoria());
-        request.setAttribute("listaCategorias", listaCategorias);
-        request.setAttribute("evento", evento);
+        evento=nEvento.selectEventoDB(idEvento);
+        if (evento!=null){
+            listaCategorias=nCategoria.selectCategoriasOrdenadasDB(evento.getIdCategoria());   
+        }else{
+        //mostrar un mensaje si las categorias no se puden cargar
+            JOptionPane.showMessageDialog(null, "El evento no se pudo cargar");
+        }
+        if (listaCategorias==null){
+            JOptionPane.showMessageDialog(null, "Las categorias no se pudieron cargar");  
+        }
+        //Si evento en null es porque la consulta no se hizo bien por lo que hay que mostrar un mensaje
+         request.setAttribute("listaCategorias", listaCategorias);
+         request.setAttribute("evento", evento);
         return mapping.getInputForward();
     }
-    
-    
-    
-    
-//        public ActionForward execute(ActionMapping mapping, ActionForm form,
-//            HttpServletRequest request, HttpServletResponse response)
-//            throws Exception {
-//        EventoForm formu=(EventoForm) form;
-//        //JOptionPane.showMessageDialog(null, "evento modificar "+formu.getIdEvento());
-////        Evento evento=new Evento(formu.getIdEvento(), 
-////                                formu.getIdCategoria(), 
-////                                formu.getNombreCategoria(), 
-////                                formu.getLugar(), 
-////                                formu.getNombre(), "fecha","hora",
-////                                //formu.getFecha(),
-////                                //formu.getHora(),
-////                                formu.getInformacion(), 
-////                                formu.getCorreo(),"imagen");
-//        Evento evento=new Evento(0, 
-//                                0, 
-//                                "nombreCategoria", 
-//                                formu.getLugar(), 
-//                                formu.getNombre(), "fecha","hora",
-//                                //formu.getFecha(),
-//                                //formu.getHora(),
-//                                formu.getInformacion(), 
-//                                "correo","imagen");
-//                                
-//                                //formu.getImagen()
-//        //nEvento.actualizarEventosDB(evento);
-//        return mapping.getInputForward();
-//    }
     
     
 }

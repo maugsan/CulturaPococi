@@ -39,15 +39,21 @@ public class EliminarEventoAction extends DispatchAction {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        int idEvento=0;
+        
+        int idEvento;
+        boolean eliminado;
         LinkedList <Evento> listaEventos;
         idEvento=Integer.parseInt(request.getParameter("idEvento"));
         
-        nEvento.eliminarEventosDB(idEvento);
+        eliminado=nEvento.eliminarEventosDB(idEvento);
+        //if eliminado es false es que no se pudo eliminar y se debe mostrar un mensaje
+        if(!eliminado){
+            JOptionPane.showMessageDialog(null, "No se puedo eliminar el evento por fallo en la base");
+        }
         listaEventos=nEvento.listarEventosDB();
         
         request.setAttribute("listaEventos", listaEventos);
-        
+
         return mapping.getInputForward();
     }
 }

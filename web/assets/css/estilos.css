@@ -369,6 +369,20 @@ button {
     border-radius: 10px;
 
 }
+
+#boton-volver {
+    margin-top: 20px;
+    float: left;
+    width: 127px;
+    margin-left: 25px;
+    height: 45px;
+    background-color: #99CCFF;
+    color: #FFFFFF;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid #99CCFF;
+    cursor: pointer;
+}
 /* 
 ========================================= 
   Formularios
@@ -475,7 +489,7 @@ input[type="file"]  {
 
 }
 
-input[type="text_area"] {
+input[type="textarea"] {
     font-size: 12px;
     width:340px;
     height:340px;

@@ -5,11 +5,13 @@
 package com.culturaPococi.data;
 
 import com.culturaPococi.dominio.Categoria;
+import com.culturaPococi.dominio.Evento;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.LinkedList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,37 +20,49 @@ import java.util.LinkedList;
 public class DataCategoria extends DataBase{
     
     
-     public LinkedList<Categoria> selectCategorias() throws SQLException{
-        LinkedList<Categoria> listaCategorias=new LinkedList<Categoria>();
-        Categoria categoria=new Categoria();
-        String sql = "call pListaCategorias();" ;
+    public LinkedList<Categoria> selectCategorias() throws SQLException {
+        LinkedList<Categoria> listaCategorias = new LinkedList<Categoria>();
+        Categoria categoria = new Categoria();
+        String sql = "call pListaCategorias();";
         ResultSet resultado;
         Connection conexion = super.getConexion();
 
-        Statement statement = conexion.createStatement(); 
-        resultado=statement.executeQuery(sql);
+        try {
+            Statement statement = conexion.createStatement();
+            resultado = statement.executeQuery(sql);
 
-        while (resultado.next()) { 
-            categoria=new Categoria(resultado.getString("nombreCategoria"),resultado.getInt("idCategoria"));
-            listaCategorias.add(categoria);
-        }//fin while
+            while (resultado.next()) {
+                categoria = new Categoria(resultado.getString("nombreCategoria"), 
+                        resultado.getInt("idCategoria"));
+                listaCategorias.add(categoria);
+            }//fin while
 
-        conexion.close();
+            statement.close();
+        } catch (Exception e) {
+            listaCategorias = null;
+        } finally {
+            conexion.close();
+        }
+
         return listaCategorias;
     }//fin selectCategoria
      
      
-     public LinkedList<Categoria> ordenarPrimeraCategoria(int idCategoria) throws SQLException{
-        LinkedList<Categoria> listaCategorias=new LinkedList<Categoria>();
-        LinkedList<Categoria> listaOrdenadaCategorias=new LinkedList<Categoria>();
-        listaCategorias=selectCategorias();
-        for (int i=0; i<listaCategorias.size(); i++){
-            if(listaCategorias.get(i).getIdCategoria()==idCategoria){
-                listaOrdenadaCategorias.addFirst(listaCategorias.get(i));
-            }else{
-                listaOrdenadaCategorias.add(listaCategorias.get(i));
-            }//fin if
-        }//fin for
+    public LinkedList<Categoria> ordenarPrimeraCategoria(int idCategoria) throws SQLException {
+        LinkedList<Categoria> listaCategorias;
+        LinkedList<Categoria> listaOrdenadaCategorias = new LinkedList<Categoria>();
+        listaCategorias = selectCategorias();
+        if (listaCategorias != null) {
+            for (int i = 0; i < listaCategorias.size(); i++) {
+                if (listaCategorias.get(i).getIdCategoria() == idCategoria) {
+                    listaOrdenadaCategorias.addFirst(listaCategorias.get(i));
+                } else {
+                    listaOrdenadaCategorias.add(listaCategorias.get(i));
+                }//fin if
+            }//fin for
+        }else{
+            listaOrdenadaCategorias=null;
+        }
         return listaOrdenadaCategorias;
     }//fin ordenarPrimeraCategoria
 }

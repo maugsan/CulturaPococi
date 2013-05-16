@@ -5,7 +5,6 @@
 package com.culturaPococi.negocio;
 
 import com.culturaPococi.data.DataEvento;
-import com.culturaPococi.dominio.Categoria;
 import com.culturaPococi.dominio.Evento;
 import java.sql.SQLException;
 import java.util.LinkedList;
@@ -24,22 +23,20 @@ public class NegocioEvento {
         return listaEventos;
     }//fin listarEventos
     
-    public void eliminarEventosDB(int idEvento) throws SQLException{
-        dEvento.EliminarEvento(idEvento);
+    public boolean eliminarEventosDB(int idEvento) throws SQLException{
+         return dEvento.eliminarEvento(idEvento);
     }//fin listarEventos
     
-    public void actualizarEventosDB(Evento evento) throws SQLException{
-        dEvento.actualizarEvento(evento);
+    public boolean actualizarEventosDB(Evento evento) throws SQLException{
+        return dEvento.actualizarEvento(evento);
     }//fin listarEventos
     
-    public void crearEventosDB(Evento evento) throws SQLException{
-        dEvento.crearEvento(evento);
+    public boolean crearEventosDB(Evento evento) throws SQLException{
+        return dEvento.crearEvento(evento);
     }//fin listarEventos
     
     public Evento selectEventoDB(int idEvento) throws SQLException{
-        Evento evento;
-        evento=dEvento.selectEvento(idEvento);
-        return evento;
+        return dEvento.selectEvento(idEvento);
     }//fin selectEventoDB
     
    

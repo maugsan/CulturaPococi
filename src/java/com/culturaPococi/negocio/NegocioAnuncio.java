@@ -25,8 +25,8 @@ public class NegocioAnuncio {
         return listaAnuncios;
     }//fin listarAnunciosDB
     
-     public void eliminarAnuncioDB(int idEvento) throws SQLException{
-        dAnuncio.eliminarAnuncio(idEvento);
+     public boolean eliminarAnuncioDB(int idEvento) throws SQLException{
+        return dAnuncio.eliminarAnuncio(idEvento);
     }//fin eliminarAnuncioDB
      
      public LinkedList listarPrioridadesDB() throws SQLException{
@@ -41,7 +41,7 @@ public class NegocioAnuncio {
         return anuncio;
     }//fin anuncioDB
      
-     public void crearAnuncioDB(Anuncio anuncio) throws SQLException{
-        dAnuncio.crearAnuncio(anuncio);
+     public boolean crearAnuncioDB(Anuncio anuncio) throws SQLException{
+        return dAnuncio.crearAnuncio(anuncio);
     }//fin crearAnuncioDB
 }

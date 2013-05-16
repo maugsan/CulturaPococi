@@ -39,11 +39,11 @@ public class ListarEventoAction extends DispatchAction {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        JOptionPane.showMessageDialog(null, "INCORRECTO!!");
         LinkedList <Evento> listaEventos;
         listaEventos=nEvento.listarEventosDB();
-        for(int i=0; i<listaEventos.size();i++){
-            JOptionPane.showMessageDialog(null, listaEventos.get(i).getIdEvento());
+        //si la lista es null se debe de mostrar un mensaje porque ocurre un error
+        if(listaEventos==null){
+            JOptionPane.showMessageDialog(null, "La lista de eventos no se pudo caragr por error en la base");
         }
         request.setAttribute("listaEventos", listaEventos);
         return mapping.getInputForward();

@@ -9,15 +9,17 @@ import com.culturaPococi.negocio.NegocioAnuncio;
 import java.util.LinkedList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import org.apache.struts.actions.DispatchAction;
 
 /**
  *
  * @author Moa
  */
-public class EliminarAnuncioAction extends org.apache.struts.action.Action {
+public class EliminarAnuncioAction extends DispatchAction {
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
@@ -36,13 +38,18 @@ public class EliminarAnuncioAction extends org.apache.struts.action.Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        
+        boolean accionRealizada;
         int idAnuncio=Integer.parseInt(request.getParameter("idAnuncio"));
         LinkedList<Anuncio> listaAnuncios;
         
-        nAnuncio.eliminarAnuncioDB(idAnuncio);
+        accionRealizada=nAnuncio.eliminarAnuncioDB(idAnuncio);
         
         listaAnuncios=nAnuncio.listarAnunciosDB();
+        
+        //hay que mostrar un mensaje de error
+        if(accionRealizada==false || listaAnuncios==null){
+            JOptionPane.showMessageDialog(null, "Error al cargar la lista de anuncios o eliminar un anuncio");
+        }
         request.setAttribute("listaAnuncios", listaAnuncios);
         
         return mapping.getInputForward();

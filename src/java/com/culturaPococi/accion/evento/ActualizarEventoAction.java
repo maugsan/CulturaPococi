@@ -42,21 +42,31 @@ public class ActualizarEventoAction extends DispatchAction {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        JOptionPane.showMessageDialog(null, "actualizar");
-        LinkedList<Categoria> listaCategorias=new LinkedList<Categoria>();
-        EventoForm formu=(EventoForm) form;
-       Evento evento=new Evento(formu.getIdEvento(), 
-                                formu.getIdCategoria(), 
-                                "", 
-                                formu.getLugar(), 
-                                formu.getNombre(), "","",
-                                //formu.getFecha(),
-                                //formu.getHora(),
-                                formu.getInformacion(), 
-                                "ybarboza27@gmail.com","");
-       nEvento.actualizarEventosDB(evento);
-       
-       listaCategorias=nCategoria.selectCategoriasDB();
+        
+        boolean accionRealizadaEvento;
+        LinkedList<Categoria> listaCategorias;
+        EventoForm formu = (EventoForm) form;
+        Evento evento = new Evento(formu.getIdEvento(),
+                formu.getIdCategoria(),
+                "",
+                formu.getLugar(),
+                formu.getNombre(), "", "",
+                //formu.getFecha(),
+                //formu.getHora(),
+                formu.getInformacion(),
+                "ybarboza27@gmail.com", "");
+        accionRealizadaEvento=nEvento.actualizarEventosDB(evento);
+        
+        if(!accionRealizadaEvento){
+            //hay que mostrar un mensaje de que no se pudo actualizar el evento
+            JOptionPane.showMessageDialog(null, "El evento no se pudo cargar");
+        }
+        
+        listaCategorias = nCategoria.selectCategoriasDB();
+        if(listaCategorias==null){
+            //hay que mostrar un mensaje de que no se pudo actualizar el evento
+            JOptionPane.showMessageDialog(null, "La lista de categorias no se pudo cargar");
+        }
         
         request.setAttribute("listaCategorias", listaCategorias);
         request.setAttribute("evento", evento);

@@ -8,11 +8,19 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
+        <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
+        <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+
+        <link rel="stylesheet" href="./assets/css/estilos.css" type="text/css" />
+        <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+    
+        <title><bean:message key="exitoso"/></title>
     </head>
     <body>
-        <h1>Login Exitos!o</h1>
+        <h1><bean:message key="evento.exitoso"/></h1>
         <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
         
         <logic:redirect  forward="dashboard"/>

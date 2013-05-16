@@ -9,6 +9,7 @@ import com.culturaPococi.negocio.NegocioAnuncio;
 import java.util.LinkedList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
@@ -38,13 +39,18 @@ public class CrearAnuncioAction extends DispatchAction {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         
+        boolean accionRealizada;
         AnuncioForm formu=(AnuncioForm) form;
         Anuncio anuncio=new Anuncio(formu.getTitulo(),null,formu.getPrioridad(),formu.getIdAnuncio());
         
         LinkedList listaPrioridades = new LinkedList();
         listaPrioridades = nAnuncio.listarPrioridadesDB();
         
-        nAnuncio.crearAnuncioDB(anuncio);
+        accionRealizada=nAnuncio.crearAnuncioDB(anuncio);
+        
+        if(accionRealizada==false || listaPrioridades==null){
+            JOptionPane.showMessageDialog(null, "ocurrio un error al cargar la base de datos");
+        }
         
         request.setAttribute("listaPrioridades", listaPrioridades);
         return mapping.getInputForward();

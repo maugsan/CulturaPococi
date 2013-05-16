@@ -29,12 +29,11 @@
 
             <html:form action="/crear_evento"  >
                 
-                
-                
                 <h1><bean:message key="form.evento.crear"/></h1>
                 
                 <h2><bean:message key="form.nombre"/></h2>
                 <html:text  name="EventoForm" property="nombre" size="16" value=""/><br>
+                <html:errors property="enombre"/> 
                 
                 <h2><bean:message key="form.categoria"/></h2>
                 <html:select property="idCategoria">
@@ -47,14 +46,22 @@
                 
                 <h2><bean:message key="form.lugar"/></h2>
                 <html:text  name="EventoForm" property="lugar" size="16" value=""/><br>
+                <html:errors property="elugar"/> 
                 
                 <h2><bean:message key="form.informacion"/></h2>
-                
                 <html:textarea name="EventoForm" property="informacion" /><br>
-                <html:submit value="Crear" />
-
+                <html:errors property="einformacion"/> 
+                
+                <html:submit value="Crear" /><br>
+               
+                
+                   
             </html:form>
-            <html:errors/>
+                 <a href="./listar_evento.do">
+                    <button id="boton-volver">
+                        <bean:message key="boton.volver"/>
+                    </button>
+                </a>
 
         </div> 
 

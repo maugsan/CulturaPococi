@@ -69,16 +69,21 @@
                 scope="request" 
                 type="com.culturaPococi.accion.evento.ListarEventoAction"
                 parameter="metodo"
-                validate="false"
+                validate="false">
                 
-        />
+                <forward name="denegado" path="/includes/denegado.jsp" />
+       
+        </action>
         <action path="/eliminar_evento" 
                 type="com.culturaPococi.accion.evento.EliminarEventoAction"
                 input="/evento/index.jsp" 
                 scope="request"
                 parameter="metodo"
-                validate="false" 
-        />
+                validate="false" >
+                
+                <forward name="denegado" path="/includes/denegado.jsp" />
+       
+        </action>
         
         <action path="/modificar_evento" 
                 type="com.culturaPococi.accion.evento.ModificarEventoAction"
@@ -86,30 +91,45 @@
                 scope="request"
                 parameter="metodo"
                 validate="false" 
-                name="EventoForm"
-        />
+                name="EventoForm">
+                
+                <forward name="exitoso" path="/includes/exitoso.jsp" />
+                <forward name="denegado" path="/includes/denegado.jsp" />
+       
+        </action>
         <action path="/crear_evento" 
                 type="com.culturaPococi.accion.evento.CrearEventoAction"
                 input="/evento/crear_evento.jsp"
                 scope="request"
                 validate="true" 
-                name="EventoForm"
-        />
+                name="EventoForm">
+                
+                <forward name="exitoso" path="/includes/exitoso.jsp" />
+                <forward name="denegado" path="/includes/denegado.jsp" />
+       
+        </action>
         
          <action input="/evento/modificar_evento.jsp" 
                  name="EventoForm" 
                  path="/actualizar_evento" 
                  scope="request" 
                  validate="false" 
-                 type="com.culturaPococi.accion.evento.ActualizarEventoAction"/>
-         
+                 type="com.culturaPococi.accion.evento.ActualizarEventoAction">
+                
+                <forward name="exitoso" path="/includes/exitoso.jsp" />
+                <forward name="denegado" path="/includes/denegado.jsp" />
+       
+        </action>
          <action path="/listar_categorias" 
                  input="/evento/crear_evento.jsp" 
                  name="EventoForm"
                  scope="request" 
                  validate="false" 
-                 type="com.culturaPococi.accion.evento.ListarCategoriasAction"/>
+                 type="com.culturaPococi.accion.evento.ListarCategoriasAction">
+                
+                <forward name="denegado" path="/includes/denegado.jsp" />
        
+        </action>
         <!-- FIN EVENTO  -->
         
         <!-- INICIO ANUNCIOS  -->
@@ -123,16 +143,23 @@
                 input="/anuncio/index.jsp" 
                 scope="request" 
                 validate="false"
-                type="com.culturaPococi.accion.anuncio.EliminarAnuncioAction"
-        />
+                type="com.culturaPococi.accion.anuncio.EliminarAnuncioAction">
+                
+                <forward name="denegado" path="/includes/denegado.jsp" />
+       
+        </action>
         
         <action path="/crear_anuncio" 
                 scope="request" 
                 validate="true"
                 name="AnuncioForm" 
                 input="/anuncio/crear_anuncio.jsp" 
-                type="com.culturaPococi.accion.anuncio.CrearAnuncioAction"
-        />
+                type="com.culturaPococi.accion.anuncio.CrearAnuncioAction">
+                
+                <forward name="exitoso" path="/includes/exitoso.jsp" />
+                <forward name="denegado" path="/includes/denegado.jsp" />
+       
+        </action>
         
         <action path="/listar_prioridades" 
                 scope="request" 

@@ -19,9 +19,8 @@ public class NegocioCategoria {
     
     DataCategoria dCategoria=new DataCategoria();
      public LinkedList<Categoria> selectCategoriasDB() throws SQLException{
-        LinkedList <Categoria> listaCategoria;
-        listaCategoria=dCategoria.selectCategorias();
-        return listaCategoria;
+         
+        return dCategoria.selectCategorias();
     }//fin selectCategoriasDB
      
      public LinkedList<Categoria> selectCategoriasOrdenadasDB(int idCategoria) throws SQLException{

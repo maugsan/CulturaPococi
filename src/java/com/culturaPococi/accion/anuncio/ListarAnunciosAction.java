@@ -10,6 +10,7 @@ import com.culturaPococi.negocio.NegocioAnuncio;
 import java.util.LinkedList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
@@ -44,6 +45,10 @@ public class ListarAnunciosAction extends DispatchAction {
         LinkedList<Anuncio> listaAnuncios;
         
         listaAnuncios=nAnuncio.listarAnunciosDB();
+        //hay que mostrar un mensaje de error
+        if(listaAnuncios==null){
+            JOptionPane.showMessageDialog(null, "Error al cargar la lista de anuncios");
+        }
         request.setAttribute("listaAnuncios", listaAnuncios);
         return mapping.getInputForward();
     }

@@ -4,6 +4,10 @@
  */
 package com.culturaPococi.accion.evento;
 
+import com.culturaPococi.negocio.NegocioCategoria;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.swing.JOptionPane;
 
@@ -28,6 +32,8 @@ public class EventoForm extends org.apache.struts.action.ActionForm {
     //private String nombreCategoria;
 
     //private String imagen;
+    
+    NegocioCategoria nCategoria=new NegocioCategoria();
     
 //    public String getNombreCategoria() {
 //        return nombreCategoria;
@@ -105,9 +111,18 @@ public class EventoForm extends org.apache.struts.action.ActionForm {
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
         ActionErrors errors = new ActionErrors();
         if (getNombre() == null || getNombre().length() < 1) {
-            //errors.add("nombre", new ActionMessage("Falta nombre"));  //arreglar
-            // TODO: add 'error.name.required' key to your resources
-            JOptionPane.showMessageDialog(null, "formu");
+            errors.add("enombre", new ActionMessage("evento.error.nombre"));  //arreglar
+        }
+        if (getNombre() == null || getNombre().length() < 1) {
+            errors.add("elugar", new ActionMessage("evento.error.lugar"));  //arreglar
+        }
+        if (getNombre() == null || getNombre().length() < 1) {
+            errors.add("einformacion", new ActionMessage("evento.error.informacion"));  //arreglar
+        }
+        try {        
+            request.setAttribute("listaCategorias", nCategoria.selectCategoriasDB());
+        } catch (SQLException ex) {
+            Logger.getLogger(EventoForm.class.getName()).log(Level.SEVERE, null, ex);
         }
         return errors;
     }

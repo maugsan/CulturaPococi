@@ -38,10 +38,13 @@ public class ListarCategoriasAction extends DispatchAction {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        JOptionPane.showMessageDialog(null, "listar");
-        LinkedList<Categoria> listaCategorias=new LinkedList<Categoria>();
-        listaCategorias=nCategoria.selectCategoriasDB();
         
+        LinkedList<Categoria> listaCategorias;
+        listaCategorias=nCategoria.selectCategoriasDB();
+        //mostrar un mensaje si las categorias no se puden cargar
+        if(listaCategorias==null){
+            JOptionPane.showMessageDialog(null, "La lista de categorias no se pudo cargar");
+        }
         request.setAttribute("listaCategorias", listaCategorias);
         return mapping.getInputForward();
     }
