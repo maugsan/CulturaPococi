@@ -113,7 +113,7 @@
                  name="EventoForm" 
                  path="/actualizar_evento" 
                  scope="request" 
-                 validate="false" 
+                 validate="true" 
                  type="com.culturaPococi.accion.evento.ActualizarEventoAction">
                 
                 <forward name="exitoso" path="/includes/exitoso.jsp" />

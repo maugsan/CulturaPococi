@@ -36,7 +36,7 @@
                 <html:errors property="enombre"/> 
                 
                 <h2><bean:message key="form.categoria"/></h2>
-                <html:select property="idCategoria">
+                <html:select property="idCategoria" >
                     <logic:iterate name="listaCategorias" id="numero" >
                         <html:option value="${numero.idCategoria}"> <!-- esto es para que cuando elija el nombre me envie el numero !-->
                             <bean:write name="numero" property="nombreCategoria"/>
@@ -49,7 +49,7 @@
                 <html:errors property="elugar"/> 
                 
                 <h2><bean:message key="form.informacion"/></h2>
-                <html:textarea name="EventoForm" property="informacion" /><br>
+                <html:textarea name="EventoForm" property="informacion" cols="44" rows="5" /><br>
                 <html:errors property="einformacion"/> 
                 
                 <html:submit value="Crear" /><br>
