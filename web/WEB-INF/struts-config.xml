@@ -7,6 +7,7 @@
 
 <struts-config>
     <form-beans>
+        
         <form-bean name="AnuncioForm" 
                    type="com.culturaPococi.accion.anuncio.AnuncioForm"
         />

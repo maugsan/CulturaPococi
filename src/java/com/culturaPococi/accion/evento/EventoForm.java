@@ -5,6 +5,7 @@
 package com.culturaPococi.accion.evento;
 
 import com.culturaPococi.negocio.NegocioCategoria;
+import com.culturaPococi.negocio.NegocioEvento;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -34,6 +35,7 @@ public class EventoForm extends org.apache.struts.action.ActionForm {
     //private String imagen;
     
     NegocioCategoria nCategoria=new NegocioCategoria();
+    NegocioEvento nEvento=new NegocioEvento();
     
 //    public String getNombreCategoria() {
 //        return nombreCategoria;
@@ -112,15 +114,17 @@ public class EventoForm extends org.apache.struts.action.ActionForm {
         ActionErrors errors = new ActionErrors();
         if (getNombre() == null || getNombre().length() < 1) {
             errors.add("enombre", new ActionMessage("evento.error.nombre"));  //arreglar
+            JOptionPane.showMessageDialog(null, "falta nombre");
         }
-        if (getNombre() == null || getNombre().length() < 1) {
+        if (getLugar() == null || getLugar().length() < 1) {
             errors.add("elugar", new ActionMessage("evento.error.lugar"));  //arreglar
         }
-        if (getNombre() == null || getNombre().length() < 1) {
+        if (getInformacion() == null || getInformacion().length() < 1) {
             errors.add("einformacion", new ActionMessage("evento.error.informacion"));  //arreglar
         }
         try {        
             request.setAttribute("listaCategorias", nCategoria.selectCategoriasDB());
+            request.setAttribute("evento", nEvento.selectEventoDB(idEvento));
         } catch (SQLException ex) {
             Logger.getLogger(EventoForm.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -35,6 +35,7 @@
                 
                 <h2><bean:message key="form.nombre"/></h2>
                 <html:text  name="EventoForm" property="nombre" size="16" value="${evento.nombre}"/><br>
+                <html:errors property="enombre"/> 
                 
                 <h2><bean:message key="form.categoria"/></h2>
                 <html:select property="idCategoria">
@@ -47,9 +48,12 @@
                 
                 <h2><bean:message key="form.lugar"/></h2>
                 <html:text  name="EventoForm" property="lugar" size="16" value="${evento.lugar}"/><br>
+                <html:errors property="elugar"/> 
                 
-                <h2><bean:message key="form.informacion"/></h2>     
-                <html:textarea name="EventoForm" property="informacion" value="${evento.informacion}" /><br>
+                <h2><bean:message key="form.informacion"/></h2>
+                <html:textarea name="EventoForm" property="informacion" cols="44" rows="5" value="${evento.informacion}" /><br>
+                <html:errors property="einformacion"/> 
+                
                 <html:hidden  name="EventoForm" property="idEvento" value="${evento.idEvento}"/>
                 <html:hidden  name="EventoForm" property="correo" value="${evento.correo}"/>
                 <html:hidden  name="EventoForm" property="idCategoria" value="${evento.idCategoria}"/>
@@ -62,8 +66,6 @@
                         <bean:message key="boton.volver"/>
                     </button>
                 </a>
-            <html:errors/>
-            <html:errors/>
 
         </div> 
 
