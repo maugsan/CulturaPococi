@@ -43,16 +43,25 @@ public class CrearAnuncioAction extends DispatchAction {
         AnuncioForm formu=(AnuncioForm) form;
         Anuncio anuncio=new Anuncio(formu.getTitulo(),null,formu.getPrioridad(),formu.getIdAnuncio());
         
-        LinkedList listaPrioridades = new LinkedList();
-        listaPrioridades = nAnuncio.listarPrioridadesDB();
+        //LinkedList listaPrioridades = new LinkedList();
+        //listaPrioridades = nAnuncio.listarPrioridadesDB();
         
         accionRealizada=nAnuncio.crearAnuncioDB(anuncio);
         
-        if(accionRealizada==false || listaPrioridades==null){
+        if(accionRealizada==false){
             JOptionPane.showMessageDialog(null, "ocurrio un error al cargar la base de datos");
         }
         
-        request.setAttribute("listaPrioridades", listaPrioridades);
+        //request.setAttribute("listaPrioridades", listaPrioridades);
+        
+        LinkedList<Anuncio> listaAnuncios;
+        
+        listaAnuncios=nAnuncio.listarAnunciosDB();
+        //hay que mostrar un mensaje de error
+        if(listaAnuncios==null){
+            JOptionPane.showMessageDialog(null, "Error al cargar la lista de anuncios");
+        }
+        request.setAttribute("listaAnuncios", listaAnuncios);
         return mapping.getInputForward();
     }
 }

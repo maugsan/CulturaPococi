@@ -100,7 +100,7 @@
         </action>
         <action path="/crear_evento" 
                 type="com.culturaPococi.accion.evento.CrearEventoAction"
-                input="/evento/crear_evento.jsp"
+                input="/evento/index.jsp"
                 scope="request"
                 validate="true" 
                 name="EventoForm">
@@ -110,7 +110,7 @@
        
         </action>
         
-         <action input="/evento/modificar_evento.jsp" 
+         <action input="/evento/index.jsp" 
                  name="EventoForm" 
                  path="/actualizar_evento" 
                  scope="request" 
@@ -154,7 +154,7 @@
                 scope="request" 
                 validate="true"
                 name="AnuncioForm" 
-                input="/anuncio/crear_anuncio.jsp" 
+                input="/anuncio/index.jsp" 
                 type="com.culturaPococi.accion.anuncio.CrearAnuncioAction">
                 
                 <forward name="exitoso" path="/includes/exitoso.jsp" />

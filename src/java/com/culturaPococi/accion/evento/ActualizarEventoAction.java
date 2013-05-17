@@ -61,15 +61,23 @@ public class ActualizarEventoAction extends DispatchAction {
             //hay que mostrar un mensaje de que no se pudo actualizar el evento
             JOptionPane.showMessageDialog(null, "El evento no se pudo cargar");
         }
+//        
+//        listaCategorias = nCategoria.selectCategoriasDB();
+//        if(listaCategorias==null){
+//            //hay que mostrar un mensaje de que no se pudo actualizar el evento
+//            JOptionPane.showMessageDialog(null, "La lista de categorias no se pudo cargar");
+//        }
         
-        listaCategorias = nCategoria.selectCategoriasDB();
-        if(listaCategorias==null){
-            //hay que mostrar un mensaje de que no se pudo actualizar el evento
-            JOptionPane.showMessageDialog(null, "La lista de categorias no se pudo cargar");
+        //request.setAttribute("listaCategorias", listaCategorias);
+        //request.setAttribute("evento", evento);
+        
+        LinkedList <Evento> listaEventos;
+        listaEventos=nEvento.listarEventosDB();
+        //si la lista es null se debe de mostrar un mensaje porque ocurre un error
+        if(listaEventos==null){
+            JOptionPane.showMessageDialog(null, "La lista de eventos no se pudo caragr por error en la base");
         }
-        
-        request.setAttribute("listaCategorias", listaCategorias);
-        request.setAttribute("evento", evento);
+        request.setAttribute("listaEventos", listaEventos);
         return mapping.getInputForward();
     }
 }

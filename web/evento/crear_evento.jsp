@@ -57,11 +57,7 @@
                 
                    
             </html:form>
-                 <a href="./listar_evento.do">
-                    <button id="boton-volver">
-                        <bean:message key="boton.volver"/>
-                    </button>
-                </a>
+                 
 
         </div> 
 

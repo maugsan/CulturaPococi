@@ -60,17 +60,25 @@ public class CrearEventoAction extends DispatchAction {
             // si la accion es false es que no se pudo crear el nuevo evento por loq ue hay que mostrar un mensaje
             JOptionPane.showMessageDialog(null, "El evento no se pudo crear por fallo en la base");
         }//fin if
-        LinkedList<Categoria> listaCategorias;
-        listaCategorias=nCategoria.selectCategoriasDB();
-        //mostrar un mensaje si las categorias no se puden cargar
-        if(listaCategorias==null){
-            JOptionPane.showMessageDialog(null, "La lista de categorias no se pudo cargar");
-        }
+//        LinkedList<Categoria> listaCategorias;
+//        listaCategorias=nCategoria.selectCategoriasDB();
+//        //mostrar un mensaje si las categorias no se puden cargar
+//        if(listaCategorias==null){
+//            JOptionPane.showMessageDialog(null, "La lista de categorias no se pudo cargar");
+//        }
         
         formu.setInformacion("");
         formu.setLugar("");
         formu.setNombre("");
-        request.setAttribute("listaCategorias", listaCategorias);
+        //request.setAttribute("listaCategorias", listaCategorias);
+        
+        LinkedList <Evento> listaEventos;
+        listaEventos=nEvento.listarEventosDB();
+        //si la lista es null se debe de mostrar un mensaje porque ocurre un error
+        if(listaEventos==null){
+            JOptionPane.showMessageDialog(null, "La lista de eventos no se pudo caragr por error en la base");
+        }
+        request.setAttribute("listaEventos", listaEventos);
         return mapping.getInputForward();
         
     }
