@@ -57,11 +57,37 @@
                 scope="request" 
                 type="com.culturaPococi.accion.usuarioNormal.MostrarUsuariosAction"/>
         
-       <action path="/mostrarperfiles" 
+             <!-- PERFIL  -->
+        <action path="/mostrarperfiles" 
                 type="com.culturaPococi.accion.perfil.MostrarPerfilesAction"
                 scope="request"
                 input="/perfil/index.jsp"
                 validate="false"/>
+       
+        <action path="/eliminar_perfil" 
+                type="com.culturaPococi.accion.perfil.EliminarPerfilAction"
+        >        
+            <forward name="success" path="/perfil/eliminar_perfil.jsp"/>
+                
+        </action>
+        
+        <action path="/modificar_perfil" type="com.culturaPococi.accion.perfil.ModificarPerfilAction"/>
+        <action path="/crear_perfil" type="com.culturaPococi.accion.perfil.CrearPerfilAction"/>
+        
+        <action path="/mostrar_perfil_seleccionado"
+                type="com.culturaPococi.accion.perfil.MostrarPerfilSeleccionadoAction"
+               />
+        
+        <!-- FIN PERFIL  -->
+        
+                <!-- PUBLICACION  -->
+                <action path="/mostrar_publicacion"
+                type="com.culturaPococi.accion.publicacion.MostrarPublicacionAction"
+                scope="request"
+                input="/publicacion/index.jsp"
+                validate="false"
+                />
+        <!-- FIN PUBLICACION  -->
        
        
         <!-- INICIO EVENTO  -->
@@ -196,7 +222,7 @@
             
         <forward name="success" path="/usuario/eliminar_usuarionormal.jsp"/>    
         </action>
-        
+      
        
         
         
@@ -213,18 +239,9 @@
         
         
         
+    
         
         
-        
-        
-        <action path="/eliminar_perfil" 
-                type="com.culturaPococi.accion.perfil.EliminarPerfilAction"
-                
-        />
-        
-        
-        <action path="/modificar_perfil" type="com.culturaPococi.accion.perfil.ModificarPerfilAction"/>
-        <action path="/crear_perfil" type="com.culturaPococi.accion.perfil.CrearPerfilAction"/>
         <action path="/eliminar_boletin" type="com.culturaPococi.accion.boletin.EliminarBoletinAction"/>
         <action path="/crear_boletin" type="com.culturaPococi.accion.boletin.CrearBoletinAction"/>
        

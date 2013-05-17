@@ -9,6 +9,7 @@ package com.culturaPococi.dominio;
  * @author jonathan
  */
 public class Perfil {
+    
 
     private String nombrePerfil;
     private String nombreCategoria;
@@ -19,6 +20,8 @@ public class Perfil {
     private String nombreDistrito;
 
     public Perfil(String nombrePerfil, String nombreCategoria, String fechaDeCreacion,String biografia, String imagenDePortada, String correo, String nombreDistrito) {
+        
+        
         this.nombrePerfil = nombrePerfil;
         this.nombreCategoria = nombreCategoria;
         this.fechaDeCreacion = fechaDeCreacion;
@@ -27,7 +30,7 @@ public class Perfil {
         this.correo = correo;
         this.nombreDistrito = nombreDistrito;
     }
-
+ 
     public String getNombrePerfil() {
         return nombrePerfil;
     }

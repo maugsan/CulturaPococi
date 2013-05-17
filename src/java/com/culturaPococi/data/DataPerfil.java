@@ -6,13 +6,11 @@
 package com.culturaPococi.data;
 
 import com.culturaPococi.dominio.Perfil;
-import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.LinkedList;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -23,10 +21,7 @@ public class DataPerfil extends DataBase {
     public void eliminarPerfil(String nombrePerfil) throws SQLException {
 
         String sql = "call pEliminar_perfiles('" + nombrePerfil + "');";
-                    //call eliminar_perfiles("Meli");
-         
-        JOptionPane.showMessageDialog(null, " sql :" + sql);
-        
+                             
         Connection conexion = super.getConexion();
         
         Statement statement = conexion.createStatement(); 
