@@ -2,12 +2,12 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package com.culturaPococi.accion.perfil;
 
 import com.culturaPococi.negocio.NegocioPerfil;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.JOptionPane;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
@@ -41,8 +41,6 @@ public class EliminarPerfilAction extends DispatchAction {
         np = new NegocioPerfil();
         String nombre = request.getParameter("nombrePerfil");
 
-        JOptionPane.showMessageDialog(null, nombre);
-        
         np.eliminarPerfil(nombre);
 
         return mapping.findForward(SUCCESS);

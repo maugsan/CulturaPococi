@@ -27,14 +27,7 @@
                     <ul>
 
                         <li><a href="./dashboard.jsp" >INICIO</a></li>
-                        <li><a href="./usuario/">USUARIOS</a></li>
-                        <li><a href="./perfil/">PERFILES</a> </li>
-                        <li><a href="./evento">EVENTOS</a> </li>
-                        <li><a href="./categoria">CATEGORIAS</a></li>
-                        <li><a href="./boletin">BOLETINES</a></li>
-                        <li><a href="./anuncio">ANUNCIOS</a></li>
-                        <li><a href="./programaradio">PROGRAMAS</a></li>
-                        <li><a href="./publicacion">PUBLICACIONES</a></li>
+                      
 
                     </ul>
 
@@ -95,7 +88,7 @@
                                             <img id="icono" src="assets/img/radio-icon.png" width="60">
                                             <h2>Programas de Radio</h2>
                                         </section></a>
-                                    <a href="./publicacion/"> <section class="modulo">
+                                    <a href="./publicacion/index.jsp"> <section class="modulo">
                                             <img id="icono" src="assets/img/publicacion-icon.png" width="60">
                                             <h2>Publicación</h2>
                                         </section></a>

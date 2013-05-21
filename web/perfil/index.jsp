@@ -47,17 +47,20 @@
                             <%-- Inicio Elemento  --%>
                             <div id="elemento">
 
-                                <%-- href="action.do?metodo(mostrar)= ${perfilTemporal.idPerfil}" --%>
-                                <a href=""> <div id="link-detalle-elemento"><div id="elemento-imagen"><img src="../assets/img/perfil-icon.png" width="30"/></div>
-                                        <p  value="${perfilTemporal.nombrePerfil}" id="elemento-nombre"> 
-                                            ${perfilTemporal.nombrePerfil}
-                                            ${perfilTemporal.nombreCategoria}
-                                            ${perfilTemporal.fechaDeCreacion}
-                                            ${perfilTemporal.biografia}
-                                            ${perfilTemporal.imagenDePortada}
-                                            ${perfilTemporal.correo}
-                                            ${perfilTemporal.nombreDistrito}
-                                        </p></div></a>
+                                <%-- href="../mostrar_perfil_seleccionado.do?idPerfil= ${perfilTemporal.idPerfil}" --%>
+                                
+                                <a href="../mostrar_perfil_seleccionado.do?nombrePerfil=${perfilTemporal.nombrePerfil}"> <div id="link-detalle-elemento"><div id="elemento-imagen"><img src="../assets/img/perfil-icon.png" width="30"/></div>
+                                        
+                                        <p id="elemento-nombre"> ${perfilTemporal.nombrePerfil}</p> 
+                                        <BR>
+                                        <p id="elemento-categoria" > ${perfilTemporal.nombreCategoria}</p>
+
+                                        <%--  ${perfilTemporal.biografia}
+                                         ${perfilTemporal.fechaDeCreacion}
+                                         ${perfilTemporal.imagenDePortada}
+                                         ${perfilTemporal.correo}
+                                         ${perfilTemporal.nombreDistrito}--%>
+                                    </div></a>
                                 <a href="../eliminar_perfil.do?nombrePerfil=${perfilTemporal.nombrePerfil}"><div id="elemento-icon"><img src="../assets/img/delete-icon.png" width="30"/></div></a>   
 
                             </div>

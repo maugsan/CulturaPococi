@@ -4,7 +4,6 @@
  */
 package com.culturaPococi.accion.evento;
 
-import com.culturaPococi.dominio.Categoria;
 import com.culturaPococi.dominio.Evento;
 import com.culturaPococi.negocio.NegocioCategoria;
 import com.culturaPococi.negocio.NegocioEvento;
@@ -43,6 +42,7 @@ public class CrearEventoAction extends DispatchAction {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         boolean accionRealizada;
+        String nombrejsp="";
         EventoForm formu=(EventoForm) form;
         Evento evento=new Evento(0, 
                                 formu.getIdCategoria(), 
@@ -55,22 +55,15 @@ public class CrearEventoAction extends DispatchAction {
                                 "","");
                                 
                                 //formu.getImagen()
+        
         accionRealizada=nEvento.crearEventosDB(evento);
         if(!accionRealizada){
             // si la accion es false es que no se pudo crear el nuevo evento por loq ue hay que mostrar un mensaje
             JOptionPane.showMessageDialog(null, "El evento no se pudo crear por fallo en la base");
         }//fin if
-//        LinkedList<Categoria> listaCategorias;
-//        listaCategorias=nCategoria.selectCategoriasDB();
-//        //mostrar un mensaje si las categorias no se puden cargar
-//        if(listaCategorias==null){
-//            JOptionPane.showMessageDialog(null, "La lista de categorias no se pudo cargar");
-//        }
-        
         formu.setInformacion("");
         formu.setLugar("");
         formu.setNombre("");
-        //request.setAttribute("listaCategorias", listaCategorias);
         
         LinkedList <Evento> listaEventos;
         listaEventos=nEvento.listarEventosDB();
@@ -79,7 +72,8 @@ public class CrearEventoAction extends DispatchAction {
             JOptionPane.showMessageDialog(null, "La lista de eventos no se pudo caragr por error en la base");
         }
         request.setAttribute("listaEventos", listaEventos);
-        return mapping.getInputForward();
+        request.setAttribute("listaCategorias", nCategoria.selectCategoriasDB());
         
+        return mapping.getInputForward();
     }
 }

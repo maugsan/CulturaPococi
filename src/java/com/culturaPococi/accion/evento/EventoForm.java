@@ -118,13 +118,16 @@ public class EventoForm extends org.apache.struts.action.ActionForm {
         }
         if (getLugar() == null || getLugar().length() < 1) {
             errors.add("elugar", new ActionMessage("evento.error.lugar"));  //arreglar
+            JOptionPane.showMessageDialog(null, "falta lugar");
         }
         if (getInformacion() == null || getInformacion().length() < 1) {
             errors.add("einformacion", new ActionMessage("evento.error.informacion"));  //arreglar
+            JOptionPane.showMessageDialog(null, "falta info");
         }
         try {        
             request.setAttribute("listaCategorias", nCategoria.selectCategoriasDB());
             request.setAttribute("evento", nEvento.selectEventoDB(idEvento));
+            request.setAttribute("listaEventos", nEvento.listarEventosDB());
         } catch (SQLException ex) {
             Logger.getLogger(EventoForm.class.getName()).log(Level.SEVERE, null, ex);
         }

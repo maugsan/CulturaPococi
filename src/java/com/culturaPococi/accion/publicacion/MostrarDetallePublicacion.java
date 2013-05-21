@@ -4,20 +4,25 @@
  */
 package com.culturaPococi.accion.publicacion;
 
+import com.culturaPococi.dominio.Publicacion;
+import com.culturaPococi.negocio.NegocioPublicacion;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import org.apache.struts.actions.DispatchAction;
 
 /**
  *
- * @author Moa
+ * @author Personal
  */
-public class EliminarPublicacionAction extends org.apache.struts.action.Action {
+public class MostrarDetallePublicacion extends DispatchAction {
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
+    NegocioPublicacion nPublicidad=new NegocioPublicacion();
 
     /**
      * This is the action called from the Struts framework.
@@ -33,7 +38,15 @@ public class EliminarPublicacionAction extends org.apache.struts.action.Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
+        Publicacion publicacion;
+        JOptionPane.showMessageDialog(null, "inicio mostrar detalle");
+        int idPublicacion=Integer.parseInt(request.getParameter("idPublicacion"));
+        JOptionPane.showMessageDialog(null, "idpublicacion: "+idPublicacion);
         
-        return mapping.findForward(SUCCESS);
+        publicacion=nPublicidad.getPublicacion(idPublicacion);
+        
+        request.setAttribute("publicacion", publicacion);
+        JOptionPane.showMessageDialog(null, "publicacion1: "+publicacion.getIdPublicacion());
+        return mapping.findForward("publicacionMusica");
     }
 }

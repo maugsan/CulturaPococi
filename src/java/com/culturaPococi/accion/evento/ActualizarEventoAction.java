@@ -81,3 +81,45 @@ public class ActualizarEventoAction extends DispatchAction {
         return mapping.getInputForward();
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+//<section id="lista-elementos">
+//
+//                        <logic:iterate  name="listaPublicacion" id="publicacionTemporal" >
+//
+//                            <%-- Inicio Elemento  --%>
+//                            <div id="elemento">
+//
+//                                <%-- href="action.do?metodo(mostrar)= ${perfilTemporal.idPerfil}" --%>
+//                                <a href=""> <div id="link-detalle-elemento"><div id="elemento-imagen"><img src="../assets/img/perfil-icon.png" width="30"/></div>
+//
+//                                        <p id="elemento-nombre"> ${publicacionTemporal.nombrePerfil}</p> 
+//                                        <br>
+//                                        <p id="elemento-categoria">${publicacionTemporal.nombreCategoria}</p>
+//                                        <br>
+//                                        <p id="elemento-categoria">${publicacionTemporal.musica}</p>
+//                                        <br>
+//                                        <p id="elemento-categoria">${publicacionTemporal.video}</p>
+//                                        <br>
+//                                        <p id="elemento-categoria">${publicacionTemporal.imagen}</p>
+//
+//                                    </div></a>
+//                                    <%-- <a href="../eliminar_perfil.do?nombrePerfil=${publicacionTemporal.idPublicacion}"><div id="elemento-icon"><img src="../assets/img/delete-icon.png" width="30"/></div></a> --%>  
+//
+//                            </div>
+//                            <%-- FIN Elemento   ${perfilTemporal.nombrePerfil} --%> 
+//
+//                        </logic:iterate>
+//
+//                    </section>

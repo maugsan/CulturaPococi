@@ -485,6 +485,17 @@ input[type="submit"] {
 
 }
 
+select { 
+    font-family: Georgia; 
+    font-size: 16px; 
+    color: #3a3a3a;
+    border: 0 none; 
+    padding: 5px; 
+    width:200px;
+    height: 30px;
+}
+
+
 input[type="file"]  {
 
     height: 45px;
@@ -541,6 +552,50 @@ input[type="textarea"] {
     margin:  10px;
     padding: 10px;
 }
+
+#listaPublicacion {
+    width:600px; 
+    height: 40px;
+    color: #333;
+    border: solid 1px #ccc;
+    background: #f0f0f0;
+    margin:  10px;
+    padding: 10px;
+    font-size: 22;
+}
+#listaTipoPublicacion {
+    width:600px; 
+    height: 80px;
+    color: #333;
+    border: solid 1px #ccc;
+    background: #f0f0f0;
+    margin:  10px;
+    padding: 10px;
+    font-size: 22;
+}
+
+#elemento-listaPublicacion {
+    width:600px; 
+    height: 120px;
+    color: #333;
+    border: solid 1px #ccc;
+    background: #00FFFF;
+    margin:  10px;
+    padding: 10px;
+    font-size: 22;
+}
+
+#elemento-publicacion-musica {
+    width:600px; 
+    height: 250px;
+    color: #333;
+    border: solid 1px #ccc;
+    background: #00FFFF;
+    margin:  10px;
+    padding: 10px;
+    font-size: 22;
+}
+
 
 
 #elemento-icon {

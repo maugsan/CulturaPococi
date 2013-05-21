@@ -8,7 +8,6 @@ import com.culturaPococi.data.DataPerfil;
 import com.culturaPococi.dominio.Perfil;
 import java.sql.SQLException;
 import java.util.LinkedList;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -23,9 +22,7 @@ public class NegocioPerfil {
     }
 
     public void eliminarPerfil(String nombrePerfil) throws SQLException {
-        JOptionPane.showMessageDialog(null, " negocio " + nombrePerfil);
         dp.eliminarPerfil(nombrePerfil);
-
     }
     
     public LinkedList<Perfil> getListaPerfil() throws SQLException{

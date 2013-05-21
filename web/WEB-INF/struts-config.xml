@@ -7,6 +7,7 @@
 
 <struts-config>
     <form-beans>
+        <form-bean name="FormularioTipoPublicacion" type="com.culturaPococi.accion.publicacion.FormularioTipoPublicacion"/>
         
         <form-bean name="AnuncioForm" 
                    type="com.culturaPococi.accion.anuncio.AnuncioForm"
@@ -57,11 +58,37 @@
                 scope="request" 
                 type="com.culturaPococi.accion.usuarioNormal.MostrarUsuariosAction"/>
         
-       <action path="/mostrarperfiles" 
+             <!-- PERFIL  -->
+        <action path="/mostrarperfiles" 
                 type="com.culturaPococi.accion.perfil.MostrarPerfilesAction"
                 scope="request"
                 input="/perfil/index.jsp"
                 validate="false"/>
+       
+        <action path="/eliminar_perfil" 
+                type="com.culturaPococi.accion.perfil.EliminarPerfilAction"
+        >        
+            <forward name="success" path="/perfil/eliminar_perfil.jsp"/>
+                
+        </action>
+        
+        <action path="/modificar_perfil" type="com.culturaPococi.accion.perfil.ModificarPerfilAction"/>
+        <action path="/crear_perfil" type="com.culturaPococi.accion.perfil.CrearPerfilAction"/>
+        
+        <action path="/mostrar_perfil_seleccionado"
+                type="com.culturaPococi.accion.perfil.MostrarPerfilSeleccionadoAction"
+               />
+        
+        <!-- FIN PERFIL  -->
+        
+                <!-- PUBLICACION  -->
+                <action path="/mostrar_publicacion"
+                type="com.culturaPococi.accion.publicacion.MostrarPublicacionAction"
+                scope="request"
+                input="/publicacion/index.jsp"
+                validate="false"
+                />
+        <!-- FIN PUBLICACION  -->
        
        
         <!-- INICIO EVENTO  -->
@@ -100,25 +127,20 @@
         </action>
         <action path="/crear_evento" 
                 type="com.culturaPococi.accion.evento.CrearEventoAction"
-                input="/evento/index.jsp"
+                input="/evento/crear_evento.jsp" 
                 scope="request"
                 validate="true" 
                 name="EventoForm">
                 
-                <forward name="exitoso" path="/includes/exitoso.jsp" />
-                <forward name="denegado" path="/includes/denegado.jsp" />
        
         </action>
         
-         <action input="/evento/index.jsp" 
-                 name="EventoForm" 
+         <action name="EventoForm" 
                  path="/actualizar_evento" 
                  scope="request" 
                  validate="true" 
+                 input="/evento/modificar_evento.jsp"
                  type="com.culturaPococi.accion.evento.ActualizarEventoAction">
-                
-                <forward name="exitoso" path="/includes/exitoso.jsp" />
-                <forward name="denegado" path="/includes/denegado.jsp" />
        
         </action>
          <action path="/listar_categorias" 
@@ -169,7 +191,48 @@
                 input="/anuncio/crear_anuncio.jsp" 
                 type="com.culturaPococi.accion.anuncio.ListarPrioridadesAction"/>
         <!-- FIN ANUNCIOS  -->
+        
+        <!-- Publicaciones  -->
      
+        <action input="/publicacion/aprobar_publicacion.jsp" 
+                name="AnuncioForm" 
+                path="/listar_tipo_publicacion" 
+                scope="request" 
+                type="com.culturaPococi.accion.publicacion.ListarTipoPublicacionAction"
+        />
+        
+        <action input="/publicacion/lista_pendientes.jsp" 
+                path="/listar_publicaciones_pendientes" 
+                scope="request" 
+                validate="false"
+                type="com.culturaPococi.accion.publicacion.ListarPublicacionesPendientesAction"
+        />
+        <action validate="false"
+                path="/mostrar_detalle_publicacion" 
+                scope="request" 
+                type="com.culturaPococi.accion.publicacion.MostrarDetallePublicacion">
+                
+                <forward name="publicacionMusica" path="/publicacion/publicacion_musica.jsp" />
+                <forward name="denegado" path="/includes/denegado.jsp" />
+       
+        </action>
+        
+        <action path="/aceptar_publicacion" 
+                scope="request"
+                validate="false"
+                input="/publicacion/lista_pendientes.jsp"
+                type="com.culturaPococi.accion.publicacion.AceptarPublicacionAction"
+        />
+        
+        
+        <action input="/publicacion/lista_pendientes.jsp"
+                path="/eliminar_publicacion_pendiente" 
+                scope="request" 
+                validate="false"
+                type="com.culturaPococi.accion.publicacion.EliminarPublicacionPendienteAction"/>
+        
+        
+       <!-- FIN Publicaciones  -->
        
         <action path="/modificar_programa_radio" type="com.culturaPococi.accion.programaradio.ModificarProgramaRadioAction"/>
         <action path="/eliminar_programa_radio" type="com.culturaPococi.accion.programaradio.EliminarProgramaRadioAction"/>
@@ -213,18 +276,9 @@
         
         
         
+    
         
         
-        
-        
-        <action path="/eliminar_perfil" 
-                type="com.culturaPococi.accion.perfil.EliminarPerfilAction"
-                
-        />
-        
-        
-        <action path="/modificar_perfil" type="com.culturaPococi.accion.perfil.ModificarPerfilAction"/>
-        <action path="/crear_perfil" type="com.culturaPococi.accion.perfil.CrearPerfilAction"/>
         <action path="/eliminar_boletin" type="com.culturaPococi.accion.boletin.EliminarBoletinAction"/>
         <action path="/crear_boletin" type="com.culturaPococi.accion.boletin.CrearBoletinAction"/>
        

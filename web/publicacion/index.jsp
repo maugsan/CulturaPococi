@@ -4,13 +4,21 @@
     Author     : Mac
 --%>
 
+
+<%@page contentType="text/html"%>
+<%@page pageEncoding="UTF-8"%>
+
+<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
+<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
+<%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
+
 <html:html lang="true">
-    <head>
+      <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title><bean:message key="welcome.title"/></title>
         <link rel="stylesheet" href="../assets/css/estilos.css" type="text/css" />
         <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" />
-       <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
         <html:base/>
     </head>
     <body>
@@ -23,8 +31,23 @@
 
                 
                 <div id="contendor-interno"> 
-                   
-                    <h1>Publicaciones</h1>
+
+                    <h1><bean:message key="publicaciones.titulo"/></h1>
+
+
+
+                    <div id="listaPublicacion">
+                        <div id="elemento-imagen"><img src="../assets/img/evento-icon.png" width="30"/></div>
+                        <a href="eliminar_publicacion.jsp"><bean:message key="publicacion.publicaciones.actuales"/></a>
+                    </div>
+                    <div id="listaPublicacion">
+                        <div id="elemento-imagen"><img src="../assets/img/evento-icon.png" width="30"/></div>
+                        <a href="aprobar_publicacion.jsp"><bean:message key="publicacion.publicaciones.pendientes"/></a>
+                    </div>
+                    <%-- FIN Elemento   ${perfilTemporal.nombrePerfil} --%> 
+
+
+
                 </div> 
 
             </section>
@@ -36,7 +59,6 @@
 
             </section>
             <%@include file="/includes/footer.jsp" %>
-
 
         </div>
 
