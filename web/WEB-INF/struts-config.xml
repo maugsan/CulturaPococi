@@ -259,7 +259,7 @@
             
         <forward name="success" path="/usuario/eliminar_usuarionormal.jsp"/>    
         </action>
-        
+      
        
         
         
