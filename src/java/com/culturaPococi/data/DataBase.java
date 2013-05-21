@@ -30,13 +30,10 @@ public class DataBase {
 //        this.baseDatos = "grupo_tres_db";
 //        this.host = "jdbc:mysql://163.178.175.115:3306/" + baseDatos;
         this.usuario = "root";
-<<<<<<< HEAD
         this.contra = "root";
         this.baseDatos = "cultura_pococi";
-=======
         this.contra = "";
         this.baseDatos = "cultura_pococi2013";
->>>>>>> branch 'master' of https://github.com/maugsan/CulturaPococi.git
         this.host = "jdbc:mysql://localhost:3306/" + baseDatos;
         try {
 
