@@ -30,16 +30,21 @@
 
             <html:form action="/nuevologin">
                 <h1>Ingresar</h1>
-                <h2> Correo</h2>
+                <h2>Correo</h2>
 
                 <html:text  name="NuevoLoginForm" property="correo" size="16"/><br>
-                <h2> clave</h2>
+                <h2>Contraseña</h2>
                 <html:password  name="NuevoLoginForm" property="contrasenia" size="16"/><br>
                 <html:submit value="Entrar" />
+               
 
             </html:form>
             <html:errors/>
 
+            <aside>
+             <a><h2>Crear cuenta</h2></a>
+              <a><h2>Olvidaste la contraseña</h2></a>
+            </aside>
         </div> 
 
     </section>
