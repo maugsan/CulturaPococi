@@ -194,7 +194,7 @@
         
         <!-- Publicaciones  -->
      
-        <action input="/publicacion/aprobar_publicacion.jsp" 
+        <action input="/publicacion/elegir_tipo_publicacion.jsp" 
                 name="AnuncioForm" 
                 path="/listar_tipo_publicacion" 
                 scope="request" 
@@ -207,12 +207,16 @@
                 validate="false"
                 type="com.culturaPococi.accion.publicacion.ListarPublicacionesPendientesAction"
         />
+        
         <action validate="false"
                 path="/mostrar_detalle_publicacion" 
                 scope="request" 
                 type="com.culturaPococi.accion.publicacion.MostrarDetallePublicacion">
                 
-                <forward name="publicacionMusica" path="/publicacion/publicacion_musica.jsp" />
+                <forward name="musica" path="/publicacion/publicacion_musica.jsp" />
+                <forward name="texto" path="/publicacion/publicacion_texto.jsp" />
+                <forward name="imagen" path="/publicacion/publicacion_imagen.jsp" />
+                <forward name="video" path="/publicacion/publicacion_video.jsp" />
                 <forward name="denegado" path="/includes/denegado.jsp" />
        
         </action>

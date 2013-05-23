@@ -38,6 +38,11 @@ public class MostrarDetallePublicacion extends DispatchAction {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
+        
+        String mostrarJSP="";
+        
+        String tipoPublicacion=request.getParameter("tipoPublicacion");
+        
         Publicacion publicacion;
         JOptionPane.showMessageDialog(null, "inicio mostrar detalle");
         int idPublicacion=Integer.parseInt(request.getParameter("idPublicacion"));
@@ -46,7 +51,18 @@ public class MostrarDetallePublicacion extends DispatchAction {
         publicacion=nPublicidad.getPublicacion(idPublicacion);
         
         request.setAttribute("publicacion", publicacion);
-        JOptionPane.showMessageDialog(null, "publicacion1: "+publicacion.getIdPublicacion());
-        return mapping.findForward("publicacionMusica");
+        JOptionPane.showMessageDialog(null, "publicacion1: "+tipoPublicacion);
+        
+        if (tipoPublicacion.equals("musica")){
+            mostrarJSP="musica";
+        }else if (tipoPublicacion.equals("texto")){
+             mostrarJSP="texto";
+        }else if (tipoPublicacion.equals("imagen")){
+            mostrarJSP="imagen";
+        }else{
+            mostrarJSP="video";
+        }
+        JOptionPane.showMessageDialog(null, "FIIIIIIINNNNNNNNN "+mostrarJSP);
+        return mapping.findForward(mostrarJSP);
     }
 }

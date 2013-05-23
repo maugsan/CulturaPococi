@@ -88,11 +88,8 @@
                                             <img id="icono" src="assets/img/radio-icon.png" width="60">
                                             <h2>Programas de Radio</h2>
                                         </section></a>
-<<<<<<< HEAD
-                                    <a href="./publicacion/index.jsp"> <section class="modulo">
-=======
-                                    <a href="./mostrar_publicacion.do"> <section class="modulo">
->>>>>>> branch 'master' of https://github.com/maugsan/CulturaPococi.git
+                                  <a href="./publicacion/index.jsp"> <section class="modulo">
+                                    <%-- <a href="./mostrar_publicacion.do"> <section class="modulo">--%>
                                             <img id="icono" src="assets/img/publicacion-icon.png" width="60">
                                             <h2>Publicación</h2>
                                         </section></a>

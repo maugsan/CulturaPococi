@@ -80,16 +80,16 @@ public class DataPublicacion extends DataBase{
     }
      
      
-     public LinkedList<Publicacion> getListaPublicacionMusica () throws SQLException {
+     public LinkedList<Publicacion> getListaPublicacionMusica (String tipo) throws SQLException {
 
         LinkedList<Publicacion> listaPublicacionMusica = new LinkedList<Publicacion>();
         
         Publicacion publicacion;
 
-        String sql = "call pListarPublicacionMusicaPendiente();";
+        //String sql = "call pListarPublicacionMusicaPendiente('"+tipo+"');";
+        String sql = "call pPublicacionPendiente('"+tipo+"');";
         ResultSet resultado;
         Connection conexion = super.getConexion();
-        
         try{
             
             Statement statement = conexion.createStatement(); 
@@ -115,7 +115,7 @@ public class DataPublicacion extends DataBase{
      public Publicacion selectPublicacion(int idPublicacion) throws SQLException{
         Publicacion publicacion=new Publicacion();
         LinkedList<Publicacion> listaPublicaciones=new LinkedList<Publicacion>();
-        String sql = "call pPublicacionMusicaPendiente();" ;
+        String sql = " call pListarPublicacion("+idPublicacion+");" ;
         ResultSet resultado;
         Connection conexion = super.getConexion();
 
@@ -135,7 +135,6 @@ public class DataPublicacion extends DataBase{
                     resultado.getString("imagen"), 
                     resultado.getString("nombreCategoria"));
             listaPublicaciones.add(publicacion);
-        JOptionPane.showMessageDialog(null, "publicacion:data  "+publicacion.getDescripcion());
         }//fin while
             statement.close();    
         }catch(Exception e){
@@ -144,7 +143,6 @@ public class DataPublicacion extends DataBase{
         }finally{
              conexion.close();
         }//fin try
-           
         for(int i=0; i<listaPublicaciones.size();i++){
             if(listaPublicaciones.get(i).getIdPublicacion()==idPublicacion){
                 publicacion=listaPublicaciones.get(i);

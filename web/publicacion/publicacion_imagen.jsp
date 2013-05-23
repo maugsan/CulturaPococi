@@ -1,6 +1,6 @@
 <%-- 
-    Document   : lista_pendientes
-    Created on : 18/05/2013, 12:07:28 PM
+    Document   : publicacion_imagen
+    Created on : 22/05/2013, 08:23:28 PM
     Author     : Personal
 --%>
 
@@ -31,31 +31,27 @@
                 
                 <div id="contendor-interno"> 
 
-                    <h1><bean:message key="publicacion.publicaciones.pendientes"/>:${tipoPublicacion}</h1>
+                    <h1><bean:message key="publicacion"/></h1>
 
-
-
-                   
-                            <logic:iterate  name="listaPublicacionesPendientes" id="publicacionTemporal" >
-                        <%-- Inicio Elemento  --%>
-                         <div id="elemento-listaPublicacion">
-                                ${tipoPublicacion}   k
-                            <div id="elemento-imagen"><img src="../assets/img/evento-icon.png" width="30"/></div>
-                            <p id="elemento-nombre">${publicacionTemporal.getNombrePerfil()}</p><br>
-                            <p id="elemento-nombre">${publicacionTemporal.getFechaPublicacion()}</p>
-                            
-                            <a href="../eliminar_publicacion_pendiente.do?idPublicacion=${publicacionTemporal.idPublicacion}&tipoPublicacion=${tipoPublicacion}">
-                                <div id="elemento-icon"><img src="../assets/img/delete-icon.png" width="30"/></div>
-                            </a>
-                            <a href="../mostrar_detalle_publicacion.do?idPublicacion=${publicacionTemporal.idPublicacion}&tipoPublicacion=${tipoPublicacion}">
-                                <div id="elemento-icon"><img src="../assets/img/boletin-icon.png" width="30"/></div>
-                            </a>
-                              </div>
-                            
+                    <div id="elemento-publicacion-musica">
                         
+                            
+                        <%-- Inicio Elemento  --%>
+                        
+
+                            <div id="elemento-imagen"><img src="../assets/img/evento-icon.png" width="30"/></div><br>
+                            ${publicacion.getIdPublicacion()}
+                            <p id="elemento-nombre">${publicacion.getNombrePerfil()}</p><br>
+                            <p id="elemento-nombre">${publicacion.getFechaPublicacion()}</p><br>
+                            <p id="elemento-nombre">${publicacion.getNombreCategoria()}</p><br>
+                            <p id="elemento-nombre">${publicacion.getDescripcion()}</p><br>
+                            <img src=${publicacion.getImagen()}>
+                            
+                             <a href="../aceptar_publicacion.do?idPublicacion=${publicacion.getIdPublicacion()}&tipoPublicacion=musica">
+                                <html:submit value="Aceptar" />
+                            </a>
                         <%-- FIN Elemento  --%>
-                        </logic:iterate>
-                    
+                    </div>
 
 
 

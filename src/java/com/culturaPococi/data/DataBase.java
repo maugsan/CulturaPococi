@@ -32,8 +32,6 @@ public class DataBase {
         this.usuario = "root";
         this.contra = "root";
         this.baseDatos = "cultura_pococi";
-        this.contra = "";
-        this.baseDatos = "cultura_pococi2013";
         this.host = "jdbc:mysql://localhost:3306/" + baseDatos;
         try {
 

@@ -40,6 +40,8 @@ public class ListarPublicacionesPendientesAction extends DispatchAction {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         
+        
+        
         String tipoPublicacion=request.getParameter("tipoPublicacion");
         JOptionPane.showMessageDialog(null, "listarpublicacionespendientes: "+tipoPublicacion);
         LinkedList<Publicacion> listaPublicacionesPendientes;
@@ -52,6 +54,7 @@ public class ListarPublicacionesPendientesAction extends DispatchAction {
         JOptionPane.showMessageDialog(null, listaPublicacionesPendientes.size());
         request.setAttribute("listaPublicacionesPendientes", listaPublicacionesPendientes);
         request.setAttribute("tipoPublicacion", tipoPublicacion);
-        return mapping.getInputForward();
+        
+       return mapping.getInputForward();
     }
 }

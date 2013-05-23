@@ -1,16 +1,9 @@
-<%-- 
-    Document   : index
-    Created on : 23/04/2013, 01:18:18 PM
-    Author     : Mac
---%>
-
-
-<%@page contentType="text/html"%>
-<%@page pageEncoding="UTF-8"%>
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
+<!DOCTYPE html>
+
 
 <html:html lang="true">
       <head>
@@ -32,19 +25,26 @@
                 
                 <div id="contendor-interno"> 
 
-                    <h1><bean:message key="publicaciones.titulo"/></h1>
+                    <h1><bean:message key="publicacion.publicaciones.pendientes"/></h1>
 
 
 
-                    <div id="listaPublicacion">
-                        <div id="elemento-imagen"><img src="../assets/img/evento-icon.png" width="30"/></div>
-                        <a href="eliminar_publicacion.jsp"><bean:message key="publicacion.publicaciones.actuales"/></a>
+                    <div id="listaTipoPublicacion">
+                        <form method="get" action="../listar_publicaciones_pendientes.do">
+
+                            <select name="tipoPublicacion">
+                                <option value="musica">Música</option>
+                                <option value="video">Video</option>
+                                <option value="texto">Texto</option>
+                                <option value="imagen">Imagen</option>
+                            </select>
+
+                            <html:submit value="Buscar" /><br>
+
+
+
+                        </form>
                     </div>
-                    <div id="listaPublicacion">
-                        <div id="elemento-imagen"><img src="../assets/img/evento-icon.png" width="30"/></div>
-                        <a href="aprobar_publicacion.jsp"><bean:message key="publicacion.publicaciones.pendientes"/></a>
-                    </div>
-                    <%-- FIN Elemento   ${perfilTemporal.nombrePerfil} --%> 
 
 
 
@@ -64,3 +64,4 @@
 
     </body>
 </html:html>
+    

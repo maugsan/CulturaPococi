@@ -42,13 +42,13 @@ public class NegocioPublicacion {
     public LinkedList<Publicacion> getListaPublicacionPendiente(String tipo) throws SQLException {
         LinkedList<Publicacion> listaPublicacionesPendientes=new LinkedList<Publicacion>();
         if(tipo.equals("musica")){
-            listaPublicacionesPendientes=dp.getListaPublicacionMusica();
+            listaPublicacionesPendientes=dp.getListaPublicacionMusica(tipo);
         }else if(tipo.equals("texto")){
-        
+            listaPublicacionesPendientes=dp.getListaPublicacionMusica(tipo);
         }else if(tipo.equals("imagen")){
-        
+            listaPublicacionesPendientes=dp.getListaPublicacionMusica(tipo);
         }else{
-        
+            listaPublicacionesPendientes=dp.getListaPublicacionMusica(tipo);
         }
         
         return listaPublicacionesPendientes;
