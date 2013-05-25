@@ -6,6 +6,7 @@ package com.culturaPococi.data;
 
 import com.culturaPococi.dominio.Categoria;
 import com.culturaPococi.dominio.Evento;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -65,4 +66,27 @@ public class DataCategoria extends DataBase{
         }
         return listaOrdenadaCategorias;
     }//fin ordenarPrimeraCategoria
+    
+    
+    public boolean crearCategoria(String categoria) throws SQLException {
+
+        String sql = "call pCrearCategorias(?);";
+        boolean accionRealizada = true;
+        Connection conexion = super.getConexion();
+
+        try {
+            CallableStatement call = conexion.prepareCall(sql);
+
+            call.setString("pNombreCategoria", categoria);
+            
+            call.executeUpdate();
+            call.close();
+        } catch (Exception e) {
+            accionRealizada = false;
+        } finally {
+            conexion.close();
+        }//fin try
+
+        return accionRealizada;
+    }
 }

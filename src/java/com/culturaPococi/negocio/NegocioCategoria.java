@@ -28,4 +28,9 @@ public class NegocioCategoria {
         listaCategoria=dCategoria.ordenarPrimeraCategoria(idCategoria);
         return listaCategoria;
     }//fin selectCategoriasDB
+     
+     public boolean crearCategoriaDB(String categoria) throws SQLException{
+         
+        return dCategoria.crearCategoria(categoria);
+    }//fin selectCategoriasDB
 }

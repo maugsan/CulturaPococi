@@ -16,8 +16,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title><bean:message key="welcome.title"/></title>
-        <link rel="stylesheet" href="../assets/css/estilos.css" type="text/css" />
-        <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" />
+        <link rel="stylesheet" href="./assets/css/estilos.css" type="text/css" />
+        <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
         <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
         <html:base/>
     </head>
@@ -26,18 +26,32 @@
         <%@include file="/includes/header_administrativo.jsp" %>
         <div id="contendor">
 
-            
             <section  id="seccion-principal">
 
-                
-                <div id="contendor-interno"> 
-                   
-                    <h1>Categorias</h1>
-                </div> 
 
+                <div id="contendor-interno"> 
+
+                    <h1><bean:message key="form.categoria"/></h1>
+
+                    <section id="lista-elementos">
+                        <logic:iterate  name="listaCategorias" id="categoriaTemporal" >
+                            <%-- Inicio Elemento  --%>
+                            <div id="elemento">
+
+                                <div id="elemento-imagen"><img src="../assets/img/category-icon.png" width="30"/></div>
+                                <p id="elemento-nombre">${categoriaTemporal.nombreCategoria}</p>
+
+
+                            </div>
+                            <%-- FIN Elemento  --%>
+                        </logic:iterate>
+                        <a href="./crear_categoria.jsp"><button id="boton-unir"><bean:message key="boton.crear.categoria"/></button></a>
+                    </section>
+
+                </div> 
             </section>
 
-            <%@include file="/includes/espacios.jsp" %>
+
             <section id="seccion-inferior">
 
                 <div id="contendor-interno"> </div>
@@ -50,4 +64,3 @@
 
     </body>
 </html:html>
-

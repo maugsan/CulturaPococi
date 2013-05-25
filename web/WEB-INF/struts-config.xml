@@ -7,6 +7,7 @@
 
 <struts-config>
     <form-beans>
+        <form-bean name="FormularioCategoria" type="com.culturaPococi.accion.categoria.FormularioCategoria"/>
         <form-bean name="FormularioTipoPublicacion" type="com.culturaPococi.accion.publicacion.FormularioTipoPublicacion"/>
         
         <form-bean name="AnuncioForm" 
@@ -202,10 +203,17 @@
         />
         
         <action input="/publicacion/lista_pendientes.jsp" 
-                path="/listar_publicaciones_pendientes" 
+                path="/listar_publicaciones_pendientes_pendiente" 
                 scope="request" 
                 validate="false"
                 type="com.culturaPococi.accion.publicacion.ListarPublicacionesPendientesAction"
+        />
+        
+        <action path="/listar_publicacion_aceptada" 
+                input="/publicacion/lista_pendientes.jsp" 
+                scope="request" 
+                validate="false"
+                type="com.culturaPococi.accion.publicacion.ListarPublicacionAceptadaAction"
         />
         
         <action validate="false"
@@ -236,7 +244,37 @@
                 type="com.culturaPococi.accion.publicacion.EliminarPublicacionPendienteAction"/>
         
         
+       
        <!-- FIN Publicaciones  -->
+       
+       <!-- INICIO CATEGORIAS  -->
+       
+       <action input="/categoria/index.jsp" 
+               path="/listar_categorias" 
+               scope="request" 
+               validate="false"
+               type="com.culturaPococi.accion.categoria.ListarCategoriasAction"
+       />
+       
+       <action path="/crear_categoria" 
+               input="/categoria/index.jsp" 
+               scope="request" 
+               validate="false"
+               type="com.culturaPococi.accion.categoria.CrearCategoriaAction"
+       />
+       
+       <action path="/crear_categorias" 
+               input="/categoria/index.jsp" 
+               scope="request" 
+               validate="false"
+               name="FormularioCategoria"
+               type="com.culturaPococi.accion.categoria.CrearCategoriasAction"
+       />
+        
+        
+        
+      
+        <!-- FIN CATEGORIAS  -->
        
         <action path="/modificar_programa_radio" type="com.culturaPococi.accion.programaradio.ModificarProgramaRadioAction"/>
         <action path="/eliminar_programa_radio" type="com.culturaPococi.accion.programaradio.EliminarProgramaRadioAction"/>
@@ -263,6 +301,7 @@
             
         <forward name="success" path="/usuario/eliminar_usuarionormal.jsp"/>    
         </action>
+        
       
        
         
@@ -292,8 +331,7 @@
         <action path="/eliminar_publicacion" type="com.culturaPococi.accion.publicacion.EliminarPublicacionAction"/>
         <action path="/modificar_publicacion" type="com.culturaPococi.accion.publicacion.ModificarPublicacionAction"/>
         <action path="/crear_publicacion" type="com.culturaPococi.accion.publicacion.CrearPublicacionAction"/>
-        <action path="/eliminar_categoria" type="com.culturaPococi.accion.categoria.EliminarCategoriaAction"/>
-        <action path="/crear_categoria" type="com.culturaPococi.accion.categoria.CrearCategoriaAction"/>
+        
         <action path="/Inicio" forward="/inicio.jsp"/>
     </action-mappings>
     

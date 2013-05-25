@@ -72,7 +72,7 @@
                                             <img id="icono" src="assets/img/evento-icon.png" width="60">
                                             <h2>Evento</h2>
                                         </section></a>
-                                    <a href="./categoria/"><section class="modulo">
+                                    <a href="./listar_categorias.do"><section class="modulo">
                                             <img id="icono" src="assets/img/category-icon.png" width="60">
                                             <h2>Categoria</h2>
                                         </section></a>

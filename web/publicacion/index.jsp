@@ -38,11 +38,11 @@
 
                     <div id="listaPublicacion">
                         <div id="elemento-imagen"><img src="../assets/img/evento-icon.png" width="30"/></div>
-                        <a href="eliminar_publicacion.jsp"><bean:message key="publicacion.publicaciones.actuales"/></a>
+                        <a href="elegir_tipo_publicacion_aceptada.jsp"><bean:message key="publicacion.publicaciones.actuales"/></a>
                     </div>
                     <div id="listaPublicacion">
                         <div id="elemento-imagen"><img src="../assets/img/evento-icon.png" width="30"/></div>
-                        <a href="aprobar_publicacion.jsp"><bean:message key="publicacion.publicaciones.pendientes"/></a>
+                        <a href="elegir_tipo_publicacion_pendiente.jsp"><bean:message key="publicacion.publicaciones.pendientes"/></a>
                     </div>
                     <%-- FIN Elemento   ${perfilTemporal.nombrePerfil} --%> 
 

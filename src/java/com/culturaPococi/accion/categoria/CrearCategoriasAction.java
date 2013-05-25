@@ -16,9 +16,9 @@ import org.apache.struts.action.ActionMapping;
 
 /**
  *
- * @author Moa
+ * @author Personal
  */
-public class CrearCategoriaAction extends org.apache.struts.action.Action {
+public class CrearCategoriasAction extends org.apache.struts.action.Action {
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
@@ -59,6 +59,6 @@ public class CrearCategoriaAction extends org.apache.struts.action.Action {
         JOptionPane.showMessageDialog(null, "proble");
         request.setAttribute("listaCategorias", listaCategorias);
         
-        return mapping.findForward(SUCCESS);
+        return mapping.getInputForward();
     }
 }
