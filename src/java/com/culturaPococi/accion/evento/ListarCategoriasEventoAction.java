@@ -19,7 +19,7 @@ import org.apache.struts.actions.DispatchAction;
  *
  * @author Personal
  */
-public class ListarCategoriasAction extends DispatchAction {
+public class ListarCategoriasEventoAction extends DispatchAction {
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
@@ -41,11 +41,15 @@ public class ListarCategoriasAction extends DispatchAction {
         
         LinkedList<Categoria> listaCategorias;
         listaCategorias=nCategoria.selectCategoriasDB();
+        
+        
+        
         //mostrar un mensaje si las categorias no se puden cargar
         if(listaCategorias==null){
             JOptionPane.showMessageDialog(null, "La lista de categorias no se pudo cargar");
         }
         request.setAttribute("listaCategorias", listaCategorias);
+        JOptionPane.showMessageDialog(null, "entró ");
         return mapping.getInputForward();
     }
 }

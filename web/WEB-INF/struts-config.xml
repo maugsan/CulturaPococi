@@ -144,16 +144,17 @@
                  type="com.culturaPococi.accion.evento.ActualizarEventoAction">
        
         </action>
-         <action path="/listar_categorias" 
-                 input="/evento/crear_evento.jsp" 
-                 name="EventoForm"
-                 scope="request" 
-                 validate="false" 
-                 type="com.culturaPococi.accion.evento.ListarCategoriasAction">
-                
-                <forward name="denegado" path="/includes/denegado.jsp" />
-       
-        </action>
+         
+        
+        <action path="/listar_categorias_evento" 
+                input="/evento/crear_evento.jsp" 
+                name="EventoForm"
+                scope="request" 
+                validate="false" 
+                type="com.culturaPococi.accion.evento.ListarCategoriasEventoAction"
+        />
+        
+      
         <!-- FIN EVENTO  -->
         
         <!-- INICIO ANUNCIOS  -->
@@ -301,6 +302,7 @@
             
         <forward name="success" path="/usuario/eliminar_usuarionormal.jsp"/>    
         </action>
+        <action input="/" name="FormularioCategoria" path="/combo_categoria" scope="session" type="com.culturaPococi.accion.evento.ComboCategoriaAction"/>
         
       
        
