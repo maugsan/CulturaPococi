@@ -40,11 +40,11 @@
                         <div id="elemento">
 
                             <div id="elemento-imagen"><img src="../assets/img/evento-icon.png" width="30"/></div>
-                            <p id="elemento-nombre">${eventoTemporal.nombre}</p>
-                            <a href="../eliminar_evento.do?idEvento=${eventoTemporal.idEvento}">
+                            <p id="elemento-nombre">${boletinTemporal.fecha}</p>
+                            <a href="../eliminar_boletin.do?fecha=${boletinTemporal.fecha}">
                                 <div id="elemento-icon"><img src="../assets/img/delete-icon.png" width="30"/></div>
                             </a> 
-                            <a href="../modificar_evento.do?idEvento=${eventoTemporal.idEvento}">
+                            <a href="../listar_articulos.do?fecha=${boletinTemporal.fecha}">
                                 <div id="elemento-icon"><img src="../assets/img/editar-icon.png" width="30"/></div>
                             </a>
                               
@@ -52,7 +52,7 @@
                         </div>
                         <%-- FIN Elemento  --%>
                         </logic:iterate>
-                        <a href="../listar_categorias.do"><button id="boton-unir">Crear Evento</button></a>
+                        <a href="crear_boletin.jsp"><button id="boton-unir"><bean:message key="boton.crear.boletin"/></button></a>
                     </section>
                         
                 </div> 

@@ -80,7 +80,7 @@ public class DataBoletin extends DataBase{
         try{
             
             CallableStatement call=conexion.prepareCall(sqleliminarBoletin);
-            //call.setDate("pfecha", fecha);
+            call.setString("pfecha", fecha);
             call.executeUpdate();
             
             call.close();

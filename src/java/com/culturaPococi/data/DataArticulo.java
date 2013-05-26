@@ -53,7 +53,7 @@ public class DataArticulo extends DataBase {
     }//fin selectCategoria
     
     
-    public boolean crearBoletin(Articulo articulo) throws SQLException {
+    public boolean crearArticulo(Articulo articulo) throws SQLException {
 
         String sql = "call pCrearArticulo(?,?,?,?,?,?);";
         boolean accionRealizada = true;
@@ -79,15 +79,15 @@ public class DataArticulo extends DataBase {
         return accionRealizada;
     }
     
-    public boolean eliminarBoletin(String fecha) throws SQLException{
-        String sqleliminarBoletin="call pEliminaBoletin(?);" ;
+    public boolean eliminarArticulos(int idArticulo) throws SQLException{
+        String sqleliminarArticulo="call pEliminarArticulo(?);" ;
         boolean accionRealizada=true;
         
         Connection conexion=super.getConexion();
         try{
             
-            CallableStatement call=conexion.prepareCall(sqleliminarBoletin);
-            //call.setDate("pfecha", fecha);
+            CallableStatement call=conexion.prepareCall(sqleliminarArticulo);
+            call.setInt("pidArticulo", idArticulo);
             call.executeUpdate();
             
             call.close();

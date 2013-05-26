@@ -6,7 +6,6 @@ package com.culturaPococi.negocio;
 
 import com.culturaPococi.data.DataArticulo;
 import com.culturaPococi.dominio.Articulo;
-import com.culturaPococi.dominio.Boletin;
 import java.sql.SQLException;
 import java.util.LinkedList;
 
@@ -21,13 +20,19 @@ public class NegocioArticulo {
         dArticulo=new DataArticulo();
     }
     
-    public LinkedList<Articulo> bdListarBoletines() throws SQLException{
+    public LinkedList<Articulo> bdListarArticulos() throws SQLException{
         return dArticulo.selectArticulos();
     }
     
-//    public boolean bdCrearBoletin() throws SQLException{
-//        return dArticulo.selectArticulos();
-//    }
+    public boolean bdCrearArticulo(Articulo articulo) throws SQLException{
+        return dArticulo.crearArticulo(articulo);
+    }
+    
+    public boolean bdEliminarArticulo(int idArticulo) throws SQLException{
+        return dArticulo.eliminarArticulos(idArticulo);
+    }
+    
+    
     
     
     

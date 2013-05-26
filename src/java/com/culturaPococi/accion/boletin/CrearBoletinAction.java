@@ -4,20 +4,25 @@
  */
 package com.culturaPococi.accion.boletin;
 
+import com.culturaPococi.dominio.Boletin;
+import com.culturaPococi.negocio.NegocioBoletin;
+import java.util.LinkedList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 /**
  *
- * @author Moa
+ * @author Personal
  */
 public class CrearBoletinAction extends org.apache.struts.action.Action {
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
+    NegocioBoletin nBoletin=new NegocioBoletin();
 
     /**
      * This is the action called from the Struts framework.
@@ -34,6 +39,21 @@ public class CrearBoletinAction extends org.apache.struts.action.Action {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         
-        return mapping.findForward(SUCCESS);
+        boolean accionRealicada;
+        LinkedList<Boletin> listaBoletines;
+                
+        String fecha=request.getParameter("fecha");
+        
+        accionRealicada=nBoletin.bdCrearBolentin(fecha, "ybarboza27@gmail.com");
+                
+        listaBoletines=nBoletin.bdListarBoletines();
+        
+        if(!accionRealicada||listaBoletines==null){
+            JOptionPane.showMessageDialog(null, "Problemas con la base de datos");
+        }//fin if
+        
+        request.setAttribute("listaBoletines", listaBoletines);
+        
+        return mapping.getInputForward();
     }
 }

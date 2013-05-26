@@ -276,7 +276,51 @@
         
       
         <!-- FIN CATEGORIAS  -->
-       
+        
+        <!-- INICIO BOLETIN  -->
+        <action path="/crear_boletin" 
+                validate="false"
+                scope="request"
+                input="/boletin/index.jsp"
+                type="com.culturaPococi.accion.boletin.CrearBoletinAction"
+        />
+        
+        <action path="/listar_boletines"
+                validate="false"
+                scope="request"
+                input="/boletin/index.jsp" 
+                type="com.culturaPococi.accion.boletin.ListarBoletinesAction"
+        />
+        
+        <action path="/eliminar_boletin" 
+                validate="false"
+                scope="request"
+                input="/boletin/index.jsp" 
+                type="com.culturaPococi.accion.boletin.EliminarBoletinAction"
+        />
+        
+        
+        <!-- FIN BOLETIN  -->
+        
+         <!-- INICIO ARTÍCULOS  -->
+        
+        <action path="/listar_articulos"
+                validate="false"
+                scope="request"
+                input="/articulo/index.jsp" 
+                type="com.culturaPococi.accion.articulo.ListarArticulosAction"
+        />
+        
+        <action path="/eliminar_articulo" 
+                validate="false"
+                scope="request"
+                input="/articulo/index.jsp" 
+                type="com.culturaPococi.accion.articulo.EliminarArticuloAction"
+        />
+        
+        
+         <!-- FIN ARTÍCULOS  -->
+        
         <action path="/modificar_programa_radio" type="com.culturaPococi.accion.programaradio.ModificarProgramaRadioAction"/>
         <action path="/eliminar_programa_radio" type="com.culturaPococi.accion.programaradio.EliminarProgramaRadioAction"/>
         <action path="/crear_programa_radio" type="com.culturaPococi.accion.programaradio.CrearProgramaRadioAction"/>
@@ -302,7 +346,7 @@
             
         <forward name="success" path="/usuario/eliminar_usuarionormal.jsp"/>    
         </action>
-        <action input="/" name="FormularioCategoria" path="/combo_categoria" scope="session" type="com.culturaPococi.accion.evento.ComboCategoriaAction"/>
+        <action path="/ver_modificar_articulo" type="com.culturaPococi.accion.articulo.VerModificarArticuloAction"/>
         
       
        
@@ -324,13 +368,9 @@
     
         
         
-        <action path="/eliminar_boletin" type="com.culturaPococi.accion.boletin.EliminarBoletinAction"/>
-        <action path="/crear_boletin" type="com.culturaPococi.accion.boletin.CrearBoletinAction"/>
+        
        
-        <action path="/eliminar_articulo" type="com.culturaPococi.accion.articulo.EliminarArticuloAction"/>
-        <action path="/modificar_articulo" type="com.culturaPococi.accion.articulo.ModificarArticuloAction"/>
-        <action path="/crear_articulo" type="com.culturaPococi.accion.articulo.CrearArticulaAction"/>
-        <action path="/eliminar_publicacion" type="com.culturaPococi.accion.publicacion.EliminarPublicacionAction"/>
+       <action path="/eliminar_publicacion" type="com.culturaPococi.accion.publicacion.EliminarPublicacionAction"/>
         <action path="/modificar_publicacion" type="com.culturaPococi.accion.publicacion.ModificarPublicacionAction"/>
         <action path="/crear_publicacion" type="com.culturaPococi.accion.publicacion.CrearPublicacionAction"/>
         

@@ -18,7 +18,7 @@ import org.apache.struts.action.ActionMapping;
  *
  * @author Personal
  */
-public class EliminarArticuloAction extends org.apache.struts.action.Action {
+public class ListarArticulosAction extends org.apache.struts.action.Action {
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
@@ -38,17 +38,13 @@ public class EliminarArticuloAction extends org.apache.struts.action.Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        boolean accionRealizada;
+        
         LinkedList<Articulo> listaArticulos;
-        
-        int idArticulo=Integer.parseInt(request.getParameter("idArticulo"));
-        
-        accionRealizada=nArticulo.bdEliminarArticulo(idArticulo);
         
         listaArticulos=nArticulo.bdListarArticulos();
         
-        if(listaArticulos==null||accionRealizada==false){
-            JOptionPane.showMessageDialog(null, "Error en la base de datos EliminarArticulosAction");
+        if(listaArticulos==null){
+            JOptionPane.showMessageDialog(null, "Error en la base de datos listarArticulosAction");
         }//fin if
         
         request.setAttribute("listaArticulos", listaArticulos);

@@ -76,7 +76,7 @@
                                             <img id="icono" src="assets/img/category-icon.png" width="60">
                                             <h2>Categoria</h2>
                                         </section></a>
-                                    <a href="./boletin/"><section class="modulo">
+                                    <a href="./listar_boletines.do"><section class="modulo">
                                             <img id="icono" src="assets/img/boletin-icon.png" width="60">
                                             <h2>Boletín</h2>
                                         </section></a>

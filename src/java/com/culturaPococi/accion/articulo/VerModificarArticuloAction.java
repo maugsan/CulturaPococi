@@ -12,9 +12,9 @@ import org.apache.struts.action.ActionMapping;
 
 /**
  *
- * @author Moa
+ * @author Personal
  */
-public class ModificarArticuloAction extends org.apache.struts.action.Action {
+public class VerModificarArticuloAction extends org.apache.struts.action.Action {
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
