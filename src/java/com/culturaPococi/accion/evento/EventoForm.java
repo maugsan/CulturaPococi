@@ -25,14 +25,14 @@ public class EventoForm extends org.apache.struts.action.ActionForm {
     private String nombre;
     private int idCategoria;
     private String lugar;
-    //private String  fecha;
-    //private String hora;
+    private String  fecha;
+    private String hora;
     private String informacion;
-    //private String correo;
+    private String correo;
     private int idEvento;
     //private String nombreCategoria;
 
-    //private String imagen;
+    private String imagen;
     
     NegocioCategoria nCategoria=new NegocioCategoria();
     NegocioEvento nEvento=new NegocioEvento();
@@ -46,6 +46,31 @@ public class EventoForm extends org.apache.struts.action.ActionForm {
 //    }
 //    
 //    
+    
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public String getHora() {
+        return hora;
+    }
+
+    public void setHora(String hora) {
+        this.hora = hora;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+    
     public int getIdEvento() {
         return idEvento;
     }
@@ -87,13 +112,13 @@ public class EventoForm extends org.apache.struts.action.ActionForm {
         this.informacion = informacion;
     }
 
-//    public String getCorreo() {
-//        return correo;
-//    }
-//
-//    public void setCorreo(String correo) {
-//        this.correo = correo;
-//    }
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
 
     
     
@@ -114,15 +139,15 @@ public class EventoForm extends org.apache.struts.action.ActionForm {
         ActionErrors errors = new ActionErrors();
         if (getNombre() == null || getNombre().length() < 1) {
             errors.add("enombre", new ActionMessage("evento.error.nombre"));  //arreglar
-            JOptionPane.showMessageDialog(null, "falta nombre");
         }
         if (getLugar() == null || getLugar().length() < 1) {
             errors.add("elugar", new ActionMessage("evento.error.lugar"));  //arreglar
-            JOptionPane.showMessageDialog(null, "falta lugar");
         }
         if (getInformacion() == null || getInformacion().length() < 1) {
             errors.add("einformacion", new ActionMessage("evento.error.informacion"));  //arreglar
-            JOptionPane.showMessageDialog(null, "falta info");
+        }
+        if (getFecha() == null || getFecha().length() < 1) {
+            errors.add("efecha", new ActionMessage("evento.error.fecha"));  //arreglar
         }
         try {        
             request.setAttribute("listaCategorias", nCategoria.selectCategoriasDB());

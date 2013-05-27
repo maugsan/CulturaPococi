@@ -2,12 +2,12 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.culturaPococi.accion.boletin;
+package com.culturaPococi.accion.articulo;
 
 import com.culturaPococi.dominio.Articulo;
-import com.culturaPococi.dominio.Boletin;
+import com.culturaPococi.dominio.Categoria;
 import com.culturaPococi.negocio.NegocioArticulo;
-import com.culturaPococi.negocio.NegocioBoletin;
+import com.culturaPococi.negocio.NegocioCategoria;
 import java.util.LinkedList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,17 +15,17 @@ import javax.swing.JOptionPane;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-import org.apache.struts.actions.DispatchAction;
 
 /**
  *
  * @author Personal
  */
-public class EliminarBoletinAction extends DispatchAction {
+public class VerArticuloAction extends org.apache.struts.action.Action {
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
-    NegocioBoletin nBoletin = new NegocioBoletin();
+    NegocioArticulo nArticulo=new NegocioArticulo();
+    NegocioCategoria nCategoria=new NegocioCategoria();
 
     /**
      * This is the action called from the Struts framework.
@@ -41,28 +41,22 @@ public class EliminarBoletinAction extends DispatchAction {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        LinkedList<Boletin> listaBoletines;
+        
         boolean accionRealizada;
-        String fecha=request.getParameter("fecha");
+        Articulo articulo;
+        LinkedList<Categoria>listaCategoria;
+        int idArticulo=Integer.parseInt(request.getParameter("idArticulo"));
         
-        accionRealizada=nBoletin.bdEliminarBolentin(fecha);
+        articulo=nArticulo.bdArticulo(idArticulo);
+        listaCategoria=nCategoria.selectCategoriasOrdenadasDB(articulo.getIdArticulo());
         
-        listaBoletines=nBoletin.bdListarBoletines();
+        if(articulo==null||listaCategoria==null){
+            JOptionPane.showMessageDialog(null, "Error en la base de datos verArticuloAction");
+        }//fin if
         
-        if(listaBoletines==null||accionRealizada==false){
-            JOptionPane.showMessageDialog(null, "problemas al cargar la página en eliminarBoletinAccion o duplicacion de la fecha");
-        }
+        request.setAttribute("articulo", articulo);
+        request.setAttribute("listaCategorias", listaCategoria);
         
-        request.setAttribute("listaBoletines", listaBoletines);
         return mapping.getInputForward();
     }
 }
-
-
-
-
-
-
-
-
-

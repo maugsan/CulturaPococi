@@ -53,6 +53,24 @@ public class DataArticulo extends DataBase {
     }//fin selectCategoria
     
     
+    
+    public Articulo selectArticulo(int idArticulo) throws SQLException {
+        LinkedList<Articulo> listaArticulos;
+        Articulo articulo=new Articulo();
+        
+        listaArticulos=selectArticulos();
+        if(listaArticulos!=null){
+            for(int i=0;i<listaArticulos.size(); i++){
+                if(idArticulo==listaArticulos.get(i).getIdArticulo()){
+                    articulo=listaArticulos.get(i);
+                }
+            }// fin for
+        }else{
+            articulo=null;
+        }//fin else
+        return articulo;
+    }
+    
     public boolean crearArticulo(Articulo articulo) throws SQLException {
 
         String sql = "call pCrearArticulo(?,?,?,?,?,?);";
@@ -78,6 +96,34 @@ public class DataArticulo extends DataBase {
 
         return accionRealizada;
     }
+    
+    
+    public boolean actualizarArticulo(Articulo articulo) throws SQLException {
+
+        String sql = "call pActualizarArticulo(?,?,?,?,?,?,?);";
+        boolean accionRealizada = true;
+        Connection conexion = super.getConexion();
+
+        try {
+            CallableStatement call = conexion.prepareCall(sql);
+            call.setString("pimagen", articulo.getImagen());
+            call.setInt("pcategoria", articulo.getCategoria());
+            call.setString("ptitulo", articulo.getTitulo());
+            call.setString("pautor", articulo.getAutor());
+            call.setString("pcontenido", articulo.getContenido());
+            call.setString("pfecha", articulo.getFecha());
+            call.setInt("pidArticulo", articulo.getIdArticulo());
+            
+            call.executeUpdate();
+            call.close();
+        } catch (Exception e) {
+            accionRealizada = false;
+        } finally {
+            conexion.close();
+        }//fin try
+        return accionRealizada;
+    }//fin actualizarArticulo
+    
     
     public boolean eliminarArticulos(int idArticulo) throws SQLException{
         String sqleliminarArticulo="call pEliminarArticulo(?);" ;

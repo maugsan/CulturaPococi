@@ -7,6 +7,7 @@
 
 <struts-config>
     <form-beans>
+        <form-bean name="ArticuloForm" type="com.culturaPococi.accion.articulo.ArticuloForm"/>
         <form-bean name="FormularioCategoria" type="com.culturaPococi.accion.categoria.FormularioCategoria"/>
         <form-bean name="FormularioTipoPublicacion" type="com.culturaPococi.accion.publicacion.FormularioTipoPublicacion"/>
         
@@ -204,7 +205,7 @@
         />
         
         <action input="/publicacion/lista_pendientes.jsp" 
-                path="/listar_publicaciones_pendientes_pendiente" 
+                path="/listar_publicaciones_pendientes" 
                 scope="request" 
                 validate="false"
                 type="com.culturaPococi.accion.publicacion.ListarPublicacionesPendientesAction"
@@ -319,6 +320,41 @@
         />
         
         
+       <action path="/ver_articulo" 
+               validate="false"
+               scope="request"
+               input="/articulo/ver_articulo.jsp"
+               name="ArticuloForm"
+               type="com.culturaPococi.accion.articulo.VerArticuloAction"
+       />
+         
+        <action path="/actualizar_articulo" 
+                validate="true"
+                scope="request"
+                input="/articulo/index.jsp"
+                name="ArticuloForm"
+                type="com.culturaPococi.accion.articulo.ActualizarArticuloAction"
+        />
+        
+        <action path="/crear_articulo" 
+                validate="false"
+                scope="request"
+                input="/articulo/index.jsp"
+                name="ArticuloForm"
+                type="com.culturaPococi.accion.articulo.CrearArticuloAction"
+        />
+        
+        <action path="/listar_categorias_articulos"
+                validate="false"
+                scope="request"
+                input="/articulo/crear_articulo.jsp"
+                name="ArticuloForm" 
+                type="com.culturaPococi.accion.articulo.ListarCategoriasArticulo"
+        />
+        
+        
+        
+        
          <!-- FIN ARTÍCULOS  -->
         
         <action path="/modificar_programa_radio" type="com.culturaPococi.accion.programaradio.ModificarProgramaRadioAction"/>
@@ -346,7 +382,6 @@
             
         <forward name="success" path="/usuario/eliminar_usuarionormal.jsp"/>    
         </action>
-        <action path="/ver_modificar_articulo" type="com.culturaPococi.accion.articulo.VerModificarArticuloAction"/>
         
       
        
@@ -370,10 +405,7 @@
         
         
        
-       <action path="/eliminar_publicacion" type="com.culturaPococi.accion.publicacion.EliminarPublicacionAction"/>
-        <action path="/modificar_publicacion" type="com.culturaPococi.accion.publicacion.ModificarPublicacionAction"/>
-        <action path="/crear_publicacion" type="com.culturaPococi.accion.publicacion.CrearPublicacionAction"/>
-        
+       
         <action path="/Inicio" forward="/inicio.jsp"/>
     </action-mappings>
     

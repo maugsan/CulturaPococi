@@ -4,8 +4,13 @@
  */
 package com.culturaPococi.accion.articulo;
 
+import com.culturaPococi.dominio.Articulo;
+import com.culturaPococi.dominio.Categoria;
+import com.culturaPococi.negocio.NegocioCategoria;
+import java.util.LinkedList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
@@ -14,10 +19,11 @@ import org.apache.struts.action.ActionMapping;
  *
  * @author Personal
  */
-public class VerModificarArticuloAction extends org.apache.struts.action.Action {
+public class ListarCategoriasArticulo extends org.apache.struts.action.Action {
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
+    NegocioCategoria nCategoria=new NegocioCategoria();
 
     /**
      * This is the action called from the Struts framework.
@@ -34,6 +40,15 @@ public class VerModificarArticuloAction extends org.apache.struts.action.Action 
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         
-        return mapping.findForward(SUCCESS);
+        LinkedList<Categoria> listaCategorias;
+        
+        listaCategorias=nCategoria.selectCategoriasDB();
+        
+        if(listaCategorias==null){
+            JOptionPane.showMessageDialog(null, "Error en la base de datos listarCategoriasArticulosAction");
+        }//fin if
+        
+        request.setAttribute("listaCategorias", listaCategorias);
+        return mapping.getInputForward();
     }
 }

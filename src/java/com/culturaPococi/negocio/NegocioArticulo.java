@@ -24,12 +24,20 @@ public class NegocioArticulo {
         return dArticulo.selectArticulos();
     }
     
+    public Articulo bdArticulo(int idArticulo) throws SQLException{
+        return dArticulo.selectArticulo(idArticulo);
+    }
+    
     public boolean bdCrearArticulo(Articulo articulo) throws SQLException{
         return dArticulo.crearArticulo(articulo);
     }
     
     public boolean bdEliminarArticulo(int idArticulo) throws SQLException{
         return dArticulo.eliminarArticulos(idArticulo);
+    }
+    
+    public boolean bdActualizarArticulo(Articulo articulo) throws SQLException{
+        return dArticulo.actualizarArticulo(articulo);
     }
     
     

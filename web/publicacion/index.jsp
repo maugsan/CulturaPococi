@@ -35,11 +35,6 @@
                     <h1><bean:message key="publicaciones.titulo"/></h1>
 
 
-
-                    <div id="listaPublicacion">
-                        <div id="elemento-imagen"><img src="../assets/img/evento-icon.png" width="30"/></div>
-                        <a href="elegir_tipo_publicacion_aceptada.jsp"><bean:message key="publicacion.publicaciones.actuales"/></a>
-                    </div>
                     <div id="listaPublicacion">
                         <div id="elemento-imagen"><img src="../assets/img/evento-icon.png" width="30"/></div>
                         <a href="elegir_tipo_publicacion_pendiente.jsp"><bean:message key="publicacion.publicaciones.pendientes"/></a>

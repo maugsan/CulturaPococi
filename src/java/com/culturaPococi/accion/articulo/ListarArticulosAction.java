@@ -13,12 +13,13 @@ import javax.swing.JOptionPane;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import org.apache.struts.actions.DispatchAction;
 
 /**
  *
  * @author Personal
  */
-public class ListarArticulosAction extends org.apache.struts.action.Action {
+public class ListarArticulosAction extends DispatchAction {
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
@@ -48,6 +49,7 @@ public class ListarArticulosAction extends org.apache.struts.action.Action {
         }//fin if
         
         request.setAttribute("listaArticulos", listaArticulos);
+        
         return mapping.getInputForward();
     }
 }

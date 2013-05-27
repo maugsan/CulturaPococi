@@ -84,7 +84,7 @@ public class DataEvento extends DataBase{
      
      public boolean crearEvento(Evento evento) throws SQLException {
 
-        String sql = "call pCrearEventos(?,?,?,?);";
+        String sql = "call pCrearEventos(?,?,?,?,?,?,?,?);";
         boolean accionRealizada = true;
         Connection conexion = super.getConexion();
 
@@ -93,12 +93,12 @@ public class DataEvento extends DataBase{
 
             call.setString("pnombre", evento.getNombre());
             call.setString("plugar", evento.getLugar());
-//        //call.setTime("phora", evento.getFecha());
-//        //call.setDate("pfecha", null);
+            call.setString("phora", evento.getHora());
+            call.setString("pfecha", evento.getFecha());
             call.setString("pinformacion", evento.getInformacion());
-//        call.setString("pcorreo",evento.getCorreo());
+            call.setString("pcorreo",evento.getCorreo());
             call.setInt("pidCategoria", evento.getIdCategoria());
-
+            call.setString("pimagen",evento.getImagen());
             call.executeUpdate();
             call.close();
         } catch (Exception e) {

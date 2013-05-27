@@ -48,18 +48,16 @@ public class CrearEventoAction extends DispatchAction {
                                 formu.getIdCategoria(), 
                                 "", 
                                 formu.getLugar(), 
-                                formu.getNombre(), "","",
-                                //formu.getFecha(),
+                                formu.getNombre(),"",
+                                formu.getFecha(),
                                 //formu.getHora(),
                                 formu.getInformacion(), 
-                                "","");
-                                
-                                //formu.getImagen()
-        
+                                "ybarboza27@gmail.com","");
+                  JOptionPane.showMessageDialog(null, "fecha "+formu.getFecha());              
         accionRealizada=nEvento.crearEventosDB(evento);
         if(!accionRealizada){
             // si la accion es false es que no se pudo crear el nuevo evento por loq ue hay que mostrar un mensaje
-            JOptionPane.showMessageDialog(null, "El evento no se pudo crear por fallo en la base");
+            JOptionPane.showMessageDialog(null, "El evento no se pudo crear por fallo en la base CREAR_EVENTO_ACTION");
         }//fin if
         formu.setInformacion("");
         formu.setLugar("");
@@ -77,3 +75,88 @@ public class CrearEventoAction extends DispatchAction {
         return mapping.getInputForward();
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+//
+//<%-- 
+//    Document   : crear_evento
+//    Created on : 18/04/2013, 10:08:58 PM
+//    Author     : Mac
+//--%>
+//
+//<%@page contentType="text/html" pageEncoding="UTF-8"%>
+//<!DOCTYPE html>
+//<html>
+//    <head>
+//        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+//        <title><bean:message key="welcome.title"/></title>
+//        <link rel="stylesheet" href="./assets/css/estilos.css" type="text/css" />
+//        <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
+//        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+//        <html:base/>
+//    </head>
+//    <body>
+//        <%@include file="/includes/header.jsp" %>
+//
+//    <section  id="seccion-principal">
+//
+//        <div id="contendor-interno"> 
+//
+//            <html:form action="/crear_evento"  >
+//                
+//                <h1><bean:message key="form.evento.crear"/></h1>
+//                
+//                <h2><bean:message key="form.nombre"/></h2>
+//                <html:text  name="EventoForm" property="nombre" size="16" value=""/><br>
+//                <html:errors property="enombre"/> 
+//                
+//                <h2><bean:message key="form.fecha"/></h2>
+//                <%--<input type="text" name="fecha" id="datepicker" readonly="readonly" size="12" />
+//                <html:text  name="EventoForm" property="fecha" id="datepicker"/>--%>
+//
+//                
+//                <h2><bean:message key="form.categoria"/></h2>
+//                <html:select property="idCategoria" >
+//                    <logic:iterate name="listaCategorias" id="numero" >
+//                        <html:option value="${numero.idCategoria}"> <!-- esto es para que cuando elija el nombre me envie el numero !-->
+//                            <bean:write name="numero" property="nombreCategoria"/>
+//                        </html:option>
+//                    </logic:iterate>
+//                </html:select>
+//                
+//                <h2><bean:message key="form.lugar"/></h2>
+//                <html:text  name="EventoForm" property="lugar" size="16" value=""/><br>
+//                <html:errors property="elugar"/> 
+//                
+//                <h2><bean:message key="form.informacion"/></h2>
+//                <html:textarea name="EventoForm" property="informacion" cols="44" rows="5" /><br>
+//                <html:errors property="einformacion"/> 
+//                
+//                <html:submit value="Crear" /><br>
+//               
+//                
+//                   
+//            </html:form>
+//                 
+//                <a href="./listar_evento.do">
+//                    <button id="boton-volver">
+//                        <bean:message key="boton.volver"/>
+//                    </button>
+//                </a>
+//        </div> 
+//
+//    </section>
+//
+//
+//    <%@include file="/includes/footer.jsp" %>
+//    </body>
+//</html>

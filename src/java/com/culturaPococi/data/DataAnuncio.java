@@ -31,7 +31,7 @@ public class DataAnuncio extends DataBase{
             resultado = statement.executeQuery(sql);
 
             while (resultado.next()) {
-                anuncio = new Anuncio(resultado.getString("titulo"), resultado.getBlob("imagen"),
+                anuncio = new Anuncio(resultado.getString("titulo"), resultado.getString("imagen"),
                         resultado.getInt("prioridad"), resultado.getInt("idAnuncio"));
                 listaAnuncios.add(anuncio);
             }//fin while
@@ -111,14 +111,16 @@ public class DataAnuncio extends DataBase{
     public boolean crearAnuncio(Anuncio anuncio) throws SQLException {
 
         boolean accionRealizada = true;
-        String sql = "call pCrearAnuncio(?,?);";
+        String sql = "call pCrearAnuncio(?,?,?);";
         Connection conexion = super.getConexion();
 
         try {
             CallableStatement call = conexion.prepareCall(sql);
 
-            call.setString("ptitulo", anuncio.getTitulo());
+            call.setString("pimagen", anuncio.getImagen());
             call.setInt("pprioridad", anuncio.getPrioridad());
+            call.setString("ptitulo", anuncio.getTitulo());
+            
 
             call.executeUpdate();
             call.close();

@@ -41,15 +41,18 @@ public class CrearAnuncioAction extends DispatchAction {
         
         boolean accionRealizada;
         AnuncioForm formu=(AnuncioForm) form;
-        Anuncio anuncio=new Anuncio(formu.getTitulo(),null,formu.getPrioridad(),formu.getIdAnuncio());
+        Anuncio anuncio=new Anuncio(formu.getTitulo(),"../assets/img/evento-icon.png",
+                formu.getPrioridad(),formu.getIdAnuncio());
         
         //LinkedList listaPrioridades = new LinkedList();
         //listaPrioridades = nAnuncio.listarPrioridadesDB();
+        JOptionPane.showMessageDialog(null, "titulo: "+formu.getTitulo()+"prio "+formu.getPrioridad()
+                +"id "+formu.getIdAnuncio());
         
         accionRealizada=nAnuncio.crearAnuncioDB(anuncio);
         
         if(accionRealizada==false){
-            JOptionPane.showMessageDialog(null, "ocurrio un error al cargar la base de datos");
+            JOptionPane.showMessageDialog(null, "ocurrio un error al cargar la base de datos crearAnuncioAction");
         }
         
         //request.setAttribute("listaPrioridades", listaPrioridades);

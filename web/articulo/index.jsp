@@ -44,7 +44,7 @@
                             <a href="../eliminar_articulo.do?idArticulo=${articuloTemporal.idArticulo}">
                                 <div id="elemento-icon"><img src="../assets/img/delete-icon.png" width="30"/></div>
                             </a> 
-                            <a href="../listar_articulos.do?idArticulo=${articuloTemporal.idArticulo}">
+                            <a href="../ver_articulo.do?idArticulo=${articuloTemporal.idArticulo}">
                                 <div id="elemento-icon"><img src="../assets/img/editar-icon.png" width="30"/></div>
                             </a>
                               
@@ -52,7 +52,7 @@
                         </div>
                         <%-- FIN Elemento  --%>
                         </logic:iterate>
-                        <a href="crear_articulo.jsp"><button id="boton-unir"><bean:message key="boton.crear.articulo"/></button></a>
+                        <a href="../listar_categorias_articulos.do"><button id="boton-unir"><bean:message key="boton.crear.articulo"/></button></a>
                     </section>
                         
                 </div> 

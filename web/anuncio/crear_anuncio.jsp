@@ -39,7 +39,7 @@
                 <h2><bean:message key="anuncios.form.prioridad"/></h2>
                 <html:select property="prioridad" name="AnuncioForm">
                     <logic:iterate name="listaPrioridades" id="numero" >
-                        <html:option value=""> <!-- esto es para que cuando elija el nombre me envie el numero !-->
+                        <html:option value="1"> <!-- esto es para que cuando elija el nombre me envie el numero !-->
                             <bean:write name="numero"/><br>
                         </html:option>
                     </logic:iterate>

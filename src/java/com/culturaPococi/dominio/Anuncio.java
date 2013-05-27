@@ -13,14 +13,14 @@ import java.sql.Blob;
 public class Anuncio {
     
     private String titulo;
-    private Blob imagen;
+    private String imagen;
     private int prioridad;
     private int idAnuncio;
 
     public Anuncio() {
     }
 
-    public Anuncio(String titulo, Blob imagen, int prioridad, int idAnuncio) {
+    public Anuncio(String titulo, String imagen, int prioridad, int idAnuncio) {
         this.titulo = titulo;
         this.imagen = imagen;
         this.prioridad = prioridad;
@@ -35,11 +35,11 @@ public class Anuncio {
         this.titulo = titulo;
     }
 
-    public Blob getImagen() {
+    public String getImagen() {
         return imagen;
     }
 
-    public void setImagen(Blob imagen) {
+    public void setImagen(String imagen) {
         this.imagen = imagen;
     }
 

@@ -1,6 +1,6 @@
 <%-- 
-    Document   : crear_evento
-    Created on : 18/04/2013, 10:08:58 PM
+    Document   : modificar_evento
+    Created on : 18/04/2013, 10:09:36 PM
     Author     : Mac
 --%>
 
@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
         <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
     
-        <title>Crear Evento</title>
+        <title>Modificar Evento</title>
     </head>
     <body>
         <%@include file="/includes/header.jsp" %>
@@ -27,7 +27,9 @@
 
         <div id="contendor-interno"> 
 
-            <html:form action="/crear_evento"  >
+            <html:form action="/crear_evento" >
+                
+                
                 
                 <h1><bean:message key="form.evento.crear"/></h1>
                 
@@ -35,10 +37,13 @@
                 <html:text  name="EventoForm" property="nombre" size="16" value=""/><br>
                 <html:errors property="enombre"/> 
                 
+                <h2><bean:message key="form.fecha"/></h2>
+                <html:errors property="efecha"/> 
+                
                 <h2><bean:message key="form.categoria"/></h2>
-                <html:select property="idCategoria" >
+                <html:select property="idCategoria">
                     <logic:iterate name="listaCategorias" id="numero" >
-                        <html:option value="${numero.idCategoria}"> <!-- esto es para que cuando elija el nombre me envie el numero !-->
+                        <html:option value=""> <!-- esto es para que cuando elija el nombre me envie el numero !-->
                             <bean:write name="numero" property="nombreCategoria"/>
                         </html:option>
                     </logic:iterate>
@@ -49,20 +54,20 @@
                 <html:errors property="elugar"/> 
                 
                 <h2><bean:message key="form.informacion"/></h2>
-                <html:textarea name="EventoForm" property="informacion" cols="44" rows="5" /><br>
+                <html:textarea name="EventoForm" property="informacion" cols="44" rows="5" value="" /><br>
                 <html:errors property="einformacion"/> 
                 
-                <html:submit value="Crear" /><br>
-               
+                <html:hidden  name="EventoForm" property="correo" value=""/>
                 
-                   
+                <html:submit value="Crear" />
+
             </html:form>
-                 
-                <a href="./listar_evento.do">
+                 <a href="./listar_evento.do">
                     <button id="boton-volver">
                         <bean:message key="boton.volver"/>
                     </button>
                 </a>
+
         </div> 
 
     </section>

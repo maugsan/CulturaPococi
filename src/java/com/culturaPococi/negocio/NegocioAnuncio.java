@@ -36,7 +36,7 @@ public class NegocioAnuncio {
     }//fin listarPrioridadesDB
      
      public Anuncio anuncioDB(int idAnuncio) throws SQLException{
-        Anuncio anuncio=new Anuncio();
+        Anuncio anuncio;
         anuncio=dAnuncio.selectAnuncio(idAnuncio);
         return anuncio;
     }//fin anuncioDB

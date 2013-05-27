@@ -13,12 +13,13 @@ import javax.swing.JOptionPane;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import org.apache.struts.actions.DispatchAction;
 
 /**
  *
  * @author Personal
  */
-public class ListarBoletinesAction extends org.apache.struts.action.Action {
+public class ListarBoletinesAction extends DispatchAction {
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
