@@ -4,6 +4,8 @@
  */
 package com.culturaPococi.accion.perfil;
 
+import com.culturaPococi.dominio.Perfil;
+import com.culturaPococi.negocio.NegocioPerfil;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.swing.JOptionPane;
@@ -17,7 +19,8 @@ import org.apache.struts.actions.DispatchAction;
  * @author jonathan
  */
 public class MostrarPerfilSeleccionadoAction extends DispatchAction{
-
+  Perfil p ;
+  NegocioPerfil np;
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
 
@@ -35,11 +38,18 @@ public class MostrarPerfilSeleccionadoAction extends DispatchAction{
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        
-       String nombrePerfil = request.getParameter("nombrePerfil");
-        
-        JOptionPane.showMessageDialog(null, " nombrePerfil   "+ nombrePerfil);
-        
-        return mapping.findForward(SUCCESS);
+        np = new NegocioPerfil();
+
+        String nombrePerfil = request.getParameter("nombrePerfil");
+
+        JOptionPane.showMessageDialog(null, " nombrePerfil   " + nombrePerfil);
+
+        p = np.mostrarPerfil(nombrePerfil);
+
+        request.setAttribute("perfil", nombrePerfil);
+
+        return mapping.findForward("mostrar_perfil_seleccionado.jsp");
     }
+
+ 
 }

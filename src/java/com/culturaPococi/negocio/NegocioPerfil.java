@@ -28,4 +28,8 @@ public class NegocioPerfil {
     public LinkedList<Perfil> getListaPerfil() throws SQLException{
     return dp.getListaPerfil();
     }
+    
+    public Perfil  mostrarPerfil(String nombreP) throws SQLException{
+    return dp.mostrarPerfil(nombreP);
+    }
 }
