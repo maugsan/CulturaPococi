@@ -33,20 +33,22 @@
 
                     <h1><bean:message key="publicacion"/></h1>
 
-                    <div id="elemento-publicacion-musica">
+                    <div id="lista-elementos">
                         
                             
                         <%-- Inicio Elemento  --%>
                         
 
-                            <div id="elemento-imagen"><img src="../assets/img/evento-icon.png" width="30"/></div><br>
-                            ${publicacion.getIdPublicacion()}
-                            <p id="elemento-nombre">${publicacion.getNombrePerfil()}</p><br>
-                            <p id="elemento-nombre">${publicacion.getFechaPublicacion()}</p><br>
-                            <p id="elemento-nombre">${publicacion.getNombreCategoria()}</p><br>
-                            <p id="elemento-nombre">${publicacion.getDescripcion()}</p><br>
-                            <a href="${publicacion.getVideo()}"><p id="elemento-nombre">Link: ${publicacion.getVideo()}</p></a><br>
                             
+                            <h1>${publicacion.getNombrePerfil()}</h1>
+                            <h2>${publicacion.getNombreCategoria()}</h2>
+                            <h3>${publicacion.getFechaPublicacion()}</h3>
+                            <h3>${publicacion.getDescripcion()}</h3><br>
+                            
+                            <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F89903395"></iframe>
+                            <iframe width="420" height="315" src="http://www.youtube.com/embed/tb9yKa-P2-M" frameborder="0" allowfullscreen></iframe>
+                          ${publicacion.getVideo()}
+                            <br>
                              <a href="../aceptar_publicacion.do?idPublicacion=${publicacion.getIdPublicacion()}&tipoPublicacion=musica">
                                 <html:submit value="Aceptar" />
                             </a>
@@ -59,7 +61,7 @@
 
             </section>
 
-            <%@include file="/includes/espacios.jsp" %>
+           
             <section id="seccion-inferior">
 
                 <div id="contendor-interno"> </div>

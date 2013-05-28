@@ -29,7 +29,7 @@
 
 
 
-                    <div id="listaTipoPublicacion">
+                    
                         <form method="get" action="../listar_publicaciones_pendientes.do">
 
                             <select name="tipoPublicacion">
@@ -44,7 +44,7 @@
 
 
                         </form>
-                    </div>
+                   
 
 
 
@@ -52,7 +52,7 @@
 
             </section>
 
-            <%@include file="/includes/espacios.jsp" %>
+        
             <section id="seccion-inferior">
 
                 <div id="contendor-interno"> </div>

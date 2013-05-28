@@ -34,7 +34,6 @@ body {
 
     width: 940px;
     height: auto;
-    /* border: solid 1px blue; */
     margin: 0 auto;
      display: block;
 
@@ -99,10 +98,9 @@ section {
 #seccion-principal {
 
     padding-top: 110px;
-    min-height: 350px;
-    height: auto;
+    min-height: 400px;
     display: block;
-
+    
 }
 
 
@@ -425,7 +423,7 @@ button {
 
 .form {
 
-    background-color: #684e24;
+    background-color: #red;
 
 }
 /* 
@@ -478,7 +476,9 @@ button {
 
 form {
     margin: 20px;
+    background: #red;
     width: 50%;
+    height: auto;
     padding: 20px;
     border-radius: 10px;
     border:2px solid #ccc;
