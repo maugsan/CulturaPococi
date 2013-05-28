@@ -27,21 +27,21 @@
         <%@include file="/includes/header_administrativo.jsp" %>
         <div id="contendor">
 
+            <section  id="seccion-principal">
 
-            <div id="contendor-interno"> 
+                <div id="contendor-interno"> 
 
 
-                <section  id="seccion-principal">
+
+                    <a href="crear_programaradio.jsp"><button id="boton-unir">Nuevo Programa de Radio</button></a>
+                    <script type="text/javascript">
+                                             var d = new Date();
+                                             document.write('<br>Hora: ' + d.getHours(), ':' + d.getMinutes());
+                    </script>
+
 
 
                     <logic:iterate name="listaProgramas" id="numero" >
-
-
-                        <script type="text/javascript">
-                            var d = new Date();
-                            document.write('<br>Hora: ' + d.getHours(), ':' + d.getMinutes());
-                        </script>
-
                         <div id="elemento">
 
                             <p id="elemento-nombre"> ${numero.nombre}</p> 
@@ -54,24 +54,24 @@
                         </div>
                         <a href="../eliminar_programa_radio.do?nombre=${numero.nombre}"><div id="elemento-icon"><img src="../assets/img/delete-icon.png" width="30"/></div></a>   
 
-                </div>
-                <%-- FIN Elemento   ${perfilTemporal.nombrePerfil} --%> 
+                    </div>
+                    <%-- FIN Elemento   ${perfilTemporal.nombrePerfil} --%> 
 
-            </logic:iterate>
+                </logic:iterate>
+            </section>
+        </div> 
+
+
+
+        <%@include file="/includes/espacios.jsp" %>
+        <section id="seccion-inferior">
+
+            <div id="contendor-interno"> </div>
+
         </section>
-    </div> 
+        <%@include file="/includes/footer.jsp" %>
 
-    <a href="crear_programaradio.jsp"><button id="boton-unir">Nuevo Programa de Radio</button></a>
-
-    <%@include file="/includes/espacios.jsp" %>
-    <section id="seccion-inferior">
-
-        <div id="contendor-interno"> </div>
-
-    </section>
-    <%@include file="/includes/footer.jsp" %>
-
-</div>
+    </div>
 
 </body>
 </html:html>
