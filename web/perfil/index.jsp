@@ -51,9 +51,9 @@
                                 
                                 <a href="../mostrar_perfil_seleccionado.do?nombrePerfil=${perfilTemporal.nombrePerfil}"> <div id="link-detalle-elemento"><div id="elemento-imagen"><img src="../assets/img/perfil-icon.png" width="30"/></div>
                                         
-                                        <p id="elemento-nombre"> ${perfilTemporal.nombrePerfil}</p> 
+                                        <h1> ${perfilTemporal.nombrePerfil}</h1> 
                                         <BR>
-                                        <p id="elemento-categoria" > ${perfilTemporal.nombreCategoria}</p>
+                                        <h2> ${perfilTemporal.nombreCategoria}</h2>
 
                                         <%--  ${perfilTemporal.biografia}
                                          ${perfilTemporal.fechaDeCreacion}
