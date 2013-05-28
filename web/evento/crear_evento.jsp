@@ -18,6 +18,9 @@
         <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
         <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
     
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="./assets/js/calendario.js"></script>
         <title>Modificar Evento</title>
     </head>
     <body>
@@ -38,6 +41,8 @@
                 <html:errors property="enombre"/> 
                 
                 <h2><bean:message key="form.fecha"/></h2>
+
+                <input type="text" name="fecha" id="datepicker" readonly="readonly" size="12" />
                 <html:errors property="efecha"/> 
                 
                 <h2><bean:message key="form.categoria"/></h2>

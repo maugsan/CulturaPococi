@@ -17,7 +17,9 @@
         <link rel="stylesheet" href="./assets/css/estilos.css" type="text/css" />
         <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
         <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
-    
+         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="./assets/js/calendario.js"></script>
         <title>Modificar Evento</title>
     </head>
     <body>
@@ -30,9 +32,12 @@
             <html:form action="/actualizar_evento" >
                 
                 
-                
+
                 <h1><bean:message key="form.evento.modificar"/></h1>
-                
+
+                <label> Seleccionar Fecha:</label>
+                <input type="text" name="fecha" id="datepicker" readonly="readonly" size="12" />
+
                 <h2><bean:message key="form.nombre"/></h2>
                 <html:text  name="EventoForm" property="nombre" size="16" value="${evento.nombre}"/><br>
                 <html:errors property="enombre"/> 
