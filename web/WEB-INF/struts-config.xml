@@ -7,6 +7,7 @@
 
 <struts-config>
     <form-beans>
+         <form-bean name="CrearProgramaRadioForm" type="com.culturaPococi.accion.programaradio.CrearProgramaRadioForm"/>
         <form-bean name="ArticuloForm" type="com.culturaPococi.accion.articulo.ArticuloForm"/>
         <form-bean name="FormularioCategoria" type="com.culturaPococi.accion.categoria.FormularioCategoria"/>
         <form-bean name="FormularioTipoPublicacion" type="com.culturaPococi.accion.publicacion.FormularioTipoPublicacion"/>
