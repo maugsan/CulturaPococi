@@ -41,6 +41,7 @@
 
                             <div id="elemento-imagen"><img src="../assets/img/evento-icon.png" width="30"/></div>
                             <p id="elemento-nombre">${eventoTemporal.nombre}</p>
+                            <p id="elemento-nombre">${eventoTemporal.fecha}</p>
                             <a href="../eliminar_evento.do?idEvento=${eventoTemporal.idEvento}">
                                 <div id="elemento-icon"><img src="../assets/img/delete-icon.png" width="30"/></div>
                             </a> 

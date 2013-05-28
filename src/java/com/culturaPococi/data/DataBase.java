@@ -30,7 +30,7 @@ public class DataBase {
 //        this.baseDatos = "grupo_tres_db";
 //        this.host = "jdbc:mysql://163.178.175.115:3306/" + baseDatos;
         this.usuario = "root";
-        this.contra = "";
+        this.contra = "root";
         this.baseDatos = "cultura_pococi";
         this.host = "jdbc:mysql://localhost:3306/" + baseDatos;
         try {

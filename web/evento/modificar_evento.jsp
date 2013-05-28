@@ -36,7 +36,7 @@
                 <h1><bean:message key="form.evento.modificar"/></h1>
 
                 <label> Seleccionar Fecha:</label>
-                <input type="text" name="fecha" id="datepicker" readonly="readonly" size="12" />
+                <input type="text" name="fecha" id="datepicker" readonly="readonly" size="12" value="${evento.fecha}" />
 
                 <h2><bean:message key="form.nombre"/></h2>
                 <html:text  name="EventoForm" property="nombre" size="16" value="${evento.nombre}"/><br>

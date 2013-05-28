@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.LinkedList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -92,14 +93,23 @@ public class DataEvento extends DataBase{
             CallableStatement call = conexion.prepareCall(sql);
 
             call.setString("pnombre", evento.getNombre());
+            JOptionPane.showMessageDialog(null, "1:"+evento.getNombre());
             call.setString("plugar", evento.getLugar());
+            JOptionPane.showMessageDialog(null, "2:"+evento.getLugar());
             call.setString("phora", evento.getHora());
+            JOptionPane.showMessageDialog(null, "3:"+evento.getHora());
             call.setString("pfecha", evento.getFecha());
+            JOptionPane.showMessageDialog(null, "4:"+evento.getFecha());
             call.setString("pinformacion", evento.getInformacion());
+            JOptionPane.showMessageDialog(null, "5:"+evento.getInformacion());
             call.setString("pcorreo",evento.getCorreo());
+            JOptionPane.showMessageDialog(null, "6:"+evento.getCorreo());
             call.setInt("pidCategoria", evento.getIdCategoria());
+            JOptionPane.showMessageDialog(null, "7:"+evento.getIdCategoria());
             call.setString("pimagen",evento.getImagen());
+            JOptionPane.showMessageDialog(null, "8:"+evento.getImagen());
             call.executeUpdate();
+             JOptionPane.showMessageDialog(null, "9");
             call.close();
         } catch (Exception e) {
             accionRealizada = false;

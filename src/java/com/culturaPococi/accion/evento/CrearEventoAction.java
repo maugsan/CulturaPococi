@@ -48,12 +48,12 @@ public class CrearEventoAction extends DispatchAction {
                                 formu.getIdCategoria(), 
                                 "", 
                                 formu.getLugar(), 
-                                formu.getNombre(),"",
-                                formu.getFecha(),
+                                formu.getNombre(),
+                                formu.getFecha(),"",
                                 //formu.getHora(),
                                 formu.getInformacion(), 
                                 "ybarboza27@gmail.com","");
-                  JOptionPane.showMessageDialog(null, "fecha "+formu.getFecha());              
+                  JOptionPane.showMessageDialog(null, "fecha "+formu.getIdCategoria());   
         accionRealizada=nEvento.crearEventosDB(evento);
         if(!accionRealizada){
             // si la accion es false es que no se pudo crear el nuevo evento por loq ue hay que mostrar un mensaje

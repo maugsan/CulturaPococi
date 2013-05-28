@@ -30,6 +30,6 @@ $(document).ready(function() {
     $("#datepicker").datepicker({
         showOn: 'button',
         buttonImageOnly: true,
-        buttonImage: '../assets/img/evento-icon.png'
+        buttonImage: './assets/img/evento-icon.png'
     });
 });

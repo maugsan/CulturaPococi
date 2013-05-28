@@ -38,18 +38,19 @@
                 
                 <h2><bean:message key="form.nombre"/></h2>
                 <html:text  name="EventoForm" property="nombre" size="16" value=""/><br>
+                
                 <html:errors property="enombre"/> 
                 
                 <h2><bean:message key="form.fecha"/></h2>
-
                 <input type="text" name="fecha" id="datepicker" readonly="readonly" size="12" />
-                <html:errors property="efecha"/> 
+                 <html:errors property="efecha"/> 
+                 
                 
                 <h2><bean:message key="form.categoria"/></h2>
                 <html:select property="idCategoria">
                     <logic:iterate name="listaCategorias" id="numero" >
-                        <html:option value=""> <!-- esto es para que cuando elija el nombre me envie el numero !-->
-                            <bean:write name="numero" property="nombreCategoria"/>
+                        <html:option value="${numero.idCategoria}"> <!-- esto es para que cuando elija el nombre me envie el numero !-->
+                            <bean:write name="numero" property="idCategoria"/>
                         </html:option>
                     </logic:iterate>
                 </html:select>
