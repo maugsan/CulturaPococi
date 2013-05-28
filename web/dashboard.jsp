@@ -84,7 +84,7 @@
                                             <img id="icono" src="assets/img/anuncio-icon.png" width="60">
                                             <h2>Anuncio</h2>
                                         </section></a>
-                                    <a href="./programaradio/"> <section class="modulo">
+                                  <a href="./listar_programa_radio.do"> <section class="modulo">
                                             <img id="icono" src="assets/img/radio-icon.png" width="60">
                                             <h2>Programas de Radio</h2>
                                         </section></a>

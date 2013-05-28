@@ -60,6 +60,7 @@
                 scope="request" 
                 type="com.culturaPococi.accion.usuarioNormal.MostrarUsuariosAction"/>
         
+           
              <!-- PERFIL  -->
         <action path="/mostrarperfiles" 
                 type="com.culturaPococi.accion.perfil.MostrarPerfilesAction"
@@ -79,7 +80,11 @@
         
         <action path="/mostrar_perfil_seleccionado"
                 type="com.culturaPococi.accion.perfil.MostrarPerfilSeleccionadoAction"
-               />
+                 scope="request"
+                 input="/perfil/mostrar_perfil_seleccionado.jsp"
+        >
+        
+        </action>
         
         <!-- FIN PERFIL  -->
         
@@ -357,11 +362,7 @@
         
          <!-- FIN ARTÍCULOS  -->
         
-        <action path="/modificar_programa_radio" type="com.culturaPococi.accion.programaradio.ModificarProgramaRadioAction"/>
-        <action path="/eliminar_programa_radio" type="com.culturaPococi.accion.programaradio.EliminarProgramaRadioAction"/>
-        <action path="/crear_programa_radio" type="com.culturaPococi.accion.programaradio.CrearProgramaRadioAction"/>
-        
-        
+              
         
         <!-- MAPPING PARA ACIONES PARA USUARIO NORMAL  -->
         
@@ -384,7 +385,31 @@
         </action>
         
       
-       
+       <!-- PROGRAMA RADIO -->
+        <action path="/listar_programa_radio"
+                type="com.culturaPococi.accion.programaradio.ListarProgramaRadio" 
+                scope="request" 
+                input="/programaradio/index.jsp" 
+                validate="false"
+        /> 
+   
+        <action path="/eliminar_programa_radio" 
+                type="com.culturaPococi.accion.programaradio.EliminarProgramaRadioAction"
+        
+        >
+            <forward name="success" path="/programaradio/eliminar_programaradio.jsp"/>
+        </action>
+        <action input="/crear_programaradio.js" 
+                name="CrearProgramaRadioForm" 
+                path="/crear_programa_radio" 
+                scope="session" 
+                validate="false"
+                type="com.culturaPococi.accion.programaradio.CrearProgramaRadioAction"/>
+
+        <action path="/modificar_programa_radio" type="com.culturaPococi.accion.programaradio.ModificarProgramaRadioAction"/>
+        
+        
+        <!-- PROGRAMA RADIO -->
         
         
         
