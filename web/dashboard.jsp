@@ -12,7 +12,7 @@
         <title>Dashboard</title>
         <link rel="stylesheet" href="./assets/css/estilos.css" type="text/css" />
         <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
-         <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
     </head>
     <body>
 
@@ -27,7 +27,7 @@
                     <ul>
 
                         <li><a href="./dashboard.jsp" >INICIO</a></li>
-                      
+
 
                     </ul>
 
@@ -56,7 +56,8 @@
                             <div id="contendor-interno"> 
 
                                 <h1>Sitio administrativo</h1>
-                                <aside>
+                               
+                                
 
 
                                     <a href="./mostrar_usuario.do"><section class="modulo">
@@ -67,8 +68,8 @@
                                             <img id="icono" src="assets/img/perfil-icon.png" width="60">
                                             <h2>Perfil</h2>
                                         </section></a>
-                                    
-                                        <a href="./listar_evento.do"><section class="modulo">
+
+                                    <a href="./listar_evento.do"><section class="modulo">
                                             <img id="icono" src="assets/img/evento-icon.png" width="60">
                                             <h2>Evento</h2>
                                         </section></a>
@@ -84,34 +85,34 @@
                                             <img id="icono" src="assets/img/anuncio-icon.png" width="60">
                                             <h2>Anuncio</h2>
                                         </section></a>
-                                  <a href="./listar_programa_radio.do"> <section class="modulo">
+                                    <a href="./listar_programa_radio.do"> <section class="modulo">
                                             <img id="icono" src="assets/img/radio-icon.png" width="60">
                                             <h2>Programas de Radio</h2>
                                         </section></a>
-                                  <a href="./publicacion/index.jsp"> <section class="modulo">
-                                    <%-- <a href="./mostrar_publicacion.do"> <section class="modulo">--%>
+                                    <a href="./publicacion/index.jsp"> <section class="modulo">
+                                            <%-- <a href="./mostrar_publicacion.do"> <section class="modulo">--%>
                                             <img id="icono" src="assets/img/publicacion-icon.png" width="60">
                                             <h2>Publicación</h2>
                                         </section></a>
 
-                                </aside>
+                              
+                                            
 
                             </div> 
 
                         </section>
 
-                        <%@include file="/includes/espacios.jsp" %>
                         <section id="seccion-inferior">
 
                             <div id="contendor-interno"> 
-                            
-                            
-                            <%
-HttpSession sesion=request.getSession();
 
-%>
-                            
-           <p><%= sesion %></p>          
+
+                                <%
+                                    HttpSession sesion = request.getSession();
+
+                                %>
+
+                                <p><%= sesion%></p>          
                             </div>
 
                         </section>

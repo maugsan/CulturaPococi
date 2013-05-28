@@ -29,41 +29,47 @@
 
             <section  id="seccion-principal">
 
+                  <a href="crear_programaradio.jsp"><button id="boton-unir">Nuevo Programa de Radio</button></a>
                 <div id="contendor-interno"> 
 
-
-
-                    <a href="crear_programaradio.jsp"><button id="boton-unir">Nuevo Programa de Radio</button></a>
                     <script type="text/javascript">
                                              var d = new Date();
                                              document.write('<br>Hora: ' + d.getHours(), ':' + d.getMinutes());
                     </script>
-
-
+                
+                    
+                    <section id="lista-elementos">
+                    
 
                     <logic:iterate name="listaProgramas" id="numero" >
                         <div id="elemento">
 
-                            <p id="elemento-nombre"> ${numero.nombre}</p> 
-                            <BR>
-                            <p id="elemento-nombre"> ${numero.horario}</p> 
-                            <BR>
-                            <p id="elemento-nombre"> ${numero.descripcion}</p> 
-                            <BR>
+                            <h1> ${numero.nombre}</h1>
+                            <h2>  ${numero.horario}</h2>
+                            <h3>  ${numero.descripcion}</h3>
+                         
+                          
+                          
+                          
+                             <a href="../eliminar_programa_radio.do?nombre=${numero.nombre}"><div id="elemento-icon"><img src="../assets/img/delete-icon.png" width="30"/></div></a>   
 
+                       
+
+                 
+                         <%-- FIN Elemento   ${perfilTemporal.nombrePerfil} --%> 
+                    
+                      
                         </div>
-                        <a href="../eliminar_programa_radio.do?nombre=${numero.nombre}"><div id="elemento-icon"><img src="../assets/img/delete-icon.png" width="30"/></div></a>   
+                        </logic:iterate>
+                    
+                    </section>
+                    
+                       </div>
 
-                    </div>
-                    <%-- FIN Elemento   ${perfilTemporal.nombrePerfil} --%> 
-
-                </logic:iterate>
+            
             </section>
-        </div> 
+     
 
-
-
-        <%@include file="/includes/espacios.jsp" %>
         <section id="seccion-inferior">
 
             <div id="contendor-interno"> </div>
