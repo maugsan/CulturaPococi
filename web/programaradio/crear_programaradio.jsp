@@ -44,7 +44,8 @@
 
                 </html:form>
 
-                <a href="http://localhost:8084/CulturaPococi/listar_programa_radio.do">
+                    <%-- <a href="http://localhost:8084/CulturaPococi/listar_programa_radio.do"> --%>
+                    <a  href="../listar_programa_radio.do">
                     <button id="boton-volver">
                         <bean:message key="boton.volver"/>
                     </button>
