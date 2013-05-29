@@ -47,7 +47,10 @@
                             <p id="elemento-nombre">${publicacion.getDescripcion()}</p><br>
                             <a href="${publicacion.getMusica()}"><p id="elemento-nombre">Link: ${publicacion.getMusica()}</p></a><br>
                             
-                             <a href="../aceptar_publicacion.do?idPublicacion=${publicacion.getIdPublicacion()}&tipoPublicacion=musica">
+                             <iframe width="100%" height="166" scrolling="no" frameborder="no" src="${publicacion.getMusica()}"></iframe>
+                            
+                            
+                             <a href="../aceptar_publicacion.do?idPublicacion=${publicacion.getIdPublicacion()}&tipoPublicacion=música">
                                 <html:submit value="Aceptar" />
                             </a>
                         <%-- FIN Elemento  --%>

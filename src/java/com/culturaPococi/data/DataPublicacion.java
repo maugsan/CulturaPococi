@@ -178,7 +178,6 @@ public class DataPublicacion extends DataBase{
         
         Connection conexion=super.getConexion();
         try{
-            
             CallableStatement call=conexion.prepareCall(sql);
             call.setInt("pidPublicacion", idPublicacion);
             call.executeUpdate();

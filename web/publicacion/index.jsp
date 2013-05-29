@@ -32,14 +32,26 @@
                 
                 <div id="contendor-interno"> 
 
-                    <h1><bean:message key="publicaciones.titulo"/></h1>
+                    <h1><bean:message key="publicacion.publicaciones.pendientes"/></h1>
 
 
-                    <div id="listaPublicacion">
-                        <div id="elemento-imagen"><img src="../assets/img/evento-icon.png" width="30"/></div>
-                        <a href="elegir_tipo_publicacion_pendiente.jsp"><bean:message key="publicacion.publicaciones.pendientes"/></a>
-                    </div>
-                    <%-- FIN Elemento   ${perfilTemporal.nombrePerfil} --%> 
+
+                    
+                        <form method="get" action="../listar_publicaciones_pendientes.do">
+
+                            <select name="tipoPublicacion">
+                                <option value="música">Música</option>
+                                <option value="video">Video</option>
+                                <option value="texto">Texto</option>
+                                <option value="imagen">Imagen</option>
+                            </select>
+
+                            <html:submit value="Buscar" /><br>
+
+
+
+                        </form>
+                   
 
 
 
@@ -47,7 +59,7 @@
 
             </section>
 
-            <%@include file="/includes/espacios.jsp" %>
+        
             <section id="seccion-inferior">
 
                 <div id="contendor-interno"> </div>
@@ -59,3 +71,4 @@
 
     </body>
 </html:html>
+    

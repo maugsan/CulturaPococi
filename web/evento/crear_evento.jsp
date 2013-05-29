@@ -50,7 +50,7 @@
                 <html:select property="idCategoria">
                     <logic:iterate name="listaCategorias" id="numero" >
                         <html:option value="${numero.idCategoria}"> <!-- esto es para que cuando elija el nombre me envie el numero !-->
-                            <bean:write name="numero" property="idCategoria"/>
+                            <bean:write name="numero" property="nombreCategoria"/>
                         </html:option>
                     </logic:iterate>
                 </html:select>

@@ -46,20 +46,33 @@ public class ActualizarEventoAction extends DispatchAction {
         boolean accionRealizadaEvento;
         LinkedList<Categoria> listaCategorias;
         EventoForm formu = (EventoForm) form;
-        Evento evento = new Evento(formu.getIdEvento(),
-                formu.getIdCategoria(),
-                "",
-                formu.getLugar(),
-                formu.getNombre(), "", "",
-                //formu.getFecha(),
-                //formu.getHora(),
-                formu.getInformacion(),
-                "ybarboza27@gmail.com", "");
+//        Evento evento = new Evento(formu.getIdEvento(),
+//                formu.getIdCategoria(),
+//                "",
+//                formu.getLugar(),
+//                formu.getNombre(), "", "",
+//                //formu.getFecha(),
+//                //formu.getHora(),
+//                formu.getInformacion(),
+//                "ybarboza27@gmail.com", "");
+        
+        Evento evento=new Evento(formu.getIdEvento(),
+                                formu.getIdCategoria(), 
+                                "", 
+                                formu.getLugar(), 
+                                formu.getNombre(),
+                                formu.getFecha(),"",
+                                //formu.getHora(),
+                                formu.getInformacion(), 
+                                "ybarboza27@gmail.com","");
+        
+        
         accionRealizadaEvento=nEvento.actualizarEventosDB(evento);
+        JOptionPane.showMessageDialog(null, "por "+formu.getIdCategoria());
         
         if(!accionRealizadaEvento){
             //hay que mostrar un mensaje de que no se pudo actualizar el evento
-            JOptionPane.showMessageDialog(null, "El evento no se pudo cargar");
+            JOptionPane.showMessageDialog(null, "El evento no se pudo cargar------------ ActualizaEventoAction");
         }
 //        
 //        listaCategorias = nCategoria.selectCategoriasDB();

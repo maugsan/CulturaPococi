@@ -40,12 +40,14 @@ public class EliminarPublicacionPendienteAction extends DispatchAction {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         
-        
+        boolean accionRealizada;
         int idPublicacion=Integer.parseInt(request.getParameter("idPublicacion"));
         String tipoPublicacion=request.getParameter("tipoPublicacion");
-        nPublicacion.eliminarPublicacion(idPublicacion);
+        accionRealizada=nPublicacion.eliminarPublicacion(idPublicacion);
         
-        
+        if(!accionRealizada){
+            JOptionPane.showMessageDialog(null, "no se pudo borrar id> "+idPublicacion);
+        }
         
         LinkedList<Publicacion> listaPublicacionesPendientes;
          
@@ -54,8 +56,6 @@ public class EliminarPublicacionPendienteAction extends DispatchAction {
             JOptionPane.showMessageDialog(null, "problemas al cargar la lista");
         }
         
-        JOptionPane.showMessageDialog(null, "salida de eliminar NUEVA");
-        JOptionPane.showMessageDialog(null, listaPublicacionesPendientes.size()+"NUEVO");
         request.setAttribute("listaPublicacionesPendientes", listaPublicacionesPendientes);
         request.setAttribute("tipoPublicacion", tipoPublicacion);
         

@@ -58,23 +58,32 @@ public class DataEvento extends DataBase{
      public boolean  actualizarEvento(Evento evento) throws SQLException{
     
          boolean accionRealizada=true;
-        String sql = "call pActualizarEventon(?,?,?,?,?,?);";
+        String sql = "call pActualizarEvento(?,?,?,?,?,?,?,?,?);";
         Connection conexion = super.getConexion();
         
         try{
             CallableStatement call=conexion.prepareCall(sql);
         
-        call.setInt("pidEvento", evento.getIdEvento());
+       call.setInt("pidEvento", evento.getIdEvento());
+//            call.setInt("pidEvento", 26);
         call.setString("pnombre",evento.getNombre());
+        JOptionPane.showMessageDialog(null, "1"+evento.getIdEvento());
         call.setString("plugar",evento.getLugar());
-        //call.setTime("phora", evento.getFecha());
-        //call.setDate("pfecha", null);
+        call.setString("pfecha", evento.getFecha());
+        call.setString("phora", evento.getHora());
+        JOptionPane.showMessageDialog(null, "4");
         call.setString("pinformacion",evento.getInformacion());
         call.setString("pcorreo",evento.getCorreo());
-        call.setInt("pidCategoria", evento.getIdCategoria());   
+        JOptionPane.showMessageDialog(null, "7");
+        call.setInt("pidCategoria", evento.getIdCategoria()); 
+        call.setString("pimagen", evento.getImagen());
+        JOptionPane.showMessageDialog(null, "8");
         call.executeUpdate();
+        JOptionPane.showMessageDialog(null, "9");
         call.close();
-            
+       
+                
+                
         }catch(Exception e){
             accionRealizada=false;
         }finally{
