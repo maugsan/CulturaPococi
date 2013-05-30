@@ -15,14 +15,9 @@
                     HttpSession sesion = request.getSession();
                     if (sesion.getAttribute("c") == null) {
 
-                        JOptionPane.showMessageDialog(null, "jp");
+                       
                         session.invalidate();
                     }
-
-
-
-
-
 
                 %>         
 

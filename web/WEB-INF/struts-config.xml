@@ -54,15 +54,15 @@
     </global-forwards>
 
     <action-mappings>
-        <action path="/nuevologin" 
+         <action path="/nuevologin" 
                 type="com.culturaPococi.accion.login.NuevoLoginAction"
                 input="/login/nuevo_login.jsp"
                 name="NuevoLoginForm"
                 scope="session"
                 >
                 
-                <forward name="exitoso" path="/includes/exitoso.jsp" />
-                <forward name="denegado" path="/includes/denegado.jsp" />
+                <forward name="exitoso" path="/dashboard.jsp" />
+                <forward name="denegado" path="/login/nuevo_login.jsp" />
        
         </action>
       

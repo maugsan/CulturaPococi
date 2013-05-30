@@ -13,8 +13,10 @@
         <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
         <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Ingresar al sistema</title>
 
+         <link rel="stylesheet" href="./assets/css/estilos.css" type="text/css" />
+        <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
         <link rel="stylesheet" href="../assets/css/estilos.css" type="text/css" />
         <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" />
           <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
@@ -26,6 +28,7 @@
 
     <section  id="seccion-principal">
 
+        
         <div id="contendor-interno"> 
 
             <html:form action="/nuevologin">

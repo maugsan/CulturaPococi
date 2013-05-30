@@ -34,11 +34,11 @@ public class NuevoLoginAction extends DispatchAction {
         String correo=login.getCorreo();
 
         if (nua.verificarUsuarioAdministrador(login.getCorreo(), login.getContrasenia())) {
-            System.out.println("ENTRO----------------------------------------------------------------");
+             request.setAttribute("correo", correo);
             return mapping.findForward(EXITOSO);
         } else {
 
-            System.out.println("NO ENTRO----------------------------------------------------------------");
+             request.setAttribute("correo", null);
             return mapping.findForward(DENEGADO);
         }
 
