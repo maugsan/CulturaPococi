@@ -7,7 +7,7 @@
 
         <div id="header-opciones">
             <section id="controles">
-                <a href="../invalidar.jsp"><button id="boton-salir">Salir</button></a>
+                <a href="./invalidar.jsp"><button id="boton-salir">Salir</button></a>
 
                 <%
 

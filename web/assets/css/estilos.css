@@ -20,7 +20,7 @@ html {
 }
 body {
  
-    background-image: url("../img/bg.jpg");
+    background: #f0f0f0;
     color: #444;
     height: auto;
 }
@@ -36,6 +36,7 @@ body {
     height: auto;
     margin: 0 auto;
      display: block;
+     position: relative;
 
 }
 header {
@@ -99,9 +100,12 @@ section {
 
     padding-top: 110px;
     min-height: 400px;
-    display: block;
+    max-height: 100%;
     
-}
+}   
+   
+    
+
 
 
 #seccion-media {
@@ -162,14 +166,12 @@ aside {
 }
 footer {
 
-    /* border: solid 1px red; */
+    background-image: url("../img/textura1.png");
     height: auto;
     width: 100%;
-   
-    background-color: #9a9a9a;
     height: 100%;
     position: absolute;
-    
+    z-index: 0;
     
    
 
@@ -488,16 +490,18 @@ button {
 
 form {
    
-    background: #red;
+    background: #ccc;  
     width: 50%;
     height: auto;
     padding: 20px;
-    border-radius: 10px;
-    border:2px solid #ccc;
+    border-radius: 5px;
+    border:2px solid #eee;
+    margin-bottom: 20px;
 }
 #busqueda{
     
     width: 900px;
+    background: none;
     padding: 20px;
     border-radius: 10px;
     border:none;
@@ -709,3 +713,48 @@ input[type="textarea"] {
     color: green;
 }
 
+/* 
+  ========================================= 
+       Programas de radio
+  ========================================= */
+
+#programa {
+    
+    width: 200px;
+     height:  300px;
+      border: 1px solid #ccc;
+    background-color: white;
+    padding: 9px;
+    margin: 7px;
+    display: block;
+    float: left;
+
+    
+}
+
+#evento {
+    
+    width: 550px;
+     height:  50px;
+      border: 1px solid #ccc;
+    background-color: white;
+    padding: 9px;
+    margin: 7px;
+    display: block;
+    float: left;
+
+    
+}
+#social {
+    
+    width: 300px;
+     height:  1000px;
+      border: 1px solid #ccc;
+    background-color: white;
+    padding: 9px;
+    margin: 7px;
+    display: block;
+    float: right;
+
+    
+}

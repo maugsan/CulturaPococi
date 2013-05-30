@@ -28,7 +28,7 @@ public class NuevoLoginAction extends DispatchAction {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
 
-        System.out.println("ENTRO A ACTION-------------------------------------------------------------------");
+       
 
         NuevoLoginForm login = (NuevoLoginForm) form;
         String correo=login.getCorreo();
