@@ -6,6 +6,17 @@
 
 
 <struts-config>
+    
+    
+      <global-exception-mappings>
+    <exception-mapping exception="java.lang.Exception" result="exception" />
+</global-exception-mappings>
+
+<global-results>
+    <result name="exception" type="httpheader">
+        <param name="error">500</param>
+    </result>
+</global-results>
     <form-beans>
          <form-bean name="CrearProgramaRadioForm" type="com.culturaPococi.accion.programaradio.CrearProgramaRadioForm"/>
         <form-bean name="ArticuloForm" type="com.culturaPococi.accion.articulo.ArticuloForm"/>

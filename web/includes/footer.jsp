@@ -1,6 +1,17 @@
 <footer> 
 
     <div id="contendor-interno">
+        
+        
+                            <form id="busqueda" action="/buscar">
+
+                                <input id="tags">
+                                <input type="submit" value="Buscar">
+
+
+                            </form>
+
+                       
 
 
         <div id="footer-izquierdo">

@@ -13,33 +13,43 @@
         <link rel="stylesheet" href="./assets/css/estilos.css" type="text/css" />
         <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
         <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+        
+        
+        <%
+
+            HttpSession sesion = request.getSession();
+            String correo = (String) request.getAttribute("correo");
+
+            sesion.setAttribute("c", correo);
+
+            if ( sesion.getAttribute("c") == null) {
+
+
+                sesion.setAttribute("c",null);
+                session.invalidate();
+            }
+
+
+        %>             
+
+        
     </head>
     <body>
-
-        <header>
+ <header>
 
             <div id="contendor-interno">
-                <div id="header-logo">
+                <a href="#"><div id="header-logo">
 
-                </div>
-
-                <nav>
-                    <ul>
-
-                        <li><a href="./dashboard.jsp" >INICIO</a></li>
-
-
-                    </ul>
-
-                </nav>
+                    </div></a>
+                
 
                 <div id="header-opciones">
                     <section id="controles">
-                        <a href="./"><button id="boton-salir">Salir</button></a>
+                        <a href="./invalidar.jsp"><button id="boton-salir">Salir</button></a>
 
 
 
-
+                        <button id="boton-usuario"><%=sesion.getAttribute("c")%></button>
                     </section>
 
 
@@ -107,12 +117,7 @@
                             <div id="contendor-interno"> 
 
 
-                                <%
-                                    HttpSession sesion = request.getSession();
-
-                                %>
-
-                                <p><%= sesion%></p>          
+                                   
                             </div>
 
                         </section>
