@@ -18,10 +18,10 @@
         <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
         <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
         
-           <script type="text/javascript" src="./assets/js/jquery-1.0.9.min.js"></script>
+        <script type="text/javascript" src="./assets/js/jquery-1.0.9.min.js"></script>
         <script type="text/javascript" src="./assets/js/jquery.validate.js"></script>
         <script type="text/javascript" src="./assets/js/validar.js"></script>
-    
+
         <title>Crear Evento</title>
     </head>
     <body>
@@ -32,13 +32,14 @@
         <div id="contendor-interno"> 
 
              <form method="post" action="./crear_anuncio.do"  id="validar-form">
+                 
                <h1><bean:message key="anuncios.form"/></h1>
                 
                 <h2><bean:message key="anuncios.form.titulo"/></h2>
                 <input type="text" id="titulo" name="titulo" size="16" value=""/>
                                 
                 <h2><bean:message key="anuncios.form.prioridad"/></h2>
-                <select property="prioridad" name="AnuncioForm">
+                <select name="prioridad">
                     <logic:iterate name="listaPrioridades" id="numero" >
                         <option value="${numero}"> <!-- esto es para que cuando elija el nombre me envie el numero !-->
                             <bean:write name="numero"/><br>

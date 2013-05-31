@@ -31,9 +31,10 @@
 
                 
                 <div id="contendor-interno"> 
+                
                    
                     <h1><bean:message key="articulo.titulo"/></h1>
-                    
+                        
                     <section id="lista-elementos">
                         <logic:iterate  name="listaArticulos" id="articuloTemporal" >
                         <%-- Inicio Elemento  --%>
@@ -48,11 +49,11 @@
                                 <div id="elemento-icon"><img src="../assets/img/editar-icon.png" width="30"/></div>
                             </a>
                               
-                            
+                            <a href="../listar_categorias_articulos.do"><button id="boton-unir"><bean:message key="boton.crear.articulo"/></button></a>
                         </div>
                         <%-- FIN Elemento  --%>
                         </logic:iterate>
-                        <a href="../listar_categorias_articulos.do"><button id="boton-unir"><bean:message key="boton.crear.articulo"/></button></a>
+                        
                     </section>
                         
                 </div> 

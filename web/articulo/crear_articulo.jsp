@@ -61,7 +61,7 @@
 
                     <h2><bean:message key="form.categoria"/></h2>
                     
-                    <select property="categoria" id="categoria">
+                    <select name="categoria">
                         <logic:iterate name="listaCategorias" id="numero" >
                             <option value="idCategoria"> <!-- esto es para que cuando elija el nombre me envie el numero !-->
                                 <bean:write name="numero" property="nombreCategoria"/>

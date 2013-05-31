@@ -37,22 +37,20 @@ public class CrearProgramaRadioAction extends DispatchAction {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         
-        CrearProgramaRadioForm cprf = (CrearProgramaRadioForm) form;
+    
         NegocioProgramaRadio npr = new NegocioProgramaRadio();
         programaRadio pr = new programaRadio("", "", "", "");
 
-        String nombre = cprf.getNombre();
-        String horario = cprf.getHorario();
-        String descripcion = cprf.getDescripcion();
+        String nombre = request.getParameter("nombre");
+        String horario =  request.getParameter("horario");
+        String descripcion = request.getParameter("descripcion");
         
         pr.setNombre(nombre);
         pr.setHorario(horario);
         pr.setDescripcion(descripcion);
         pr.setCorreo("caro@gmail.com");
         
-        cprf.setNombre("");
-        cprf.setHorario("");
-        cprf.setDescripcion("");
+   
         
         npr.nuevoProgramaRadio(pr);
 

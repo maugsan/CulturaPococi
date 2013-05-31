@@ -40,9 +40,14 @@ public class CrearAnuncioAction extends DispatchAction {
             throws Exception {
         
         boolean accionRealizada;
-        AnuncioForm formu=(AnuncioForm) form;
-        Anuncio anuncio=new Anuncio(formu.getTitulo(),"../assets/img/evento-icon.png",
-                formu.getPrioridad(),formu.getIdAnuncio());
+        String titulo=(String) request.getParameter("titulo");
+         int prioridad= Integer.parseInt(request.getParameter("prioridad"));
+        
+        
+        Anuncio anuncio=new Anuncio(titulo,
+                                 "../assets/img/evento-icon.png",
+                                  prioridad,
+                                  0);
         
       
         

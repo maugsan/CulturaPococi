@@ -10,11 +10,12 @@ $().ready(function() {
                         titulo: { required: true, minlength: 2},
                         autor: { required: true, minlength: 2},
                         lugar: { required: true, minlength: 2},
-			email: { required:true, email: true},
+			correo: { required:true, email: true},
 			informacion: { required:true},
 			horario: { required:true, minlength: 2},
                         contenido: { required:true, minlength: 2},
                         descripcion: { required:true, minlength: 2},
+                        contrasenia: { required:true},
                         nombreCategoria: { required: true, minlength: 2}
                   
 		},
@@ -24,7 +25,8 @@ $().ready(function() {
                         autor: " * obligatorio ",
                         lugar: " * obligatorio ",
                         categoria: " * obligatorio ",
-			email : "El campo es obligatorio y debe tener formato de email correcto.",
+			correo :  " * obligatorio ",
+                        contrasenia: " * obligatorio ",
                         informacion: " * obligatorio ",
 			telefono : "El campo Tel&eacute;fono no contiene un formato correcto.",
 			horario : " * obligatorio ",

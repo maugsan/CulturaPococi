@@ -40,10 +40,9 @@ public class CrearCategoriaAction extends org.apache.struts.action.Action {
             throws Exception {
         boolean accionRealizada;
         LinkedList<Categoria> listaCategorias;
+   
         
-        FormularioCategoria formu=(FormularioCategoria) form;
-        
-        accionRealizada=nCategoria.crearCategoriaDB(formu.getNombreCategoria());
+        accionRealizada=nCategoria.crearCategoriaDB(request.getParameter("nombreCategoria"));
         
         if(!accionRealizada){
             JOptionPane.showMessageDialog(null, "poblemas con la base de datos");

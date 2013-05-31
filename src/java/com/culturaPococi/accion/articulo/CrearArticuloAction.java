@@ -42,19 +42,26 @@ public class CrearArticuloAction extends DispatchAction {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         
-        ArticuloForm formu=(ArticuloForm) form;
+       
         Articulo articulo;
         boolean accionRealizada;
         LinkedList<Articulo> listaArticulos;
         LinkedList<Categoria>listaCategoria;
         
-        articulo=new Articulo(formu.getIdArticulo(), 
-                            formu.getImagen(), 
-                            formu.getCategoria(), 
-                            formu.getTitulo(), 
-                            formu.getAutor(), 
-                            formu.getContenido(), 
-                            formu.getFecha());
+       
+        int categoria=Integer.parseInt(request.getParameter("categoria"));
+        String titulo=request.getParameter("titulo");
+        String autor=request.getParameter("autor");
+        String contenido=request.getParameter("contenido");
+        String fecha=request.getParameter("fecha");
+        
+        articulo=new Articulo(0, 
+                            "", 
+                            categoria, 
+                            titulo, 
+                            autor, 
+                            contenido, 
+                            fecha);
         accionRealizada=nArticulo.bdCrearArticulo(articulo);
         
         

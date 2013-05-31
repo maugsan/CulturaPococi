@@ -55,18 +55,20 @@ public class ActualizarEventoAction extends DispatchAction {
 //                //formu.getHora(),
 //                formu.getInformacion(),
 //                "ybarboza27@gmail.com", "");
-        
-        Evento evento=new Evento(formu.getIdEvento(),
-                                formu.getIdCategoria(), 
-                                "", 
-                                formu.getLugar(), 
-                                formu.getNombre(),
-                                formu.getFecha(),"",
-                                //formu.getHora(),
-                                formu.getInformacion(), 
-                                "ybarboza27@gmail.com","");
-        
-        
+      
+     
+
+        Evento evento = new Evento(formu.getIdEvento(),
+                formu.getIdCategoria(),
+                "",
+                formu.getLugar(),
+                formu.getNombre(),
+                formu.getFecha(), "",
+                //formu.getHora(),
+                formu.getInformacion(),
+                "ybarboza27@gmail.com", "");
+
+
         accionRealizadaEvento=nEvento.actualizarEventosDB(evento);
         JOptionPane.showMessageDialog(null, "por "+formu.getIdCategoria());
         
