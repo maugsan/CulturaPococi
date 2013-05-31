@@ -55,7 +55,7 @@
                     <input type="text" name="fecha" id="datepicker" readonly="readonly" size="12" />
 
                     <h2>Hora </h2>
-                    <select name='hora' size="2"> 
+                    <select name='hora' id="select-hora"> 
                         <option value='${hora}' > ${hora} </option>
                         <option value='1' > 1 </option>
                         <option value='2'> 2 </option>
@@ -71,7 +71,7 @@
                 <option value='12'> 12 </option>
             </select>
 
-            <select name='minutos' size="2">
+            <select name='minutos' id="select-hora">
                 <option value='${minutos}'>${minutos} </option>
                 <option value='00'> 00 </option>
                 <option value='05'> 05 </option>
@@ -88,7 +88,7 @@
 
             </select>
 
-                <select name='tiempo' size="2">
+                <select name='tiempo' id="select-hora">
                 <option value='${tiempo}'>${tiempo} </option>
                 <option value='am'> am </option>
                 <option value='pm'> pm </option>

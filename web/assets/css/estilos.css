@@ -894,3 +894,21 @@ label.error {
 
     border-radius: 5px;
 }
+
+#select-hora{
+    font-size: 12px;
+    width:60px;
+    height:30px;
+    background:#fefefe;
+    margin-top:3px;
+    padding: 5px;
+    margin-bottom: 4px;
+    font-size:0.9em;
+    color:#3a3a3a;
+    border: none;
+    -webkit-border-radius: 5px;
+
+    border-radius: 10px;
+   
+   
+}
