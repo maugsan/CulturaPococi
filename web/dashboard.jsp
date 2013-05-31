@@ -24,7 +24,10 @@
 
             if (correo == null) {
 
-                session.invalidate();
+                 String pageToForward = request.getContextPath();
+  
+    response.sendRedirect(pageToForward+"/invalidar"); 
+               
             }
 
 
@@ -36,7 +39,7 @@
         <header>
 
             <div id="contendor-interno">
-                <a href="#"><div id="header-logo"> </div></a>
+                <a href="<%= request.getContextPath()%>/nuevologin.do"><div id="header-logo"> </div></a>
 
 
                 <div id="header-opciones">
@@ -46,79 +49,75 @@
                         <button id="boton-usuario"><%=sesion.getAttribute("c")%></button>
                     </section>
 
-                </div></div>
+                </div>
 
-                    </header>
+                <%@include file="../includes/menu.jsp" %>
 
-                    <div id="contendor">
+            </div>
 
+        </header>
 
-
-                        <section  id="seccion-principal">
-
-
-                            <div id="contendor-interno"> 
-
-                                <h1>Sitio administrativo</h1>
+        <div id="contendor">
 
 
 
+            <section  id="seccion-principal">
 
-                                <a href="./mostrar_usuario.do"><section class="modulo">
-                                        <img id="icono" src="assets/img/user-icon.png" width="60">
-                                        <h2>Usuario</h2>
-                                    </section></a>
-                                <a href="./mostrarperfiles.do"><section class="modulo">
-                                        <img id="icono" src="assets/img/perfil-icon.png" width="60">
-                                        <h2>Perfil</h2>
-                                    </section></a>
 
-                                <a href="./listar_evento.do"><section class="modulo">
-                                        <img id="icono" src="assets/img/evento-icon.png" width="60">
-                                        <h2>Evento</h2>
-                                    </section></a>
-                                <a href="./listar_categorias.do"><section class="modulo">
-                                        <img id="icono" src="assets/img/category-icon.png" width="60">
-                                        <h2>Categoria</h2>
-                                    </section></a>
-                                <a href="./listar_boletines.do"><section class="modulo">
-                                        <img id="icono" src="assets/img/boletin-icon.png" width="60">
-                                        <h2>Boletín</h2>
-                                    </section></a>
-                                <a href="./listar_anuncios.do"> <section class="modulo">
-                                        <img id="icono" src="assets/img/anuncio-icon.png" width="60">
-                                        <h2>Anuncio</h2>
-                                    </section></a>
-                                <a href="./listar_programa_radio.do"> <section class="modulo">
-                                        <img id="icono" src="assets/img/radio-icon.png" width="60">
-                                        <h2>Programas de Radio</h2>
-                                    </section></a>
-                                <a href="./publicacion/index.jsp"> <section class="modulo">
-                                        <%-- <a href="./mostrar_publicacion.do"> <section class="modulo">--%>
-                                        <img id="icono" src="assets/img/publicacion-icon.png" width="60">
-                                        <h2>Publicación</h2>
-                                    </section></a>
+                <div id="contendor-interno"> 
+
+                    <h1>Sitio administrativo</h1>
 
 
 
 
-                            </div> 
+                    <a href="./mostrar_usuario.do"><section class="modulo">
+                            <img id="icono" src="assets/img/user-icon.png" width="60">
+                            <h2>Usuario</h2>
+                        </section></a>
+                    <a href="./mostrarperfiles.do"><section class="modulo">
+                            <img id="icono" src="assets/img/perfil-icon.png" width="60">
+                            <h2>Perfil</h2>
+                        </section></a>
 
-                        </section>
+                    <a href="./listar_evento.do"><section class="modulo">
+                            <img id="icono" src="assets/img/evento-icon.png" width="60">
+                            <h2>Evento</h2>
+                        </section></a>
+                    <a href="./listar_categorias.do"><section class="modulo">
+                            <img id="icono" src="assets/img/category-icon.png" width="60">
+                            <h2>Categoria</h2>
+                        </section></a>
+                    <a href="./listar_boletines.do"><section class="modulo">
+                            <img id="icono" src="assets/img/boletin-icon.png" width="60">
+                            <h2>Boletín</h2>
+                        </section></a>
+                    <a href="./listar_anuncios.do"> <section class="modulo">
+                            <img id="icono" src="assets/img/anuncio-icon.png" width="60">
+                            <h2>Anuncio</h2>
+                        </section></a>
+                    <a href="./listar_programa_radio.do"> <section class="modulo">
+                            <img id="icono" src="assets/img/radio-icon.png" width="60">
+                            <h2>Programas de Radio</h2>
+                        </section></a>
+                    <a href="./publicacion/index.jsp"> <section class="modulo">
+                            <%-- <a href="./mostrar_publicacion.do"> <section class="modulo">--%>
+                            <img id="icono" src="assets/img/publicacion-icon.png" width="60">
+                            <h2>Publicación</h2>
+                        </section></a>
 
-                        <section id="seccion-inferior">
-
-                            <div id="contendor-interno"> 
 
 
 
-                            </div>
+                </div> 
 
-                        </section>
-                        <%@include file="/includes/footer.jsp" %>
+            </section>
 
 
-                    </div>
+            <%@include file="/includes/footer.jsp" %>
 
-                    </body>
-                    </html>
+
+        </div>
+
+    </body>
+</html>

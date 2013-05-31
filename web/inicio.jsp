@@ -23,7 +23,7 @@
         <link rel="stylesheet" href="./assets/css/jquery.ui.all.css">
         <script src="./assets/js/jquery-ui.js"></script>
 
-       
+
 
 
     </head>
@@ -34,13 +34,13 @@
 
         <div id="contendor">
             <%@include file="includes/header.jsp" %>
-            <section  id="seccion-principal">
+            <section  id="seccion-principal-inicio">
 
 
                 <div id="contendor-interno"> 
 
 
-                      
+
 
                     <div id="contentSlide">
 
@@ -66,24 +66,49 @@
 
             </section>
 
-            <%@include file="includes/espacios.jsp" %>
+
+
             <section id="seccion-inferior">
 
-
-
                 <div id="contendor-interno">
+
+                <div id="s-izquierdo">
+                    <img src="./assets/img/guitarra-icon.png"/>
+                    <h1>Directorio</h1>
+
+                </div> 
+
+                <div id="s-centro">
+
+                    <img src="./assets/img/radio-icon.png"/>
+                    <h1>Radio</h1>
+
+                </div> 
+
+                <div id="s-derecho">
+
+                    <img src="./assets/img/idea-icon.png"/>
+                     <h1>Iniciativa</h1>
+
+
+                </div> 
+           
+
+                
                     <a href=""><button id="boton-unir">Únete</button></a>
-                            <p>Proin elit arccitudin mi sit  dapibus lacus
-                                auctor risus. Aenean tempor ullamcorper leo. 
-                                Vivamus sed magna quis ligula eleifend adipiscing.
-                                Duis orci. Aliquam sodales tortor vitae ipsum. 
-                                um. Nunc tristique tempus lectus.</p>
+                    <p>Proin elit arccitudin mi sit  dapibus lacus
+                        auctor risus. Aenean tempor ullamcorper leo. 
+                        Vivamus sed magna quis ligula eleifend adipiscing.
+                        Duis orci. Aliquam sodales tortor vitae ipsum. 
+                        um. Nunc tristique tempus lectus.</p>
 
                 </div>
 
 
             </section>
 
+
+            <%@include file="includes/espacios.jsp" %> 
 
             <%@include file="includes/footer.jsp" %>
 

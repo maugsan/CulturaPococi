@@ -2,12 +2,12 @@
 <header>
 
     <div id="contendor-interno">
-        <a href="../"><div id="header-logo"></div></a>
-
+           <a href="<%= request.getContextPath()%>/nuevologin.do"><div id="header-logo"> </div></a>
+          
 
         <div id="header-opciones">
             <section id="controles">
-                <a href="./invalidar.jsp"><button id="boton-salir">Salir</button></a>
+                <a href="<%=request.getContextPath()%>/invalidar.jsp"><button id="boton-salir">Salir</button></a>
 
                 <%
 
@@ -26,5 +26,6 @@
 
 
         </div>
+            <%@include file="../includes/menu.jsp" %>
     </div>
 </header>

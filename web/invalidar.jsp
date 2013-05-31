@@ -4,10 +4,19 @@
     Author     : MAU
 --%>
 
+<%@page import="org.apache.commons.logging.LogFactory"%>
 <%
     HttpSession sesion=request.getSession();
-    sesion.setAttribute("c",null);
-    sesion.invalidate();
-    response.sendRedirect("./login/nuevo_login.jsp"); 
+
+         sesion.removeAttribute("c");
+        sesion.invalidate();                               
+        String pageToForward = request.getContextPath();
+  
+    response.sendRedirect(pageToForward);   
 
 %>
+
+<script>
+    alert("se borraron");
+    $.cookie("c", null);
+</script>

@@ -393,7 +393,7 @@
             
         >
             
-        <forward name="success" path="/usuario/eliminar_usuarionormal.jsp"/>    
+        <forward name="success" path="/mostrar_usuario.do"/>    
         </action>
         
       

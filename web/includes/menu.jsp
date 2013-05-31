@@ -2,9 +2,6 @@
 
 <nav>
     <ul>
-
-
-
         <li id="radio"><a href="./player.jsp" target="_blank">RADIO</a>
 
             <ul>
@@ -27,14 +24,12 @@
                         <li><a href="#">ARTÍCULOS</a></li>
 
                     </ul>
-
-
-
-
+                    
                 </li>
 
                 <li><a href="#">ECOLOGÍA</a>
 
+                    
                     <ul>
                         <li><a href="#">REFORESTACIÓN</a></li>
                         <li><a href="#">EDUCACION AMBIENTAL</a></li>
