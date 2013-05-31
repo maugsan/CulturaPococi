@@ -17,8 +17,12 @@
         <link rel="stylesheet" href="../assets/css/estilos.css" type="text/css" />
         <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" />
         <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+        
+         <script type="text/javascript" src="../assets/js/jquery-1.0.9.min.js"></script>
+        <script type="text/javascript" src="../assets/js/jquery.validate.js"></script>
+        <script type="text/javascript" src="../assets/js/validar.js"></script>
     
-        <title>Crear Evento</title>
+        <title>Crear Categoria</title>
     </head>
     <body>
         <%@include file="/includes/header.jsp" %>
@@ -26,20 +30,18 @@
     <section  id="seccion-principal">
 
         <div id="contendor-interno"> 
-
-            <html:form action="/crear_categorias">
+        <form method="post" action="../crear_categorias.do" id="validar-form">
                 
                 <h1><bean:message key="crear.categoria"/></h1>
                 
                 <h2><bean:message key="form.nombre.categoria"/></h2>
-                <html:text  name="FormularioCategoria" property="nombreCategoria" size="16" value=""/><br>
+                <input type="text" id="nombreCategoria" name="nombreCategoria"  size="16" value=""/><br>
+                           
                 
-                
-                <html:submit value="Crear" /><br>
-               
-                
+                <input type="submit" value="Crear"/><br>
+ 
                    
-            </html:form>
+            </form>
                  
     
         </div> 

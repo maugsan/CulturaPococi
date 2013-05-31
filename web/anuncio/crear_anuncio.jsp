@@ -17,6 +17,10 @@
         <link rel="stylesheet" href="./assets/css/estilos.css" type="text/css" />
         <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
         <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+        
+           <script type="text/javascript" src="./assets/js/jquery-1.0.9.min.js"></script>
+        <script type="text/javascript" src="./assets/js/jquery.validate.js"></script>
+        <script type="text/javascript" src="./assets/js/validar.js"></script>
     
         <title>Crear Evento</title>
     </head>
@@ -27,28 +31,25 @@
 
         <div id="contendor-interno"> 
 
-            <html:form action="/crear_anuncio"  >
-                
-                
-                
-                <h1><bean:message key="anuncios.form"/></h1>
+             <form method="post" action="./crear_anuncio.do"  id="validar-form">
+               <h1><bean:message key="anuncios.form"/></h1>
                 
                 <h2><bean:message key="anuncios.form.titulo"/></h2>
-                <html:text  name="AnuncioForm" property="titulo" size="16" value=""/><br>
-                
+                <input type="text" id="titulo" name="titulo" size="16" value=""/>
+                                
                 <h2><bean:message key="anuncios.form.prioridad"/></h2>
-                <html:select property="prioridad" name="AnuncioForm">
+                <select property="prioridad" name="AnuncioForm">
                     <logic:iterate name="listaPrioridades" id="numero" >
-                        <html:option value="${numero}"> <!-- esto es para que cuando elija el nombre me envie el numero !-->
+                        <option value="${numero}"> <!-- esto es para que cuando elija el nombre me envie el numero !-->
                             <bean:write name="numero"/><br>
-                        </html:option>
+                        </option>
                     </logic:iterate>
-                </html:select>
+                </select>
                 
                 <br>
-                <html:submit value="Crear" />
+                <input type="submit" value="Crear"/><br>
 
-            </html:form>
+            </form>
             <html:errors/>
 
         </div> 

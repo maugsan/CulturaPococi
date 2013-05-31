@@ -15,6 +15,10 @@
         <link rel="stylesheet" href="../assets/css/estilos.css" type="text/css" />
         <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" />
         <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+        
+          <script type="text/javascript" src="../assets/js/jquery-1.0.9.min.js"></script>
+        <script type="text/javascript" src="../assets/js/jquery.validate.js"></script>
+        <script type="text/javascript" src="../assets/js/validar.js"></script>
 
         <title>Crear Programa Radio</title>
     </head>
@@ -25,24 +29,24 @@
 
             <div id="contendor-interno"> 
 
-                <html:form action="/crear_programa_radio">
+                <form method="post" action="../crear_programa_radio.do" id="validar-form">
+                         
 
-                    <h1><bean:message key="form.programaRadio.nuevo"/></h1>
+                            <h2><bean:message key="form.nombre"/></h2>
+                            <input type="text" id="nombre" name="nombre" size="16" value=""/>
+                            <br>
 
-                    <h2><bean:message key="form.nombre"/></h2>
-                    <html:text  name="CrearProgramaRadioForm" property="nombre" size="16" value=""/><br>
-                  
-                    <h2><bean:message key="form.horario"/></h2>
-                    <html:textarea name="CrearProgramaRadioForm" property="horario" cols="44" rows="5" /><br>
-                    
+                            <h2><bean:message key="form.horario"/></h2>
+                            <textarea ROWS="5" id="texto-grande" id="horario"  name="horario" size="16" value=""></textarea>
+                            <br>
+                            
+                            <h2><bean:message key="form.descripcion"/></h2>
+                             <textarea ROWS="5" id="texto-grande-2" id="descripcion"  name="descripcion" size="16" value=""></textarea>
+                            <br>
 
-                    <h2><bean:message key="form.descripcion"/></h2>
-                    <html:textarea name="CrearProgramaRadioForm" property="descripcion" cols="44" rows="5" /><br>
-                   
+                            <input type="submit" value="Crear"/>
 
-                    <html:submit value="Crear" /><br>
-
-                </html:form>
+                </form>
 
                     <%-- <a href="http://localhost:8084/CulturaPococi/listar_programa_radio.do"> --%>
                     <a  href="../listar_programa_radio.do">
