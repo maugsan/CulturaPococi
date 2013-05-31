@@ -21,9 +21,20 @@
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
         <script type="text/javascript" src="./assets/js/calendario.js"></script>
-        
-         <script type="text/javascript" src="./assets/js/jquery.validate.js"></script>
+
+        <script type="text/javascript" src="./assets/js/jquery.validate.js"></script>
         <script type="text/javascript" src="./assets/js/validar.js"></script>
+        <%-- 
+         para q se vea bonito el calendario
+        --%>
+
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+        <%-- 
+        para q se vea bonito el calendario
+        --%>
 
         <title>Crear Evento</title>
     </head>
