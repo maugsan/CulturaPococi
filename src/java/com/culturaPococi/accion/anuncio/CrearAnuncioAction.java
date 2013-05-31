@@ -44,10 +44,7 @@ public class CrearAnuncioAction extends DispatchAction {
         Anuncio anuncio=new Anuncio(formu.getTitulo(),"../assets/img/evento-icon.png",
                 formu.getPrioridad(),formu.getIdAnuncio());
         
-        //LinkedList listaPrioridades = new LinkedList();
-        //listaPrioridades = nAnuncio.listarPrioridadesDB();
-        JOptionPane.showMessageDialog(null, "titulo: "+formu.getTitulo()+"prio "+formu.getPrioridad()
-                +"id "+formu.getIdAnuncio());
+      
         
         accionRealizada=nAnuncio.crearAnuncioDB(anuncio);
         

@@ -56,7 +56,7 @@ public class CrearCategoriasAction extends org.apache.struts.action.Action {
         if(listaCategorias==null){
             JOptionPane.showMessageDialog(null, "poblemas con la base de datos");
         }
-        JOptionPane.showMessageDialog(null, "proble");
+      
         request.setAttribute("listaCategorias", listaCategorias);
         
         return mapping.getInputForward();

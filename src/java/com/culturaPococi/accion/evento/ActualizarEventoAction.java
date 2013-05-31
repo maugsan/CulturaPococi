@@ -72,7 +72,7 @@ public class ActualizarEventoAction extends DispatchAction {
         
         if(!accionRealizadaEvento){
             //hay que mostrar un mensaje de que no se pudo actualizar el evento
-            JOptionPane.showMessageDialog(null, "El evento no se pudo cargar------------ ActualizaEventoAction");
+            JOptionPane.showMessageDialog(null, "El evento no se pudo cargar");
         }
 //        
 //        listaCategorias = nCategoria.selectCategoriasDB();
