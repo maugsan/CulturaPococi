@@ -19,8 +19,10 @@
 
             HttpSession sesion = request.getSession();
             String correo = (String) request.getAttribute("correo");
+            String tipo = (String) request.getAttribute("tipo");
 
             sesion.setAttribute("c", correo);
+            sesion.setAttribute("tipo", tipo);
 
             if (correo == null) {
 
@@ -60,7 +62,6 @@
         <div id="contendor">
 
 
-
             <section  id="seccion-principal">
 
 
@@ -68,42 +69,44 @@
 
                     <h1>Sitio administrativo</h1>
 
+                    <h2>  <%=sesion.getAttribute("tipo")%></h2>
 
 
 
-                    <a href="./mostrar_usuario.do"><section class="modulo">
+                    <a <% if (sesion.getAttribute("tipo").equals("0")) { %>style="display: none;"<%}%> href="./mostrar_usuario.do"><section class="modulo">
                             <img id="icono" src="assets/img/user-icon.png" width="60">
-                            <h2>Usuario</h2>
+                            <h2>Usuarios</h2>
                         </section></a>
                     <a href="./mostrarperfiles.do"><section class="modulo">
                             <img id="icono" src="assets/img/perfil-icon.png" width="60">
-                            <h2>Perfil</h2>
+                            <h2>Perfiles</h2>
                         </section></a>
 
                     <a href="./listar_evento.do"><section class="modulo">
                             <img id="icono" src="assets/img/evento-icon.png" width="60">
-                            <h2>Evento</h2>
+                            <h2>Eventos</h2>
                         </section></a>
-                    <a href="./listar_categorias.do"><section class="modulo">
+                    <a <% if (sesion.getAttribute("tipo").equals("0")) { %>style="display: none;"<%}%> href="./listar_categorias.do"><section class="modulo">
                             <img id="icono" src="assets/img/category-icon.png" width="60">
-                            <h2>Categoria</h2>
+                            <h2>Categorias</h2>
                         </section></a>
-                    <a href="./listar_boletines.do"><section class="modulo">
+                    <a <% if (sesion.getAttribute("tipo").equals("0")) { %>style="display: none;"<%}%> href="./listar_boletines.do"><section class="modulo">
                             <img id="icono" src="assets/img/boletin-icon.png" width="60">
-                            <h2>Boletín</h2>
+                            <h2>Boletínes</h2>
                         </section></a>
-                    <a href="./listar_anuncios.do"> <section class="modulo">
+                    <a <% if (sesion.getAttribute("tipo").equals("0")) { %>style="display: none;"<%}%> href="./listar_anuncios.do"> <section class="modulo">
                             <img id="icono" src="assets/img/anuncio-icon.png" width="60">
-                            <h2>Anuncio</h2>
+                            <h2>Anuncios</h2>
                         </section></a>
-                    <a href="./listar_programa_radio.do"> <section class="modulo">
+                    <a <% if (sesion.getAttribute("tipo").equals("0")) { %>style="display: none;"<%}%> href="./listar_programa_radio.do"> <section class="modulo">
                             <img id="icono" src="assets/img/radio-icon.png" width="60">
                             <h2>Programas de Radio</h2>
                         </section></a>
-                    <a href="./publicacion/index.jsp"> <section class="modulo">
+
+                    <a  href="./publicacion/index.jsp"> <section class="modulo">
                             <%-- <a href="./mostrar_publicacion.do"> <section class="modulo">--%>
                             <img id="icono" src="assets/img/publicacion-icon.png" width="60">
-                            <h2>Publicación</h2>
+                            <h2>Publicaciónes</h2>
                         </section></a>
 
 

@@ -14,39 +14,14 @@
         <title><bean:message key="welcome.title"/></title>
         <link rel="stylesheet" href="./assets/css/estilos.css" type="text/css" >
         <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" >
-        <link rel="stylesheet" href=".../assets/css/jquery.modal.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="./assets/css/jquery.modal.css" type="text/css" media="screen" />
+        
+        <link rel="stylesheet" href="./assets/css/jquery-theme.css" />
+        <script src="./assets/js/jq.js"></script>
+        <script src="./assets/js/funciones.js"></script>
+        <script src="./assets/js/jquery-ui.js"></script>
+     
 
-        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-        <link rel="stylesheet" href="/resources/demos/style.css" />
-
-   
-    <script>
-        function eliminarUsuario(correo) {
-            $("#dialog-confirm").dialog({
-                resizable: false,
-                width: 500,
-                height: 250,
-                modal: true,
-                buttons: {
-                    "Borrar": function() {
-                        $(this).dialog("close");
-
-
-                        location.href = './eliminar_usuario_normal.do?c=' + correo;
-                        
-                    },
-                    Cancel: function() {
-                        $(this).dialog("close");
-
-                    }
-                }
-            });
-
-        }
-        ;
-    </script>
 </head>
 <body>
     <%@include file="/includes/header_administrativo.jsp" %>
@@ -69,13 +44,15 @@
             <div id="contendor-interno"> 
 
 
-                <h1>Usuarios</h1>
+              
 
                 <%-- 
                aqui es donde va el codigo
                 --%>
 
                 <section id="lista-elementos">
+                    
+                      <h1>Usuarios</h1>
 
                     <logic:iterate  name="listaUsuarios" id="usuarioTemporal" >
 
@@ -84,7 +61,7 @@
 
 
                             <a href=""> <div id="link-detalle-elemento"><div id="elemento-imagen"><img src="./assets/img/perfil-icon.png" width="30"/></div>
-                                    <p value="${usuarioTemporal.nombre}" id="elemento-nombre"> 
+                                    <p value="${usuarioTemporal.nombre}" > 
                                         ${usuarioTemporal.nombre}
                                     </p>
 

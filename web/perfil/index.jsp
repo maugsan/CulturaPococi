@@ -19,12 +19,23 @@
         <link rel="stylesheet" href="./assets/css/estilos.css" type="text/css" />
         <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
         <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+        
+             <link rel="stylesheet" href="./assets/css/jquery-theme.css" >
+        <script src="./assets/js/jq.js"></script>
+        <script src="./assets/js/funciones.js"></script>
+        <script src="./assets/js/jquery-ui.js"></script>
         <html:base/>
     </head>
     <body>
 
         <%@include file="/includes/header_administrativo.jsp" %>
         <div id="contendor">
+            
+              <div id="dialog-confirm" title="Desea eliminar?">
+            <p><span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;">
+
+                </span>Este item se borrara permanentemente, esta seguro?</p>
+        </div>
 
 
             <section  id="seccion-principal">
@@ -32,15 +43,11 @@
 
                 <div id="contendor-interno"> 
 
-                    <h1>Perfiles</h1>
-                    <%-- 
-
-    TABLA CON TODOS LOS PERFILES
-    TABLA DE UNA SOLA COLUMNA DIV!!
-    
-                    --%>
+                   
+              
 
                     <section id="lista-elementos">
+                         <h1>Perfiles</h1>
 
                         <logic:iterate  name="listaPerfil" id="perfilTemporal" >
 
@@ -61,24 +68,21 @@
                                          ${perfilTemporal.correo}
                                          ${perfilTemporal.nombreDistrito}--%>
                                     </div></a>
-                                <a href="../eliminar_perfil.do?nombrePerfil=${perfilTemporal.nombrePerfil}"><div id="elemento-icon"><img src="../assets/img/delete-icon.png" width="30"/></div></a>   
+                                <input type="button" value="Borrar" id="test" onClick="eliminarPerfil('${perfilTemporal.nombreCategoria}');" />
 
                             </div>
                             <%-- FIN Elemento   ${perfilTemporal.nombrePerfil} --%> 
 
                         </logic:iterate>
+                         <a href="./crear_perfil.do"><button id="boton-unir">Crear Perfil</button></a>
 
                     </section>
 
                 </div> 
-
+                    
             </section>
 
-            <section id="seccion-inferior">
-
-                <div id="contendor-interno"> </div>
-
-            </section>
+           
             <%@include file="/includes/footer.jsp" %>
         </div>
     </body>

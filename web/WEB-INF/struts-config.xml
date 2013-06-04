@@ -83,12 +83,16 @@
         <action path="/eliminar_perfil" 
                 type="com.culturaPococi.accion.perfil.EliminarPerfilAction"
         >        
-            <forward name="success" path="/perfil/eliminar_perfil.jsp"/>
+            <forward name="success" path="/mostrarperfiles.do"/>
                 
         </action>
         
-        <action path="/modificar_perfil" type="com.culturaPococi.accion.perfil.ModificarPerfilAction"/>
-        <action path="/crear_perfil" type="com.culturaPococi.accion.perfil.CrearPerfilAction"/>
+        <action path="/modificar_perfil" 
+                type="com.culturaPococi.accion.perfil.ModificarPerfilAction"/>
+        
+        
+        <action path="/crear_perfil"
+                type="com.culturaPococi.accion.perfil.CrearPerfilAction"/>
         
         <action path="/mostrar_perfil_seleccionado"
                 type="com.culturaPococi.accion.perfil.MostrarPerfilSeleccionadoAction"
