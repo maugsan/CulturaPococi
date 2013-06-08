@@ -27,7 +27,6 @@ public class DataEvento extends DataBase{
         ResultSet resultado;
         Connection conexion = super.getConexion();
 
-        
         try{
             
             Statement statement = conexion.createStatement(); 
@@ -38,8 +37,10 @@ public class DataEvento extends DataBase{
                     resultado.getString("nombreCategoria"),
                     resultado.getString("lugar"),resultado.getString("nombre"),  
                     resultado.getString("fecha"),resultado.getString("hora"), 
+                    resultado.getString("minutos"),resultado.getString("tiempo"),
                     resultado.getString("informacion"), 
                     resultado.getString("correo"),"");
+            
             listaEventos.add(evento);
         }//fin while
         
@@ -58,28 +59,25 @@ public class DataEvento extends DataBase{
      public boolean  actualizarEvento(Evento evento) throws SQLException{
     
          boolean accionRealizada=true;
-        String sql = "call pActualizarEvento(?,?,?,?,?,?,?,?,?);";
+        String sql = "call pActualizarEvento(?,?,?,?,?,?,?,?,?,?,?);";
         Connection conexion = super.getConexion();
         
         try{
             CallableStatement call=conexion.prepareCall(sql);
-        
-       call.setInt("pidEvento", evento.getIdEvento());
-//            call.setInt("pidEvento", 26);
-        call.setString("pnombre",evento.getNombre());
-        JOptionPane.showMessageDialog(null, "1"+evento.getIdEvento());
-        call.setString("plugar",evento.getLugar());
-        call.setString("pfecha", evento.getFecha());
-        call.setString("phora", evento.getHora());
-        JOptionPane.showMessageDialog(null, "4");
-        call.setString("pinformacion",evento.getInformacion());
-        call.setString("pcorreo",evento.getCorreo());
-        JOptionPane.showMessageDialog(null, "7");
-        call.setInt("pidCategoria", evento.getIdCategoria()); 
-        call.setString("pimagen", evento.getImagen());
-        JOptionPane.showMessageDialog(null, "8");
+    
+            call.setInt("pidEvento", evento.getIdEvento());
+            call.setString("pnombre", evento.getNombre());
+            call.setString("plugar", evento.getLugar());
+            call.setString("phora", evento.getHora());
+            call.setString("pminutos", evento.getMinutos());
+            call.setString("ptiempo", evento.getTiempo());
+            call.setString("pfecha", evento.getFecha());
+            call.setString("pinformacion", evento.getInformacion());
+            call.setString("pcorreo",evento.getCorreo());
+            call.setString("pimagen",evento.getImagen());
+            call.setInt("pidCategoria", evento.getIdCategoria());
+            
         call.executeUpdate();
-        JOptionPane.showMessageDialog(null, "9");
         call.close();
        
                 
@@ -94,7 +92,8 @@ public class DataEvento extends DataBase{
      
      public boolean crearEvento(Evento evento) throws SQLException {
 
-        String sql = "call pCrearEventos(?,?,?,?,?,?,?,?);";
+        String sql = "call pCrearEventos(?,?,?,?,?,?,?,?,?,?);";
+         
         boolean accionRealizada = true;
         Connection conexion = super.getConexion();
 
@@ -102,23 +101,18 @@ public class DataEvento extends DataBase{
             CallableStatement call = conexion.prepareCall(sql);
 
             call.setString("pnombre", evento.getNombre());
-            JOptionPane.showMessageDialog(null, "1:"+evento.getNombre());
             call.setString("plugar", evento.getLugar());
-            JOptionPane.showMessageDialog(null, "2:"+evento.getLugar());
             call.setString("phora", evento.getHora());
-            JOptionPane.showMessageDialog(null, "3:"+evento.getHora());
+            call.setString("pminutos", evento.getMinutos());
+            call.setString("ptiempo", evento.getTiempo());
             call.setString("pfecha", evento.getFecha());
-            JOptionPane.showMessageDialog(null, "4:"+evento.getFecha());
             call.setString("pinformacion", evento.getInformacion());
-            JOptionPane.showMessageDialog(null, "5:"+evento.getInformacion());
             call.setString("pcorreo",evento.getCorreo());
-            JOptionPane.showMessageDialog(null, "6:"+evento.getCorreo());
             call.setInt("pidCategoria", evento.getIdCategoria());
-            JOptionPane.showMessageDialog(null, "7:"+evento.getIdCategoria());
             call.setString("pimagen",evento.getImagen());
-            JOptionPane.showMessageDialog(null, "8:"+evento.getImagen());
+            
+
             call.executeUpdate();
-             JOptionPane.showMessageDialog(null, "9");
             call.close();
         } catch (Exception e) {
             accionRealizada = false;
@@ -146,6 +140,7 @@ public class DataEvento extends DataBase{
                     resultado.getString("nombreCategoria"),
                     resultado.getString("lugar"),resultado.getString("nombre"),  
                     resultado.getString("fecha"),resultado.getString("hora"), 
+                    resultado.getString("minutos"),resultado.getString("tiempo"),
                     resultado.getString("informacion"), 
                     resultado.getString("correo"),"");
             listaEventos.add(evento);

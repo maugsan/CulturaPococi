@@ -49,23 +49,26 @@ public class CrearArticuloAction extends DispatchAction {
         LinkedList<Categoria>listaCategoria;
         
        
-        int categoria=Integer.parseInt(request.getParameter("categoria"));
-        String titulo=request.getParameter("titulo");
-        String autor=request.getParameter("autor");
-        String contenido=request.getParameter("contenido");
-        String fecha=request.getParameter("fecha");
+//        int categoria=Integer.parseInt(request.getParameter("categoria"));
+//        String titulo=request.getParameter("titulo");
+//        String autor=request.getParameter("autor");
+//        String contenido=request.getParameter("contenido");
+        //String fecha=request.getParameter("fecha");
+        
+        ArticuloForm formu=(ArticuloForm) form;
         
         articulo=new Articulo(0, 
                             "", 
-                            categoria, 
-                            titulo, 
-                            autor, 
-                            contenido, 
-                            fecha);
+                            formu.getCategoria(), 
+                            formu.getTitulo(), 
+                            formu.getAutor(), 
+                            formu.getContenido(), 
+                            formu.getFecha());
+        JOptionPane.showMessageDialog(null, "formu.getCategoria() "+formu.getFecha());
         accionRealizada=nArticulo.bdCrearArticulo(articulo);
         
         
-        listaArticulos=nArticulo.bdListarArticulos();
+        listaArticulos=nArticulo.bdListarArticulos(formu.getFecha());
         listaCategoria=nCategoria.selectCategoriasOrdenadasDB(articulo.getIdArticulo());
         
         if(listaArticulos==null||!accionRealizada||listaCategoria==null){

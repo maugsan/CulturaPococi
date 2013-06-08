@@ -44,6 +44,8 @@
                             <a href="../eliminar_boletin.do?fecha=${boletinTemporal.fecha}">
                                 <div id="elemento-icon"><img src="../assets/img/delete-icon.png" width="30"/></div>
                             </a> 
+                                
+                               
                             <a href="../listar_articulos.do?fecha=${boletinTemporal.fecha}">
                                 <div id="elemento-icon"><img src="../assets/img/editar-icon.png" width="30"/></div>
                             </a>

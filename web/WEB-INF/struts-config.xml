@@ -162,7 +162,7 @@
                  path="/actualizar_evento" 
                  scope="request" 
                  validate="true" 
-                 input="/evento/modificar_evento.jsp"
+                 input="/evento/index.jsp"
                  type="com.culturaPococi.accion.evento.ActualizarEventoAction">
        
         </action>

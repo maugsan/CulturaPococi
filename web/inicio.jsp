@@ -19,8 +19,8 @@
 
         <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
 
-        <link rel="stylesheet" href="./assets/css/jquery.ui.css">
-        <link rel="stylesheet" href="./assets/css/jquery.ui.all.css">
+        <link rel="stylesheet" href="../assets/css/jquery.ui.css">
+        <link rel="stylesheet" href="../assets/css/jquery.ui.all.css">
         <script src="./assets/js/jquery-ui.js"></script>
 
 

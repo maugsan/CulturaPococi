@@ -49,13 +49,15 @@ public class DataCategoria extends DataBase{
     }//fin selectCategoria
      
      
-    public LinkedList<Categoria> ordenarPrimeraCategoria(int idCategoria) throws SQLException {
+    public LinkedList<Categoria> ordenarPrimeraCategoria(int idArticulo) throws SQLException {
         LinkedList<Categoria> listaCategorias;
         LinkedList<Categoria> listaOrdenadaCategorias = new LinkedList<Categoria>();
         listaCategorias = selectCategorias();
         if (listaCategorias != null) {
             for (int i = 0; i < listaCategorias.size(); i++) {
-                if (listaCategorias.get(i).getIdCategoria() == idCategoria) {
+                JOptionPane.showMessageDialog(null, "getIdCategoria() "+listaCategorias.get(i).getIdCategoria()
+                        +"= idCategoria "+idArticulo);
+                if (listaCategorias.get(i).getIdCategoria() == idArticulo) {
                     listaOrdenadaCategorias.addFirst(listaCategorias.get(i));
                 } else {
                     listaOrdenadaCategorias.add(listaCategorias.get(i));

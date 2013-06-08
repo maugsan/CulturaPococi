@@ -14,12 +14,14 @@ import javax.swing.JOptionPane;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import org.apache.struts.actions.DispatchAction;
+import sun.security.util.DisabledAlgorithmConstraints;
 
 /**
  *
  * @author Personal
  */
-public class ListarCategoriasArticulo extends org.apache.struts.action.Action {
+public class ListarCategoriasArticulo extends DispatchAction {
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
@@ -41,7 +43,8 @@ public class ListarCategoriasArticulo extends org.apache.struts.action.Action {
             throws Exception {
         
         LinkedList<Categoria> listaCategorias;
-        
+        String fecha=""+request.getParameter("fecha");
+        JOptionPane.showMessageDialog(null, "Fecha listarcategoriasari "+fecha+" /");
         listaCategorias=nCategoria.selectCategoriasDB();
         
         if(listaCategorias==null){
@@ -49,6 +52,7 @@ public class ListarCategoriasArticulo extends org.apache.struts.action.Action {
         }//fin if
         
         request.setAttribute("listaCategorias", listaCategorias);
+        request.setAttribute("fecha", fecha);
         return mapping.getInputForward();
     }
 }

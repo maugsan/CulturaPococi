@@ -40,20 +40,20 @@
                         <%-- Inicio Elemento  --%>
                         <div id="elemento">
 
-                            <div id="elemento-imagen"><img src="../assets/img/evento-icon.png" width="30"/></div>
+                           <div id="elemento-imagen"><img src="../assets/img/evento-icon.png" width="30"/></div>
                             <p id="elemento-nombre">${articuloTemporal.titulo}</p>
-                            <a href="../eliminar_articulo.do?idArticulo=${articuloTemporal.idArticulo}">
+                            <a href="../eliminar_articulo.do?idArticulo=${articuloTemporal.idArticulo}&fecha=${articuloTemporal.fecha}">
                                 <div id="elemento-icon"><img src="../assets/img/delete-icon.png" width="30"/></div>
                             </a> 
                             <a href="../ver_articulo.do?idArticulo=${articuloTemporal.idArticulo}">
                                 <div id="elemento-icon"><img src="../assets/img/editar-icon.png" width="30"/></div>
                             </a>
-                              
-                            <a href="../listar_categorias_articulos.do"><button id="boton-unir"><bean:message key="boton.crear.articulo"/></button></a>
+                            
                         </div>
                         <%-- FIN Elemento  --%>
                         </logic:iterate>
-                        
+                        <a href="../listar_categorias_articulos.do?fecha=${fecha}"><button id="boton-unir"><bean:message key="boton.crear.articulo"/></button></a>
+                    
                     </section>
                         
                 </div> 

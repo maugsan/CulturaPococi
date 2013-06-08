@@ -20,12 +20,12 @@ public class NegocioArticulo {
         dArticulo=new DataArticulo();
     }
     
-    public LinkedList<Articulo> bdListarArticulos() throws SQLException{
-        return dArticulo.selectArticulos();
+    public LinkedList<Articulo> bdListarArticulos(String fechaBoletin) throws SQLException{
+        return dArticulo.selectArticulos(fechaBoletin);
     }
     
-    public Articulo bdArticulo(int idArticulo) throws SQLException{
-        return dArticulo.selectArticulo(idArticulo);
+    public Articulo bdArticulo(int idArticulo,String fecha) throws SQLException{
+        return dArticulo.selectArticulo(idArticulo, fecha);
     }
     
     public boolean bdCrearArticulo(Articulo articulo) throws SQLException{
