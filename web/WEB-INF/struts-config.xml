@@ -8,15 +8,6 @@
 <struts-config>
     
     
-      <global-exception-mappings>
-    <exception-mapping exception="java.lang.Exception" result="exception" />
-</global-exception-mappings>
-
-<global-results>
-    <result name="exception" type="httpheader">
-        <param name="error">500</param>
-    </result>
-</global-results>
     <form-beans>
          <form-bean name="CrearProgramaRadioForm" type="com.culturaPococi.accion.programaradio.CrearProgramaRadioForm"/>
         <form-bean name="ArticuloForm" type="com.culturaPococi.accion.articulo.ArticuloForm"/>
@@ -293,9 +284,7 @@
                name="FormularioCategoria"
                type="com.culturaPococi.accion.categoria.CrearCategoriasAction"
        />
-        
-        
-        
+       
       
         <!-- FIN CATEGORIAS  -->
         
@@ -394,10 +383,11 @@
      
         <action path="/eliminar_usuario_normal" 
                 type="com.culturaPococi.accion.usuarioNormal.EliminarUsuarioNormalAction"
-            
+                
         >
-            
-        <forward name="success" path="/mostrar_usuario.do"/>    
+        <forward 
+            name="success" 
+            path="/usuario/eliminar_usuarionormal.jsp" />    
         </action>
         
       
@@ -415,6 +405,19 @@
         >
             <forward name="success" path="/programaradio/eliminar_programaradio.jsp"/>
         </action>
+        <action path="/buscar" 
+                type="com.culturaPococi.accion.busqueda.BusquedaAction"
+                parameter="q"
+                validate="false"
+                input="/busqueda.jsp"
+                scope="request"
+       
+        
+        />
+        
+        
+        
+        
         <action input="/crear_programaradio.js" 
                 name="CrearProgramaRadioForm" 
                 path="/crear_programa_radio" 
@@ -427,10 +430,7 @@
         
         <!-- PROGRAMA RADIO -->
         
-        
-        
         <action input="/" name="EventoForm" path="/seleccionar_evento" scope="session" type="com.culturaPococi.accion.evento.SeleccionarEventoAction"/>
-        
         <action path="/modificar_usuario" type="com.culturaPococi.accion.usuarioNormal.ModificarUsuarioNormalAction"/>
         <action path="/crear_usuario" 
                 type="com.culturaPococi.accion.usuarioNormal.CrearUsuarioNormalAction"

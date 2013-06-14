@@ -31,6 +31,7 @@
         
         <div id="contendor-interno"> 
 
+            <div id="login-principal">
             <html:form action="/nuevologin">
                 <h1>Ingresar</h1>
                 <h2>Correo</h2>
@@ -44,11 +45,14 @@
             </html:form>
             <html:errors/>
 
-            <aside>
-             <a><h2>Crear cuenta</h2></a>
+            </div>
+            <aside id="aside-login">
+               <a href=""><button id="boton-unir">Únete</button></a>
+               
               <a><h2>Olvidaste la contraseña</h2></a>
             </aside>
         </div> 
+              </section>
 
     </section>
 

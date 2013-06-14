@@ -18,14 +18,14 @@
         <script type="text/javascript" src="./assets/js/jqSlide.js"></script>
 
         <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
-
+        <link href='http://fonts.googleapis.com/css?family=Monofett' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="./assets/css/jquery.ui.css">
         <link rel="stylesheet" href="./assets/css/jquery.ui.all.css">
         <script src="./assets/js/jquery-ui.js"></script>
-
-
-
-
+     
+        <noscript>
+            <meta http-equiv="refresh" content="0; <%=request.getContextPath()%>/javascript.jsp">
+        </noscript>
     </head>
 
 
@@ -39,9 +39,6 @@
 
                 <div id="contendor-interno"> 
 
-
-
-
                     <div id="contentSlide">
 
                         <div id="slideshow">
@@ -54,6 +51,7 @@
                                 <li> <a href = "#">  <img src="./assets/img/inicio.png" > </a> </li>
                                 <li> <a href = "#">   <img src="./assets/img/banner1.jpg" > </a> </li>
                                 <li> <a href = "#">   <img src="./assets/img/banner2.jpg" > </a> </li>
+                              
 
 
                             </ul>
@@ -88,7 +86,7 @@
                 <div id="s-derecho">
 
                     <img src="./assets/img/idea-icon.png"/>
-                     <h1>Iniciativa</h1>
+                     <h1>Nosotros</h1>
 
 
                 </div> 
@@ -101,6 +99,7 @@
                         Vivamus sed magna quis ligula eleifend adipiscing.
                         Duis orci. Aliquam sodales tortor vitae ipsum. 
                         um. Nunc tristique tempus lectus.</p>
+                    <br><br>
 
                 </div>
 

@@ -3,9 +3,15 @@
     <div id="contendor-interno">
 
 
-        <form id="busqueda" action="/buscar">
+        <form  method="post" id="busqueda" action="<%=request.getContextPath()%>/buscar.do">
 
-            <input id="tags">
+            <input name="q" id="tags">
+            <select name="tipo">
+                
+                <option value="1">Perfiles</option>
+                 <option value="2">Articulos</option>
+                  <option value="3">Eventos</option>
+            </select>
             <input type="submit" value="Buscar">
 
 

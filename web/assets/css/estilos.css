@@ -13,16 +13,13 @@
 root { 
     display: block;
 }
-html {
 
-    
-   
-}
 body {
 
-    background-image: url("../img/bg2.jpg");
+
     color: #444;
-   
+    background: #aaa;
+
 }
 
 #contendor {
@@ -40,8 +37,6 @@ body {
 
 }
 header {
-
-
 
     background: #333333; /* Old browsers */
     background: -moz-linear-gradient(top,  #333333 0%, #555555 100%); /* FF3.6+ */
@@ -63,9 +58,15 @@ header {
 #header-logo {
 
     background-image: url('../img/logo.png') ;
+    background-repeat: no-repeat;
     background-size: 80px;
-    height: 80px;
-    width: 80px;
+    height: 60px;
+    width: 260px;
+    font-size: 10px;
+    text-align: right;
+    padding: 10px;
+    color: whitesmoke;
+
     /* border: solid 1px yellow; */
     float: left;
 
@@ -90,11 +91,6 @@ header {
 
 }
 
-section {
-
-    /*   border: solid 1px green; */
-
-}
 
 
 #s-izquierdo {
@@ -151,9 +147,9 @@ section {
 
     padding: 110px 0 110px 0 ;
     min-height: 500px;
-    
 
-    
+
+
 
 }   
 
@@ -227,14 +223,43 @@ aside {
     float: right;
     width: 35%;
 }
+
+#aside-login {
+    
+    
+    float: right;
+     width: 400px;
+     background: whitesmoke;  
+     padding: 10px;
+    
+    
+}
+#login-principal {
+    
+    float: left;
+/*     border: solid 1px red;*/
+    width: 500px;
+     background: whitesmoke;  
+}
+
+
 footer {
 
+/*    background-image: url("../img/textura1.png");*/
 
-    background-image: url("../img/textura1.png");
+    background: #333333; /* Old browsers */
+    background: -moz-linear-gradient(top,  #333333 0%, #555555 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#333333), color-stop(100%,#555555)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #333333 0%,#555555 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #333333 0%,#555555 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #333333 0%,#555555 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #333333 0%,#555555 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#555555',GradientType=0 ); /* IE6-9 */
+
     color: white;
     width: 100%;
     height: 700px;
-   
+
 
 }
 
@@ -247,7 +272,7 @@ footer a {
 }
 footer ul {
     list-style: none;
-  
+
 
 }
 
@@ -260,7 +285,7 @@ footer ul {
     display: inline-block;
     float: left;
     text-align: center;
-     position: relative;
+    position: relative;
 
 }
 
@@ -272,7 +297,7 @@ footer ul {
     float: left;
     margin: 0 15px 0 15px;
     text-align: center;
-     position: relative;
+    position: relative;
 
 }
 
@@ -283,7 +308,7 @@ footer ul {
     display: inline-block;
     float: left;
     text-align: center;
-     position: relative;
+    position: relative;
 
 
 }
@@ -507,7 +532,7 @@ button {
     height: 45px;
     background-color: #99CCFF;
     color: #FFFFFF;
-    
+
     -webkit-border-radius: 10px;
     border-radius: 10px;
     border: 1px solid #ccc;
@@ -518,11 +543,7 @@ button {
   Formularios
 ========================================= */
 
-.form {
 
-    background-color: #red;
-
-}
 /* 
 ========================================= 
   Sitio administrativo
@@ -574,7 +595,7 @@ button {
 form {
 
     background: whitesmoke;  
-    width: 50%;
+    width: auto;
     height: auto;
     padding: 20px;
     border-radius: 5px;
@@ -603,7 +624,7 @@ form input {
     margin-bottom: 4px;
     font-size:0.9em;
     color:#3a3a3a;
-   
+
     -webkit-border-radius: 5px;
 
     border-radius: 5px;
@@ -680,7 +701,7 @@ input[type="textarea"] {
     border: solid 1px #ccc;
     position: relative;
     background-color: #e1e1e1;
-      
+
 
 }
 
@@ -694,8 +715,8 @@ input[type="textarea"] {
     background: #f0f0f0;
     margin:  10px;
     padding: 10px;
-    
-  
+
+
 
 }
 
@@ -776,7 +797,7 @@ input[type="textarea"] {
     margin-top: 0;
     color: #333;
     text-decoration: none;
-   
+
 
 }
 
@@ -846,22 +867,22 @@ input[type="textarea"] {
 
 }
 #dialog-confirm{
-    
+
     background-color: whitesmoke;
-    
+
 }
 
 label.valid {
-  font-weight: bold;
-  color: green;
-  padding: 2px 8px;
-  margin-top: 2px;
+    font-weight: bold;
+    color: green;
+    padding: 2px 8px;
+    margin-top: 2px;
 }
 label.error {
-  font-weight: bold;
-  color: #cd0a0a;
-  padding: 2px 8px;
-  margin-top: 2px;
+    font-weight: bold;
+    color: #cd0a0a;
+    padding: 2px 8px;
+    margin-top: 2px;
 }
 
 
@@ -911,6 +932,26 @@ label.error {
     -webkit-border-radius: 5px;
 
     border-radius: 10px;
-   
-   
+
+
+}
+
+
+input[type="file"]  {
+
+    height: 45px;
+    border: none;
+    background: none;
+    margin-top:20px;
+    cursor: pointer;
+    color: #ccc; 
+    
+  /* In IE7, the height of the select element cannot be changed by height, only font-size */
+
+  *margin-top: 4px;
+  /* For IE7, add top margin to align select with labels */
+
+  line-height: 30px;
+  
+
 }

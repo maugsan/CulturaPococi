@@ -2,7 +2,7 @@
 <header>
 
     <div id="contendor-interno">
-           <a href="<%= request.getContextPath()%>/nuevologin.do"><div id="header-logo"> </div></a>
+           <a href="<%=request.getContextPath()%>"><div id="header-logo"><h1>El Frente.org</h1></div></a>
           
 
         <div id="header-opciones">

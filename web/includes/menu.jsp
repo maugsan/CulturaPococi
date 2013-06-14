@@ -2,7 +2,7 @@
 
 <nav>
     <ul>
-        <li id="radio"><a href="./player.jsp" target="_blank">RADIO</a>
+        <li id="radio"><a href="<%=request.getContextPath()%>/player.html" target="_blank">RADIO</a>
 
             <ul>
 
@@ -24,12 +24,12 @@
                         <li><a href="#">ARTÍCULOS</a></li>
 
                     </ul>
-                    
+
                 </li>
 
                 <li><a href="#">ECOLOGÍA</a>
 
-                    
+
                     <ul>
                         <li><a href="#">REFORESTACIÓN</a></li>
                         <li><a href="#">EDUCACION AMBIENTAL</a></li>
@@ -71,34 +71,32 @@
 
 
 
-       <li><a href="#">ARTE</a>
+        <li><a href="#">ARTE</a>
 
             <ul>
-        <li><a href="#">ARTISTAS</a>
+                <li><a href="#">ARTISTAS</a>
 
-            <ul>
-                <li><a href="#">LITERATURA</a></li>
-                <li><a href="#">PLÁSTICAS</a></li>
-                <li><a href="#">MÚSICA</a></li>
-                <li><a href="#">DANZA</a></li>
-                <li><a href="#">TEATRO</a></li>
-                <li><a href="#">ARTE URBANO</a></li>
+                    <ul>
+                        <li><a href="#">LITERATURA</a></li>
+                        <li><a href="#">PLÁSTICAS</a></li>
+                        <li><a href="#">MÚSICA</a></li>
+                        <li><a href="#">DANZA</a></li>
+                        <li><a href="#">TEATRO</a></li>
+                        <li><a href="#">ARTE URBANO</a></li>
+
+                    </ul>
+                </li>
+
+
+
+                <li><a href="#">NUESTRO ARTE</a></li>
+
 
             </ul>
-        </li>
-        
-        
-               
-         <li><a href="#">NUESTRO ARTE</a></li>
-     
-        
-         </ul>
-        
+
         </li>
 
-
-
-           <li><a href="#">AGENDA</a></li>
+        <li><a href="#">AGENDA</a></li>
 
     </ul>
 

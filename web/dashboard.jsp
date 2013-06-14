@@ -41,7 +41,7 @@
         <header>
 
             <div id="contendor-interno">
-                <a href="<%= request.getContextPath()%>/nuevologin.do"><div id="header-logo"> </div></a>
+                <a href="<%=request.getContextPath()%>/nuevologin.do"><div id="header-logo"> </div></a>
 
 
                 <div id="header-opciones">

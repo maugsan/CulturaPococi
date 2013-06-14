@@ -43,6 +43,8 @@ public class CrearEventoAction extends DispatchAction {
             throws Exception {
         boolean accionRealizada;
         String nombrejsp="";
+        String email = (String)request.getSession().getAttribute("c");
+ 
         EventoForm formu=(EventoForm) form;
         Evento evento=new Evento(0, 
                                 formu.getIdCategoria(), 
@@ -53,7 +55,7 @@ public class CrearEventoAction extends DispatchAction {
                                 //formu.getHora(),
                                 formu.getInformacion(), 
                                 "ybarboza27@gmail.com","");
-                  JOptionPane.showMessageDialog(null, "fecha "+formu.getIdCategoria());   
+               
         accionRealizada=nEvento.crearEventosDB(evento);
         if(!accionRealizada){
             // si la accion es false es que no se pudo crear el nuevo evento por loq ue hay que mostrar un mensaje
