@@ -40,15 +40,13 @@ public class MostrarPerfilSeleccionadoAction extends DispatchAction{
             throws Exception {
         np = new NegocioPerfil();
 
-        String nombrePerfil = request.getParameter("nombrePerfil");
-
-        JOptionPane.showMessageDialog(null, " nombrePerfil   " + nombrePerfil);
+        String nombrePerfil = ""+request.getParameter("nomPerfil");
 
         p = np.mostrarPerfil(nombrePerfil);
 
-        request.setAttribute("perfil", nombrePerfil);
+        request.setAttribute("perfil", p);
 
-        return mapping.findForward("mostrar_perfil_seleccionado.jsp");
+        return mapping.getInputForward();
     }
 
  

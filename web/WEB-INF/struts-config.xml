@@ -8,16 +8,10 @@
 <struts-config>
     
     
-      <global-exception-mappings>
-    <exception-mapping exception="java.lang.Exception" result="exception" />
-</global-exception-mappings>
 
-<global-results>
-    <result name="exception" type="httpheader">
-        <param name="error">500</param>
-    </result>
-</global-results>
+
     <form-beans>
+        <form-bean name="PerfilForm" type="com.culturaPococi.accion.perfil.PerfilForm"/>
          <form-bean name="CrearProgramaRadioForm" type="com.culturaPococi.accion.programaradio.CrearProgramaRadioForm"/>
         <form-bean name="ArticuloForm" type="com.culturaPococi.accion.articulo.ArticuloForm"/>
         <form-bean name="FormularioCategoria" type="com.culturaPococi.accion.categoria.FormularioCategoria"/>
@@ -87,21 +81,49 @@
                 
         </action>
         
-        <action path="/modificar_perfil" 
-                type="com.culturaPococi.accion.perfil.ModificarPerfilAction"/>
-        
-        
-        <action path="/crear_perfil"
-                type="com.culturaPococi.accion.perfil.CrearPerfilAction"/>
         
         <action path="/mostrar_perfil_seleccionado"
                 type="com.culturaPococi.accion.perfil.MostrarPerfilSeleccionadoAction"
                  scope="request"
-                 input="/perfil/mostrar_perfil_seleccionado.jsp"
+                 input="/perfil/perfil.jsp"
         >
         
         </action>
         
+        <action input="/" 
+                path="/crear_perfil" 
+                scope="request" 
+                type="com.culturaPococi.accion.perfil.CrearPerfilAction"/>
+        
+        <action input="/perfil/crear_perfil.jsp"
+                path="/cargar_categorias_perfil" 
+                scope="request" 
+                type="com.culturaPococi.accion.perfil.CargarCategoriasPerfilAction"/>
+        
+        <action input="/"
+                path="/actualizar_perfil" 
+                scope="request" 
+                type="com.culturaPococi.accion.perfil.ActualizarPerfilAction"/>
+        
+        <action input="/"
+                path="/eliminar_perfil_por_usuario" 
+                scope="request" 
+                type="com.culturaPococi.accion.perfil.EliminarPerfilPorUsuarioAction"/>
+        
+         <action input="/perfil/crear_perfil.jsp"
+                 path="/confirmar_nombre_perfil" 
+                 scope="request" 
+                 type="com.culturaPococi.accion.perfil.ConfirmarNombrePerfilAction"/>
+        
+        <action input="/perfil/mostrar_mis_perfiles.jsp"
+                path="/listar_mis_perfiles" 
+                scope="request" 
+                type="com.culturaPococi.accion.perfil.ListarMisPerfilesAction">
+                
+                <forward name="mostrarPerfiles" path="/perfil/mostrar_mis_perfiles.jsp" />
+                <forward name="crearPerfil" path="/perfil/crear_perfil.jsp"/>
+       
+        </action>
         <!-- FIN PERFIL  -->
         
                 <!-- PUBLICACION  -->
@@ -267,7 +289,29 @@
                 type="com.culturaPococi.accion.publicacion.EliminarPublicacionPendienteAction"/>
         
         
+       <action input="/"
+               path="/listar_mis_publicaciones" 
+               scope="request" 
+               type="com.culturaPococi.accion.publicacion.ListarMisPublicacionesAction">
+                
+                <forward name="miMusica" path="/publicacion/mi_publicacion_musica.jsp" />
+                <forward name="miTexto" path="/publicacion/mi_publicacion_texto.jsp" />
+                <forward name="miImagen" path="/publicacion/mi_publicacion_imagen.jsp" />
+                <forward name="miVideo" path="/publicacion/mi_publicacion_video.jsp" />
        
+        </action>
+        
+        <action input="/"
+                path="/crear_publicacion" 
+                scope="request" 
+                type="com.culturaPococi.accion.publicacion.CrearPublicacionAction">
+                
+                <forward name="miMusica" path="/publicacion/mi_publicacion_musica.jsp" />
+                <forward name="miTexto" path="/publicacion/mi_publicacion_texto.jsp" />
+                <forward name="miImagen" path="/publicacion/mi_publicacion_imagen.jsp" />
+                <forward name="miVideo" path="/publicacion/mi_publicacion_video.jsp" />
+       
+        </action>
        <!-- FIN Publicaciones  -->
        
        <!-- INICIO CATEGORIAS  -->
@@ -400,6 +444,17 @@
         <forward name="success" path="/mostrar_usuario.do"/>    
         </action>
         
+        
+        <action input="/" 
+                path="/crear_usuario" 
+                scope="request" 
+                type="com.culturaPococi.accion.usuarioNormal.CrearUsuarioAction"/>
+        
+        <action input="/" 
+                path="/cambiar_contrasenia_usuario_normal" 
+                scope="request" 
+                type="com.culturaPococi.accion.usuarioNormal.CambiarContraseniaUsuarioNormalAction"/>
+        
       
        <!-- PROGRAMA RADIO -->
         <action path="/listar_programa_radio"
@@ -415,6 +470,8 @@
         >
             <forward name="success" path="/programaradio/eliminar_programaradio.jsp"/>
         </action>
+        
+        
         <action input="/crear_programaradio.js" 
                 name="CrearProgramaRadioForm" 
                 path="/crear_programa_radio" 
@@ -432,12 +489,8 @@
         <action input="/" name="EventoForm" path="/seleccionar_evento" scope="session" type="com.culturaPococi.accion.evento.SeleccionarEventoAction"/>
         
         <action path="/modificar_usuario" type="com.culturaPococi.accion.usuarioNormal.ModificarUsuarioNormalAction"/>
-        <action path="/crear_usuario" 
-                type="com.culturaPococi.accion.usuarioNormal.CrearUsuarioNormalAction"
-                input="/usuario/crear_usuarionormal.jsp"
         
         
-        />
         
         
         

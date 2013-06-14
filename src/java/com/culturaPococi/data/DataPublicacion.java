@@ -44,8 +44,8 @@ public class DataPublicacion extends DataBase{
 
 
          while (resultado.next()) {
-             p = new Publicacion("", 0, "", "", "", 0, "", "", "", "", "");
-
+             p = new Publicacion();
+             
              nombrePerfil = resultado.getString(1);
              idPublicacion = resultado.getInt(2);
              fechaPublicacion = resultado.getString(3);
@@ -80,7 +80,7 @@ public class DataPublicacion extends DataBase{
     }
      
      
-     public LinkedList<Publicacion> getListaPublicacionMusica (String tipo) throws SQLException {
+     public LinkedList<Publicacion> getListaPublicacionPendiente (String tipo) throws SQLException {
 
         LinkedList<Publicacion> listaPublicacionMusica = new LinkedList<Publicacion>();
         
@@ -98,8 +98,8 @@ public class DataPublicacion extends DataBase{
             while (resultado.next()) { 
             publicacion=new Publicacion(resultado.getString("nombrePerfil"),
                                         resultado.getInt("idPublicacion"),
-                                        ""+resultado.getDate("fechaPublicacion"),
-                 "","",0,"","","","","");
+                                        resultado.getString("fechaPublicacion"),
+                 "","",0,"","","","","",0);
             listaPublicacionMusica.add(publicacion);
         }//fin while
             statement.close();
@@ -127,13 +127,15 @@ public class DataPublicacion extends DataBase{
             while (resultado.next()) { 
             publicacion=new Publicacion(
                     resultado.getString("nombrePerfil"), resultado.getInt("idPublicacion"), 
-                    ""+resultado.getDate("fechaPublicacion"), 
+                    resultado.getString("fechaPublicacion"), 
                     "", resultado.getString("descripcion"), 0, 
                     resultado.getString("musica"), 
                     resultado.getString("video"), 
                     resultado.getString("texto"), 
                     resultado.getString("imagen"), 
-                    resultado.getString("nombreCategoria"));
+                    resultado.getString("nombreCategoria"),0);
+
+        
             listaPublicaciones.add(publicacion);
         }//fin while
             statement.close();    
@@ -190,6 +192,71 @@ public class DataPublicacion extends DataBase{
         }
         return accionRealizada;
     }
+     
+     
+     public boolean crearPublicacion(Publicacion publicacion) throws SQLException {
+
+        String sql = "call pCrearPublicacion(?,?,?,?,?,?,?,?,?,?);";
+        boolean accionRealizada = true;
+        Connection conexion = super.getConexion();
+
+        try {
+            CallableStatement call = conexion.prepareCall(sql);
+
+            call.setString("pnombrePerfil", publicacion.getNombrePerfil());
+            call.setString("pfechaPublicacion", publicacion.getFechaPublicacion());
+            call.setString("pcorreo", publicacion.getCorreo());
+            call.setString("pdescripcion", publicacion.getDescripcion());
+            call.setInt("pverificacion", 0);
+            call.setString("pmusica", publicacion.getMusica());
+            call.setString("pvideo", publicacion.getVideo());
+            call.setString("ptexto",publicacion.getTexto());
+            call.setString("pimagen", publicacion.getImagen());
+            call.setInt("pidCategoria",publicacion.getIdCategoria());
+            call.executeUpdate();
+            call.close();
+            JOptionPane.showMessageDialog(null, "bien!!!");
+        } catch (Exception e) {
+            accionRealizada = false;
+            JOptionPane.showMessageDialog(null, "mal!!!");
+        } finally {
+            conexion.close();
+        }//fin try
+
+        return accionRealizada;
+    }
+     
+     public LinkedList<Publicacion> selectPublicacionPorPerfilYPorTipo(String tipoPublicacion, String nombrePerfil) throws SQLException{
+        Publicacion publicacion;
+        LinkedList<Publicacion> listaPublicaciones=new LinkedList<Publicacion>();
+        String sql = "call pListarPublicacionesPerfil('"+nombrePerfil+"','"+tipoPublicacion+"');" ;
+        ResultSet resultado;
+        Connection conexion = super.getConexion();
+        try{
+            
+            Statement statement = conexion.createStatement(); 
+            resultado=statement.executeQuery(sql);
+            
+            while (resultado.next()) { 
+            publicacion=new Publicacion(
+                    resultado.getString("nombrePerfil"), resultado.getInt("idPublicacion"), 
+                    resultado.getString("fechaPublicacion"), 
+                    "", resultado.getString("descripcion"), 0, 
+                    resultado.getString("musica"), 
+                    resultado.getString("video"), 
+                    resultado.getString("texto"), 
+                    resultado.getString("imagen"), 
+                    resultado.getString("nombreCategoria"),resultado.getInt("idCategoria"));
+            listaPublicaciones.add(publicacion);
+        }//fin while
+            statement.close(); 
+        }catch(Exception e){
+            listaPublicaciones=null;
+        }finally{
+            conexion.close();
+        }//fin finally
+        return listaPublicaciones;
+    }//fin selectEventos
      
      
 }

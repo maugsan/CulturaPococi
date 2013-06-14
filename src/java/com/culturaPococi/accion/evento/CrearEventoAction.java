@@ -48,6 +48,9 @@ public class CrearEventoAction extends DispatchAction {
         String minutos=(String)request.getParameter("minutos");
         String tiempo=(String)request.getParameter("tiempo");
         
+        String email=(String)request.getParameter("email");
+        JOptionPane.showMessageDialog(null, "email "+email);
+        
         EventoForm formu=(EventoForm) form;
         Evento evento=new Evento(0, 
                                 formu.getIdCategoria(), 

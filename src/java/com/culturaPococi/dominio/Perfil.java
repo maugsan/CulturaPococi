@@ -18,10 +18,9 @@ public class Perfil {
     private String imagenDePortada;
     private String correo;
     private String nombreDistrito;
+    private int idCategoria;
 
-    public Perfil(String nombrePerfil, String nombreCategoria, String fechaDeCreacion,String biografia, String imagenDePortada, String correo, String nombreDistrito) {
-        
-        
+    public Perfil(String nombrePerfil, String nombreCategoria, String fechaDeCreacion, String biografia, String imagenDePortada, String correo, String nombreDistrito, int idCategoria) {
         this.nombrePerfil = nombrePerfil;
         this.nombreCategoria = nombreCategoria;
         this.fechaDeCreacion = fechaDeCreacion;
@@ -29,7 +28,21 @@ public class Perfil {
         this.imagenDePortada = imagenDePortada;
         this.correo = correo;
         this.nombreDistrito = nombreDistrito;
+        this.idCategoria = idCategoria;
     }
+
+    public Perfil() {
+    }
+
+    public int getIdCategoria() {
+        return idCategoria;
+    }
+
+    public void setIdCategoria(int idCategoria) {
+        this.idCategoria = idCategoria;
+    }
+
+    
  
     public String getNombrePerfil() {
         return nombrePerfil;
