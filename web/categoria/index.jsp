@@ -34,18 +34,19 @@
                     <h1><bean:message key="form.categoria"/></h1>
 
                     <section id="lista-elementos">
+                            <a href="./crear_categoria.jsp"><button id="boton-unir"><bean:message key="boton.crear.categoria"/></button></a>
                         <logic:iterate  name="listaCategorias" id="categoriaTemporal" >
                             <%-- Inicio Elemento  --%>
                             <div id="elemento">
 
                                 <div id="elemento-imagen"><img src="../assets/img/category-icon.png" width="30"/></div>
-                                <p id="elemento-nombre">${categoriaTemporal.nombreCategoria}</p>
+                                <h1>${categoriaTemporal.nombreCategoria}</h1>
 
 
                             </div>
                             <%-- FIN Elemento  --%>
                         </logic:iterate>
-                        <a href="./crear_categoria.jsp"><button id="boton-unir"><bean:message key="boton.crear.categoria"/></button></a>
+                    
                     </section>
 
                 </div> 

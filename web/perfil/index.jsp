@@ -48,7 +48,7 @@
 
                     <section id="lista-elementos">
                          <h1>Perfiles</h1>
-
+                         <a href="./crear_perfil.do"><button id="boton-unir">Crear Perfil</button></a>
                         <logic:iterate  name="listaPerfil" id="perfilTemporal" >
 
                             <%-- Inicio Elemento  --%>
@@ -56,17 +56,13 @@
 
                                 <%-- href="../mostrar_perfil_seleccionado.do?idPerfil= ${perfilTemporal.idPerfil}" --%>
                                 
-                                <a href="../mostrar_perfil_seleccionado.do?nombrePerfil=${perfilTemporal.nombrePerfil}"> <div id="link-detalle-elemento"><div id="elemento-imagen"><img src="../assets/img/perfil-icon.png" width="30"/></div>
+                                <a href="../mostrar_perfil_seleccionado.do?nombrePerfil=${perfilTemporal.nombrePerfil}"> <div id="link-detalle-elemento"><div id="elemento-imagen"><img src="../assets/img/perfil-icon.png" width="50"/></div>
                                         
                                         <h1> ${perfilTemporal.nombrePerfil}</h1> 
-                                        <BR>
+                                     
                                         <h2> ${perfilTemporal.nombreCategoria}</h2>
 
-                                        <%--  ${perfilTemporal.biografia}
-                                         ${perfilTemporal.fechaDeCreacion}
-                                         ${perfilTemporal.imagenDePortada}
-                                         ${perfilTemporal.correo}
-                                         ${perfilTemporal.nombreDistrito}--%>
+                                    
                                     </div></a>
                                 <input type="button" value="Borrar" id="test" onClick="eliminarPerfil('${perfilTemporal.nombreCategoria}');" />
 
@@ -74,7 +70,7 @@
                             <%-- FIN Elemento   ${perfilTemporal.nombrePerfil} --%> 
 
                         </logic:iterate>
-                         <a href="./crear_perfil.do"><button id="boton-unir">Crear Perfil</button></a>
+                         
 
                     </section>
 

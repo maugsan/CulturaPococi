@@ -32,21 +32,22 @@
                    
                     <h1><bean:message key="anuncio.titulo"/></h1>
                     <section id="lista-elementos">
+                         <a href="../listar_prioridades.do"><button id="boton-unir">Crear Anuncio</button></a>
                         <logic:iterate  name="listaAnuncios" id="anuncioTemporal" >
                         <%-- Inicio Elemento  --%>
                         <div id="elemento">
 
                             <div id="elemento-imagen"><img src="../assets/img/evento-icon.png" width="30"/></div>
-                            <p id="elemento-nombre">${anuncioTemporal.titulo}</p>
+                            <h1>${anuncioTemporal.titulo}</h1>
                             <a href="../eliminar_anuncio.do?idAnuncio=${anuncioTemporal.idAnuncio}">
                                 <div id="elemento-icon"><img src="../assets/img/delete-icon.png" width="30"/></div>
                             </a> 
                               <img src=${anuncioTemporal.getImagen()}>
-                            
+                             
                         </div>
                         <%-- FIN Elemento  --%>
                         </logic:iterate>
-                        <a href="../listar_prioridades.do"><button id="boton-unir">Crear Anuncio</button></a>
+                       
             </section>
                         
                 </div> 

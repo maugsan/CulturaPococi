@@ -35,6 +35,7 @@
                     <h1><bean:message key="evento.titulo"/></h1>
                     
                     <section id="lista-elementos">
+                         <a href="../listar_categorias_evento.do"><button id="boton-unir">Crear Evento</button></a>
                         <logic:iterate  name="listaEventos" id="eventoTemporal" >
                         <%-- Inicio Elemento  --%>
                         <div id="elemento">
@@ -52,7 +53,7 @@
                         </div>
                         <%-- FIN Elemento  --%>
                         </logic:iterate>
-                        <a href="../listar_categorias_evento.do"><button id="boton-unir">Crear Evento</button></a>
+                       
                     </section>
                         
                 </div> 
