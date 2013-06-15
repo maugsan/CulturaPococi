@@ -53,6 +53,8 @@
                 <section id="lista-elementos">
                     
                       <h1>Usuarios</h1>
+                          <a href="./crear_usuario.do"><button id="boton-unir">Crear Usuario</button></a>
+                      
 
                     <logic:iterate  name="listaUsuarios" id="usuarioTemporal" >
 
@@ -77,7 +79,7 @@
 
                     </logic:iterate>
 
-                    <a href="./crear_usuario.do"><button id="boton-unir">Crear Usuario</button></a>
+                
 
                 </section>
 

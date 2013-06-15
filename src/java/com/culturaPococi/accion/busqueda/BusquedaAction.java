@@ -41,8 +41,9 @@ public class BusquedaAction extends DispatchAction {
        
         NegocioBusqueda  nB = new NegocioBusqueda();
         
+        if (palabra != null)
         request.setAttribute("lista",nB.buscar(palabra, tipo));
-       
+        
         return mapping.getInputForward();
     }
 }

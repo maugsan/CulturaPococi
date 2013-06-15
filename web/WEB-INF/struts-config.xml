@@ -442,7 +442,7 @@
         </action>
         
         
-        <action input="/" 
+        <action input="/usuarioNormal/crear_usuarionormal.jsp" 
                 path="/crear_usuario" 
                 scope="request" 
                 type="com.culturaPococi.accion.usuarioNormal.CrearUsuarioAction"/>
@@ -484,8 +484,17 @@
         <action input="/" name="EventoForm" path="/seleccionar_evento" scope="session" type="com.culturaPococi.accion.evento.SeleccionarEventoAction"/>
         <action path="/modificar_usuario" type="com.culturaPococi.accion.usuarioNormal.ModificarUsuarioNormalAction"/>
         
+         <!-- Busqueda  -->
         
+         <action path="/buscar" 
+                type="com.culturaPococi.accion.busqueda.BusquedaAction"
+                parameter="q"
+                validate="false"
+                input="/busqueda.jsp"
+                scope="request"
+       
         
+        />
         
         
         

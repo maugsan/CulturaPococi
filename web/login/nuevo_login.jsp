@@ -8,6 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="icon" type="image/png" href="../assets/img/logo.png" />
 
         <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
         <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
@@ -28,10 +29,7 @@
             <%String email = (String) request.getSession().getAttribute("c");
                 if ( email == null ) {%>
                 <%@include file="../includes/header.jsp"%>
-            
-            
-            
-            
+
                 <section  id="seccion-principal">
 
         
@@ -53,7 +51,7 @@
 
             </div>
             <aside id="aside-login">
-               <a href=""><button id="boton-unir">Únete</button></a>
+               <a href="<%=request.getContextPath()%>/crear_usuario.do"><button id="boton-unir">Únete</button></a>
                
               <a><h2>Olvidaste la contraseña</h2></a>
             </aside>
@@ -64,10 +62,8 @@
 
             <%} else {%>
             <%@include file="../includes/header_administrativo.jsp"%> 
-            <jsp:forward page="http://localhost:8084/CulturaPococi/nuevologin.do"></jsp:forward>
-            
-            
-            
+           
+
             <%  }%>
              <!--fin -->
 

@@ -102,7 +102,7 @@
 
 
 
-                    <a href=""><button id="boton-unir">Únete</button></a>
+                    <a href="<%=request.getContextPath()%>/crear_usuario.do"><button id="boton-unir">Únete</button></a>
                     <p>Proin elit arccitudin mi sit  dapibus lacus
                         auctor risus. Aenean tempor ullamcorper leo. 
                         Vivamus sed magna quis ligula eleifend adipiscing.
