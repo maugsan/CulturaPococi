@@ -1,27 +1,40 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.culturaPococi.negocio;
 
 import com.culturaPococi.data.DataUsuarioNormal;
+import com.culturaPococi.dominio.UsuarioNormal;
 import java.sql.SQLException;
+import java.util.LinkedList;
 
-/**
- *
- * @author jonathan
- */
-public class NegocioUsuarioNOrmal {
+
+public class NegocioUsuarioNormal {
 
     DataUsuarioNormal dun;
 
-    public NegocioUsuarioNOrmal() {
+    public NegocioUsuarioNormal() {
         dun = new DataUsuarioNormal();
     }
 
-    public boolean verificarUsuarioNormal(String correo, String contrasenia) throws SQLException {
+    public boolean verificarUsuarioNormal(String correo,
+            String contrasenia) throws SQLException {
 
         return dun.verificarUsuarioNormal(correo, contrasenia);
 
+    }
+    
+     DataUsuarioNormal dusuario=new DataUsuarioNormal();
+    
+    public LinkedList<UsuarioNormal> listarUsuariosDB() throws SQLException{
+        LinkedList <UsuarioNormal> listaUsuarios;
+        listaUsuarios=dusuario.selectUsuarios();
+        return listaUsuarios;
+    }//fin listarEventos
+    
+    public void eliminarUsuariosDB(String correo) throws SQLException{
+        dusuario.eliminarUsuarioNormal(correo);
+    }
+    
+    public void crearUsuariosDB(UsuarioNormal usuario) throws SQLException{
+        dusuario.crearUsuarioNormal();
     }
 }

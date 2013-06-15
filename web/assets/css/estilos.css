@@ -19,6 +19,7 @@ body {
 
     color: #444;
     background: #aaa;
+    font-family: 'Averia Libre', cursive;
 
 }
 
@@ -960,8 +961,8 @@ select {
     
     
     font-size: 12px;
-    width:340px;
-    height:40px;
+    width:auto;
+    height:50px;
     background:#fefefe;
     margin-top:3px;
     padding: 5px;
