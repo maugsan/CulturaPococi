@@ -24,9 +24,15 @@
 </head>
 <body>
 
-    <%@include file="/includes/header.jsp" %>
-
-    <section  id="seccion-principal">
+     <!-Linea para menu de usuario -->
+            <%String email = (String) request.getSession().getAttribute("c");
+                if ( email == null ) {%>
+                <%@include file="../includes/header.jsp"%>
+            
+            
+            
+            
+                <section  id="seccion-principal">
 
         
         <div id="contendor-interno"> 
@@ -54,7 +60,18 @@
         </div> 
               </section>
 
-    </section>
+            
+
+            <%} else {%>
+            <%@include file="../includes/header_administrativo.jsp"%> 
+            <jsp:forward page="http://localhost:8084/CulturaPococi/nuevologin.do"></jsp:forward>
+            
+            
+            
+            <%  }%>
+             <!--fin -->
+
+
 
 
     <%@include file="/includes/footer.jsp" %>

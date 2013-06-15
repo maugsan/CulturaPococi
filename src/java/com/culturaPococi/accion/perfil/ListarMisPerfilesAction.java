@@ -4,8 +4,11 @@
  */
 package com.culturaPococi.accion.perfil;
 
+import com.culturaPococi.dominio.Categoria;
 import com.culturaPococi.dominio.Perfil;
+import com.culturaPococi.negocio.NegocioCategoria;
 import com.culturaPococi.negocio.NegocioPerfil;
+import java.util.LinkedList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.swing.JOptionPane;
@@ -18,12 +21,13 @@ import org.apache.struts.actions.DispatchAction;
  *
  * @author Personal
  */
-public class CrearPerfilAction extends DispatchAction {
+public class ListarMisPerfilesAction extends DispatchAction{
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
-    NegocioPerfil nPerfil=new NegocioPerfil();
 
+    NegocioPerfil np=new NegocioPerfil();
+    NegocioCategoria nCategoria=new NegocioCategoria();
     /**
      * This is the action called from the Struts framework.
      *
@@ -39,14 +43,33 @@ public class CrearPerfilAction extends DispatchAction {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         
-        String distrito=request.getParameter("distrito");
-        String nombre=request.getParameter("nombre");
-        int idCategoria=Integer.parseInt(request.getParameter("idCategoria"));
-        String biografia=request.getParameter("biografia");
+        String correo=""+request.getParameter("correo");
+        
+        String jsp="mostrarPerfiles";
+        
+        JOptionPane.showMessageDialog(null, "correo "+correo);
+        
+        LinkedList<Perfil> listaPerfiles=new LinkedList<Perfil>();
+        
+        listaPerfiles=np.getListaMisPerfiles(correo);
+        
+        if(listaPerfiles==null){
+            JOptionPane.showMessageDialog(null, "mostrar mensaje de que no tiene perfiles y redireccionar a crear perfil");
+            jsp="crearPerfil";
+            
+            LinkedList<Categoria> listaCategorias = new LinkedList<Categoria>();
+
+            listaCategorias = nCategoria.selectCategoriasDB();
+            if (listaCategorias == null) {
+                JOptionPane.showMessageDialog(null, "error al cargar los datos");
+            }
+            request.setAttribute("listaCategorias", listaCategorias);
+        }
         
         
-        nPerfil.crearPerfil(new Perfil(nombre, "", "fechadecreacion", biografia, "imagen de portada", /*correo*/"correo1", distrito, idCategoria));
+        request.setAttribute("listaPerfil",listaPerfiles );
         
-        return mapping.getInputForward();
+        
+        return mapping.findForward(jsp);
     }
 }

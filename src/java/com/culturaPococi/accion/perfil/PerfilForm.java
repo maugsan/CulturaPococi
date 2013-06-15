@@ -2,37 +2,27 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.culturaPococi.dominio;
+package com.culturaPococi.accion.perfil;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts.action.ActionErrors;
+import org.apache.struts.action.ActionMapping;
+import org.apache.struts.action.ActionMessage;
 
 /**
  *
- * @author jonathan
+ * @author Personal
  */
-public class Perfil {
+public class PerfilForm extends org.apache.struts.action.ActionForm {
     
-
     private String nombrePerfil;
-    private String nombreCategoria;
     private String fechaDeCreacion;
     private String biografia;
     private String imagenDePortada;
     private String correo;
     private String nombreDistrito;
     private int idCategoria;
-
-    public Perfil(String nombrePerfil, String nombreCategoria, String fechaDeCreacion, String biografia, String imagenDePortada, String correo, String nombreDistrito, int idCategoria) {
-        this.nombrePerfil = nombrePerfil;
-        this.nombreCategoria = nombreCategoria;
-        this.fechaDeCreacion = fechaDeCreacion;
-        this.biografia = biografia;
-        this.imagenDePortada = imagenDePortada;
-        this.correo = correo;
-        this.nombreDistrito = nombreDistrito;
-        this.idCategoria = idCategoria;
-    }
-
-    public Perfil() {
-    }
 
     public int getIdCategoria() {
         return idCategoria;
@@ -43,7 +33,6 @@ public class Perfil {
     }
 
     
- 
     public String getNombrePerfil() {
         return nombrePerfil;
     }
@@ -52,13 +41,6 @@ public class Perfil {
         this.nombrePerfil = nombrePerfil;
     }
 
-    public String getNombreCategoria() {
-        return nombreCategoria;
-    }
-
-    public void setNombreCategoria(String nombreCategoria) {
-        this.nombreCategoria = nombreCategoria;
-    }
 
     public String getFechaDeCreacion() {
         return fechaDeCreacion;
@@ -99,5 +81,27 @@ public class Perfil {
     public void setNombreDistrito(String nombreDistrito) {
         this.nombreDistrito = nombreDistrito;
     }
+
     
+    
+    /**
+     *
+     */
+    public PerfilForm() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+    /**
+     * This is the action called from the Struts framework.
+     *
+     * @param mapping The ActionMapping used to select this instance.
+     * @param request The HTTP Request we are processing.
+     * @return
+     */
+    public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
+        ActionErrors errors = new ActionErrors();
+        
+        return errors;
+    }
 }

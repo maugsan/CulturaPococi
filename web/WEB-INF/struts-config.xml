@@ -9,6 +9,7 @@
     
     
     <form-beans>
+          <form-bean name="PerfilForm" type="com.culturaPococi.accion.perfil.PerfilForm"/>
          <form-bean name="CrearProgramaRadioForm" type="com.culturaPococi.accion.programaradio.CrearProgramaRadioForm"/>
         <form-bean name="ArticuloForm" type="com.culturaPococi.accion.articulo.ArticuloForm"/>
         <form-bean name="FormularioCategoria" type="com.culturaPococi.accion.categoria.FormularioCategoria"/>
@@ -64,7 +65,7 @@
                 type="com.culturaPococi.accion.usuarioNormal.MostrarUsuariosAction"/>
         
            
-             <!-- PERFIL  -->
+  <!-- PERFIL  -->
         <action path="/mostrarperfiles" 
                 type="com.culturaPococi.accion.perfil.MostrarPerfilesAction"
                 scope="request"
@@ -78,22 +79,50 @@
                 
         </action>
         
-        <action path="/modificar_perfil" 
-                type="com.culturaPococi.accion.perfil.ModificarPerfilAction"/>
-        
-        
-        <action path="/crear_perfil"
-                type="com.culturaPococi.accion.perfil.CrearPerfilAction"/>
         
         <action path="/mostrar_perfil_seleccionado"
                 type="com.culturaPococi.accion.perfil.MostrarPerfilSeleccionadoAction"
                  scope="request"
-                 input="/perfil/mostrar_perfil_seleccionado.jsp"
+                 input="/perfil/perfil.jsp"
         >
         
         </action>
         
-        <!-- FIN PERFIL  -->
+        <action input="/" 
+                path="/crear_perfil" 
+                scope="request" 
+                type="com.culturaPococi.accion.perfil.CrearPerfilAction"/>
+        
+        <action input="/perfil/crear_perfil.jsp"
+                path="/cargar_categorias_perfil" 
+                scope="request" 
+                type="com.culturaPococi.accion.perfil.CargarCategoriasPerfilAction"/>
+        
+        <action input="/"
+                path="/actualizar_perfil" 
+                scope="request" 
+                type="com.culturaPococi.accion.perfil.ActualizarPerfilAction"/>
+        
+        <action input="/"
+                path="/eliminar_perfil_por_usuario" 
+                scope="request" 
+                type="com.culturaPococi.accion.perfil.EliminarPerfilPorUsuarioAction"/>
+        
+         <action input="/perfil/crear_perfil.jsp"
+                 path="/confirmar_nombre_perfil" 
+                 scope="request" 
+                 type="com.culturaPococi.accion.perfil.ConfirmarNombrePerfilAction"/>
+        
+        <action input="/perfil/mostrar_mis_perfiles.jsp"
+                path="/listar_mis_perfiles" 
+                scope="request" 
+                type="com.culturaPococi.accion.perfil.ListarMisPerfilesAction">
+                
+                <forward name="mostrarPerfiles" path="/perfil/mostrar_mis_perfiles.jsp" />
+                <forward name="crearPerfil" path="/perfil/crear_perfil.jsp"/>
+       
+        </action>
+        <!-- FIN PERFIL  --> 
         
                 <!-- PUBLICACION  -->
                 <action path="/mostrar_publicacion"
@@ -105,7 +134,7 @@
         <!-- FIN PUBLICACION  -->
        
        
-        <!-- INICIO EVENTO  -->
+       <!-- INICIO EVENTO  -->
         <action input="/evento/index.jsp"  
                 path="/listar_evento" 
                 scope="request" 
@@ -153,7 +182,7 @@
                  path="/actualizar_evento" 
                  scope="request" 
                  validate="true" 
-                 input="/evento/modificar_evento.jsp"
+                 input="/evento/index.jsp"
                  type="com.culturaPococi.accion.evento.ActualizarEventoAction">
        
         </action>
@@ -439,9 +468,6 @@
         
         />
         
-        
-        
-    
         
         
         

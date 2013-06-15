@@ -20,9 +20,9 @@
         <link rel="stylesheet" href="./assets/css/jquery.ui.css">
         <link rel="stylesheet" href="./assets/css/jquery.ui.all.css">
         <script src="./assets/js/jquery-ui.js"></script>
-     
+
         <noscript>
-            <meta http-equiv="refresh" content="0; <%=request.getContextPath()%>/javascript.jsp">
+        <meta http-equiv="refresh" content="0; <%=request.getContextPath()%>/javascript.jsp">
         </noscript>
     </head>
 
@@ -31,7 +31,16 @@
 
 
         <div id="contendor">
-            <%@include file="includes/header.jsp" %>
+
+            <!--Linea para menu de usuario -->
+            <%String email = (String) request.getSession().getAttribute("c");
+                if ( email == null ) {%>
+            <%@include file="includes/header.jsp"%> 
+            <%} else {%>
+            <%@include file="includes/header_administrativo.jsp"%> 
+            <%  }%>
+             <!--fin -->
+          
             <section  id="seccion-principal-inicio">
 
 
@@ -49,7 +58,7 @@
                                 <li> <a href = "#">  <img src="./assets/img/inicio.png" > </a> </li>
                                 <li> <a href = "#">   <img src="./assets/img/banner1.jpg" > </a> </li>
                                 <li> <a href = "#">   <img src="./assets/img/banner2.jpg" > </a> </li>
-                              
+
 
 
                             </ul>
@@ -68,29 +77,29 @@
 
                 <div id="contendor-interno">
 
-                <div id="s-izquierdo">
-                    <img src="./assets/img/guitarra-icon.png"/>
-                    <h1>Directorio</h1>
+                    <div id="s-izquierdo">
+                        <img src="./assets/img/guitarra-icon.png"/>
+                        <h1>Directorio</h1>
 
-                </div> 
+                    </div> 
 
-                <div id="s-centro">
+                    <div id="s-centro">
 
-                    <img src="./assets/img/radio-icon.png"/>
-                    <h1>Radio</h1>
+                        <img src="./assets/img/radio-icon.png"/>
+                        <h1>Radio</h1>
 
-                </div> 
+                    </div> 
 
-                <div id="s-derecho">
+                    <div id="s-derecho">
 
-                    <img src="./assets/img/idea-icon.png"/>
-                     <h1>Nosotros</h1>
+                        <img src="./assets/img/idea-icon.png"/>
+                        <h1>Nosotros</h1>
 
 
-                </div> 
-           
+                    </div> 
 
-                
+
+
                     <a href=""><button id="boton-unir">Únete</button></a>
                     <p>Proin elit arccitudin mi sit  dapibus lacus
                         auctor risus. Aenean tempor ullamcorper leo. 
