@@ -18,13 +18,15 @@ public class Evento {
     private String nombre;
     private String  fecha;
     private String hora;
+    private String minutos;
+    private String tiempo;
     private String informacion;
     private String correo;
     private String imagen;
 
     public Evento() {}
 
-    public Evento(int idEvento, int idCategoria, String nombreCategoria, String lugar, String nombre, String fecha, String hora, String informacion, String correo, String imagen) {
+    public Evento(int idEvento, int idCategoria, String nombreCategoria, String lugar, String nombre, String fecha, String hora, String minutos, String tiempo, String informacion, String correo, String imagen) {
         this.idEvento = idEvento;
         this.idCategoria = idCategoria;
         this.nombreCategoria = nombreCategoria;
@@ -32,10 +34,32 @@ public class Evento {
         this.nombre = nombre;
         this.fecha = fecha;
         this.hora = hora;
+        this.minutos = minutos;
+        this.tiempo = tiempo;
         this.informacion = informacion;
         this.correo = correo;
         this.imagen = imagen;
     }
+    
+    
+
+    public String getMinutos() {
+        return minutos;
+    }
+
+    public void setMinutos(String minutos) {
+        this.minutos = minutos;
+    }
+
+    public String getTiempo() {
+        return tiempo;
+    }
+
+    public void setTiempo(String tiempo) {
+        this.tiempo = tiempo;
+    }
+
+    
 
     
 

@@ -13,12 +13,13 @@ import javax.swing.JOptionPane;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import org.apache.struts.actions.DispatchAction;
 
 /**
  *
  * @author Personal
  */
-public class EliminarArticuloAction extends org.apache.struts.action.Action {
+public class EliminarArticuloAction extends DispatchAction {
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
@@ -41,11 +42,12 @@ public class EliminarArticuloAction extends org.apache.struts.action.Action {
         boolean accionRealizada;
         LinkedList<Articulo> listaArticulos;
         
+        String fechaBoletin=""+request.getParameter("fecha");
         int idArticulo=Integer.parseInt(request.getParameter("idArticulo"));
         
         accionRealizada=nArticulo.bdEliminarArticulo(idArticulo);
         
-        listaArticulos=nArticulo.bdListarArticulos();
+        listaArticulos=nArticulo.bdListarArticulos(fechaBoletin);
         
         if(listaArticulos==null||accionRealizada==false){
             JOptionPane.showMessageDialog(null, "Error en la base de datos EliminarArticulosAction");

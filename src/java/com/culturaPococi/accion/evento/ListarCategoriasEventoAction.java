@@ -49,7 +49,6 @@ public class ListarCategoriasEventoAction extends DispatchAction {
             JOptionPane.showMessageDialog(null, "La lista de categorias no se pudo cargar");
         }
         request.setAttribute("listaCategorias", listaCategorias);
-        JOptionPane.showMessageDialog(null, "entró ");
         return mapping.getInputForward();
     }
 }

@@ -43,7 +43,6 @@ public class ListarPublicacionesPendientesAction extends DispatchAction {
         
         
         String tipoPublicacion=request.getParameter("tipoPublicacion");
-        JOptionPane.showMessageDialog(null, "listarpublicacionespendientes: "+tipoPublicacion);
         LinkedList<Publicacion> listaPublicacionesPendientes;
          
         listaPublicacionesPendientes=nPublicacion.getListaPublicacionPendiente(tipoPublicacion);

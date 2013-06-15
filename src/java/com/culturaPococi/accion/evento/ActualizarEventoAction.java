@@ -43,8 +43,11 @@ public class ActualizarEventoAction extends DispatchAction {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         
-        boolean accionRealizadaEvento;
+         boolean accionRealizadaEvento;
         LinkedList<Categoria> listaCategorias;
+        String hora=""+request.getParameter("hora");
+        String minutos=""+request.getParameter("minutos");
+        String tiempo=""+request.getParameter("tiempo");
         EventoForm formu = (EventoForm) form;
 //        Evento evento = new Evento(formu.getIdEvento(),
 //                formu.getIdCategoria(),
@@ -55,26 +58,22 @@ public class ActualizarEventoAction extends DispatchAction {
 //                //formu.getHora(),
 //                formu.getInformacion(),
 //                "ybarboza27@gmail.com", "");
-      
-     
-
-        Evento evento = new Evento(formu.getIdEvento(),
-                formu.getIdCategoria(),
-                "",
-                formu.getLugar(),
-                formu.getNombre(),
-                formu.getFecha(), "",
-                //formu.getHora(),
-                formu.getInformacion(),
-                "ybarboza27@gmail.com", "");
-
-
+        
+        Evento evento=new Evento(formu.getIdEvento(),
+                                formu.getIdCategoria(), 
+                                "", 
+                                formu.getLugar(), 
+                                formu.getNombre(),
+                                formu.getFecha(),
+                                hora,minutos,tiempo,
+                                formu.getInformacion(), 
+                                "ybarboza27@gmail.com","");
+        
         accionRealizadaEvento=nEvento.actualizarEventosDB(evento);
-        JOptionPane.showMessageDialog(null, "por "+formu.getIdCategoria());
         
         if(!accionRealizadaEvento){
             //hay que mostrar un mensaje de que no se pudo actualizar el evento
-            JOptionPane.showMessageDialog(null, "El evento no se pudo cargar");
+            JOptionPane.showMessageDialog(null, "El evento no se pudo cargar------------ ActualizaEventoAction");
         }
 //        
 //        listaCategorias = nCategoria.selectCategoriasDB();
@@ -96,7 +95,6 @@ public class ActualizarEventoAction extends DispatchAction {
         return mapping.getInputForward();
     }
 }
-
 
 
 

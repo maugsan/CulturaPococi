@@ -17,8 +17,10 @@
         <script type="text/javascript" src="./assets/js/jqcy.js"></script>
         <script type="text/javascript" src="./assets/js/jqSlide.js"></script>
 
-        <link rel="stylesheet" href="./assets/css/jquery.ui.css">
-        <link rel="stylesheet" href="./assets/css/jquery.ui.all.css">
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="../assets/css/jquery.ui.css">
+        <link rel="stylesheet" href="../assets/css/jquery.ui.all.css">
         <script src="./assets/js/jquery-ui.js"></script>
 
         <noscript>

@@ -18,19 +18,9 @@ public class Publicacion {
     private String texto;
     private String imagen;
     private String nombreCategoria;
+    private int idCategoria;
 
-    public Publicacion(String nombrePerfil,
-         int idPublicacion,
-         String fechaPublicacion,
-         String correo,
-         String descripcion,
-         int verificacion,
-         String musica,
-         String video,
-         String texto,
-         String imagen,
-         String nombreCategoria) {
-        
+    public Publicacion(String nombrePerfil, int idPublicacion, String fechaPublicacion, String correo, String descripcion, int verificacion, String musica, String video, String texto, String imagen, String nombreCategoria, int idCategoria) {
         this.nombrePerfil = nombrePerfil;
         this.idPublicacion = idPublicacion;
         this.fechaPublicacion = fechaPublicacion;
@@ -42,10 +32,23 @@ public class Publicacion {
         this.texto = texto;
         this.imagen = imagen;
         this.nombreCategoria = nombreCategoria;
+        this.idCategoria = idCategoria;
     }
+
+    
 
     public Publicacion() {
     }
+
+    public int getIdCategoria() {
+        return idCategoria;
+    }
+
+    public void setIdCategoria(int idCategoria) {
+        this.idCategoria = idCategoria;
+    }
+    
+    
     
     
 

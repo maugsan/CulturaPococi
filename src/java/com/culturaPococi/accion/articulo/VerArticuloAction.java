@@ -15,12 +15,13 @@ import javax.swing.JOptionPane;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import org.apache.struts.actions.DispatchAction;
 
 /**
  *
  * @author Personal
  */
-public class VerArticuloAction extends org.apache.struts.action.Action {
+public class VerArticuloAction extends DispatchAction {
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
@@ -47,8 +48,8 @@ public class VerArticuloAction extends org.apache.struts.action.Action {
         LinkedList<Categoria>listaCategoria;
         int idArticulo=Integer.parseInt(request.getParameter("idArticulo"));
         
-        articulo=nArticulo.bdArticulo(idArticulo);
-        listaCategoria=nCategoria.selectCategoriasOrdenadasDB(articulo.getIdArticulo());
+        articulo=nArticulo.bdArticulo(idArticulo,"");
+        listaCategoria=nCategoria.selectCategoriasOrdenadasDB(articulo.getCategoria());
         
         if(articulo==null||listaCategoria==null){
             JOptionPane.showMessageDialog(null, "Error en la base de datos verArticuloAction");

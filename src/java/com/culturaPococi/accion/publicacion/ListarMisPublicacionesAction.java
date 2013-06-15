@@ -2,11 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.culturaPococi.accion.articulo;
+package com.culturaPococi.accion.publicacion;
 
-import com.culturaPococi.dominio.Articulo;
-import com.culturaPococi.dominio.Categoria;
-import com.culturaPococi.negocio.NegocioCategoria;
+import com.culturaPococi.dominio.Publicacion;
+import com.culturaPococi.negocio.NegocioPublicacion;
 import java.util.LinkedList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,17 +14,16 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.DispatchAction;
-import sun.security.util.DisabledAlgorithmConstraints;
 
 /**
  *
  * @author Personal
  */
-public class ListarCategoriasArticulo extends DispatchAction {
+public class ListarMisPublicacionesAction extends DispatchAction {
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
-    NegocioCategoria nCategoria=new NegocioCategoria();
+    NegocioPublicacion nPublicacion=new NegocioPublicacion();
 
     /**
      * This is the action called from the Struts framework.
@@ -42,17 +40,29 @@ public class ListarCategoriasArticulo extends DispatchAction {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         
-        LinkedList<Categoria> listaCategorias;
-        String fecha=""+request.getParameter("fecha");
-        JOptionPane.showMessageDialog(null, "Fecha listarcategoriasari "+fecha+" /");
-        listaCategorias=nCategoria.selectCategoriasDB();
+        String jsp;
+        LinkedList<Publicacion> listaPublicacion;
+        String tipo=""+request.getParameter("tipo");
+        String nomPerfil=""+request.getParameter("nomPerfil");
         
-        if(listaCategorias==null){
-            JOptionPane.showMessageDialog(null, "Error en la base de datos listarCategoriasArticulosAction");
-        }//fin if
+        JOptionPane.showMessageDialog(null, "porque "+tipo+"/nom "+nomPerfil);
         
-        request.setAttribute("listaCategorias", listaCategorias);
-        request.setAttribute("fecha", fecha);
-        return mapping.getInputForward();
+        if(tipo.equalsIgnoreCase("musica")){
+            jsp="miMusica";
+        }else if (tipo.equalsIgnoreCase("texto")){
+            jsp="miTexto";
+        }else if (tipo.equalsIgnoreCase("video")){
+            jsp="miVideo";
+        }else{
+            jsp="miImagen";
+        }
+        
+        listaPublicacion=nPublicacion.getListaPublicacionesPorPerfil(nomPerfil, tipo);
+        if(listaPublicacion==null){
+            JOptionPane.showMessageDialog(null, "se cayó la base de datos");
+        }
+        
+        request.setAttribute("listaPublicaciones", listaPublicacion);
+        return mapping.findForward(jsp);
     }
 }

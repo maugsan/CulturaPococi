@@ -41,14 +41,15 @@ public class ListarArticulosAction extends DispatchAction {
             throws Exception {
         
         LinkedList<Articulo> listaArticulos;
-        
-        listaArticulos=nArticulo.bdListarArticulos();
+        String fechaBoletin=request.getParameter("fecha");
+        listaArticulos=nArticulo.bdListarArticulos(fechaBoletin);
         
         if(listaArticulos==null){
             JOptionPane.showMessageDialog(null, "Error en la base de datos listarArticulosAction");
         }//fin if
         
         request.setAttribute("listaArticulos", listaArticulos);
+        request.setAttribute("fecha", fechaBoletin);
         
         return mapping.getInputForward();
     }

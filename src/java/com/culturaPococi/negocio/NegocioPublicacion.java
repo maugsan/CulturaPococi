@@ -40,18 +40,24 @@ public class NegocioPublicacion {
     
     
     public LinkedList<Publicacion> getListaPublicacionPendiente(String tipo) throws SQLException {
-        LinkedList<Publicacion> listaPublicacionesPendientes=new LinkedList<Publicacion>();
-        if(tipo.equals("música")){
-            listaPublicacionesPendientes=dp.getListaPublicacionMusica(tipo);
-        }else if(tipo.equals("texto")){
-            listaPublicacionesPendientes=dp.getListaPublicacionMusica(tipo);
-        }else if(tipo.equals("imagen")){
-            listaPublicacionesPendientes=dp.getListaPublicacionMusica(tipo);
-        }else{
-            listaPublicacionesPendientes=dp.getListaPublicacionMusica(tipo);
-        }
+        LinkedList<Publicacion> listaPublicacionesPendientes;
+        
+        listaPublicacionesPendientes=dp.getListaPublicacionPendiente(tipo);
         
         return listaPublicacionesPendientes;
+    }
+    
+    public boolean crearPublicacionBD(Publicacion publicacion) throws SQLException {
+
+        return dp.crearPublicacion(publicacion);
+    }
+    
+    public LinkedList<Publicacion> getListaPublicacionesPorPerfil(String nombrePerfil,String tipo) throws SQLException {
+        LinkedList<Publicacion> listaPublicacionesPorPerfil;
+        
+        listaPublicacionesPorPerfil=dp.selectPublicacionPorPerfilYPorTipo(tipo, nombrePerfil);
+        
+        return listaPublicacionesPorPerfil;
     }
     
 }

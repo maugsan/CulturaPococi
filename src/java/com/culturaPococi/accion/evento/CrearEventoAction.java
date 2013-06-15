@@ -41,7 +41,7 @@ public class CrearEventoAction extends DispatchAction {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        boolean accionRealizada;
+       boolean accionRealizada;
         String nombrejsp="";
         String email = (String)request.getSession().getAttribute("c");
  
@@ -51,11 +51,11 @@ public class CrearEventoAction extends DispatchAction {
                                 "", 
                                 formu.getLugar(), 
                                 formu.getNombre(),
-                                formu.getFecha(),"",
-                                //formu.getHora(),
+                                formu.getFecha(),
+                                hora,minutos,tiempo,
                                 formu.getInformacion(), 
-                                "ybarboza27@gmail.com","");
-               
+                                "ybarboza27@gmail.com","imagen");  
+        
         accionRealizada=nEvento.crearEventosDB(evento);
         if(!accionRealizada){
             // si la accion es false es que no se pudo crear el nuevo evento por loq ue hay que mostrar un mensaje
@@ -77,6 +77,7 @@ public class CrearEventoAction extends DispatchAction {
         return mapping.getInputForward();
     }
 }
+
 
 
 

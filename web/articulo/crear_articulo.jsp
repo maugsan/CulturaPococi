@@ -44,40 +44,41 @@
                 </script>
 
 
-           <form method="post" action="./crear_articulo.do" id="validar-form">
-        
-                    <h1><bean:message key="articulo.crear.articulo"/></h1>
-
-                    <h2><bean:message key="articulo.titulo"/></h2>
-                    <input type="text" id="titulo" name="titulo" size="16" value=""/>
-
-                    <h2><bean:message key="articulo.fecha"/></h2><br>
-                    <input type="text" class="fecha" readonly="readonly" name="fecha" size="16" value=""/>
-
-
-                    <h2><bean:message key="articulo.autor"/></h2>
-                    <input type="text" id="autor" name="autor" size="16" value=""/>
-                                      
-
-                    <h2><bean:message key="form.categoria"/></h2>
-                    
-                    <select name="categoria">
-                        <logic:iterate name="listaCategorias" id="numero" >
-                            <option value="idCategoria"> <!-- esto es para que cuando elija el nombre me envie el numero !-->
-                                <bean:write name="numero" property="nombreCategoria"/>
-                            </option>
-                        </logic:iterate>
-                    </select>
-
-                    <h2><bean:message key="articulo.contenido"/></h2>
-                    
-                    <textarea ROWS="5" id="texto-grande"  id="contenido" name="contenido" size="16" value=""></textarea>
-
-                    <input type="submit" value="Crear"/><br>
-
-
+           <html:form action="/crear_articulo">
+                
+                <h1><bean:message key="articulo.crear.articulo"/></h1>
+                
+                <h2><bean:message key="articulo.titulo"/></h2>
+                <html:text  name="ArticuloForm" property="titulo" size="16" value=""/><br>
+                <html:errors property="etitulo"/> 
+                
+                <h2><bean:message key="articulo.fecha"/></h2><br>
+                
+                <h2><bean:message key="articulo.autor"/></h2>
+                <html:text  name="ArticuloForm" property="autor" size="16" value=""/><br>
+                <html:errors property="eautor"/> 
+                
+                <h2><bean:message key="form.categoria"/></h2>
+                <html:select property="categoria" >
+                    <logic:iterate name="listaCategorias" id="numero" >
+                        <html:option value="${numero.idCategoria}"> <!-- esto es para que cuando elija el nombre me envie el numero !-->
+                            <bean:write name="numero" property="nombreCategoria"/>
+                        </html:option>
+                    </logic:iterate>
+                </html:select>
+                
+                <h2><bean:message key="articulo.contenido"/></h2>
+                <html:textarea name="ArticuloForm" property="contenido" cols="44" rows="5" value=""/><br>
+                <html:errors property="econtenido"/> 
+                
+                <html:hidden  name="ArticuloForm" property="fecha" value="${fecha}"/>
+                
+                
+                <html:submit value="Crear" /><br>
+               
+                
                    
-            </form>
+            </html:form>
                  
                 <a href="./listar_articulos.do">
                     <button id="boton-volver">

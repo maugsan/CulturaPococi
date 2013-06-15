@@ -20,10 +20,10 @@ public class DataArticulo extends DataBase {
 
     public DataArticulo() {}
     
-    public LinkedList<Articulo> selectArticulos() throws SQLException {
+    public LinkedList<Articulo> selectArticulos(String fecha) throws SQLException {
         LinkedList<Articulo> listaArticulos=new LinkedList<Articulo>();
         Articulo articulo;
-        String sql = "call pListarArticulos();";
+        String sql = "call pListarArticulosPorBoletin('"+fecha+"');";
         ResultSet resultado;
         Connection conexion = super.getConexion();
 
@@ -54,11 +54,11 @@ public class DataArticulo extends DataBase {
     
     
     
-    public Articulo selectArticulo(int idArticulo) throws SQLException {
+    public Articulo selectArticulo(int idArticulo,String fechaBoletin) throws SQLException {
         LinkedList<Articulo> listaArticulos;
         Articulo articulo=new Articulo();
         
-        listaArticulos=selectArticulos();
+        listaArticulos=selectArticulos(fechaBoletin);
         if(listaArticulos!=null){
             for(int i=0;i<listaArticulos.size(); i++){
                 if(idArticulo==listaArticulos.get(i).getIdArticulo()){
