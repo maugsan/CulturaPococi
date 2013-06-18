@@ -9,9 +9,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-         <link rel="stylesheet" href="./assets/css/estilos.css" type="text/css" />
-        <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
+        <%@include file="/includes/head.jsp" %>
         <title>Busqueda</title>
     </head>
     <body>

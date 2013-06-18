@@ -7,19 +7,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
-        <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
-        <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-        <link rel="stylesheet" href="../assets/css/estilos.css" type="text/css" />
-        <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" />
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
-        
-          <script type="text/javascript" src="../assets/js/jquery-1.0.9.min.js"></script>
-        <script type="text/javascript" src="../assets/js/jquery.validate.js"></script>
-        <script type="text/javascript" src="../assets/js/validar.js"></script>
-
+       
+        <%@include file="/includes/head.jsp"%> 
         <title>Crear Programa Radio</title>
     </head>
     <body>

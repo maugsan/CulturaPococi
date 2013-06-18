@@ -8,64 +8,59 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="icon" type="image/png" href="../assets/img/logo.png" />
-
-        <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
-        <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
-        <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <%@include file="/includes/head.jsp" %>
         <title>Ingresar al sistema</title>
 
-         <link rel="stylesheet" href="./assets/css/estilos.css" type="text/css" />
-        <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
-        <link rel="stylesheet" href="../assets/css/estilos.css" type="text/css" />
-        <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" />
-          <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+       
     </head>
 </head>
 <body>
 
-     <!-Linea para menu de usuario -->
-            <%String email = (String) request.getSession().getAttribute("c");
-                if ( email == null ) {%>
-                <%@include file="../includes/header.jsp"%>
+    <!-Linea para menu de usuario -->
+    <%String email = (String) request.getSession().getAttribute("c");
+                if (email == null) {%>
+    <%@include file="../includes/header.jsp"%>
 
-                <section  id="seccion-principal">
+    <section  id="seccion-principal">
 
-        
+
         <div id="contendor-interno"> 
 
             <div id="login-principal">
-            <html:form action="/nuevologin">
-                <h1>Ingresar</h1>
-                <h2>Correo</h2>
+                <html:form action="/nuevologin">
+                    <h1>Ingresar</h1>
+                    <h2>Correo</h2>
 
-                <html:text  name="NuevoLoginForm" property="correo" size="16"/><br>
-                <h2>Contraseña</h2>
-                <html:password  name="NuevoLoginForm" property="contrasenia" size="16"/><br>
-                <html:submit value="Entrar" />
-               
+                    <html:text  name="NuevoLoginForm" property="correo" size="16"/><br>
+                    <h2>Contraseña</h2>
+                    <html:password  name="NuevoLoginForm" property="contrasenia" size="16"/><br>
+                    <html:submit value="Entrar" />
 
-            </html:form>
-            <html:errors/>
+
+                </html:form>
+                <html:errors/>
 
             </div>
             <aside id="aside-login">
-               <a href="<%=request.getContextPath()%>/crear_usuario.do"><button id="boton-unir">Únete</button></a>
-               
-              <a><h2>Olvidaste la contraseña</h2></a>
+                <a href="<%=request.getContextPath()%>/crear_usuario.do"><button id="boton-unir">Únete</button></a>
+
+                <a><h2>Olvidaste la contraseña</h2></a>
             </aside>
         </div> 
-              </section>
+    </section>
 
-            
 
-            <%} else {%>
-            <%@include file="../includes/header_administrativo.jsp"%> 
-           
 
-            <%  }%>
-             <!--fin -->
+    <%} else {
+
+            String pageToForward = request.getContextPath();
+            response.sendRedirect(pageToForward + "/nuevologin.do");
+
+
+
+
+                }%>
+    <!--fin -->
 
 
 

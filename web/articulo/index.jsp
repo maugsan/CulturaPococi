@@ -4,22 +4,12 @@
     Author     : Mac
 --%>
 
-
-<%@page contentType="text/html"%>
-<%@page pageEncoding="UTF-8"%>
-
-<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
-<%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
-
 <html:html lang="true">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <%@include file="/includes/head.jsp" %>
         <title><bean:message key="welcome.title"/></title>
-        <link rel="stylesheet" href="./assets/css/estilos.css" type="text/css" />
-        <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
-        <html:base/>
+       
     </head>
     <body>
 
@@ -52,7 +42,7 @@
                         </div>
                         <%-- FIN Elemento  --%>
                         </logic:iterate>
-                        <a href="../listar_categorias_articulos.do?fecha=${fecha}"><button id="boton-unir"><bean:message key="boton.crear.articulo"/></button></a>
+                        <a href="<%=request.getContextPath()%>/listar_categorias_articulos.do?fecha=${fecha}"><button id="boton-unir"><bean:message key="boton.crear.articulo"/></button></a>
                     
                     </section>
                         

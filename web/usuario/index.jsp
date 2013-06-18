@@ -6,25 +6,15 @@
 
 <html lang="true">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-        <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
-        <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
-
+    
+<%@include file="../includes/head.jsp" %>
         <title><bean:message key="welcome.title"/></title>
-        <link rel="stylesheet" href="./assets/css/estilos.css" type="text/css" >
-        <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" >
-        <link rel="stylesheet" href="./assets/css/jquery.modal.css" type="text/css" media="screen" />
         
-        <link rel="stylesheet" href="./assets/css/jquery-theme.css" />
-        <script src="./assets/js/jq.js"></script>
-        <script src="./assets/js/funciones.js"></script>
-        <script src="./assets/js/jquery-ui.js"></script>
      
 
 </head>
 <body>
-    <%@include file="/includes/header_administrativo.jsp" %>
+    <%@include file="../includes/header.jsp" %>
 
     <div id="contendor">
 
@@ -62,10 +52,10 @@
                         <div id="elemento">
 
 
-                            <a href=""> <div id="link-detalle-elemento"><div id="elemento-imagen"><img src="./assets/img/perfil-icon.png" width="30"/></div>
-                                    <p value="${usuarioTemporal.nombre}" > 
+                            <a href=""> <div id="link-detalle-elemento"><div id="elemento-imagen"><img src="./assets/img/perfil-icon.png" width="50"/></div>
+                                    <h1 value="${usuarioTemporal.nombre}" > 
                                         ${usuarioTemporal.nombre}
-                                    </p>
+                                    </h1>
 
 
                                 </div></a>

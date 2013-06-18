@@ -18,10 +18,10 @@ function eliminarUsuario(correo) {
             "Borrar": function() {
                 $(this).dialog("close");
 
-                location.href='./eliminar_usuario_normal.do?c=' + correo;
-           
-           
-              
+                location.href = './eliminar_usuario_normal.do?c=' + correo;
+
+
+
 
 
             },
@@ -46,7 +46,7 @@ function eliminarPerfil(nombre) {
 
 
                 location.href = '../eliminar_perfil.do?nombrePerfil=' + nombre;
-                 window.location = "../mostrarperfiles.do";
+                window.location = "../mostrarperfiles.do";
 
             },
             Cancel: function() {
@@ -57,5 +57,4 @@ function eliminarPerfil(nombre) {
     });
 
 }
-
 

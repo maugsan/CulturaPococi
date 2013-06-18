@@ -8,12 +8,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Dashboard</title>
-        <link rel="stylesheet" href="./assets/css/estilos.css" type="text/css" />
-        <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
-
+        <%@include file="includes/head.jsp"%> 
+        <title>El FrenteCR.org | Dashboard</title>
 
         <%
 
@@ -26,10 +22,10 @@
 
             if (correo == null) {
 
-                 String pageToForward = request.getContextPath();
-  
-    response.sendRedirect(pageToForward+"/invalidar"); 
-               
+                String pageToForward = request.getContextPath();
+
+                response.sendRedirect(pageToForward + "/invalidar");
+
             }
 
 
@@ -38,42 +34,18 @@
 
     </head>
     <body>
-        <header>
-
-            <div id="contendor-interno">
-                <a href="<%=request.getContextPath()%>/nuevologin.do"><div id="header-logo"> </div></a>
-
-
-                <div id="header-opciones">
-                    <section id="controles">
-                        <a href="./invalidar.jsp"><button id="boton-salir">Salir</button></a>
-
-                        <button id="boton-usuario"><%=sesion.getAttribute("c")%></button>
-                    </section>
-
-                </div>
-
-                <%@include file="../includes/menu.jsp" %>
-
-            </div>
-
-        </header>
+        <%@include file="includes/header.jsp"%>
 
         <div id="contendor">
 
 
             <section  id="seccion-principal">
 
-
                 <div id="contendor-interno"> 
 
                     <h1>Sitio administrativo</h1>
 
-                    <h2>  <%=sesion.getAttribute("tipo")%></h2>
-
-
-
-                    <a <% if (sesion.getAttribute("tipo").equals("0")) { %>style="display: none;"<%}%> href="./mostrar_usuario.do"><section class="modulo">
+                    <a <% if (sesion.getAttribute("tipo").equals("0"))                        { %>style="display: none;"<%}%> href="./mostrar_usuario.do"><section class="modulo">
                             <img id="icono" src="assets/img/user-icon.png" width="60">
                             <h2>Usuarios</h2>
                         </section></a>
@@ -104,26 +76,21 @@
                         </section></a>
 
                     <%--<a  href="./publicacion/index.jsp"> <section class="modulo">--%>
-                            <a  href="./mostrar_perfil_seleccionado.do?nomPerfil=Caro"> <section class="modulo">
+                    <a  href="./mostrar_perfil_seleccionado.do?nomPerfil=Caro"> <section class="modulo">
                             <%--<a  href="./usuarioNormal/inicio_usuario_normal.jsp"> <section class="modulo">
                             
                             <%--<a  href="./cargar_categorias_perfil.do"> <section class="modulo">--%>
                             <%--<a  href="./usuarioNormal/inicio_usuario_normal.jsp"> <section class="modulo">--%>
-                            
-                           <img id="icono" src="assets/img/publicacion-icon.png" width="60">
+
+                            <img id="icono" src="assets/img/publicacion-icon.png" width="60">
                             <h2>Publicaciones</h2>
                         </section></a>
-
-
-
 
                 </div> 
 
             </section>
 
-
             <%@include file="/includes/footer.jsp" %>
-
 
         </div>
 

@@ -2,11 +2,11 @@
 
 <nav>
     <ul>
-        <li id="radio"><a href="<%=request.getContextPath()%>/player.html" target="_blank">RADIO</a>
+        <li id="radio"><a href="">RADIO</a>
 
             <ul>
 
-                <li><a href="#">PROGRAMACIÓN</a></li>
+                <li><a href="<%=request.getContextPath()%>/programacion.jsp">PROGRAMACIÓN</a></li>
 
 
             </ul>
@@ -89,14 +89,14 @@
 
 
 
-                <li><a href="#">NUESTRO ARTE</a></li>
+                <li><a href="<%=request.getContextPath()%>/portal.jsp">NUESTRO ARTE</a></li>
 
 
             </ul>
 
         </li>
 
-        <li><a href="#">AGENDA</a></li>
+        <li><a href="<%=request.getContextPath()%>/agenda.jsp">AGENDA</a></li>
 
     </ul>
 

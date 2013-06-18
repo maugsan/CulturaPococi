@@ -1,34 +1,14 @@
-<%-- 
-    Document   : index
-    Created on : 23/04/2013, 01:17:25 PM
-    Author     : Mac
---%>
-
-
-<%@page contentType="text/html"%>
-<%@page pageEncoding="UTF-8"%>
-
-<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
-<%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
-
 <html:html lang="true">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+       
+        <%@include file="/includes/head.jsp" %>
         <title><bean:message key="welcome.title"/></title>
-        <link rel="stylesheet" href="./assets/css/estilos.css" type="text/css" />
-        <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
-        
-             <link rel="stylesheet" href="./assets/css/jquery-theme.css" >
-        <script src="./assets/js/jq.js"></script>
-        <script src="./assets/js/funciones.js"></script>
-        <script src="./assets/js/jquery-ui.js"></script>
-        <html:base/>
+      
     </head>
     <body>
 
-        <%@include file="/includes/header_administrativo.jsp" %>
+        <%@include file="/includes/header.jsp" %>
         <div id="contendor">
             
               <div id="dialog-confirm" title="Desea eliminar?">

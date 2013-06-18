@@ -2,47 +2,14 @@
 <!DOCTYPE html>
 <html lang="true">
     <head>
-
-        <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
-        <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
-        <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>El Frente.org</title>
-
-        <link rel="stylesheet" href="./assets/css/estilos.css" type="text/css" />
-        <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
-        <link rel="stylesheet" href="./assets/css/estilosld.css" type="text/css" />
-
-        <script type="text/javascript" src="./assets/js/jq.js"></script>
-        <script type="text/javascript" src="./assets/js/jqcy.js"></script>
-        <script type="text/javascript" src="./assets/js/jqSlide.js"></script>
-
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
-
-        <link rel="stylesheet" href="../assets/css/jquery.ui.css">
-        <link rel="stylesheet" href="../assets/css/jquery.ui.all.css">
-        <script src="./assets/js/jquery-ui.js"></script>
-
-        <noscript>
-        <meta http-equiv="refresh" content="0; <%=request.getContextPath()%>/javascript.jsp">
-        </noscript>
+        <%@include file="includes/head.jsp"%> 
+        <title>El FrenteCR.org</title>
     </head>
 
-
     <body>
-
-
         <div id="contendor">
 
-            <!--Linea para menu de usuario -->
-            <%String email = (String) request.getSession().getAttribute("c");
-                if ( email == null ) {%>
-            <%@include file="includes/header.jsp"%> 
-            <%} else {%>
-            <%@include file="includes/header_administrativo.jsp"%> 
-            <%  }%>
-             <!--fin -->
-          
+           <%@include file="includes/header.jsp"%>
             <section  id="seccion-principal-inicio">
 
 
