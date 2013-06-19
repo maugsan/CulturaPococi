@@ -13,7 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.LinkedList;
-import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -153,13 +153,13 @@ public class DataPerfil extends DataBase {
             call.setString("pimagenDePortada", perfil.getImagenDePortada());
             call.setString("pcorreo", perfil.getCorreo());
             call.setString("pnombreDistrito", perfil.getNombreDistrito());
-            JOptionPane.showMessageDialog(null, "nombreP> "+perfil.getNombreDistrito()+"\n");
+           
             call.executeUpdate();
-            JOptionPane.showMessageDialog(null, "2");
+           
             call.close();
         } catch (Exception e) {
             accionRealizada = false;
-            JOptionPane.showMessageDialog(null, "3");
+           
         } finally {
             conexion.close();
         }//fin try

@@ -18,7 +18,7 @@
 
     <!-Linea para menu de usuario -->
     <%String email = (String) request.getSession().getAttribute("c");
-                if (email == null) {%>
+        if (email == null) {%>
     <%@include file="../includes/header.jsp"%>
 
     <section  id="seccion-principal">
@@ -27,17 +27,19 @@
         <div id="contendor-interno"> 
 
             <div id="login-principal">
-                <html:form action="/nuevologin">
+
+                <form method="post" action="../nuevologin.do" id="validar-form">
                     <h1>Ingresar</h1>
                     <h2>Correo</h2>
+                    <input type="text" id="correo" name="correo" size="16" value=""/>
 
-                    <html:text  name="NuevoLoginForm" property="correo" size="16"/><br>
                     <h2>Contraseña</h2>
-                    <html:password  name="NuevoLoginForm" property="contrasenia" size="16"/><br>
-                    <html:submit value="Entrar" />
+
+                    <input type="password" id="contrasenia" name="contrasenia" size="16" value=""/>
+                    <input type="submit" value="Enviar"/>
 
 
-                </html:form>
+                </form>
                 <html:errors/>
 
             </div>

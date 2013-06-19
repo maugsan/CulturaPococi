@@ -44,14 +44,21 @@ public class MostrarDetallePublicacion extends DispatchAction {
         String tipoPublicacion=request.getParameter("tipoPublicacion");
         
         Publicacion publicacion;
-        JOptionPane.showMessageDialog(null, "inicio mostrar detalle");
-        int idPublicacion=Integer.parseInt(request.getParameter("idPublicacion"));
-        JOptionPane.showMessageDialog(null, "idpublicacion: "+idPublicacion);
         
+        int idPublicacion=Integer.parseInt(request.getParameter("idPublicacion"));
+       
         publicacion=nPublicidad.getPublicacion(idPublicacion);
         
         request.setAttribute("publicacion", publicacion);
-        JOptionPane.showMessageDialog(null, "publicacion1: "+tipoPublicacion);
+        
+        if(publicacion==null){
+               JOptionPane.showMessageDialog(null, "NULL");
+        }
+        JOptionPane.showMessageDialog(null, "nombre perfil: "+publicacion.getNombrePerfil());
+JOptionPane.showMessageDialog(null, "nombreCategoria: "+publicacion.getNombreCategoria());
+JOptionPane.showMessageDialog(null, "getFechaPublicacion(): "+publicacion.getFechaPublicacion());
+JOptionPane.showMessageDialog(null, "getDescripcion(): "+publicacion.getDescripcion()); 
+
         
         if (tipoPublicacion.equals("musica")){
             mostrarJSP="musica";
@@ -62,7 +69,7 @@ public class MostrarDetallePublicacion extends DispatchAction {
         }else{
             mostrarJSP="video";
         }
-        JOptionPane.showMessageDialog(null, "FIIIIIIINNNNNNNNN "+mostrarJSP);
+        
         return mapping.findForward(mostrarJSP);
     }
 }

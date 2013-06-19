@@ -9,7 +9,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -39,7 +39,7 @@ public class DataBase {
             this.con = (Connection) DriverManager.getConnection(host, usuario, contra);
            
         } catch (ClassNotFoundException ex) {
-            JOptionPane.showMessageDialog(null, "INCORRECTO!!");
+           
             Logger.getLogger(DataBase.class.getName()).log(Level.SEVERE, null, ex);
         }
         return con;

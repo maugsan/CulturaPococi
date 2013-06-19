@@ -38,7 +38,7 @@
                         
 
                             <div id="elemento-imagen"><img src="../assets/img/evento-icon.png" width="30"/></div><br>
-                            ${publicacion.getIdPublicacion()}
+                            
                             <p id="elemento-nombre">${publicacion.getNombrePerfil()}</p><br>
                             <p id="elemento-nombre">${publicacion.getFechaPublicacion()}</p><br>
                             <p id="elemento-nombre">${publicacion.getNombreCategoria()}</p><br>

@@ -12,7 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.LinkedList;
-import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -55,8 +55,7 @@ public class DataCategoria extends DataBase{
         listaCategorias = selectCategorias();
         if (listaCategorias != null) {
             for (int i = 0; i < listaCategorias.size(); i++) {
-                JOptionPane.showMessageDialog(null, "getIdCategoria() "+listaCategorias.get(i).getIdCategoria()
-                        +"= idCategoria "+idArticulo);
+               
                 if (listaCategorias.get(i).getIdCategoria() == idArticulo) {
                     listaOrdenadaCategorias.addFirst(listaCategorias.get(i));
                 } else {

@@ -36,9 +36,7 @@ public class ConfirmarNombrePerfilAction extends DispatchAction {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         String nombrePerfil=request.getParameter("nombrePerfil");
-        JOptionPane.showMessageDialog(null, "entró a comprobar "+nombrePerfil);
-        
-        
+  
         return mapping.getInputForward();
     }
 }

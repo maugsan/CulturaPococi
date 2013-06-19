@@ -20,7 +20,7 @@ import org.apache.struts.actions.DispatchAction;
 public class CrearProgramaRadioAction extends DispatchAction {
 
     /* forward name="success" path="" */
-    private static final String SUCCESS = "success";
+    private static final String SUCCESS = "";
 
     /**
      * This is the action called from the Struts framework.
@@ -48,12 +48,13 @@ public class CrearProgramaRadioAction extends DispatchAction {
         pr.setNombre(nombre);
         pr.setHorario(horario);
         pr.setDescripcion(descripcion);
-        pr.setCorreo("caro@gmail.com");
-        
-   
-        
+        String email = (String)request.getSession().getAttribute("c");
+        pr.setCorreo(email);
+ 
         npr.nuevoProgramaRadio(pr);
+        
+         request.setAttribute("listaProgramas", npr.listaProgramacionRadio());
 
-        return mapping.findForward(SUCCESS);
+        return mapping.getInputForward();
     }
 }

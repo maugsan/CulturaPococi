@@ -10,6 +10,7 @@ import java.util.LinkedList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.swing.JOptionPane;
+
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
@@ -45,7 +46,7 @@ public class ListarCategoriasAction extends org.apache.struts.action.Action {
         if(listaCategorias==null){
             JOptionPane.showMessageDialog(null, "poblemas con la base de datos");
         }
-        JOptionPane.showMessageDialog(null, "proble");
+        
         request.setAttribute("listaCategorias", listaCategorias);
         
         return mapping.getInputForward();

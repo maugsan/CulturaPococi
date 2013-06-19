@@ -8,13 +8,12 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/estilos.css" type="text/css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/normalize.css" type="text/css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/estilosld.css" type="text/css" />
-<link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/carousel.css" type="text/css" />
+
 <script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/jq.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/jqcy.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/jqSlide.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/funciones.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/jquery.waterwheelCarousel.js.js"></script>
-               
+        
         <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/jquery-theme.css" />
         <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/jquery.modal.css" type="text/css" media="screen" />
 

@@ -40,7 +40,7 @@ public class EliminarProgramaRadioAction extends DispatchAction {
          String nombre = request.getParameter("nombre");
          
         npr.eliminar(nombre);
-        
-        return mapping.findForward(SUCCESS);
+        String forw="listar";
+        return mapping.findForward(forw);
     }
 }

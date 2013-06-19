@@ -6,6 +6,9 @@ package com.culturaPococi.accion.articulo;
 
 import com.culturaPococi.dominio.Articulo;
 import com.culturaPococi.dominio.Categoria;
+
+
+
 import com.culturaPococi.negocio.NegocioCategoria;
 import java.util.LinkedList;
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +18,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.DispatchAction;
-import sun.security.util.DisabledAlgorithmConstraints;
+//import sun.security.util.DisabledAlgorithmConstraints;
 
 /**
  *
@@ -44,7 +47,7 @@ public class ListarCategoriasArticulo extends DispatchAction {
         
         LinkedList<Categoria> listaCategorias;
         String fecha=""+request.getParameter("fecha");
-        JOptionPane.showMessageDialog(null, "Fecha listarcategoriasari "+fecha+" /");
+        
         listaCategorias=nCategoria.selectCategoriasDB();
         
         if(listaCategorias==null){

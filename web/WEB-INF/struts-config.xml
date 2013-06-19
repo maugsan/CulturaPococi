@@ -72,9 +72,8 @@
                 input="/perfil/index.jsp"
                 validate="false"/>
        
-        <action path="/eliminar_perfil" 
-                type="com.culturaPococi.accion.perfil.EliminarPerfilAction"
-        >        
+      <action path="/eliminar_perfil" 
+                type="com.culturaPococi.accion.perfil.EliminarPerfilAction" >        
             <forward name="success" path="/mostrarperfiles.do"/>
                 
         </action>
@@ -434,13 +433,9 @@
           
           
      
-        <action path="/eliminar_usuario_normal" 
-                type="com.culturaPococi.accion.usuarioNormal.EliminarUsuarioNormalAction"
-                
-        >
-        <forward 
-            name="success" 
-            path="/usuario/eliminar_usuarionormal.jsp" />    
+      <action path="/eliminar_usuario_normal" 
+                type="com.culturaPococi.accion.usuarioNormal.EliminarUsuarioNormalAction">
+        <forward name="success"  path="/usuario/index.jsp" />    
         </action>
         
         
@@ -467,7 +462,7 @@
                 type="com.culturaPococi.accion.programaradio.EliminarProgramaRadioAction"
         
         >
-            <forward name="success" path="/programaradio/eliminar_programaradio.jsp"/>
+            <forward name="listar" path="/listar_programa_radio.do"/>
         </action>
         <action path="/mostrar_articulo" 
                  validate="false"
@@ -492,10 +487,13 @@
                 type="com.culturaPococi.accion.programaradio.verProgramasRadioAction"/>
         
         
-        <action input="/crear_programaradio.js" 
+       
+        
+        
+        <action input="/programaradio/index.jsp" 
                 name="CrearProgramaRadioForm" 
                 path="/crear_programa_radio" 
-                scope="session" 
+                scope="request" 
                 validate="false"
                 type="com.culturaPococi.accion.programaradio.CrearProgramaRadioAction"/>
 

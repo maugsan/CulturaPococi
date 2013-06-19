@@ -44,9 +44,9 @@
                             <h3>${publicacion.getDescripcion()}</h3><br>
                             
                            <iframe width="420" height="315" src="http://www.youtube.com/embed/tb9yKa-P2-M" frameborder="0" allowfullscreen></iframe>
-                          ${publicacion.getVideo()}
+                         
                             <br>
-                             <a href="../aceptar_publicacion.do?idPublicacion=${publicacion.getIdPublicacion()}&tipoPublicacion=musica">
+                             <a href="../aceptar_publicacion.do?idPublicacion=${publicacion.getIdPublicacion()}&tipoPublicacion=video">
                                 <html:submit value="Aceptar" />
                             </a>
                         <%-- FIN Elemento  --%>

@@ -38,7 +38,7 @@
                         
 
                             <div id="elemento-imagen"><img src="../assets/img/evento-icon.png" width="30"/></div><br>
-                            ${publicacion.getIdPublicacion()}
+                           
                             <p id="elemento-nombre">${publicacion.getNombrePerfil()}</p><br>
                             <p id="elemento-nombre">${publicacion.getFechaPublicacion()}</p><br>
                             <p id="elemento-nombre">${publicacion.getNombreCategoria()}</p><br>
@@ -48,7 +48,7 @@
                              <iframe width="100%" height="166" scrolling="no" frameborder="no" src="${publicacion.getMusica()}"></iframe>
                             
                             
-                             <a href="../aceptar_publicacion.do?idPublicacion=${publicacion.getIdPublicacion()}&tipoPublicacion=música">
+                             <a href="../aceptar_publicacion.do?idPublicacion=${publicacion.getIdPublicacion()}&tipoPublicacion=musica">
                                 <html:submit value="Aceptar" />
                             </a>
                         <%-- FIN Elemento  --%>

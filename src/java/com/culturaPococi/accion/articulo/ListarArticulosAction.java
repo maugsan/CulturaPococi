@@ -34,7 +34,7 @@ public class ListarArticulosAction extends DispatchAction {
         listaArticulos=nArticulo.bdListarArticulos(fechaBoletin);
         
         if(listaArticulos==null){
-            JOptionPane.showMessageDialog(null, "Error en la base de datos listarArticulosAction");
+           JOptionPane.showMessageDialog(null, "Error en la base de datos listarArticulosAction");
         }//fin if
         
         request.setAttribute("listaArticulos", listaArticulos);

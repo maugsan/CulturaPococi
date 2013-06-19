@@ -19,11 +19,6 @@ function eliminarUsuario(correo) {
                 $(this).dialog("close");
 
                 location.href = './eliminar_usuario_normal.do?c=' + correo;
-
-
-
-
-
             },
             Cancel: function() {
                 $(this).dialog("close");

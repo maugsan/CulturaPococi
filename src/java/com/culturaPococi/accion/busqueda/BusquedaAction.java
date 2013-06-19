@@ -7,7 +7,7 @@ package com.culturaPococi.accion.busqueda;
 import com.culturaPococi.negocio.NegocioBusqueda;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.JOptionPane;
+
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;

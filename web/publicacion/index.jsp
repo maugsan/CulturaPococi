@@ -1,15 +1,11 @@
-<%-- 
-    Document   : index
-    Created on : 23/04/2013, 01:18:18 PM
-    Author     : Mac
---%>
+
 
 
 <%@page contentType="text/html"%>
-<%@page pageEncoding="UTF-8"%>
 
 
-<html:html lang="true">
+
+<html>
       <head>
         <%@include file="/includes/head.jsp" %>
         <title><bean:message key="welcome.title"/></title>
@@ -35,7 +31,7 @@
                         <form method="get" action="../listar_publicaciones_pendientes.do">
 
                             <select name="tipoPublicacion">
-                                <option value="música">Música</option>
+                                <option value="musica">M�sica</option>
                                 <option value="video">Video</option>
                                 <option value="texto">Texto</option>
                                 <option value="imagen">Imagen</option>
@@ -43,14 +39,8 @@
 
                             <html:submit value="Buscar" /><br>
 
-
-
                         </form>
-                   
-
-
-
-                </div> 
+                  </div> 
 
             </section>
 
@@ -65,5 +55,5 @@
         </div>
 
     </body>
-</html:html>
+</html>
     

@@ -42,7 +42,7 @@ public class AceptarPublicacionAction extends DispatchAction {
         
         String tipoPublicacion=request.getParameter("tipoPublicacion");
         int idPublicacion=Integer.parseInt(request.getParameter("idPublicacion"));
-        JOptionPane.showMessageDialog(null, "jjjjjjj"+idPublicacion);
+        
         if(!nPublicacion.aceptarPublicacion(idPublicacion)){
             JOptionPane.showMessageDialog(null, "error al actualizar la verificacion");
         }
