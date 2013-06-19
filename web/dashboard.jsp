@@ -70,7 +70,7 @@
                             <img id="icono" src="assets/img/anuncio-icon.png" width="60">
                             <h2>Anuncios</h2>
                         </section></a>
-                    <a <% if (sesion.getAttribute("tipo").equals("0")) { %>style="display: none;"<%}%> href="./listar_programa_radio.do"> <section class="modulo">
+                    <a <% if (sesion.getAttribute("tipo").equals("0")) { %>style="display: none;"<%}%> href="./listar_programas_radio.do"> <section class="modulo">
                             <img id="icono" src="assets/img/radio-icon.png" width="60">
                             <h2>Programas de Radio</h2>
                         </section></a>
