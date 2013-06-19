@@ -12,11 +12,14 @@ $().ready(function() {
             informacion: {required: true},
             descripcion: {required: true, minlength: 2},
             horario: {required: true, minlength: 2},
+            correo: { required:true, email: true},
+            contrasenia: { required:true},
+            
             
                         autor: { required: true, minlength: 2},
-			correo: { required:true, email: true},
+			
                         contenido: { required:true, minlength: 2},
-                        contrasenia: { required:true},
+                        
                         nombreCategoria: { required: true, minlength: 2}
                   
         },

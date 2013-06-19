@@ -8,9 +8,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-     
-        
-      <%@include file="/includes/head.jsp"%> 
+
+
+        <%@include file="/includes/head.jsp"%> 
 
         <title>Crear Evento</title>
     </head>
@@ -21,14 +21,14 @@
 
             <div id="contendor-interno"> 
 
-              
-              <form method="post" action="./crear_evento.do" id="validar-form">
-                  
-                   <h2><bean:message key="form.fecha"/></h2>
+
+                <form method="post" action="./crear_evento.do" id="validar-form">
+
+                    <h2><bean:message key="form.fecha"/></h2>
                     <input type="text" name="fecha" id="datepicker" readonly="readonly" size="12" />
-                    
-                    
-                    
+
+
+
                     <h1><bean:message key="form.hora"/></h1>
 
                     <select name='hora' id="select-hora"> 
@@ -75,8 +75,8 @@
 
                     <h2><bean:message key="form.nombre"/></h2>
                     <input type="text" id="nombre" name="nombre" size="16" value=""/>
-    
-                                 
+
+
 
                     <h2><bean:message key="form.categoria"/></h2>
                     <select property="idCategoria">
@@ -88,12 +88,12 @@
                     </select>
 
                     <h2><bean:message key="form.lugar"/></h2>
-                      <input type="text" id="lugar" name="lugar" size="16" value=""/>
+                    <input type="text" id="lugar" name="lugar" size="16" value=""/>
 
                     <h2><bean:message key="form.informacion"/></h2>
-                   <textarea ROWS="5" id="texto-grande" id="informacion"  name="informacion" size="16" value=""></textarea>
+                    <textarea ROWS="5" id="texto-grande" id="informacion"  name="informacion" size="16" value=""></textarea>
 
-                      <input type="submit" value="Crear"/>
+                    <input type="submit" value="Crear"/>
 
                 </form>
                 <a href="./listar_evento.do">
