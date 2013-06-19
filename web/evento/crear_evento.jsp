@@ -25,7 +25,7 @@
                 <form method="post" action="./crear_evento.do" id="validar-form">
 
                     <h2><bean:message key="form.fecha"/></h2>
-                    <input type="text" name="fecha" id="datepicker" readonly="readonly" size="12" />
+                    <input type="text" name="fecha" id="datepicker" id="fecha"   readonly="readonly" size="12" />
 
 
 

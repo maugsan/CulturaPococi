@@ -12,19 +12,19 @@ $().ready(function() {
             informacion: {required: true},
             descripcion: {required: true, minlength: 2},
             horario: {required: true, minlength: 2},
-            correo: { required:true, email: true},
-            contrasenia: { required:true},
+            correo: {required: true, email: true},
+            contrasenia: {required: true},
+            fecha: {required: true},
             
             
                         autor: { required: true, minlength: 2},
-			
                         contenido: { required:true, minlength: 2},
-                        
                         nombreCategoria: { required: true, minlength: 2}
                   
         },
         messages: {
             nombre: " * obligatorio ",
+            fecha: " * obligatorio ",
             titulo: " * obligatorio ",
             autor: " * obligatorio ",
             lugar: " * obligatorio ",

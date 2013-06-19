@@ -461,8 +461,11 @@
                 type="com.culturaPococi.accion.programaradio.EliminarProgramaRadioAction"
         
         >
-            <forward name="success" path="/programaradio/eliminar_programaradio.jsp"/>
+            <forward name="listar" path="/listar_programa_radio.do"/>
         </action>
+        
+        
+       
         
         
         <action input="/programaradio/index.jsp" 

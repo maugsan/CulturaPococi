@@ -6,13 +6,13 @@
 
 <%@page import="org.apache.commons.logging.LogFactory"%>
 <%
-    HttpSession sesion=request.getSession();
+    HttpSession sesion = request.getSession();
 
-         sesion.removeAttribute("c");
-        sesion.invalidate();                               
-        String pageToForward = request.getContextPath();
-  
-    response.sendRedirect(pageToForward);   
+    sesion.removeAttribute("c");
+    sesion.invalidate();
+    String pageToForward = request.getContextPath();
+
+    response.sendRedirect(pageToForward);
 
 %>
 

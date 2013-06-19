@@ -7,6 +7,7 @@
 
             <input name="q" id="tags">
             <select name="tipo">
+        <form  method="post" id="busqueda" action="<%=request.getContextPath()%>/buscar.do">
                 
                 <option value="1">Perfiles</option>
                  <option value="2">Articulos</option>

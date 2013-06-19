@@ -35,7 +35,7 @@
 
                     <h2>Contraseña</h2>
 
-                    <input type="text" id="contrasenia" name="contrasenia" size="16" value=""/>
+                    <input type="password" id="contrasenia" name="contrasenia" size="16" value=""/>
                     <input type="submit" value="Enviar"/>
 
 
