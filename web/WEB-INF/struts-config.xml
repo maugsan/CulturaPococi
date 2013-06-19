@@ -432,13 +432,9 @@
           
           
      
-        <action path="/eliminar_usuario_normal" 
-                type="com.culturaPococi.accion.usuarioNormal.EliminarUsuarioNormalAction"
-                
-        >
-        <forward 
-            name="success" 
-            path="/usuario/eliminar_usuarionormal.jsp" />    
+      <action path="/eliminar_usuario_normal" 
+                type="com.culturaPococi.accion.usuarioNormal.EliminarUsuarioNormalAction">
+        <forward name="success"  path="/usuario/index.jsp" />    
         </action>
         
         
@@ -469,10 +465,10 @@
         </action>
         
         
-        <action input="/crear_programaradio.js" 
+        <action input="/programaradio/index.jsp" 
                 name="CrearProgramaRadioForm" 
                 path="/crear_programa_radio" 
-                scope="session" 
+                scope="request" 
                 validate="false"
                 type="com.culturaPococi.accion.programaradio.CrearProgramaRadioAction"/>
 

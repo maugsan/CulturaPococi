@@ -4,6 +4,7 @@
  */
 package com.culturaPococi.accion.usuarioNormal;
 
+import com.culturaPococi.data.DataUsuarioNormal;
 import com.culturaPococi.negocio.NegocioUsuarioNormal;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,8 +21,8 @@ public class EliminarUsuarioNormalAction extends org.apache.struts.action.Action
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
+    private DataUsuarioNormal dUsuario = new DataUsuarioNormal();
     private NegocioUsuarioNormal nUsuario = new NegocioUsuarioNormal();
-
    
     @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form,
@@ -32,6 +33,9 @@ public class EliminarUsuarioNormalAction extends org.apache.struts.action.Action
       
         nUsuario.eliminarUsuariosDB(correo);
         
+        
+        
+        request.setAttribute("listaUsuarios", dUsuario.selectUsuarios());
         
         return mapping.findForward(SUCCESS);
     }

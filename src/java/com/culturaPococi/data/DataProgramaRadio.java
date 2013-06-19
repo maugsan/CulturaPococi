@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.LinkedList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -69,11 +70,11 @@ public class DataProgramaRadio extends DataBase {
             call.setString("horario", programa.getHorario());
             call.setString("descripcion", programa.getDescripcion());
             call.setString("correo", programa.getCorreo());
-
+            JOptionPane.showMessageDialog(null, "11111111");
 
             call.executeUpdate();
             call.close();
-
+JOptionPane.showMessageDialog(null, "222222222");
         } catch (Exception e) {
              accionRealizada = false;
               if (conexion != null) {

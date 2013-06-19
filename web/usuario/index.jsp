@@ -33,18 +33,15 @@
 
             <div id="contendor-interno"> 
 
-
-              
-
                 <%-- 
                aqui es donde va el codigo
                 --%>
 
                 <section id="lista-elementos">
-                    
-                      <h1>Usuarios</h1>
-                          <a href="./crear_usuario.do"><button id="boton-unir">Crear Usuario</button></a>
-                      
+
+                    <h1>Usuarios</h1>
+                    <%-- <a href="./crear_usuario.do"><button id="boton-unir">Crear Usuario</button></a>--%>
+
 
                     <logic:iterate  name="listaUsuarios" id="usuarioTemporal" >
 
@@ -53,8 +50,8 @@
 
 
                             <a href=""> <div id="link-detalle-elemento"><div id="elemento-imagen"><img src="./assets/img/perfil-icon.png" width="50"/></div>
-                                    <h1 value="${usuarioTemporal.nombre}" > 
-                                        ${usuarioTemporal.nombre}
+                                    <h1> 
+                                        ${usuarioTemporal.correo}
                                     </h1>
 
 
@@ -65,17 +62,9 @@
                         </div>
                         <%-- FIN Elemento  --%> 
 
-
-
                     </logic:iterate>
 
-                
-
                 </section>
-
-
-
-
 
             </div> 
 

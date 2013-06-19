@@ -23,26 +23,26 @@
 
                 <div id="contendor-interno"> 
 
-                   
-              
+
+
 
                     <section id="lista-elementos">
-                         <h1>Perfiles</h1>
-                         <a href="./crear_perfil.do"><button id="boton-unir">Crear Perfil</button></a>
+                        <h1>Perfiles</h1>
+                        <%-- <a href="./crear_perfil.do"><button id="boton-unir">Crear Perfil</button></a>--%>
                         <logic:iterate  name="listaPerfil" id="perfilTemporal" >
 
                             <%-- Inicio Elemento  --%>
                             <div id="elemento">
 
                                 <%-- href="../mostrar_perfil_seleccionado.do?idPerfil= ${perfilTemporal.idPerfil}" --%>
-                                
+
                                 <a href="../mostrar_perfil_seleccionado.do?nombrePerfil=${perfilTemporal.nombrePerfil}"> <div id="link-detalle-elemento"><div id="elemento-imagen"><img src="../assets/img/perfil-icon.png" width="50"/></div>
-                                        
+
                                         <h1> ${perfilTemporal.nombrePerfil}</h1> 
-                                     
+
                                         <h2> ${perfilTemporal.nombreCategoria}</h2>
 
-                                    
+
                                     </div></a>
                                 <input type="button" value="Borrar" id="test" onClick="eliminarPerfil('${perfilTemporal.nombreCategoria}');" />
 
@@ -50,12 +50,12 @@
                             <%-- FIN Elemento   ${perfilTemporal.nombrePerfil} --%> 
 
                         </logic:iterate>
-                         
+
 
                     </section>
 
                 </div> 
-                    
+
             </section>
 
            

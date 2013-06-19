@@ -39,9 +39,7 @@ public class ListarProgramaRadio extends DispatchAction  {
           JOptionPane.showMessageDialog(null, "listar");
           
         NegocioProgramaRadio npr= new NegocioProgramaRadio();
-        
-          
-        
+       
         request.setAttribute("listaProgramas", npr.listaProgramacionRadio());
         
         return mapping.getInputForward();
