@@ -17,25 +17,20 @@ import org.apache.struts.actions.DispatchAction;
 
 /**
  *
- * @author Personal
+ * @author MAU
  */
-public class ListarBoletinesAction extends DispatchAction {
+public class verBoletinesAction extends DispatchAction {
 
     NegocioBoletin nBoletin = new NegocioBoletin();
-
- 
+  
     @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         
-        LinkedList<Boletin> listaBoletines;
+       LinkedList<Boletin> listaBoletines;
         
         listaBoletines=nBoletin.bdListarBoletines();
-        
-        if(listaBoletines==null){
-            JOptionPane.showMessageDialog(null, "problemas al cargar la página");
-        }
         
         request.setAttribute("listaBoletines", listaBoletines);
         

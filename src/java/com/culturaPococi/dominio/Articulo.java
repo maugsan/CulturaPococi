@@ -21,7 +21,10 @@ public class Articulo {
     
     public Articulo() {}
 
-    public Articulo(int idArticulo, String imagen, int categoria, String titulo, String autor, String contenido, String fecha) {
+    public Articulo(int idArticulo, String imagen, int categoria, 
+            String titulo, String autor, 
+            String contenido, String fecha) {
+        
         this.idArticulo = idArticulo;
         this.imagen = imagen;
         this.categoria = categoria;

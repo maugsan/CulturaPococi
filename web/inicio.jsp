@@ -52,12 +52,13 @@
 
                     </div> 
 
-                    <div id="s-centro">
-
-                        <img src="./assets/img/radio-icon.png"/>
+                    <a href="#" id="radio"><div  id="s-centro">
+                        
+                        <img src="./assets/img/radio-icon.png" />
                         <h1>Radio</h1>
-
-                    </div> 
+                           
+                  
+                    </div></a>
 
                     <div id="s-derecho">
 
