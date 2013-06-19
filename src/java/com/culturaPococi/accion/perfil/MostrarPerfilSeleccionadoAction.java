@@ -8,7 +8,6 @@ import com.culturaPococi.dominio.Perfil;
 import com.culturaPococi.negocio.NegocioPerfil;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.JOptionPane;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;

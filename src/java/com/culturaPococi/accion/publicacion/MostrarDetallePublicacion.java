@@ -8,7 +8,6 @@ import com.culturaPococi.dominio.Publicacion;
 import com.culturaPococi.negocio.NegocioPublicacion;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.JOptionPane;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
@@ -44,14 +43,12 @@ public class MostrarDetallePublicacion extends DispatchAction {
         String tipoPublicacion=request.getParameter("tipoPublicacion");
         
         Publicacion publicacion;
-        JOptionPane.showMessageDialog(null, "inicio mostrar detalle");
-        int idPublicacion=Integer.parseInt(request.getParameter("idPublicacion"));
-        JOptionPane.showMessageDialog(null, "idpublicacion: "+idPublicacion);
         
+        int idPublicacion=Integer.parseInt(request.getParameter("idPublicacion"));
+       
         publicacion=nPublicidad.getPublicacion(idPublicacion);
         
         request.setAttribute("publicacion", publicacion);
-        JOptionPane.showMessageDialog(null, "publicacion1: "+tipoPublicacion);
         
         if (tipoPublicacion.equals("musica")){
             mostrarJSP="musica";
@@ -62,7 +59,7 @@ public class MostrarDetallePublicacion extends DispatchAction {
         }else{
             mostrarJSP="video";
         }
-        JOptionPane.showMessageDialog(null, "FIIIIIIINNNNNNNNN "+mostrarJSP);
+        
         return mapping.findForward(mostrarJSP);
     }
 }

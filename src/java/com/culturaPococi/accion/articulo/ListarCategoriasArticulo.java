@@ -47,7 +47,7 @@ public class ListarCategoriasArticulo extends DispatchAction {
         
         LinkedList<Categoria> listaCategorias;
         String fecha=""+request.getParameter("fecha");
-        JOptionPane.showMessageDialog(null, "Fecha listarcategoriasari "+fecha+" /");
+        
         listaCategorias=nCategoria.selectCategoriasDB();
         
         if(listaCategorias==null){

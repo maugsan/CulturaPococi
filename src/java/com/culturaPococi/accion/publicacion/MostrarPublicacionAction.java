@@ -30,8 +30,6 @@ public class MostrarPublicacionAction extends DispatchAction {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         
-        JOptionPane.showMessageDialog(null, "MostrarPublicacionAction");
-        
         request.setAttribute("listaPublicacion", np.getListaPublicacion());
         
         return mapping.getInputForward();

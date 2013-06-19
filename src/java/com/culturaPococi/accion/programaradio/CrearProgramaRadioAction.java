@@ -48,10 +48,9 @@ public class CrearProgramaRadioAction extends DispatchAction {
         pr.setNombre(nombre);
         pr.setHorario(horario);
         pr.setDescripcion(descripcion);
-        pr.setCorreo("caro@gmail.com");
-        
-   
-        
+        String email = (String)request.getSession().getAttribute("c");
+        pr.setCorreo(email);
+ 
         npr.nuevoProgramaRadio(pr);
         
          request.setAttribute("listaProgramas", npr.listaProgramacionRadio());

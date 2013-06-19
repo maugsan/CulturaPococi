@@ -44,8 +44,7 @@ public class ListarMisPublicacionesAction extends DispatchAction {
         LinkedList<Publicacion> listaPublicacion;
         String tipo=""+request.getParameter("tipo");
         String nomPerfil=""+request.getParameter("nomPerfil");
-        
-        JOptionPane.showMessageDialog(null, "porque "+tipo+"/nom "+nomPerfil);
+      
         
         if(tipo.equalsIgnoreCase("musica")){
             jsp="miMusica";
@@ -59,7 +58,7 @@ public class ListarMisPublicacionesAction extends DispatchAction {
         
         listaPublicacion=nPublicacion.getListaPublicacionesPorPerfil(nomPerfil, tipo);
         if(listaPublicacion==null){
-            JOptionPane.showMessageDialog(null, "se cayó la base de datos");
+            JOptionPane.showMessageDialog(null, "error base de datos");
         }
         
         request.setAttribute("listaPublicaciones", listaPublicacion);

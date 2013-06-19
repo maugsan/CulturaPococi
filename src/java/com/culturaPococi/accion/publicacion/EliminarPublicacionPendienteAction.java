@@ -46,7 +46,7 @@ public class EliminarPublicacionPendienteAction extends DispatchAction {
         accionRealizada=nPublicacion.eliminarPublicacion(idPublicacion);
         
         if(!accionRealizada){
-            JOptionPane.showMessageDialog(null, "no se pudo borrar id> "+idPublicacion);
+            JOptionPane.showMessageDialog(null, "error ");
         }
         
         LinkedList<Publicacion> listaPublicacionesPendientes;

@@ -58,8 +58,7 @@ public class CrearPublicacionAction extends DispatchAction {
 	int idCategoria=Integer.parseInt(request.getParameter("idCategoria"));
 	
         nPublicacion.crearPublicacionBD(new Publicacion(nombrePerfil, 0, fechaPublicacion, correo, descripcion, 0, musica, video, texto, imagen, "", idCategoria));
-        
-        JOptionPane.showMessageDialog(null, "porque "+tipo+"/nom "+nomPerfil);
+       
         
         if(tipo.equalsIgnoreCase("musica")){
             jsp="miMusica";
@@ -73,7 +72,7 @@ public class CrearPublicacionAction extends DispatchAction {
         
         listaPublicacion=nPublicacion.getListaPublicacionesPorPerfil(nomPerfil, tipo);
         if(listaPublicacion==null){
-            JOptionPane.showMessageDialog(null, "se cayó la base de datos");
+            JOptionPane.showMessageDialog(null, "error base de datos");
         }
         
         request.setAttribute("listaPublicaciones", listaPublicacion);

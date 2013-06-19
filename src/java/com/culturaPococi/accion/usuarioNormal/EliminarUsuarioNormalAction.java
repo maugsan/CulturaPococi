@@ -32,9 +32,7 @@ public class EliminarUsuarioNormalAction extends org.apache.struts.action.Action
         String correo = (String)request.getParameter("c");
       
         nUsuario.eliminarUsuariosDB(correo);
-        
-        
-        
+
         request.setAttribute("listaUsuarios", dUsuario.selectUsuarios());
         
         return mapping.findForward(SUCCESS);

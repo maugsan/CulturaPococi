@@ -46,8 +46,7 @@ public class ListarMisPerfilesAction extends DispatchAction{
         String correo=""+request.getParameter("correo");
         
         String jsp="mostrarPerfiles";
-        
-        JOptionPane.showMessageDialog(null, "correo "+correo);
+     
         
         LinkedList<Perfil> listaPerfiles=new LinkedList<Perfil>();
         

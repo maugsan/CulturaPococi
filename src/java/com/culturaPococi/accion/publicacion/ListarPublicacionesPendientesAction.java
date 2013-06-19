@@ -49,8 +49,7 @@ public class ListarPublicacionesPendientesAction extends DispatchAction {
         if(listaPublicacionesPendientes==null){
             JOptionPane.showMessageDialog(null, "problemas al cargar la lista");
         }
-        
-        JOptionPane.showMessageDialog(null, listaPublicacionesPendientes.size());
+    
         request.setAttribute("listaPublicacionesPendientes", listaPublicacionesPendientes);
         request.setAttribute("tipoPublicacion", tipoPublicacion);
         

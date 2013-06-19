@@ -31,7 +31,7 @@
                 </script>
 
 
-           <html:form action="./crear_articulo">
+           <html:form action="/crear_articulo">
                 
                 <h1><bean:message key="articulo.crear.articulo"/></h1>
                 
@@ -39,7 +39,6 @@
                 <html:text  name="ArticuloForm" property="titulo" size="16" value=""/><br>
                 <html:errors property="etitulo"/> 
                 
-                <h2><bean:message key="articulo.fecha"/></h2><br>
                 
                 <h2><bean:message key="articulo.autor"/></h2>
                 <html:text  name="ArticuloForm" property="autor" size="16" value=""/><br>
