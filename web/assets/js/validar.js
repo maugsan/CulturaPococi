@@ -6,12 +6,16 @@
 $().ready(function() {
 	$("#validar-form").validate({
 		rules: {
-			nombre: { required: true, minlength: 2},
-                        titulo: { required: true, minlength: 2},
+			
+            titulo: {required: true, minlength: 2},
+            lugar: {required: true, minlength: 2},
+            nombre: {required: true, minlength: 2},
+            informacion: {required: true},            
+                        
                         autor: { required: true, minlength: 2},
-                        lugar: { required: true, minlength: 2},
+                       
 			correo: { required:true, email: true},
-			informacion: { required:true},
+			
 			horario: { required:true, minlength: 2},
                         contenido: { required:true, minlength: 2},
                         descripcion: { required:true, minlength: 2},
