@@ -3,7 +3,6 @@
     Created on : 13-jun-2013, 0:01:50
     Author     : Personal
 --%>
-
 <%@page import="java.util.LinkedList"%>
 <%@page import="com.culturaPococi.dominio.Categoria"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -48,6 +47,12 @@
                 
                 <br>
                 
+                  <a href="./eliminar_perfil.do?nombrePerfil=${perfil.nombrePerfil}">
+                    <button id="boton-volver">
+                        Eliminar
+                    </button>
+                </a>
+                <%--
                  <a href="./listar_mis_publicaciones.do?tipo=texto&nomPerfil=${perfil.nombrePerfil}">
                     <button id="boton-volver">
                         <bean:message key="publicacion.texto"/>
@@ -71,6 +76,8 @@
                         <bean:message key="publicacion.audio"/>
                     </button>
                 </a>
+                --%>
+
                 
 
 

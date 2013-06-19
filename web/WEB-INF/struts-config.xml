@@ -72,9 +72,8 @@
                 input="/perfil/index.jsp"
                 validate="false"/>
        
-        <action path="/eliminar_perfil" 
-                type="com.culturaPococi.accion.perfil.EliminarPerfilAction"
-        >        
+      <action path="/eliminar_perfil" 
+                type="com.culturaPococi.accion.perfil.EliminarPerfilAction" >        
             <forward name="success" path="/mostrarperfiles.do"/>
                 
         </action>
