@@ -31,7 +31,7 @@
                     
                     <h1><bean:message key="form.hora"/></h1>
 
-                    <select name='hora' > 
+                    <select name='hora' id="select-hora"> 
                         <option value='${hora}' > ${hora} </option>
                         <option value='1' > 1 </option>
                         <option value='2'> 2 </option>
@@ -47,7 +47,7 @@
                         <option value='12'> 12 </option>
                     </select>
 
-                    <select name='minutos' >
+                    <select name='minutos' id="select-hora">
                         <option value='${minutos}'>${minutos} </option>
                         <option value='00'> 00 </option>
                         <option value='05'> 05 </option>
@@ -64,7 +64,7 @@
 
                     </select>
 
-                    <select name='tiempo'>
+                    <select name='tiempo' id="select-hora">
                         <option value='${tiempo}'>${tiempo} </option>
                         <option value='am'> am </option>
                         <option value='pm'> pm </option>
