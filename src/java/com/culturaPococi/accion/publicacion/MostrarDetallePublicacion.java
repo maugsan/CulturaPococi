@@ -8,6 +8,7 @@ import com.culturaPococi.dominio.Publicacion;
 import com.culturaPococi.negocio.NegocioPublicacion;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
@@ -49,6 +50,15 @@ public class MostrarDetallePublicacion extends DispatchAction {
         publicacion=nPublicidad.getPublicacion(idPublicacion);
         
         request.setAttribute("publicacion", publicacion);
+        
+        if(publicacion==null){
+               JOptionPane.showMessageDialog(null, "NULL");
+        }
+        JOptionPane.showMessageDialog(null, "nombre perfil: "+publicacion.getNombrePerfil());
+JOptionPane.showMessageDialog(null, "nombreCategoria: "+publicacion.getNombreCategoria());
+JOptionPane.showMessageDialog(null, "getFechaPublicacion(): "+publicacion.getFechaPublicacion());
+JOptionPane.showMessageDialog(null, "getDescripcion(): "+publicacion.getDescripcion()); 
+
         
         if (tipoPublicacion.equals("musica")){
             mostrarJSP="musica";

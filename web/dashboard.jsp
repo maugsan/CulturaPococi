@@ -75,8 +75,8 @@
                             <h2>Programas de Radio</h2>
                         </section></a>
 
-                    <%--<a  href="./publicacion/index.jsp"> <section class="modulo">--%>
-                    <a  href="./mostrar_perfil_seleccionado.do?nomPerfil=Caro"> <section class="modulo">
+                    <a  href="./publicacion/index.jsp"> <section class="modulo">
+                    <%-- <a  href="./mostrar_perfil_seleccionado.do?nomPerfil=Caro"> <section class="modulo">
                             <%--<a  href="./usuarioNormal/inicio_usuario_normal.jsp"> <section class="modulo">
                             
                             <%--<a  href="./cargar_categorias_perfil.do"> <section class="modulo">--%>

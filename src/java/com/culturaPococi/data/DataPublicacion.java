@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.LinkedList;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -113,6 +114,7 @@ public class DataPublicacion extends DataBase{
     }
      
      public Publicacion selectPublicacion(int idPublicacion) throws SQLException{
+         JOptionPane.showMessageDialog(null, idPublicacion);
         Publicacion publicacion=new Publicacion();
         LinkedList<Publicacion> listaPublicaciones=new LinkedList<Publicacion>();
         String sql = " call pListarPublicacion("+idPublicacion+");" ;
@@ -140,7 +142,7 @@ public class DataPublicacion extends DataBase{
         }//fin while
             statement.close();    
         }catch(Exception e){
-            
+            JOptionPane.showMessageDialog(null, "catch");
             publicacion=null;
         }finally{
              conexion.close();

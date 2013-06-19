@@ -41,8 +41,6 @@ $(document).ready(function() {
         NuevaVentana = window.open('', '', 'width=300,height=200');
         NuevaVentana.document.write("Nueva Ventana PequeÃ±a");
         NuevaVentana.location.assign("http://www.elfrentecr.org/player.html");
-
+       
     } );
-
-
 });
