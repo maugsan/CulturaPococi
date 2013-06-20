@@ -170,6 +170,12 @@ header {
 
 
 }
+.texto {
+    
+    background: white;
+    padding: 20px;
+    font-size: 20;
+}
 #seccion-inferior {
 
     height: auto;
@@ -701,7 +707,7 @@ input[type="textarea"] {
     border: solid 1px #ccc;
     position: relative;
     background-color: #e1e1e1;
-
+    padding: 20px;
 
 }
 
@@ -828,8 +834,8 @@ input[type="textarea"] {
 
 #programa {
 
-    width: 200px;
-    height:  300px;
+    width: 940px;
+    height: 300px;
     border: 1px solid #ccc;
     background-color: white;
     padding: 9px;

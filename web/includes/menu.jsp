@@ -2,11 +2,11 @@
 
 <nav>
     <ul>
-        <li id="radio"><a href="">RADIO</a>
+        <li ><a  href="#" id="radio">RADIO</a>
 
             <ul>
 
-                <li><a href="<%=request.getContextPath()%>/programacion.jsp">PROGRAMACIÓN</a></li>
+                <li><a href="<%=request.getContextPath()%>/ver_programas_radio.do">PROGRAMACIÓN</a></li>
 
 
             </ul>
@@ -17,7 +17,7 @@
             <ul>
 
 
-                <li><a href="#">BOLETÍN</a>
+                <li><a  href="<%=request.getContextPath()%>/ver_boletines.do">BOLETÍN</a>
                     <ul>
 
 
@@ -53,15 +53,6 @@
                     </ul>
 
                 </li>
-
-
-
-
-
-
-
-
-
 
 
             </ul>

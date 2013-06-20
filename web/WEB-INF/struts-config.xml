@@ -351,6 +351,11 @@
                 input="/boletin/index.jsp" 
                 type="com.culturaPococi.accion.boletin.ListarBoletinesAction"
         />
+         <action path="/ver_boletines"
+          validate="false"
+                scope="request"
+                input="/boletines.jsp" 
+                 type="com.culturaPococi.accion.boletin.verBoletinesAction"/>
         
         <action path="/eliminar_boletin" 
                 validate="false"
@@ -370,7 +375,7 @@
                 input="/articulo/index.jsp" 
                 type="com.culturaPococi.accion.articulo.ListarArticulosAction"
         />
-        
+      
         <action path="/eliminar_articulo" 
                 validate="false"
                 scope="request"
@@ -411,12 +416,9 @@
                 type="com.culturaPococi.accion.articulo.ListarCategoriasArticulo"
         />
         
-        
-        
-        
+       
          <!-- FIN ARTÍCULOS  -->
-        
-              
+       
         
         <!-- MAPPING PARA ACIONES PARA USUARIO NORMAL  -->
         
@@ -448,19 +450,40 @@
         
       
        <!-- PROGRAMA RADIO -->
-        <action path="/listar_programa_radio"
+        <action path="/listar_programas_radio"
                 type="com.culturaPococi.accion.programaradio.ListarProgramaRadio" 
                 scope="request" 
                 input="/programaradio/index.jsp" 
                 validate="false"
-        /> 
-   
+        />      
+                        
         <action path="/eliminar_programa_radio" 
                 type="com.culturaPococi.accion.programaradio.EliminarProgramaRadioAction"
         
         >
             <forward name="listar" path="/listar_programa_radio.do"/>
         </action>
+        <action path="/mostrar_articulo" 
+                 validate="false"
+                scope="request"
+                input="/mostrar_articulo.jsp" 
+                
+                
+                
+                type="com.culturaPococi.accion.articulo.mostrarArticuloAction"
+        
+        />
+        
+        <action path="/ver_articulos"
+                validate="false"
+                scope="request"
+                input="/articulo.jsp" 
+
+                type="com.culturaPococi.accion.articulo.verArticulosAction"/>
+       
+        <action input="/programacion.jsp" 
+                path="/ver_programas_radio"
+                type="com.culturaPococi.accion.programaradio.verProgramasRadioAction"/>
         
         
        

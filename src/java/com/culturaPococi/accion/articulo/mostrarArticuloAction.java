@@ -13,33 +13,44 @@ import javax.swing.JOptionPane;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-import org.apache.struts.actions.DispatchAction;
 
 /**
  *
- * @author Personal
+ * @author MAU
  */
-public class ListarArticulosAction extends DispatchAction {
+public class mostrarArticuloAction extends org.apache.struts.action.Action {
 
-
-    NegocioArticulo nArticulo=new NegocioArticulo();
+    
+        NegocioArticulo nArticulo=new NegocioArticulo();
 
     @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         
-        LinkedList<Articulo> listaArticulos;
-        String fechaBoletin=request.getParameter("fecha");
+          LinkedList<Articulo> listaArticulos;
+        
+        String fechaBoletin=""+request.getParameter("fecha");
+        int idArticulo=Integer.parseInt(request.getParameter("id"));
+        
+   
+        
         listaArticulos=nArticulo.bdListarArticulos(fechaBoletin);
         
-        if(listaArticulos==null){
-           JOptionPane.showMessageDialog(null, "Error en la base de datos listarArticulosAction");
-        }//fin if
+        for ( Articulo articulo : listaArticulos) {
+            
+            if ( articulo.getIdArticulo() == idArticulo) {
+            
+            request.setAttribute("articulo", articulo );
+            
+            }
+        
+        
+        }
+     
+    
         
         request.setAttribute("listaArticulos", listaArticulos);
-        request.setAttribute("fecha", fechaBoletin);
-        
         return mapping.getInputForward();
     }
 }
