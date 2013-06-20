@@ -64,7 +64,7 @@ public class CrearArticuloAction extends DispatchAction {
                             formu.getAutor(), 
                             formu.getContenido(), 
                             formu.getFecha());
-        JOptionPane.showMessageDialog(null, "formu.getCategoria() "+formu.getFecha());
+       
         accionRealizada=nArticulo.bdCrearArticulo(articulo);
         
         

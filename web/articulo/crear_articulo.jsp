@@ -31,40 +31,36 @@
                 </script>
 
 
-           <html:form action="/crear_articulo">
+                         
+               <form method="post" action="./crear_articulo.do" id="validar-form">
                 
                 <h1><bean:message key="articulo.crear.articulo"/></h1>
                 
                 <h2><bean:message key="articulo.titulo"/></h2>
-                <html:text  name="ArticuloForm" property="titulo" size="16" value=""/><br>
-                <html:errors property="etitulo"/> 
+                <input type="text" id="titulo" name="titulo" size="16" value=""/>
                 
                 
                 <h2><bean:message key="articulo.autor"/></h2>
-                <html:text  name="ArticuloForm" property="autor" size="16" value=""/><br>
-                <html:errors property="eautor"/> 
+                <input type="text" id="autor" name="autor" size="16" value=""/>
                 
                 <h2><bean:message key="form.categoria"/></h2>
-                <html:select property="categoria" >
+                <select name="categoria" >
                     <logic:iterate name="listaCategorias" id="numero" >
-                        <html:option value="${numero.idCategoria}"> <!-- esto es para que cuando elija el nombre me envie el numero !-->
+                        <option value="${numero.idCategoria}"> <!-- esto es para que cuando elija el nombre me envie el numero !-->
                             <bean:write name="numero" property="nombreCategoria"/>
-                        </html:option>
+                        </option>
                     </logic:iterate>
-                </html:select>
+                </select>
                 
                 <h2><bean:message key="articulo.contenido"/></h2>
-                <html:textarea name="ArticuloForm" property="contenido" cols="44" rows="5" value=""/><br>
-                <html:errors property="econtenido"/> 
+                 <textarea ROWS="5" id="texto-grande" id="contenido"  name="contenido" size="16" value=""></textarea>
+              
                 
                 <html:hidden  name="ArticuloForm" property="fecha" value="${fecha}"/>
                 
-                
-                <html:submit value="Crear" /><br>
-               
-                
-                   
-            </html:form>
+              
+                 <input type="submit" value="Crear"/>
+            </form>
                  
                 <a href="./listar_articulos.do">
                     <button id="boton-volver">

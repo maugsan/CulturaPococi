@@ -15,9 +15,9 @@ $().ready(function() {
             correo: {required: true, email: true},
             contrasenia: {required: true},
             fecha: {required: true},
+            autor: { required: true, minlength: 2},
             
             
-                        autor: { required: true, minlength: 2},
                         contenido: { required:true, minlength: 2},
                         nombreCategoria: { required: true, minlength: 2}
                   
