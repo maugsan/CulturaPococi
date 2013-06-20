@@ -52,6 +52,8 @@
             <%
                             if(cont==0){
                                 accion=fileItemTemp.getString();
+                                
+                                JOptionPane.showMessageDialog(null, accion);
                                 cont++;
                         }
                             
@@ -105,7 +107,7 @@
         JOptionPane.showMessageDialog(null, "por");
         
        // <jsp:forward page="Welcome.do"/> <forward name="guardarPeli"  path="/cargar_imagen.do"/>
-        
+      //<%=accion%>  
       
        
 %>
@@ -115,6 +117,6 @@
 </jsp:forward> 
  --%>
 
- <jsp:forward page="<%=accion%>">
+ <jsp:forward page= "<%=accion%>" >
   <jsp:param name="datos" value="<%=nombre %>" /> 
 </jsp:forward>

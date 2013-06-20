@@ -5,8 +5,10 @@
 package com.culturaPococi.accion.anuncio;
 
 import com.culturaPococi.dominio.Anuncio;
+import com.culturaPococi.dominio.Evento;
 import com.culturaPococi.negocio.NegocioAnuncio;
 import java.util.LinkedList;
+import javax.print.DocFlavor;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.swing.JOptionPane;
@@ -23,7 +25,8 @@ public class CrearAnuncioAction extends DispatchAction {
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
-    NegocioAnuncio nAnuncio=new NegocioAnuncio();
+    NegocioAnuncio nAnuncio = new NegocioAnuncio();
+
     /**
      * This is the action called from the Struts framework.
      *
@@ -38,32 +41,34 @@ public class CrearAnuncioAction extends DispatchAction {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        
+
         boolean accionRealizada;
-        String titulo=(String) request.getParameter("titulo");
-         int prioridad= Integer.parseInt(request.getParameter("prioridad"));
-        
-        
-        Anuncio anuncio=new Anuncio(titulo,
-                                 "../assets/img/evento-icon.png",
-                                  prioridad,
-                                  0);
-        
-      
-        
-        accionRealizada=nAnuncio.crearAnuncioDB(anuncio);
-        
-        if(accionRealizada==false){
+    
+
+        String datos = request.getParameter("datos");
+        JOptionPane.showMessageDialog(null, "carta   " + datos);
+
+        String datosSeparados[] = datos.split("-");
+
+        nAnuncio.selectIdAnuncioDB();
+  
+        JOptionPane.showMessageDialog(null, "titulo-> "+datosSeparados[2]+" imagen-> "+ datosSeparados[1] + "prioridad-> "+ Integer.parseInt(datosSeparados[3]));
+        Anuncio anuncio = new Anuncio(datosSeparados[2], datosSeparados[1], Integer.parseInt(datosSeparados[3]), 0);
+
+
+        accionRealizada = nAnuncio.crearAnuncioDB(anuncio);
+
+        if (accionRealizada == false) {
             JOptionPane.showMessageDialog(null, "ocurrio un error al cargar la base de datos crearAnuncioAction");
         }
-        
-        //request.setAttribute("listaPrioridades", listaPrioridades);
-        
+
+       // request.setAttribute("listaPrioridades", listaPrioridades);
+
         LinkedList<Anuncio> listaAnuncios;
-        
-        listaAnuncios=nAnuncio.listarAnunciosDB();
+
+        listaAnuncios = nAnuncio.listarAnunciosDB();
         //hay que mostrar un mensaje de error
-        if(listaAnuncios==null){
+        if (listaAnuncios == null) {
             JOptionPane.showMessageDialog(null, "Error al cargar la lista de anuncios");
         }
         request.setAttribute("listaAnuncios", listaAnuncios);

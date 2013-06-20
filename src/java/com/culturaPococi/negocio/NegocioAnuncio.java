@@ -44,4 +44,8 @@ public class NegocioAnuncio {
      public boolean crearAnuncioDB(Anuncio anuncio) throws SQLException{
         return dAnuncio.crearAnuncio(anuncio);
     }//fin crearAnuncioDB
+     
+      public int selectIdAnuncioDB() throws SQLException{
+       return dAnuncio.selectIdAnuncio();
+   }//fin selectEventoDB
 }

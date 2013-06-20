@@ -19,7 +19,11 @@
 
         <div id="contendor-interno"> 
 
-             <form method="post" action="./crear_anuncio.do"  id="validar-form">
+             <form enctype="multipart/form-data"  action="./cargarImagen/cargarImagen.jsp" method="post" id="validar-form">
+                 
+                  <input type="hidden" name="accion" value="/crear_anuncio.do"/>
+                    
+                    <input type="file" name="file"/>
                  
                <h1><bean:message key="anuncios.form"/></h1>
                 

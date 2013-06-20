@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.LinkedList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -131,4 +132,33 @@ public class DataAnuncio extends DataBase{
         }
         return accionRealizada;
     }//crearAnuncio
+    
+    
+      public int selectIdAnuncio() throws SQLException {
+        int idEvento = 0;
+        String sql = "select idAnuncio from nuncio order by 1 desc limit 1;";
+        ResultSet resultado;
+        Connection conexion = super.getConexion();
+
+        try {
+
+            Statement statement = conexion.createStatement();
+            resultado = statement.executeQuery(sql);
+
+            while (resultado.next()) {
+                idEvento = resultado.getInt(1);
+            }//fin while
+            idEvento = idEvento + 1;
+            statement.close();
+        } catch (Exception e) {
+            idEvento = 0;
+        } finally {
+            conexion.close();
+        }//fin try
+        JOptionPane.showMessageDialog(null, "idEvento " + idEvento);
+
+
+
+        return idEvento;
+    }//fin 
 }

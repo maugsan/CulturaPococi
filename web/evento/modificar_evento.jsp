@@ -32,8 +32,10 @@
 
             <html:form action="/actualizar_evento" >
                 
+                <input type="file" name="file"/>
                 
-
+                <img src=${evento.imagen}/>
+               
                 <h1><bean:message key="form.evento.modificar"/></h1>
 
                 <select name='hora'> 
