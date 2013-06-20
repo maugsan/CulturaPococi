@@ -22,7 +22,6 @@ import org.apache.struts.actions.DispatchAction;
  */
 public class CrearEventoAction extends DispatchAction {
 
-    /* forward name="success" path="" */
     private static final String SUCCESS = "success";
     NegocioEvento nEvento=new NegocioEvento();
     NegocioCategoria nCategoria=new NegocioCategoria();
@@ -42,31 +41,22 @@ public class CrearEventoAction extends DispatchAction {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
        boolean accionRealizada;
+       
+       String datos=request.getParameter("datos");
+        JOptionPane.showMessageDialog(null, "carta   "+datos);
+       
+      String datosSeparados[]=datos.split("-");
+       String email = (String)request.getSession().getAttribute("c");
         String nombrejsp="";
-        String email = (String)request.getSession().getAttribute("c");
- 
-        String hora=(String)request.getParameter("hora");
-        String minutos=(String)request.getParameter("minutos");
-        String tiempo=(String)request.getParameter("tiempo");
-        EventoForm formu=(EventoForm) form;
-        Evento evento=new Evento(0, 
-                                formu.getIdCategoria(), 
-                                "", 
-                                formu.getLugar(), 
-                                formu.getNombre(),
-                                formu.getFecha(),
-                                hora,minutos,tiempo,
-                                formu.getInformacion(), 
-                                "ybarboza27@gmail.com","imagen");  
+        nEvento.selectIdEventoDB();
+        Evento evento=new Evento(0, Integer.parseInt(datosSeparados[7]), "", datosSeparados[7], datosSeparados[4], datosSeparados[5],datosSeparados[1],datosSeparados[2], datosSeparados[3], datosSeparados[8], email, datosSeparados[0]);
         
         accionRealizada=nEvento.crearEventosDB(evento);
         if(!accionRealizada){
-            // si la accion es false es que no se pudo crear el nuevo evento por loq ue hay que mostrar un mensaje
+             //si la accion es false es que no se pudo crear el nuevo evento por loq ue hay que mostrar un mensaje
             JOptionPane.showMessageDialog(null, "El evento no se pudo crear por fallo en la base CREAR_EVENTO_ACTION");
         }//fin if
-        formu.setInformacion("");
-        formu.setLugar("");
-        formu.setNombre("");
+        
         
         LinkedList <Evento> listaEventos;
         listaEventos=nEvento.listarEventosDB();
@@ -80,10 +70,3 @@ public class CrearEventoAction extends DispatchAction {
         return mapping.getInputForward();
     }
 }
-
-
-
-
-
-
-

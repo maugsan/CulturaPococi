@@ -22,13 +22,12 @@
             <div id="contendor-interno"> 
 
 
-                <form method="post" action="./crear_evento.do" id="validar-form">
 
-                    <h2><bean:message key="form.fecha"/></h2>
-                    <input type="text" name="fecha" id="datepicker" id="fecha"   readonly="readonly" size="12" />
-
-
-
+                <form enctype="multipart/form-data"  action="./cargarImagen/cargarImagen.jsp" method="post" id="validar-form">
+                   
+                    <input type="hidden" name="accion" value="/crear_evento.do"/>
+                    
+                    <input type="file" name="file"/>
                     <h1><bean:message key="form.hora"/></h1>
 
                     <select name='hora' id="select-hora"> 
@@ -76,13 +75,16 @@
                     <h2><bean:message key="form.nombre"/></h2>
                     <input type="text" id="nombre" name="nombre" size="16" value=""/>
 
+                    <h2><bean:message key="form.fecha"/></h2>
+                    <input type="text" name="fecha" id="datepicker" id="fecha"   readonly="readonly" size="12" />
+
 
 
                     <h2><bean:message key="form.categoria"/></h2>
-                    <select property="idCategoria">
+                    <select name="idCategoria">
                         <logic:iterate name="listaCategorias" id="numero" >
                             <option value="${numero.idCategoria}"> <!-- esto es para que cuando elija el nombre me envie el numero !-->
-                                <bean:write name="numero" property="nombreCategoria"/>
+                                ${numero.nombreCategoria}
                             </option>
                         </logic:iterate>
                     </select>

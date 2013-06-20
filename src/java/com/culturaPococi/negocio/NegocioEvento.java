@@ -39,5 +39,8 @@ public class NegocioEvento {
         return dEvento.selectEvento(idEvento);
     }//fin selectEventoDB
     
+    public int selectIdEventoDB() throws SQLException{
+       return dEvento.selectIdEvento();
+   }//fin selectEventoDB
    
 }

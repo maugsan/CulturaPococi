@@ -167,15 +167,14 @@
                 <forward name="denegado" path="/includes/denegado.jsp" />
        
         </action>
-        <action path="/crear_evento" 
-                type="com.culturaPococi.accion.evento.CrearEventoAction"
-                input="/evento/crear_evento.jsp" 
-                scope="request"
-                validate="true" 
-                name="EventoForm">
-                
-       
-        </action>
+       <action path="/crear_evento" 
+               type="com.culturaPococi.accion.evento.CrearEventoAction"
+               input="/evento/index.jsp" 
+               scope="request"
+               validate="false">
+               
+      
+       </action>
         
          <action name="EventoForm" 
                  path="/actualizar_evento" 
