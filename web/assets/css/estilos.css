@@ -886,7 +886,7 @@ label.valid {
 }
 label.error {
     font-weight: bold;
-    color: #cd0a0a;
+    color: #1397c9;
     padding: 2px 8px;
     margin-top: 2px;
 }

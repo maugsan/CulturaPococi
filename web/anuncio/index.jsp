@@ -35,7 +35,7 @@
                             <a href="../eliminar_anuncio.do?idAnuncio=${anuncioTemporal.idAnuncio}">
                                 <div id="elemento-icon"><img src="../assets/img/delete-icon.png" width="30"/></div>
                             </a> 
-                              <img src=${anuncioTemporal.getImagen()}>
+                              <img src=<%=request.getContextPath()%>${anuncioTemporal.getImagen()}>
                              
                         </div>
                         <%-- FIN Elemento  --%>

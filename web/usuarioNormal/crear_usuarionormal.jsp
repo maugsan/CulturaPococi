@@ -8,7 +8,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-       <%@include file="/includes/head.jsp" %>
+        
+        
+        
+       <%@include file="/includes/head.jsp"%> 
 
         <title>Registrarse</title>
     </head>
@@ -19,27 +22,27 @@
 
         <div id="contendor-interno"> 
 
-            <form method="get" action="../crear_usuario.do">   
+            <form method="get" action="../crear_usuario.do"  id="validar-form">   
                 
             <h1>Crear Nuevo Usuario</h1>
 
                 
                 <h2><bean:message key="usuario.normal.correo"/></h2>
-                <input type="text" name="correo"><br>
+                <input type="text" id="correo" name="correo" ><br>
                 
                 
                 
                 <h2><bean:message key="usuario.normal.contrasenia"/></h2>
-               <input type="text" name="contrasenia"><br>
+                <input type="password" id="contrasenia" name="contrasenia" ><br>
                  
                 
                 <h2><bean:message key="usuario.normal.contrasenia.comprobacion"/></h2>
-                <input type="text" name="contraseniaComprobacion"><br>
+                <input type="password" id="contraseniaComprobacion" name="contraseniaComprobacion" ><br>
                 
                 <h2><bean:message key="usuario.normal.colaborador"/></h2>
                 <input type="checkbox" name="colaborador" value="s">
                 
-                <input type="submit" name="Crear" value="Crear Usuario">  
+                <input type="submit" value="Crear"/> 
 
             </form>
                  

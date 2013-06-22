@@ -38,7 +38,8 @@ public class DataEvento extends DataBase {
                         resultado.getString("fecha"), resultado.getString("hora"),
                         resultado.getString("minutos"), resultado.getString("tiempo"),
                         resultado.getString("informacion"),
-                        resultado.getString("correo"), "");
+                        resultado.getString("correo"), 
+                        resultado.getString("imagen"));
 
                 listaEventos.add(evento);
             }//fin while
@@ -139,7 +140,8 @@ public class DataEvento extends DataBase {
                         resultado.getString("fecha"), resultado.getString("hora"),
                         resultado.getString("minutos"), resultado.getString("tiempo"),
                         resultado.getString("informacion"),
-                        resultado.getString("correo"), "");
+                        resultado.getString("correo"),
+                        resultado.getString("imagen"));
                 listaEventos.add(evento);
             }//fin while
 

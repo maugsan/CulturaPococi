@@ -34,8 +34,8 @@
                 
                 <input type="file" name="file"/>
                 
-                <img src=${evento.imagen}/>
-               
+                <img src="<%=request.getContextPath()%>${evento.imagen}"/>
+                              
                 <h1><bean:message key="form.evento.modificar"/></h1>
 
                 <select name='hora'> 

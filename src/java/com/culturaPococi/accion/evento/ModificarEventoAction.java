@@ -48,6 +48,8 @@ public class ModificarEventoAction extends DispatchAction {
             JOptionPane.showMessageDialog(null, "Las categorias no se pudieron cargar");  
         }
         //Si evento en null es porque la consulta no se hizo bien por lo que hay que mostrar un mensaje
+        JOptionPane.showMessageDialog(null, "porque "+evento.getNombre());
+        
          request.setAttribute("listaCategorias", listaCategorias);
          request.setAttribute("evento", evento);
         return mapping.getInputForward();

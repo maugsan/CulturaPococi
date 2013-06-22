@@ -13,14 +13,13 @@ $().ready(function() {
             descripcion: {required: true, minlength: 2},
             horario: {required: true, minlength: 2},
             correo: {required: true, email: true},
-            contrasenia: {required: true},
+            contrasenia: {required: true, minlength: 2},
+            contraseniaComprobacion: {required: true, equalTo: "#contrasenia"},
             fecha: {required: true},
-            autor: { required: true, minlength: 2},
-            
-            
-                        contenido: { required:true, minlength: 2},
-                        nombreCategoria: { required: true, minlength: 2}
-                  
+            autor: {required: true, minlength: 2},
+            contenido: {required: true, minlength: 2},
+            nombreCategoria: {required: true, minlength: 2}
+
         },
         messages: {
             nombre: " * obligatorio ",
@@ -29,15 +28,16 @@ $().ready(function() {
             autor: " * obligatorio ",
             lugar: " * obligatorio ",
             categoria: " * obligatorio ",
-            correo: " * obligatorio ",
-            contrasenia: " * obligatorio ",
+            correo: " * obligatorio. puede q no estesponiendo bien tu correo ",
+            contrasenia: " * obligatorio (minimo 2 caracteres) ",
+            contraseniaComprobacion: "por favor ingrese la misma contraseÃ±a",
             informacion: " * obligatorio ",
             telefono: "El campo Tel&eacute;fono no contiene un formato correcto.",
             horario: " * obligatorio ",
             contenido: " * obligatorio ",
             descripcion: " * obligatorio ",
             validator: "Inerte los cuatro caracteres de la imagen superior.",
-            nombreCategoria: " * obligatorio "
+            nombreCategoria: " * obligatorio"
 
         },
         success: function(element) {

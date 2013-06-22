@@ -73,9 +73,9 @@
                                 extension.equalsIgnoreCase("jpg"))||
                                     (extension.equalsIgnoreCase("jpeg"))){
                         
-                        nombre=nombre+"./assets/img/"+idEvento+"."+extension+"-";
+                        nombre=nombre+"/assets/img/"+idEvento+".png"+"-";
                         JOptionPane.showMessageDialog(null, "si "+idEvento+extension);
-                        File file = new File( destinationRealPath, idEvento+"."+extension);
+                        File file = new File( destinationRealPath, idEvento+".png");
                         fileItemTemp.write( file );
                         out.write( "<p>" + file.getName() + " was uploaded successfully</p>" ) ;
                         //out.close();

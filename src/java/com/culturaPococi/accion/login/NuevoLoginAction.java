@@ -8,6 +8,7 @@ import com.culturaPococi.negocio.NegocioUsuarioAdministrador;
 import com.culturaPococi.negocio.NegocioUsuarioNormal;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
@@ -29,7 +30,7 @@ public class NuevoLoginAction extends DispatchAction {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
 
-
+        JOptionPane.showMessageDialog(null,"bueno");
 
         NuevoLoginForm login = (NuevoLoginForm) form;
         String correo = login.getCorreo();
