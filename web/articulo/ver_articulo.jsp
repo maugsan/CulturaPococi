@@ -25,13 +25,9 @@
                 
                 <h2><bean:message key="articulo.titulo"/></h2>
                 <html:text  name="ArticuloForm" property="titulo" size="16" value="${articulo.titulo}"/><br>
-                <html:errors property="etitulo"/> 
-                
-                <h2><bean:message key="articulo.fecha"/></h2><br>
                 
                 <h2><bean:message key="articulo.autor"/></h2>
-                <html:text  name="ArticuloForm" property="autor" size="16" value="${articulo.autor}"/><br>
-                <html:errors property="eautor"/> 
+                <html:text  name="ArticuloForm" property="autor" size="16" value="${articulo.autor}"/><br> 
                 
                 <h2><bean:message key="form.categoria"/></h2>
                 <html:select property="categoria" >

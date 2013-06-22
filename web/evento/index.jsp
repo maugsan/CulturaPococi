@@ -44,6 +44,8 @@
 
                             <h1>${eventoTemporal.nombre}</h1>
                             <h3>${eventoTemporal.fecha}</h3>
+                            <img src="<%=request.getContextPath()%>${eventoTemporal.imagen}" width="50"/>
+                             
                             <a href="../eliminar_evento.do?idEvento=${eventoTemporal.idEvento}">
                                 <div id="elemento-icon"><img src="../assets/img/delete-icon.png" width="30"/></div>
                             </a> 

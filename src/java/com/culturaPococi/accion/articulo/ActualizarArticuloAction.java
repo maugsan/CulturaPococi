@@ -42,6 +42,7 @@ public class ActualizarArticuloAction extends DispatchAction {
         //JOptionPane.showMessageDialog(null, "id "+);
         nArticulo.bdActualizarArticulo(articulo);
         listaArticulos=nArticulo.bdListarArticulos(formu.getFecha());
+        JOptionPane.showMessageDialog(null, "Error en la base de datos listarArticulosAction " +formu.getFecha());
         
         if(listaArticulos==null){
             JOptionPane.showMessageDialog(null, "Error en la base de datos listarArticulosAction");

@@ -34,7 +34,7 @@
                 
                 <input type="file" name="file"/>
                 
-                <img src="<%=request.getContextPath()%>${evento.imagen}"/>
+                <img src="<%=request.getContextPath()%>${evento.imagen}" width="50"/>
                               
                 <h1><bean:message key="form.evento.modificar"/></h1>
 

@@ -136,7 +136,7 @@ public class DataAnuncio extends DataBase{
     
       public int selectIdAnuncio() throws SQLException {
         int idEvento = 0;
-        String sql = "select idAnuncio from nuncio order by 1 desc limit 1;";
+        String sql = "select idAnuncio from anuncio order by 1 desc limit 1;";
         ResultSet resultado;
         Connection conexion = super.getConexion();
 
@@ -155,9 +155,6 @@ public class DataAnuncio extends DataBase{
         } finally {
             conexion.close();
         }//fin try
-        JOptionPane.showMessageDialog(null, "idEvento " + idEvento);
-
-
 
         return idEvento;
     }//fin 

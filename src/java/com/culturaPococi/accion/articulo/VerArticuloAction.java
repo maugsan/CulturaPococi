@@ -43,17 +43,23 @@ public class VerArticuloAction extends DispatchAction {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         
-         LinkedList<Articulo> listaArticulos;
-        String fechaBoletin=request.getParameter("fecha");
-        listaArticulos=nArticulo.bdListarArticulos(fechaBoletin);
+        boolean accionRealizada;
+        Articulo articulo;
+        LinkedList<Categoria>listaCategoria;
+        int idArticulo=Integer.parseInt(request.getParameter("idArticulo"));
+        String fecha=""+request.getParameter("fecha");
         
-        if(listaArticulos==null){
-            JOptionPane.showMessageDialog(null, "Error en la base de datos listarArticulosAction");
+        articulo=nArticulo.bdArticulo(idArticulo,fecha);
+        listaCategoria=nCategoria.selectCategoriasOrdenadasDB(articulo.getCategoria());
+        
+        if(articulo==null||listaCategoria==null){
+            JOptionPane.showMessageDialog(null, "Error en la base de datos verArticuloAction");
         }//fin if
         
-        request.setAttribute("listaArticulos", listaArticulos);
-        request.setAttribute("fecha", fechaBoletin);
+        request.setAttribute("articulo", articulo);
+        request.setAttribute("listaCategorias", listaCategoria);
         
         return mapping.getInputForward();
+    
     }
 }
