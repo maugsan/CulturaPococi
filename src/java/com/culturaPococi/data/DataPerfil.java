@@ -261,4 +261,70 @@ public class DataPerfil extends DataBase {
     }
     
     
+    
+     public LinkedList<Perfil> getListaMisPerfilesPorCategoria(String categoria) throws SQLException {
+
+        LinkedList<Perfil> listaPerfil = new LinkedList<Perfil>();
+        
+        Perfil p;
+        
+        String nombrePerfil;
+        String nombreCategoria;
+        String fechaDeCreacion;
+        String biografia;
+        String imagenDePortada;
+        String correo;
+        String nombreDistrito;
+
+
+        String sql = "call pListaPerfilxCatgoria('"+categoria+"');";
+        ResultSet resultado;
+        Connection conexion = super.getConexion();
+
+        try{
+            
+           Statement statement = conexion.createStatement();
+        resultado = statement.executeQuery(sql);
+
+
+        while (resultado.next()) {
+            p = new Perfil("", "", "", "", "", "", "",0);
+
+            nombrePerfil = resultado.getString(1);
+            fechaDeCreacion = resultado.getString(2);
+            biografia = resultado.getString(3);
+            imagenDePortada = resultado.getString(4);
+            correo = resultado.getString(5);
+            nombreDistrito = resultado.getString(6);
+            nombreCategoria = resultado.getString(7);
+
+            p.setNombrePerfil(nombrePerfil);
+            p.setFechaDeCreacion(fechaDeCreacion);
+            p.setBiografia(biografia);
+            p.setImagenDePortada(imagenDePortada);
+            p.setCorreo(correo);
+            p.setNombreDistrito(nombreDistrito);
+            p.setNombreCategoria(nombreCategoria);
+
+            listaPerfil.add(p);
+
+        
+        }//fin while
+        
+            resultado.close();
+
+        
+        }catch(Exception e){
+            listaPerfil=null;
+        }finally{
+             conexion.close();
+        }
+        
+        if(listaPerfil.size()==0){
+            listaPerfil=null;
+        }
+        
+        return listaPerfil;
+    }
+    
 }

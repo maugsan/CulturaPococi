@@ -87,6 +87,16 @@
         
         </action>
         
+           <action path="/ver_perfiles"
+        
+                scope="request"
+                input="/perfil/index.jsp"
+                validate="false"
+                type="com.culturaPococi.accion.perfil.verPerfilesAction"
+        
+        />
+        
+        
         <action input="/" 
                 path="/crear_perfil" 
                 scope="request" 
@@ -463,6 +473,9 @@
         >
             <forward name="listar" path="/listar_programa_radio.do"/>
         </action>
+     
+        
+        
         <action path="/mostrar_articulo" 
                  validate="false"
                 scope="request"

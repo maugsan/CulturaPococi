@@ -49,11 +49,11 @@
 
                 <div id="contendor-interno">
 
-                    <div id="s-izquierdo">
+                    <a href="./directorio.jsp" ><div id="s-izquierdo">
                         <img src="./assets/img/guitarra-icon.png"/>
                         <h1>Directorio</h1>
 
-                    </div> 
+                    </div></a>
 
                     <a href="#" id="radio"><div  id="s-centro">
                         

@@ -29,6 +29,12 @@ public class NegocioPerfil {
     return dp.getListaPerfil();
     }
     
+    
+    public LinkedList<Perfil> getListaPerfilPorCategoria(String categoria) throws SQLException{
+    return dp.getListaMisPerfilesPorCategoria(categoria);
+    }
+    
+    
     public LinkedList<Perfil> getListaMisPerfiles(String correo) throws SQLException{
     return dp.getListaMisPerfiles(correo);
     }
