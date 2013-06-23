@@ -53,7 +53,11 @@ public class VerArticuloAction extends DispatchAction {
         listaCategoria=nCategoria.selectCategoriasOrdenadasDB(articulo.getCategoria());
         
         if(articulo==null||listaCategoria==null){
+<<<<<<< HEAD
             JOptionPane.showMessageDialog(null, "Error en la base de datos verArticuloAction ");
+=======
+            JOptionPane.showMessageDialog(null, "Error en la base de datos verArticuloAction");
+>>>>>>> 33163d978b5f5b9722935b63eaa1642b9b0125c4
         }//fin if
         
         request.setAttribute("articulo", articulo);

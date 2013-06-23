@@ -32,11 +32,15 @@
 
                            <div id="elemento-imagen"><img src="<%=request.getContextPath()%>/assets/img/evento-icon.png" width="30"/></div>
                             <p id="elemento-nombre">${articuloTemporal.titulo}</p>
+<<<<<<< HEAD
                             <img src="<%=request.getContextPath()%>${articuloTemporal.getImagen()}" width="50">
                             
                             <img src="" width="50">
                             
                             <a href="<%=request.getContextPath()%>/eliminar_articulo.do?idArticulo=${articuloTemporal.idArticulo}&fecha=${articuloTemporal.fecha}">
+=======
+                            <a href="../eliminar_articulo.do?idArticulo=${articuloTemporal.idArticulo}&fecha=${articuloTemporal.fecha}">
+>>>>>>> 33163d978b5f5b9722935b63eaa1642b9b0125c4
                                 <div id="elemento-icon"><img src="<%=request.getContextPath()%>/assets/img/delete-icon.png" width="30"/></div>
                             </a> 
                             <a href="<%=request.getContextPath()%>/ver_articulo.do?idArticulo=${articuloTemporal.idArticulo}&fecha=${articuloTemporal.fecha}">

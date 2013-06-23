@@ -43,6 +43,7 @@ public class CrearAnuncioAction extends DispatchAction {
             throws Exception {
 
         boolean accionRealizada;
+<<<<<<< HEAD
 
         JOptionPane.showMessageDialog(null, "prueba");
     
@@ -51,18 +52,32 @@ public class CrearAnuncioAction extends DispatchAction {
 
 JOptionPane.showMessageDialog(null, "1");
 
+=======
+        JOptionPane.showMessageDialog(null, "prueba");
+        
+
+        String datos = request.getParameter("datos");
+JOptionPane.showMessageDialog(null, "1");
+>>>>>>> 33163d978b5f5b9722935b63eaa1642b9b0125c4
         String datosSeparados[] = datos.split("-");
 
         
   JOptionPane.showMessageDialog(null, "2");
+<<<<<<< HEAD
 
+=======
+>>>>>>> 33163d978b5f5b9722935b63eaa1642b9b0125c4
         Anuncio anuncio = new Anuncio(datosSeparados[2], datosSeparados[1], Integer.parseInt(datosSeparados[3]), 0);
 
 
         accionRealizada = nAnuncio.crearAnuncioDB(anuncio);
+<<<<<<< HEAD
 
 JOptionPane.showMessageDialog(null, "3");
 
+=======
+JOptionPane.showMessageDialog(null, "3");
+>>>>>>> 33163d978b5f5b9722935b63eaa1642b9b0125c4
         if (accionRealizada == false) {
             JOptionPane.showMessageDialog(null, "ocurrio un error al cargar la base de datos crearAnuncioAction");
         }
@@ -77,9 +92,13 @@ JOptionPane.showMessageDialog(null, "3");
             JOptionPane.showMessageDialog(null, "Error al cargar la lista de anuncios");
         }
         
+<<<<<<< HEAD
 
         JOptionPane.showMessageDialog(null, "4");
 
+=======
+        JOptionPane.showMessageDialog(null, "4");
+>>>>>>> 33163d978b5f5b9722935b63eaa1642b9b0125c4
         request.setAttribute("listaAnuncios", listaAnuncios);
         return mapping.getInputForward();
     }

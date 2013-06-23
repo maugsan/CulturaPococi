@@ -35,9 +35,14 @@
 
                                 <%-- href="../mostrar_perfil_seleccionado.do?idPerfil= ${perfilTemporal.idPerfil}" --%>
                                 
+<<<<<<< HEAD
                                 
                                 <a href="./mostrar_perfil_seleccionado.do?nomPerfil=${perfilTemporal.nombrePerfil}"> <div id="link-detalle-elemento"><div id="elemento-imagen"><img src="<%=request.getContextPath()%>${perfilTemporal.imagenDePortada}" width="50"/></div>
 
+=======
+                                <a href="./mostrar_perfil_seleccionado.do?nomPerfil=${perfilTemporal.nombrePerfil}"> <div id="link-detalle-elemento"><div id="elemento-imagen"><img src="<%=request.getContextPath()%>/assets/img/perfil-icon.png" width="50"/></div>
+                                        
+>>>>>>> 33163d978b5f5b9722935b63eaa1642b9b0125c4
                                         <h1> ${perfilTemporal.nombrePerfil}</h1> 
                                      
                                         <h2> ${perfilTemporal.nombreCategoria}</h2>

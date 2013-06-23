@@ -139,7 +139,10 @@ public class DataAnuncio extends DataBase{
         int idAnuncio = 0;
 
         int idEvento = 0;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 33163d978b5f5b9722935b63eaa1642b9b0125c4
         String sql = "select idAnuncio from anuncio order by 1 desc limit 1;";
         ResultSet resultado;
         Connection conexion = super.getConexion();
@@ -162,8 +165,11 @@ public class DataAnuncio extends DataBase{
         } finally {
             conexion.close();
         }//fin try
+<<<<<<< HEAD
 
         return idAnuncio;
+=======
+>>>>>>> 33163d978b5f5b9722935b63eaa1642b9b0125c4
 
  
     }//fin 

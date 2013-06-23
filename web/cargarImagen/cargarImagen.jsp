@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+=======
+<%-- 
+    Document   : cargarImagen
+    Created on : 19/06/2013, 07:54:34 PM
+    Author     : Personal
+--%>
+>>>>>>> 33163d978b5f5b9722935b63eaa1642b9b0125c4
 
 <%@page import="com.culturaPococi.negocio.NegocioAnuncio"%>
 <%@page import="com.culturaPococi.negocio.NegocioEvento"%>
@@ -61,7 +69,10 @@
                                 
                                 }
         
+<<<<<<< HEAD
 
+=======
+>>>>>>> 33163d978b5f5b9722935b63eaa1642b9b0125c4
                         }
                             
                         if (fileItemTemp.getFieldName().equals("filename")) {
@@ -117,4 +128,8 @@
 
  <jsp:forward page= "<%=accion%>" >
   <jsp:param name="datos" value="<%=nombre %>" /> 
+<<<<<<< HEAD
 </jsp:forward>
+=======
+</jsp:forward>
+>>>>>>> 33163d978b5f5b9722935b63eaa1642b9b0125c4
