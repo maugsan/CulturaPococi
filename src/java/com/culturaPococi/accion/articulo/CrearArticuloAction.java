@@ -4,6 +4,7 @@
  */
 package com.culturaPococi.accion.articulo;
 
+import com.culturaPococi.dominio.Anuncio;
 import com.culturaPococi.dominio.Articulo;
 import com.culturaPococi.dominio.Categoria;
 import com.culturaPococi.negocio.NegocioArticulo;
@@ -55,20 +56,24 @@ public class CrearArticuloAction extends DispatchAction {
 //        String contenido=request.getParameter("contenido");
         //String fecha=request.getParameter("fecha");
         
-        ArticuloForm formu=(ArticuloForm) form;
+//        ArticuloForm formu=(ArticuloForm) form;
+//        
+//        articulo=new Articulo(0, 
+//                            "", 
+//                            formu.getCategoria(), 
+//                            formu.getTitulo(), 
+//                            formu.getAutor(), 
+//                            formu.getContenido(), 
+//                            formu.getFecha());
         
-        articulo=new Articulo(0, 
-                            "", 
-                            formu.getCategoria(), 
-                            formu.getTitulo(), 
-                            formu.getAutor(), 
-                            formu.getContenido(), 
-                            formu.getFecha());
-       
+        String datos = request.getParameter("datos");
+        String datosSeparados[] = datos.split("-");
+        articulo=new Articulo(0, datosSeparados[1], Integer.parseInt(datosSeparados[4]), datosSeparados[2], datosSeparados[3], datosSeparados[5], datosSeparados[6]);
+        
         accionRealizada=nArticulo.bdCrearArticulo(articulo);
         
         
-        listaArticulos=nArticulo.bdListarArticulos(formu.getFecha());
+        listaArticulos=nArticulo.bdListarArticulos(datosSeparados[6]);
         listaCategoria=nCategoria.selectCategoriasOrdenadasDB(articulo.getIdArticulo());
         
         if(listaArticulos==null||!accionRealizada||listaCategoria==null){

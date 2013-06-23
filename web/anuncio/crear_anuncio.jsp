@@ -1,8 +1,4 @@
-<%-- 
-    Document   : crear_anuncio
-    Created on : 18/04/2013, 09:56:53 PM
-    Author     : Mac
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -10,7 +6,7 @@
     <head>
       
         <%@include file="../includes/head.jsp"%> 
-        <title>Crear Evento</title>
+        <title>Crear Anuncio</title>
     </head>
     <body>
         <%@include file="/includes/header.jsp" %>
@@ -34,7 +30,7 @@
                 <select name="prioridad">
                     <logic:iterate name="listaPrioridades" id="numero" >
                         <option value="${numero}"> <!-- esto es para que cuando elija el nombre me envie el numero !-->
-                            <bean:write name="numero"/><br>
+                            <bean:write name="numero"/>
                         </option>
                     </logic:iterate>
                 </select>

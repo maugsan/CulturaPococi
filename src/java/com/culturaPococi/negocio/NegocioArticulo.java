@@ -40,6 +40,10 @@ public class NegocioArticulo {
         return dArticulo.actualizarArticulo(articulo);
     }
     
+    public int selectIdArticuloDB() throws SQLException{
+       return dArticulo.selectIdArticulo();
+   }//fin selectEventoDB
+    
     
     
     

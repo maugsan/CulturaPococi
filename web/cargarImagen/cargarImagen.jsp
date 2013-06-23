@@ -4,6 +4,8 @@
     Author     : Personal
 --%>
 
+<%@page import="com.culturaPococi.negocio.NegocioArticulo"%>
+<%@page import="com.culturaPococi.negocio.NegocioAnuncio"%>
 <%@page import="com.culturaPococi.negocio.NegocioEvento"%>
 <%@page import="javax.swing.JOptionPane"%>
 <%@ page import="java.util.*" %>
@@ -20,6 +22,7 @@
     String nombre="";
     String accion="";
     int cont=0;
+    String nombreArchivo="";
     
         String destination = "/assets/img";
         String destinationRealPath = application.getRealPath( destination );
@@ -32,8 +35,9 @@
        
         ServletFileUpload uploader = new ServletFileUpload( factory );
         NegocioEvento nEvento=new NegocioEvento();
-        
-        String idEvento=""+nEvento.selectIdEventoDB(); 
+        NegocioAnuncio nAnuncio=new NegocioAnuncio();
+        NegocioArticulo nArticulo=new NegocioArticulo();
+         
        
         try{
             
@@ -53,8 +57,18 @@
                             if(cont==0){
                                 accion=fileItemTemp.getString();
                                 
-                                JOptionPane.showMessageDialog(null, accion);
                                 cont++;
+                                if(accion.equalsIgnoreCase("/crear_evento.do")){
+                                    nombreArchivo=""+nEvento.selectIdEventoDB();
+                                }else if (accion.equalsIgnoreCase("/crear_anuncio.do")){
+                                    nombreArchivo=""+nAnuncio.selectIdAnuncioDB();
+                                    JOptionPane.showMessageDialog(null, "idAnuncio "+nombreArchivo);
+                                }else{
+                                     nombreArchivo=""+nArticulo.selectIdArticuloDB();
+                                     
+                                    JOptionPane.showMessageDialog(null, "cargar idart "+nombreArchivo);
+                                }
+        JOptionPane.showMessageDialog(null, "11111111111 "+accion);
                         }
                             
                         if (fileItemTemp.getFieldName().equals("filename")) {
@@ -63,7 +77,6 @@
                     } else{
                         fileItem = fileItemTemp;
                         fileItemTemp.getContentType();
-                        JOptionPane.showMessageDialog(null, "exte "+fileItemTemp.getContentType());
                         
                         String extension=fileItemTemp.getContentType();
                         String ext[]=extension.split("/");
@@ -73,9 +86,8 @@
                                 extension.equalsIgnoreCase("jpg"))||
                                     (extension.equalsIgnoreCase("jpeg"))){
                         
-                        nombre=nombre+"/assets/img/"+idEvento+".png"+"-";
-                        JOptionPane.showMessageDialog(null, "si "+idEvento+extension);
-                        File file = new File( destinationRealPath, idEvento+".png");
+                        nombre=nombre+"/assets/img/"+nombreArchivo+".png"+"-";
+                        File file = new File( destinationRealPath, nombreArchivo+".png");
                         fileItemTemp.write( file );
                         out.write( "<p>" + file.getName() + " was uploaded successfully</p>" ) ;
                         //out.close();
@@ -87,13 +99,6 @@
                         
                 }
                 
-                
-                //while( iterator.hasNext() ){
-                       // FileItem item = (FileItem) iterator.next();
-                        //File file = new File( destinationRealPath, item.getName() );
-                        //item.write( file );
-                        //out.write( "<p>" + file.getName() + " was uploaded successfully</p>" ) ;
-                //}
                 
                 %>
                 

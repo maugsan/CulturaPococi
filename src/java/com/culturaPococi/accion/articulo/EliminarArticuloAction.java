@@ -50,7 +50,7 @@ public class EliminarArticuloAction extends DispatchAction {
         listaArticulos=nArticulo.bdListarArticulos(fechaBoletin);
         
         if(listaArticulos==null||accionRealizada==false){
-          JOptionPane.showMessageDialog(null, "Error en la base de datos EliminarArticulosAction");
+          JOptionPane.showMessageDialog(null, "Error en la base de datos EliminarArticulosAction "+accionRealizada);
         }//fin if
         
         request.setAttribute("listaArticulos", listaArticulos);

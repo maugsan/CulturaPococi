@@ -43,21 +43,15 @@ public class CrearAnuncioAction extends DispatchAction {
             throws Exception {
 
         boolean accionRealizada;
-    
+        
 
         String datos = request.getParameter("datos");
-        JOptionPane.showMessageDialog(null, "carta   " + datos);
-
         String datosSeparados[] = datos.split("-");
 
-        nAnuncio.selectIdAnuncioDB();
-  
-        JOptionPane.showMessageDialog(null, "titulo-> "+datosSeparados[2]+" imagen-> "+ datosSeparados[1] + "prioridad-> "+ Integer.parseInt(datosSeparados[3]));
         Anuncio anuncio = new Anuncio(datosSeparados[2], datosSeparados[1], Integer.parseInt(datosSeparados[3]), 0);
 
 
         accionRealizada = nAnuncio.crearAnuncioDB(anuncio);
-
         if (accionRealizada == false) {
             JOptionPane.showMessageDialog(null, "ocurrio un error al cargar la base de datos crearAnuncioAction");
         }
@@ -71,6 +65,7 @@ public class CrearAnuncioAction extends DispatchAction {
         if (listaAnuncios == null) {
             JOptionPane.showMessageDialog(null, "Error al cargar la lista de anuncios");
         }
+        
         request.setAttribute("listaAnuncios", listaAnuncios);
         return mapping.getInputForward();
     }

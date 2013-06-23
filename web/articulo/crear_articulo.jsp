@@ -31,11 +31,17 @@
                 </script>
 
 
-                         
-               <form method="post" action="./crear_articulo.do" id="validar-form">
-                
+                    
+                <%--<form method="post" action="./crear_articulo.do" id="validar-form">--%>
+                   
                 <h1><bean:message key="articulo.crear.articulo"/></h1>
-                
+                <form enctype="multipart/form-data"  action="./cargarImagen/cargarImagen.jsp" method="post" id="validar-form">
+
+                    <input type="hidden" name="accion" value="/crear_articulo.do"/>
+
+                    <input type="file" name="file"/>
+
+
                 <h2><bean:message key="articulo.titulo"/></h2>
                 <input type="text" id="titulo" name="titulo" size="16" value=""/>
                 

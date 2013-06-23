@@ -8,22 +8,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
-        <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
-        <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-        <link rel="stylesheet" href="./assets/css/estilos.css" type="text/css" />
-        <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="./assets/js/calendario.js"></script>
-        <script type="text/javascript" src="./assets/js/jquery.validate.js"></script>
-        <script type="text/javascript" src="./assets/js/validar.js"></script>
+        <%@include file="/includes/head.jsp"%> 
 
         <title>Modificar Evento</title>
     </head>
+    
+    <body>
+    
     <%@include file="/includes/header.jsp" %>
 
     <section  id="seccion-principal">
@@ -34,7 +25,7 @@
                 
                 <input type="file" name="file"/>
                 
-                <img src="<%=request.getContextPath()%>${evento.imagen}"/>
+                <img src="<%=request.getContextPath()%>${evento.imagen}" width="50"/>
                               
                 <h1><bean:message key="form.evento.modificar"/></h1>
 

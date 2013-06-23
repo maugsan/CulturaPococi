@@ -135,8 +135,8 @@ public class DataAnuncio extends DataBase{
     
     
       public int selectIdAnuncio() throws SQLException {
-        int idEvento = 0;
-        String sql = "select idAnuncio from nuncio order by 1 desc limit 1;";
+        int idAnuncio = 0;
+        String sql = "select idAnuncio from anuncio order by 1 desc limit 1;";
         ResultSet resultado;
         Connection conexion = super.getConexion();
 
@@ -146,19 +146,18 @@ public class DataAnuncio extends DataBase{
             resultado = statement.executeQuery(sql);
 
             while (resultado.next()) {
-                idEvento = resultado.getInt(1);
+                idAnuncio = resultado.getInt(1);
             }//fin while
-            idEvento = idEvento + 1;
+                JOptionPane.showMessageDialog(null, "dataanuncio 1 "+idAnuncio);
+            idAnuncio = idAnuncio + 1;
+            JOptionPane.showMessageDialog(null, "dataanuncio 2 "+idAnuncio);
             statement.close();
         } catch (Exception e) {
-            idEvento = 0;
+            idAnuncio = 0;
+            JOptionPane.showMessageDialog(null, "cacht "+idAnuncio);
         } finally {
             conexion.close();
         }//fin try
-        JOptionPane.showMessageDialog(null, "idEvento " + idEvento);
-
-
-
-        return idEvento;
+        return idAnuncio;
     }//fin 
 }

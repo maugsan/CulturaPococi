@@ -31,5 +31,6 @@ $(document).ready(function() {
         showOn: 'button',
         buttonImageOnly: true,
         buttonImage: './assets/img/evento-icon.png'
+      
     });
 });

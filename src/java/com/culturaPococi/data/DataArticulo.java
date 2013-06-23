@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.LinkedList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -128,7 +129,6 @@ public class DataArticulo extends DataBase {
     public boolean eliminarArticulos(int idArticulo) throws SQLException{
         String sqleliminarArticulo="call pEliminarArticulo(?);" ;
         boolean accionRealizada=true;
-        
         Connection conexion=super.getConexion();
         try{
             
@@ -146,5 +146,32 @@ public class DataArticulo extends DataBase {
     }
     
     
+    public int selectIdArticulo() throws SQLException {
+        int idArticulo = 0;
+        String sql = "select idArticulo from articulo order by 1 desc limit 1;";
+        ResultSet resultado;
+        Connection conexion = super.getConexion();
+
+        try {
+
+            Statement statement = conexion.createStatement();
+            resultado = statement.executeQuery(sql);
+
+            while (resultado.next()) {
+                idArticulo = resultado.getInt(1);
+            }//fin while
+            idArticulo = idArticulo + 1;
+            statement.close();
+        } catch (Exception e) {
+            idArticulo = 0;
+        } finally {
+            conexion.close();
+        }//fin try
+        JOptionPane.showMessageDialog(null, "idArt " + idArticulo);
+
+
+
+        return idArticulo;
+    }//fin 
     
 }

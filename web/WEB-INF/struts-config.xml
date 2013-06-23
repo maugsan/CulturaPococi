@@ -438,7 +438,7 @@
         </action>
         
         
-        <action input="/usuarioNormal/crear_usuarionormal.jsp" 
+        <action input="/inicio.jsp" 
                 path="/crear_usuario" 
                 scope="request" 
                 type="com.culturaPococi.accion.usuarioNormal.CrearUsuarioAction"/>

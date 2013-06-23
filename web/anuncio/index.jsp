@@ -30,12 +30,12 @@
                         <%-- Inicio Elemento  --%>
                         <div id="elemento">
 
-                            <div id="elemento-imagen"><img src="../assets/img/evento-icon.png" width="30"/></div>
+                            <div id="elemento-imagen"><img src="<%=request.getContextPath()%>/assets/img/evento-icon.png" width="30"/></div>
                             <h1>${anuncioTemporal.titulo}</h1>
                             <a href="../eliminar_anuncio.do?idAnuncio=${anuncioTemporal.idAnuncio}">
-                                <div id="elemento-icon"><img src="../assets/img/delete-icon.png" width="30"/></div>
+                                <div id="elemento-icon"><img src="<%=request.getContextPath()%>/assets/img/delete-icon.png" width="30"/></div>
                             </a> 
-                              <img src=<%=request.getContextPath()%>${anuncioTemporal.getImagen()}>
+                              <img src="<%=request.getContextPath()%>${anuncioTemporal.getImagen()}" width="50">
                              
                         </div>
                         <%-- FIN Elemento  --%>

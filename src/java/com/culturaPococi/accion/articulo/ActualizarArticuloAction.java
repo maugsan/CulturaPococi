@@ -40,9 +40,11 @@ public class ActualizarArticuloAction extends DispatchAction {
                                 formu.getContenido(),
                                 formu.getFecha());
         //JOptionPane.showMessageDialog(null, "id "+);
+        
         nArticulo.bdActualizarArticulo(articulo);
         listaArticulos=nArticulo.bdListarArticulos(formu.getFecha());
         
+       
         if(listaArticulos==null){
             JOptionPane.showMessageDialog(null, "Error en la base de datos listarArticulosAction");
         }//fin if

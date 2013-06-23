@@ -32,9 +32,12 @@
                 
                 <div id="contendor-interno"> 
                    
-                    <h1><bean:message key="boletin.titulo"/></h1>
                     
+                    <h1><bean:message key="boletin.titulo"/></h1>
+                                          
+
                     <section id="lista-elementos">
+                        <a href="crear_boletin.jsp"><button id="boton-unir"><bean:message key="boton.crear.boletin"/></button></a>
                         <logic:iterate  name="listaBoletines" id="boletinTemporal" >
                         <%-- Inicio Elemento  --%>
                         <div id="elemento">
@@ -54,7 +57,7 @@
                         </div>
                         <%-- FIN Elemento  --%>
                         </logic:iterate>
-                        <a href="crear_boletin.jsp"><button id="boton-unir"><bean:message key="boton.crear.boletin"/></button></a>
+                      
                     </section>
                         
                 </div> 

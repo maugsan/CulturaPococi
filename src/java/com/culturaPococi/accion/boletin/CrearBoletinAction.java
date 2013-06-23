@@ -50,7 +50,7 @@ public class CrearBoletinAction extends DispatchAction {
         listaBoletines=nBoletin.bdListarBoletines();
         
         if(!accionRealicada||listaBoletines==null){
-            JOptionPane.showMessageDialog(null, "Problemas con la base de datos");
+            JOptionPane.showMessageDialog(null, "Problemas con la base de datos o el boletín con esa fecha ya existe");
         }//fin if
         
         request.setAttribute("listaBoletines", listaBoletines);

@@ -23,20 +23,24 @@
                 <div id="contendor-interno"> 
                 
                    
-                    <h1><bean:message key="articulo.titulo"/></h1>
+                    <h1>Artículos ${articuloTemporal.fecha}</h1>
                         
                     <section id="lista-elementos">
                         <logic:iterate  name="listaArticulos" id="articuloTemporal" >
                         <%-- Inicio Elemento  --%>
                         <div id="elemento">
 
-                           <div id="elemento-imagen"><img src="../assets/img/evento-icon.png" width="30"/></div>
+                           <div id="elemento-imagen"><img src="<%=request.getContextPath()%>/assets/img/evento-icon.png" width="30"/></div>
                             <p id="elemento-nombre">${articuloTemporal.titulo}</p>
-                            <a href="../eliminar_articulo.do?idArticulo=${articuloTemporal.idArticulo}&fecha=${articuloTemporal.fecha}">
-                                <div id="elemento-icon"><img src="../assets/img/delete-icon.png" width="30"/></div>
+                            <img src="<%=request.getContextPath()%>${articuloTemporal.getImagen()}" width="50">
+                            
+                            <img src="" width="50">
+                            
+                            <a href="<%=request.getContextPath()%>/eliminar_articulo.do?idArticulo=${articuloTemporal.idArticulo}&fecha=${articuloTemporal.fecha}">
+                                <div id="elemento-icon"><img src="<%=request.getContextPath()%>/assets/img/delete-icon.png" width="30"/></div>
                             </a> 
-                            <a href="../ver_articulo.do?idArticulo=${articuloTemporal.idArticulo}">
-                                <div id="elemento-icon"><img src="../assets/img/editar-icon.png" width="30"/></div>
+                            <a href="<%=request.getContextPath()%>/ver_articulo.do?idArticulo=${articuloTemporal.idArticulo}&fecha=${articuloTemporal.fecha}">
+                                <div id="elemento-icon"><img src="<%=request.getContextPath()%>/assets/img/editar-icon.png" width="30"/></div>
                             </a>
                             
                         </div>

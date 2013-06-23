@@ -44,7 +44,7 @@
 
             </div>
             <aside id="aside-login">
-                <a href="<%=request.getContextPath()%>/crear_usuario.do"><button id="boton-unir">Únete</button></a>
+                <a href="/CulturaPococi/usuarioNormal/crear_usuarionormal.jsp"><button id="boton-unir">Únete</button></a>
 
                 <a><h2>Olvidaste la contraseña</h2></a>
             </aside>

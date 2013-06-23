@@ -19,7 +19,9 @@
         <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
         <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
         <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-        <script type="text/javascript" src="../assets/js/calendario.js"></script>
+        <script type="text/javascript" src="../assets/js/cale.js"></script>
+        
+          <%@include file="/includes/head.jsp"%> 
 
         <html:base/>
     </head>
@@ -38,7 +40,9 @@
                     <div id="listaTipoPublicacion">
                         <form method="get" action="../crear_boletin.do">
                             <h2><bean:message key="boletin.fecha"/></h2>
+
                             <input type="text" name="fecha" id="datepicker" readonly="readonly" size="12" />
+                            </br>
 
                             <html:submit value="Crear" /><br>
 
