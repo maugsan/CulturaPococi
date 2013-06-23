@@ -135,7 +135,11 @@ public class DataAnuncio extends DataBase{
     
     
       public int selectIdAnuncio() throws SQLException {
+
         int idAnuncio = 0;
+
+        int idEvento = 0;
+
         String sql = "select idAnuncio from anuncio order by 1 desc limit 1;";
         ResultSet resultado;
         Connection conexion = super.getConexion();
@@ -158,6 +162,9 @@ public class DataAnuncio extends DataBase{
         } finally {
             conexion.close();
         }//fin try
+
         return idAnuncio;
+
+ 
     }//fin 
 }

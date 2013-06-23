@@ -35,8 +35,9 @@
 
                                 <%-- href="../mostrar_perfil_seleccionado.do?idPerfil= ${perfilTemporal.idPerfil}" --%>
                                 
+                                
                                 <a href="./mostrar_perfil_seleccionado.do?nomPerfil=${perfilTemporal.nombrePerfil}"> <div id="link-detalle-elemento"><div id="elemento-imagen"><img src="<%=request.getContextPath()%>${perfilTemporal.imagenDePortada}" width="50"/></div>
-                                        
+
                                         <h1> ${perfilTemporal.nombrePerfil}</h1> 
                                      
                                         <h2> ${perfilTemporal.nombreCategoria}</h2>

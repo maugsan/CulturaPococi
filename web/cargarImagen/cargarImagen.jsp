@@ -1,10 +1,4 @@
-<%-- 
-    Document   : cargarImagen
-    Created on : 19/06/2013, 07:54:34 PM
-    Author     : Personal
---%>
 
-<%@page import="com.culturaPococi.negocio.NegocioArticulo"%>
 <%@page import="com.culturaPococi.negocio.NegocioAnuncio"%>
 <%@page import="com.culturaPococi.negocio.NegocioEvento"%>
 <%@page import="javax.swing.JOptionPane"%>
@@ -36,7 +30,7 @@
         ServletFileUpload uploader = new ServletFileUpload( factory );
         NegocioEvento nEvento=new NegocioEvento();
         NegocioAnuncio nAnuncio=new NegocioAnuncio();
-        NegocioArticulo nArticulo=new NegocioArticulo();
+        
          
        
         try{
@@ -57,18 +51,17 @@
                             if(cont==0){
                                 accion=fileItemTemp.getString();
                                 
+                                JOptionPane.showMessageDialog(null,"aciooooooo"+ accion);
                                 cont++;
                                 if(accion.equalsIgnoreCase("/crear_evento.do")){
                                     nombreArchivo=""+nEvento.selectIdEventoDB();
                                 }else if (accion.equalsIgnoreCase("/crear_anuncio.do")){
                                     nombreArchivo=""+nAnuncio.selectIdAnuncioDB();
-                                    JOptionPane.showMessageDialog(null, "idAnuncio "+nombreArchivo);
                                 }else{
-                                     nombreArchivo=""+nArticulo.selectIdArticuloDB();
-                                     
-                                    JOptionPane.showMessageDialog(null, "cargar idart "+nombreArchivo);
+                                
                                 }
-        JOptionPane.showMessageDialog(null, "11111111111 "+accion);
+        
+
                         }
                             
                         if (fileItemTemp.getFieldName().equals("filename")) {
