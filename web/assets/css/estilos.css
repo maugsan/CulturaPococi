@@ -1,0 +1,978 @@
+/* 
+    Document   : estilos
+    Created on : 17/04/2013, 08:19:46 PM
+    Author     : Mac
+    Description:
+        Purpose of the stylesheet follows.
+*/
+/* 
+  ========================================= 
+        Globales
+  ========================================= */
+
+root { 
+    display: block;
+}
+
+body {
+
+
+    color: #444;
+    background: #aaa;
+    
+}
+
+#contendor {
+    height: auto;
+
+}
+
+#contendor-interno {
+
+    width: 940px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+
+}
+header {
+
+    background: #333333; /* Old browsers */
+    background: -moz-linear-gradient(top,  #333333 0%, #555555 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#333333), color-stop(100%,#555555)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #333333 0%,#555555 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #333333 0%,#555555 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #333333 0%,#555555 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #333333 0%,#555555 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#555555',GradientType=0 ); /* IE6-9 */
+
+
+    height: 80px;
+    width: 100%;
+    z-index: 2;
+    position: fixed;
+    font-size: 8px;
+
+}
+#header-logo {
+
+    background-image: url('../img/logo.png') ;
+    background-repeat: no-repeat;
+    background-size: 80px;
+    height: 40px;
+    width: 200px;
+    font-size: 10px;
+    text-align: right;
+    padding: 20px;
+    color: whitesmoke;
+
+    /* border: solid 1px yellow; */
+    float: left;
+
+}
+#header-opciones {
+
+
+    float: right;
+    padding: 10px;
+    display: inline-block;
+
+}
+
+#header-herramientase {
+
+    border: solid 1px yellow; 
+    float: right;
+    padding: 10px;
+    background: #333;
+    width: 100%;
+    height: 50px;
+
+}
+
+
+
+#s-izquierdo {
+
+    width:   200px;
+    height: 200px;
+    padding: 30px;
+    display: inline-block;
+    float: left;
+    text-align: center;
+    background: #e1e1e1;
+    margin: 25px;
+    border: solid 1px #ccc;
+    border-radius: 200px;
+
+}
+
+#s-izquierdo:hover{background: whitesmoke;}
+#s-centro:hover{background: whitesmoke;}
+#s-derecho:hover{background: whitesmoke;}
+#s-centro {
+
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    float: left;
+    margin: 0 15px 0 15px;
+    text-align: center;
+    background: #e1e1e1;
+    border-radius: 200px;
+    padding: 30px;
+    margin: 25px;
+    border: solid 1px #ccc;
+
+}
+
+#s-derecho {
+
+    width: 200px;
+    height: 200px;
+    padding: 30px;
+    margin: 25px;
+    display: inline-block;
+    float: left;
+    text-align: center;
+    background: #e1e1e1;
+    border-radius: 200px;
+    border: solid 1px #ccc;
+
+
+}
+
+#seccion-principal {
+
+    padding: 110px 0 110px 0 ;
+    min-height: 500px;
+
+
+
+
+}   
+
+#seccion-principal-inicio {
+
+    padding: 150px 0 30px 0 ;
+    min-height: 400px;
+    text-align: center;
+}
+
+
+#seccion-media {
+
+    padding: 30px;
+    height: 150px;
+    background-color: #e1e1e1;
+
+
+
+}
+.texto {
+    
+    background: white;
+    padding: 20px;
+    font-size: 20;
+}
+#seccion-inferior {
+
+    height: auto;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border: solid 1px #ccc;
+    margin-bottom: 50px;
+    position: relative;
+
+}
+#articulo {
+
+    width: 600px;
+    height: 80px;
+    margin-right: 30px;
+    float: right;
+
+}
+#publicidad {
+
+    width: 580px;
+    height: 60px;
+    margin: 20px;
+    float: left;
+    padding: 10px;
+    background-color: #0097ca;
+    text-align: center;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    position: relative;
+
+}
+
+#eventos {
+
+    width: 230px;
+    height: 60px;
+    margin: 20px;
+    float: left;
+    padding: 10px;
+    background-color: #609120;
+    text-align: center;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    position: relative;
+
+
+}
+aside {
+
+    float: right;
+    width: 35%;
+}
+
+#aside-login {
+    
+    
+    float: right;
+     width: 400px;
+     background: whitesmoke;  
+     padding: 10px;
+    
+    
+}
+#login-principal {
+    
+    float: left;
+/*     border: solid 1px red;*/
+    width: 500px;
+     background: whitesmoke;  
+}
+
+
+footer {
+
+/*    background-image: url("../img/textura1.png");*/
+
+    background: #333333; /* Old browsers */
+    background: -moz-linear-gradient(top,  #333333 0%, #555555 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#333333), color-stop(100%,#555555)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #333333 0%,#555555 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #333333 0%,#555555 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #333333 0%,#555555 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #333333 0%,#555555 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#555555',GradientType=0 ); /* IE6-9 */
+
+    color: white;
+    width: 100%;
+    height: 700px;
+
+
+}
+
+footer a {
+    list-style: none;
+    color: white;
+    text-decoration: none;
+    line-height: 30px;
+
+}
+footer ul {
+    list-style: none;
+
+
+}
+
+
+
+#footer-izquierdo {
+
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+    float: left;
+    text-align: center;
+    position: relative;
+
+}
+
+#footer-centro {
+
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+    float: left;
+    margin: 0 15px 0 15px;
+    text-align: center;
+    position: relative;
+
+}
+
+#footer-derecho {
+
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+    float: left;
+    text-align: center;
+    position: relative;
+
+
+}
+
+#footer-inferior {
+
+    width: 100%;
+    height: 50px;
+    background: #333;
+    color: whitesmoke;
+    float: left;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -moz-border-radius: 20px;
+    padding: 10px;
+
+
+}
+#footer-terms {
+
+    float: right;
+}
+/* 
+  ========================================= 
+        Menú Básico
+  ========================================= */
+
+nav {
+
+    float: right;
+    width: auto;
+    margin:  30px 0 0 0;
+    width: auto;
+    z-index: 10;
+    display: inline-block;
+}
+/* 
+   1 - Elimina todos los espacios entre elementos (especialmente entre li) reduciendo el texto
+   2 - Elimina todo el relleno de sobra que tienen las cajas de menú ul*/
+nav ul{
+    font-size: 0;
+    padding: 0;
+
+}
+
+/* Muestra en una sola lína todos los elementos li*/
+nav ul li {
+
+    display: inline-block;
+}
+
+/* 
+   1 - Deja el tamaño del texto en 18 pixeles 
+       2 - Quita la decoración del texto
+       3 - Presenta el texto en color blanco
+       4 - Muestra los elementos como una caja en forma de bloque (necesario para cambiar el tamaño de cada botón del menú)
+       5 - Cambia el tamaño de los botones del menú (requiere display: block)
+*/
+nav ul li a{
+    width: 100px;
+    font-size: 12px;
+    text-decoration: none;
+    color: #ccc;
+    display: block;
+    padding: 10px 3px;
+    text-align: center;
+
+
+}
+/* 
+   Evento: Cuando el ratón pasa sobre un elemento a
+       1 - cambia el color del fondo de el botón */
+ul li a:hover{
+    background: black;
+
+}
+
+
+/* 
+========================================= 
+      Submenús
+========================================= */
+
+/*
+        1 - Esconde todos los submenús
+  2 - Agrega color al submenú
+*/
+nav ul ul {
+    font-size: 8px;
+    width: 105px;
+    display: none;
+    background: gray;
+
+}
+
+nav ul ul li a:hover{
+
+    background: whitesmoke;
+
+
+}
+
+
+/* 
+      Evento: Cuando el ratón pasa sobre un elementó li
+      1 - Permite que el submenú quede sobre el menú principal
+  2 - Muestra la caja de submenú como un elemento de bloque
+*/
+nav ul li:hover > ul{
+    position: absolute;
+    display: block;
+}
+
+/* 
+      1 - Permite que el submenú se visualice vertical
+*/
+nav ul ul li{
+    display: block;
+
+}
+
+/* Permite que un submenú dentro de otro submenú se presente bien*/
+nav ul ul ul{
+    font-size: 8px;
+    background: whitesmoke;
+    left: 100%; 
+    top:0px;
+}
+
+
+nav ul ul ul li a:hover{
+
+    background: black;
+
+}
+/* 
+========================================= 
+  Botones
+========================================= */
+
+button {
+
+    width: 80px;
+    height: 30px;
+    background-color: #684e24;
+    border: none;
+    font-size: 10px;
+    background-color: #0097ca;
+    -webkit-border-radius: 5px;
+
+    border-radius: 5px;
+
+}
+#boton-entrar {
+
+    margin-top: 20px;
+    float: left;
+
+}
+
+#boton-buscar {
+
+    margin-top: 20px;
+    float: right;
+    width: 60px;
+    margin-left: 10px;
+    background-color: #609120;
+}
+#boton-salir {
+
+    margin-top: 20px;
+    float: right;
+    width: 60px;
+    margin-left: 10px;
+    background-color: #609120;
+}
+#boton-usuario {
+
+    font-size: 12px;
+
+    margin-top: 20px;
+    float: right;
+    width: 150px;
+    color: white;
+    margin-left: 10px;
+    background-color: #333;
+}
+#boton-unir {
+    margin: 20px ;
+    float: right;
+    width: 200px;
+    margin-left: 25px;
+    height: 80px;
+    background-color: #333;
+    color: whitesmoke;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+
+}
+
+#boton-volver {
+    margin-top: 20px;
+    float: left;
+    width: 127px;
+    margin-left: 25px;
+    height: 45px;
+    background-color: #99CCFF;
+    color: #FFFFFF;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid #99CCFF;
+    cursor: pointer;
+}
+
+
+#select {
+    margin-top: 20px;
+    float: left;
+    width: 127px;
+    height: 45px;
+    background-color: #99CCFF;
+    color: #FFFFFF;
+
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+/* 
+========================================= 
+  Formularios
+========================================= */
+
+
+/* 
+========================================= 
+  Sitio administrativo
+========================================= */
+
+.modulo {
+
+
+    width: 230px;
+    height: 60px;
+    float: left;
+    margin: 10px 20px 10px 20px;
+    text-align: center;
+    color: black;
+    background: #ccc;
+    display: inline-block;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    padding: 20px;
+
+}
+
+.modulo:hover {
+
+
+    background: #aaa;
+
+
+}
+.modulo a {
+
+
+    color: black;
+
+
+}
+
+#icono {
+
+
+    float: left;
+}
+/* 
+========================================= 
+  Formularios
+========================================= */
+
+
+form {
+
+    background: whitesmoke;  
+    width: auto;
+    height: auto;
+    padding: 20px;
+    border-radius: 5px;
+    border:2px solid #eee;
+    margin-bottom: 20px;
+    border: solid 1px #ccc;
+}
+#busqueda{
+
+    width: 900px;
+    background: none;
+    padding: 20px;
+    border-radius: 10px;
+    border:none;
+}
+
+
+form input {
+    border: solid 1px #ccc;
+    font-size: 12px;
+    width:340px;
+    height:40px;
+    background:#fefefe;
+    margin-top:3px;
+    padding: 5px;
+    margin-bottom: 4px;
+    font-size:0.9em;
+    color:#3a3a3a;
+
+    -webkit-border-radius: 5px;
+
+    border-radius: 5px;
+
+}
+
+input[type="submit"] {
+
+    width:127px;
+    height: 45px;
+    border: 1px solid #1ba9df;
+    background-color: #1397c9;
+    margin-top:20px;
+    cursor: pointer;
+    color: #fff; 
+    text-decoration: none;
+
+}
+
+select { 
+    font-family: Georgia; 
+    font-size: 16px; 
+    color: #3a3a3a;
+    border: 0 none; 
+    padding: 5px; 
+    width:200px;
+    height: 30px;
+}
+
+
+input[type="file"]  {
+
+    height: 45px;
+    border: none;
+    background: none;
+    margin-top:20px;
+    cursor: pointer;
+    color: #ccc; 
+
+    /* In IE7, the height of the select element cannot be changed by height, only font-size */
+
+    *margin-top: 4px;
+    /* For IE7, add top margin to align select with labels */
+
+    line-height: 30px;
+
+
+}
+
+input[type="textarea"] {
+
+
+}
+/* 
+  ========================================= 
+        Errores
+  ========================================= */
+
+#error1 { 
+
+    width: 100%;
+    color: red;
+
+
+}
+
+/* 
+  ========================================= 
+       Lista de elementos
+  ========================================= */
+
+#lista-elementos {
+
+    border: solid 1px #ccc;
+    position: relative;
+    background-color: #e1e1e1;
+    padding: 20px;
+
+}
+
+#elemento {
+    word-wrap: break-word; 
+    width: 600px; 
+    min-height: 200px;
+    text-transform:capitalize;
+    color: #555;
+    border: solid 1px #ccc;
+    background: #f0f0f0;
+    margin:  10px;
+    padding: 10px;
+
+
+
+}
+
+#listaPublicacion {
+    width:600px; 
+    height: 40px;
+    color: #333;
+    border: solid 1px #ccc;
+    background: #f0f0f0;
+    margin:  10px;
+    padding: 10px;
+    font-size: 22px;
+}
+#listaTipoPublicacion {
+    width:600px; 
+    height: 80px;
+    color: #333;
+    border: solid 1px #ccc;
+    background: #f0f0f0;
+    margin:  10px;
+    padding: 10px;
+    font-size: 22px;
+}
+
+#elemento-listaPublicacion {
+    width:600px; 
+    height: 120px;
+    color: #333;
+    border: solid 1px #ccc;
+    background: #00FFFF;
+    margin:  10px;
+    padding: 10px;
+    font-size: 22px;
+}
+
+#elemento-publicacion-musica {
+    width:600px; 
+    height: 250px;
+    color: #333;
+    border: solid 1px #ccc;
+    background: #00FFFF;
+    margin:  10px;
+    padding: 10px;
+    font-size: 22px;
+}
+
+
+
+#elemento-icon {
+    width: 30px;
+    height: 30px;
+    float: right;
+    opacity: 0.9;
+
+}
+#elemento-icon:hover {
+
+    width: 30px;
+    height: 30px;
+    float: right;
+    opacity: 1;
+
+
+}
+
+
+#elemento-imagen {
+
+    width: 70px;
+    height: 70px;
+    float: left;
+
+}
+#elemento-nombre {
+
+    width: 300px;
+    font-size: 20px;
+    margin-top: 0;
+    color: #333;
+    text-decoration: none;
+
+
+}
+
+#link-detalle-elemento{
+    width: 400px;
+    height:50px;
+    float: left;
+
+}
+
+/* 
+  ========================================= 
+       Respuestas
+  ========================================= */
+
+#exitoso {
+
+
+    border: solid 2px green;
+    background: #CDF296;
+    color: green;
+}
+
+/* 
+  ========================================= 
+       Programas de radio
+  ========================================= */
+
+#programa {
+
+    width: 940px;
+    height: 300px;
+    border: 1px solid #ccc;
+    background-color: white;
+    padding: 9px;
+    margin: 7px;
+    display: block;
+    float: left;
+
+
+}
+
+#evento {
+
+    width: 550px;
+    height:  50px;
+    border: 1px solid #ccc;
+    background-color: white;
+    padding: 9px;
+    margin: 7px;
+    display: block;
+    float: left;
+
+
+}
+#social {
+
+    width: 300px;
+    height:  1000px;
+    border: 1px solid #ccc;
+    background-color: white;
+    padding: 9px;
+    margin: 7px;
+    display: block;
+    float: right;
+
+
+}
+#dialog-confirm{
+
+    background-color: whitesmoke;
+
+}
+
+label.valid {
+    font-weight: bold;
+    color: green;
+    padding: 2px 8px;
+    margin-top: 2px;
+}
+label.error {
+    font-weight: bold;
+    color: #1397c9;
+    padding: 2px 8px;
+    margin-top: 2px;
+}
+
+
+#texto-grande-2{
+    font-size: 12px;
+    width:340px;
+    height:70px;
+    background:#fefefe;
+    margin-top:3px;
+    padding: 5px;
+    margin-bottom: 4px;
+    font-size:0.9em;
+    color:#3a3a3a;
+    border: none;
+    -webkit-border-radius: 5px;
+
+    border-radius: 5px;
+}
+
+#texto-grande{
+    font-size: 12px;
+    width:340px;
+    height:70px;
+    background:#fefefe;
+    margin-top:3px;
+    padding: 5px;
+    margin-bottom: 4px;
+    font-size:0.9em;
+    color:#3a3a3a;
+    border: none;
+    -webkit-border-radius: 5px;
+
+    border-radius: 5px;
+}
+
+#select-hora{
+    font-size: 12px;
+    width:60px;
+    height:30px;
+    background:#fefefe;
+    margin-top:3px;
+    padding: 5px;
+    margin-bottom: 4px;
+    font-size:0.9em;
+    color:#3a3a3a;
+    border: none;
+    -webkit-border-radius: 5px;
+
+    border-radius: 10px;
+
+
+}
+
+
+input[type="file"]  {
+
+    height: 45px;
+    border: none;
+    background: none;
+    margin-top:20px;
+    cursor: pointer;
+    color: #ccc; 
+    
+  /* In IE7, the height of the select element cannot be changed by height, only font-size */
+
+  *margin-top: 4px;
+  /* For IE7, add top margin to align select with labels */
+
+  line-height: 30px;
+  
+
+}
+
+select {
+    
+    
+    font-size: 12px;
+    width:auto;
+    height:50px;
+    background:#fefefe;
+    margin-top:3px;
+    padding: 5px;
+    margin-bottom: 4px;
+    font-size:0.9em;
+    color:#3a3a3a;
+    
+}
