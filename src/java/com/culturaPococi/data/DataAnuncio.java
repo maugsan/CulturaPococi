@@ -148,13 +148,10 @@ public class DataAnuncio extends DataBase{
             while (resultado.next()) {
                 idAnuncio = resultado.getInt(1);
             }//fin while
-                JOptionPane.showMessageDialog(null, "dataanuncio 1 "+idAnuncio);
             idAnuncio = idAnuncio + 1;
-            JOptionPane.showMessageDialog(null, "dataanuncio 2 "+idAnuncio);
             statement.close();
         } catch (Exception e) {
             idAnuncio = 0;
-            JOptionPane.showMessageDialog(null, "cacht "+idAnuncio);
         } finally {
             conexion.close();
         }//fin try

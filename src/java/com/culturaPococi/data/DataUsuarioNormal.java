@@ -51,10 +51,6 @@ public class DataUsuarioNormal extends DataBase{
         
         CallableStatement call=conexion.prepareCall(sql);
         
-//        call.setString("pcorreo",);
-//        call.setString("pnombre", );
-//        call.setString("pcontrasenia", );
-//        call.setString("pcolaborador", );
         call.executeUpdate();
         call.close();
         conexion.close();
@@ -68,7 +64,6 @@ public class DataUsuarioNormal extends DataBase{
         
         CallableStatement call=conexion.prepareCall(sql);
         
-//        call.setString("pcorreo",);
         call.executeUpdate();
         call.close();
         conexion.close();

@@ -87,7 +87,6 @@ public class DataPublicacion extends DataBase{
         
         Publicacion publicacion;
 
-        //String sql = "call pListarPublicacionMusicaPendiente('"+tipo+"');";
         String sql = "call pPublicacionPendiente('"+tipo+"');";
         ResultSet resultado;
         Connection conexion = super.getConexion();

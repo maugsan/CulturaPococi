@@ -30,7 +30,7 @@
                     <h1><bean:message key="evento.titulo"/></h1>
                     
                     <section id="lista-elementos">
-                         <a href="../listar_categorias_evento.do"><button id="boton-unir">Crear Evento</button></a>
+                         <a href="<%=request.getContextPath()%>/listar_categorias_evento.do"><button id="boton-unir">Crear Evento</button></a>
                         <logic:iterate  name="listaEventos" id="eventoTemporal" >
                         <%-- Inicio Elemento  --%>
                         <div id="elemento">
@@ -39,11 +39,11 @@
                             <h3>${eventoTemporal.fecha}</h3>
                             <img src="<%=request.getContextPath()%>${eventoTemporal.imagen}" width="50"/>
                              
-                            <a href="../eliminar_evento.do?idEvento=${eventoTemporal.idEvento}">
-                                <div id="elemento-icon"><img src="../assets/img/delete-icon.png" width="30"/></div>
+                            <a href="<%=request.getContextPath()%>/eliminar_evento.do?idEvento=${eventoTemporal.idEvento}">
+                                <div id="elemento-icon"><img src="<%=request.getContextPath()%>/assets/img/delete-icon.png" width="30"/></div>
                             </a> 
-                            <a href="../modificar_evento.do?idEvento=${eventoTemporal.idEvento}">
-                                <div id="elemento-icon"><img src="../assets/img/editar-icon.png" width="30"/></div>
+                            <a href="<%=request.getContextPath()%>/modificar_evento.do?idEvento=${eventoTemporal.idEvento}">
+                                <div id="elemento-icon"><img src="<%=request.getContextPath()%>/assets/img/editar-icon.png" width="30"/></div>
                             </a>
                               
                             

@@ -49,22 +49,6 @@ public class CrearArticuloAction extends DispatchAction {
         LinkedList<Articulo> listaArticulos;
         LinkedList<Categoria>listaCategoria;
         
-       
-//        int categoria=Integer.parseInt(request.getParameter("categoria"));
-//        String titulo=request.getParameter("titulo");
-//        String autor=request.getParameter("autor");
-//        String contenido=request.getParameter("contenido");
-        //String fecha=request.getParameter("fecha");
-        
-//        ArticuloForm formu=(ArticuloForm) form;
-//        
-//        articulo=new Articulo(0, 
-//                            "", 
-//                            formu.getCategoria(), 
-//                            formu.getTitulo(), 
-//                            formu.getAutor(), 
-//                            formu.getContenido(), 
-//                            formu.getFecha());
         
         String datos = request.getParameter("datos");
         String datosSeparados[] = datos.split("-");

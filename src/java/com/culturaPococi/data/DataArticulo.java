@@ -167,9 +167,6 @@ public class DataArticulo extends DataBase {
         } finally {
             conexion.close();
         }//fin try
-        JOptionPane.showMessageDialog(null, "idArt " + idArticulo);
-
-
 
         return idArticulo;
     }//fin 

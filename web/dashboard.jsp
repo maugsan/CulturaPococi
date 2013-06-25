@@ -36,7 +36,7 @@
              function sugerencias() {
         
                      NuevaVentana = window.open('','','width=1350,height=700');
-                     NuevaVentana.location.assign(""); 
+                     NuevaVentana.location.assign("http://localhost/RecuperacionContrasenia/web/app_dev.php/elfrente/"); 
              }
                                     </script>
 

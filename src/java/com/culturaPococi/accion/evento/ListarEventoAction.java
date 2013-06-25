@@ -31,7 +31,7 @@ public class ListarEventoAction extends DispatchAction {
         listaEventos=nEvento.listarEventosDB();
         //si la lista es null se debe de mostrar un mensaje porque ocurre un error
         if(listaEventos==null){
-            JOptionPane.showMessageDialog(null, "La lista de eventos no se pudo caragr por error en la base");
+            JOptionPane.showMessageDialog(null, "La base de datos se cayó");
         }
         request.setAttribute("listaEventos", listaEventos);
         return mapping.getInputForward();

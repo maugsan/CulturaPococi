@@ -216,7 +216,6 @@ public class DataEvento extends DataBase {
         } finally {
             conexion.close();
         }//fin try
-        JOptionPane.showMessageDialog(null, "idEvento " + idEvento);
 
 
 

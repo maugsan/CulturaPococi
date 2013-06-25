@@ -50,7 +50,6 @@ public class DataBusqueda extends DataBase {
 
         }
         resultado.close();
-        System.out.println("exito");
 
         return listaBusqueda;
     }

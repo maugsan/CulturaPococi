@@ -42,13 +42,12 @@ public class ModificarEventoAction extends DispatchAction {
             listaCategorias=nCategoria.selectCategoriasOrdenadasDB(evento.getIdCategoria());   
         }else{
         //mostrar un mensaje si las categorias no se puden cargar
-            JOptionPane.showMessageDialog(null, "El evento no se pudo cargar");
+            JOptionPane.showMessageDialog(null, "La base de datos se cayó");
         }
         if (listaCategorias==null){
-            JOptionPane.showMessageDialog(null, "Las categorias no se pudieron cargar");  
+            JOptionPane.showMessageDialog(null, "La base de datos se cayó");  
         }
         //Si evento en null es porque la consulta no se hizo bien por lo que hay que mostrar un mensaje
-        JOptionPane.showMessageDialog(null, "porque "+evento.getNombre());
         
          request.setAttribute("listaCategorias", listaCategorias);
          request.setAttribute("evento", evento);

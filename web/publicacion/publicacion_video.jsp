@@ -20,7 +20,7 @@
     </head>
     <body>
 
-        <%@include file="/includes/header_administrativo.jsp" %>
+        <%@include file="/includes/header.jsp" %>
         <div id="contendor">
 
             
@@ -43,7 +43,7 @@
                             <h3>${publicacion.getFechaPublicacion()}</h3>
                             <h3>${publicacion.getDescripcion()}</h3><br>
                             
-                           <iframe width="420" height="315" src="http://www.youtube.com/embed/tb9yKa-P2-M" frameborder="0" allowfullscreen></iframe>
+                           <iframe width="420" height="315" src="http://www.youtube.com/embed/${publicacion.getMusica()}" frameborder="0" allowfullscreen></iframe>
                          
                             <br>
                              <a href="../aceptar_publicacion.do?idPublicacion=${publicacion.getIdPublicacion()}&tipoPublicacion=video">

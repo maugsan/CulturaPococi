@@ -20,7 +20,7 @@
     </head>
     <body>
 
-        <%@include file="/includes/header_administrativo.jsp" %>
+        <%@include file="/includes/header.jsp" %>
         <div id="contendor">
 
             
@@ -37,7 +37,6 @@
                             <logic:iterate  name="listaPublicacionesPendientes" id="publicacionTemporal" >
                         <%-- Inicio Elemento  --%>
                          <div id="elemento-listaPublicacion">
-                                ${tipoPublicacion}   k
                             <div id="elemento-imagen"><img src="../assets/img/evento-icon.png" width="30"/></div>
                             <p id="elemento-nombre">${publicacionTemporal.getNombrePerfil()}</p><br>
                             <p id="elemento-nombre">${publicacionTemporal.getFechaPublicacion()}</p>

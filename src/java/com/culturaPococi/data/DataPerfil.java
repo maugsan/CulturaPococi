@@ -80,7 +80,6 @@ public class DataPerfil extends DataBase {
 
         }
         resultado.close();
-        System.out.println("exito");
 
         return listaPerfil;
     }

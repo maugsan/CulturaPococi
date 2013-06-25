@@ -2,13 +2,7 @@
 <%String e = (String) request.getSession().getAttribute("c");
     if (e == null) {%>
 
-<script type="text/javascript">
-    function sugerencias() {
 
-        NuevaVentana = window.open('', '', 'width=1500,height=700');
-        NuevaVentana.location.assign("");
-    }
-</script>
 
 
 

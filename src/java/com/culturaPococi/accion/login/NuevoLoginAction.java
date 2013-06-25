@@ -30,7 +30,6 @@ public class NuevoLoginAction extends DispatchAction {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
 
-        JOptionPane.showMessageDialog(null,"bueno");
 
         NuevoLoginForm login = (NuevoLoginForm) form;
         String correo = login.getCorreo();

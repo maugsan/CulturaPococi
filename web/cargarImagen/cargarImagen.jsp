@@ -66,9 +66,7 @@
                                 }else{
                                      nombreArchivo=""+nArticulo.selectIdArticuloDB();
                                      
-                                    JOptionPane.showMessageDialog(null, "cargar idart "+nombreArchivo);
                                 }
-        JOptionPane.showMessageDialog(null, "11111111111 "+accion);
                         }
                             
                         if (fileItemTemp.getFieldName().equals("filename")) {
@@ -108,19 +106,10 @@
         catch( FileUploadException e )
         {
                 out.write( "<p>FileUploadException was thrown..." + e.getMessage() + "</p>" );
-        }
-        JOptionPane.showMessageDialog(null, "por");
-        
-       // <jsp:forward page="Welcome.do"/> <forward name="guardarPeli"  path="/cargar_imagen.do"/>
-      //<%=accion%>  
+        }%>  
       
        
 %>
-<%--<jsp:forward page="/cargar_imagen.do"/>
- <jsp:forward page="./crear_evento.do"> 
-    <jsp:param name="correo" value="<%=nombre %>" /> 
-</jsp:forward> 
- --%>
 
  <jsp:forward page= "<%=accion%>" >
   <jsp:param name="datos" value="<%=nombre %>" /> 

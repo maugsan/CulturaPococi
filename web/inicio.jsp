@@ -1,6 +1,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="true">
+    
+    
     <head>
         <%@include file="includes/head.jsp"%> 
         <title>El FrenteCR.org</title>
@@ -61,6 +63,7 @@
                   
                     </div></a>
 
+                    <a href="#" id="radio"><div  id="s-centro">
                     <div id="s-derecho">
 
                         <img src="./assets/img/idea-icon.png"/>
@@ -68,6 +71,7 @@
 
 
                     </div> 
+                    </div></a>
 
                     <p>Proin elit arccitudin mi sit  dapibus lacus
                         auctor risus. Aenean tempor ullamcorper leo. 

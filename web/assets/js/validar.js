@@ -30,7 +30,7 @@ $().ready(function() {
             categoria: " * obligatorio ",
             correo: " * obligatorio. puede q no estesponiendo bien tu correo ",
             contrasenia: " * obligatorio (minimo 2 caracteres) ",
-            contraseniaComprobacion: "por favor ingrese la misma contraseÃ±a",
+            contraseniaComprobacion: "por favor ingrese la misma contraseña",
             informacion: " * obligatorio ",
             telefono: "El campo Tel&eacute;fono no contiene un formato correcto.",
             horario: " * obligatorio ",

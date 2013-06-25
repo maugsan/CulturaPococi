@@ -52,9 +52,3 @@ public class ListarCategoriasEventoAction extends DispatchAction {
         return mapping.getInputForward();
     }
 }
-
-//
-//anuncios.form=Modificar Anuncio
-//anuncios.form.prioridad=Prioridad
-//anuncios.form.imagen=Imagen
-//anuncios.form.titulo=Título

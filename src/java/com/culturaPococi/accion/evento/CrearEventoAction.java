@@ -42,7 +42,6 @@ public class CrearEventoAction extends DispatchAction {
         boolean accionRealizada;
 
         String datos = request.getParameter("datos");
-        JOptionPane.showMessageDialog(null, "carta   " + datos);
 
         String datosSeparados[] = datos.split("-");
         String email = (String) request.getSession().getAttribute("c");
@@ -53,7 +52,7 @@ public class CrearEventoAction extends DispatchAction {
         accionRealizada = nEvento.crearEventosDB(evento);
         if (!accionRealizada) {
             //si la accion es false es que no se pudo crear el nuevo evento por loq ue hay que mostrar un mensaje
-            JOptionPane.showMessageDialog(null, "El evento no se pudo crear por fallo en la base CREAR_EVENTO_ACTION");
+            JOptionPane.showMessageDialog(null, "Se cayó la base");
         }//fin if
 
 
@@ -61,7 +60,7 @@ public class CrearEventoAction extends DispatchAction {
         listaEventos = nEvento.listarEventosDB();
         //si la lista es null se debe de mostrar un mensaje porque ocurre un error
         if (listaEventos == null) {
-            JOptionPane.showMessageDialog(null, "La lista de eventos no se pudo caragr por error en la base");
+            JOptionPane.showMessageDialog(null, "Se cayó la base");
         }
         request.setAttribute("listaEventos", listaEventos);
         request.setAttribute("listaCategorias", nCategoria.selectCategoriasDB());

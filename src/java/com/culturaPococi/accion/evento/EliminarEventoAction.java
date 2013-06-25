@@ -48,7 +48,7 @@ public class EliminarEventoAction extends DispatchAction {
         eliminado=nEvento.eliminarEventosDB(idEvento);
         //if eliminado es false es que no se pudo eliminar y se debe mostrar un mensaje
         if(!eliminado){
-            JOptionPane.showMessageDialog(null, "No se puedo eliminar el evento por fallo en la base");
+            JOptionPane.showMessageDialog(null, "La base de datos se cayó");
         }
         listaEventos=nEvento.listarEventosDB();
         
