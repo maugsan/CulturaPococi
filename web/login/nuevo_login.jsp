@@ -35,7 +35,7 @@
                     <h2>Contraseña</h2>
 
                     <input type="password" id="contrasenia" name="contrasenia" size="16" value=""/>
-                    <input type="submit" value="Enviar"/>
+                    <input type="submit" value="Entrar"/>
 
 
                 </form>
@@ -45,7 +45,7 @@
             <aside id="aside-login">
                 <a href="/CulturaPococi/usuarioNormal/crear_usuarionormal.jsp"><button id="boton-unir">Únete</button></a>
 
-                <a><h2>Olvidaste la contraseña</h2></a>
+                
             </aside>
         </div> 
     </section>

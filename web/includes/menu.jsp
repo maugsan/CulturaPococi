@@ -74,7 +74,7 @@
 
 
 
-                <li><a href="<%=request.getContextPath()%>/ver_nuestro_arte.do">NUESTRO ARTE</a></li>
+              <!--  <li><a href="<%=request.getContextPath()%>/ver_nuestro_arte.do">NUESTRO ARTE</a></li> -->
 
 
             </ul>

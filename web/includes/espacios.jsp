@@ -49,7 +49,7 @@
         <section id="eventos">
 
            <img id="icono" src="./assets/img/evento-icon.png" width="60">
-            <h3>Proximos Eventos</h3>
+            <h3>Agenda</h3>
 
         </section>
          </a>

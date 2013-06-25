@@ -21,7 +21,7 @@
         <h1>Seleccione una opción</h1>
         
         <a href=" <%=request.getContextPath()%>/artistas.jsp"><div id="evento">Artistas</div></a>
-         <a href=" <%=request.getContextPath()%>/ver_nuestro_arte.do"><div id="evento">Nuestro Arte</div></a>  
+        <!--  <a href=" <%=request.getContextPath()%>/ver_nuestro_arte.do"><div id="evento">Nuestro Arte</div></a>  -->
        
          </div>
              </section>

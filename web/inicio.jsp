@@ -1,15 +1,14 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<<<<<<< HEAD
-<html lang="true">
+
+<html >
     
-    
-=======
+
 <html >
 
     <head>
         <%@include file="includes/head.jsp"%> 
-        <title>El FrenteCR.org</title>
+        <title>ElFrenteCR.org</title>
   
     </head>
 
@@ -45,45 +44,7 @@
 
             </section>
 
-            <section id="seccion-inferior">
-
-                <div id="contendor-interno">
-
-                    <a href="./directorio.jsp" ><div id="s-izquierdo">
-                        <img src="./assets/img/guitarra-icon.png"/>
-                        <h1>Directorio</h1>
-
-                    </div></a>
-
-                    <a href="#" id="radio"><div  id="s-centro">
-                        
-                        <img src="./assets/img/radio-icon.png" />
-                        <h1>Radio</h1>
-                           
-                  
-                    </div></a>
-
-                    <a href="#" id="radio"><div  id="s-centro">
-                    <div id="s-derecho">
-
-                        <img src="./assets/img/idea-icon.png"/>
-                        <h1>Ideas</h1>
-
-
-                    </div> 
-                    </div></a>
-
-                    <p>Proin elit arccitudin mi sit  dapibus lacus
-                        auctor risus. Aenean tempor ullamcorper leo. 
-                        Vivamus sed magna quis ligula eleifend adipiscing.
-                        Duis orci. Aliquam sodales tortor vitae ipsum. 
-                        um. Nunc tristique tempus lectus.</p>
-                    <br><br>
-
-                </div>
-
-
-            </section>
+            
 
 
 

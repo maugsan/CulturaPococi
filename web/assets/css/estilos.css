@@ -16,16 +16,19 @@ root {
 
 body {
 
-   font-family: 'Cabin Condensed', sans-serif;
+   font-family: 'Open Sans', sans-serif;
    text-transform:uppercase;
-   font-style: normal;
-   color: #444;
+   color: #555;
    background: #f0f0f0;
     
 }
-
+a {
+    
+    color: #555;
+}
 #contendor {
     height: auto;
+    font-size: 15px;
 
 }
 
@@ -54,7 +57,8 @@ header {
     width: 100%;
     z-index: 2;
     position: fixed;
-    font-size: 8px;
+    font-size: 10px;
+    text-transform: uppercase;
 
 }
 #header-logo {
@@ -64,7 +68,8 @@ header {
     background-size: 80px;
     height: 40px;
     width: 200px;
-    font-size: 10px;
+    font-size: 8px;
+
     text-align: right;
     padding: 20px;
     color: whitesmoke;
@@ -401,7 +406,7 @@ nav {
 
     float: right;
     width: auto;
-    margin:  28px 0 0 0;
+    margin:  25px 0 0 0;
     width: auto;
     z-index: 10;
     word-wrap: break-word; 
@@ -431,7 +436,7 @@ nav ul li {
 */
 nav ul li a{
     width: 100px;
-    font-size: 18px;
+    font-size: 15px;
     text-decoration: none;
     color: whitesmoke;
     display: block;
@@ -627,7 +632,8 @@ button {
     display: inline-block;
     -webkit-border-radius: 5px;
     border-radius: 5px;
-    padding: 20px;
+    padding: 10px;
+    font-size: 15px;
 
 }
 
