@@ -48,7 +48,7 @@ public class CrearUsuarioAction extends DispatchAction {
 
     UsuarioNormal nu = new UsuarioNormal(correo, "", contrasenia, contraseniaComprobacion , colaborador, "");    
     hu.getInsertUsuario(nu);
-
+  
     return mapping.getInputForward();
 
     }
