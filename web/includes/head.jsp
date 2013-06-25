@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/jquery-theme.css" />
         <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/jquery.modal.css" type="text/css" media="screen" />
 
-<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Cabin+Condensed:600' rel='stylesheet' type='text/css'>
 
 <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/jquery.ui.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/jquery.ui.all.css">

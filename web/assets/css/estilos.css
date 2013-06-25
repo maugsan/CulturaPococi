@@ -16,9 +16,11 @@ root {
 
 body {
 
-
-    color: #444;
-    background: #aaa;
+   font-family: 'Cabin Condensed', sans-serif;
+   text-transform:uppercase;
+   font-style: normal;
+   color: #444;
+   background: #f0f0f0;
     
 }
 
@@ -174,7 +176,7 @@ header {
     
     background: white;
     padding: 20px;
-    font-size: 20;
+    font-size: 20px;
 }
 #seccion-inferior {
 
@@ -347,9 +349,10 @@ nav {
 
     float: right;
     width: auto;
-    margin:  30px 0 0 0;
+    margin:  28px 0 0 0;
     width: auto;
     z-index: 10;
+    word-wrap: break-word; 
     display: inline-block;
 }
 /* 
@@ -376,12 +379,14 @@ nav ul li {
 */
 nav ul li a{
     width: 100px;
-    font-size: 12px;
+    font-size: 18px;
     text-decoration: none;
-    color: #ccc;
+    color: whitesmoke;
     display: block;
-    padding: 10px 3px;
+    padding: 5px 3px;
     text-align: center;
+   
+ 
 
 
 }
@@ -389,7 +394,7 @@ nav ul li a{
    Evento: Cuando el ratón pasa sobre un elemento a
        1 - cambia el color del fondo de el botón */
 ul li a:hover{
-    background: black;
+    background: #333;
 
 }
 
@@ -404,17 +409,19 @@ ul li a:hover{
   2 - Agrega color al submenú
 */
 nav ul ul {
-    font-size: 8px;
-    width: 105px;
+ 
+    
+    width: auto;
     display: none;
-    background: gray;
+    background: #333;
+    
 
 }
 
 nav ul ul li a:hover{
 
-    background: whitesmoke;
-
+    background: #000;
+    color: whitesmoke;
 
 }
 
@@ -439,8 +446,9 @@ nav ul ul li{
 
 /* Permite que un submenú dentro de otro submenú se presente bien*/
 nav ul ul ul{
+   
     font-size: 8px;
-    background: whitesmoke;
+    background: #333;
     left: 100%; 
     top:0px;
 }
@@ -460,12 +468,11 @@ button {
 
     width: 80px;
     height: 30px;
+    word-wrap: break-word; 
     background-color: #684e24;
     border: none;
-    font-size: 10px;
     background-color: #0097ca;
     -webkit-border-radius: 5px;
-
     border-radius: 5px;
 
 }
@@ -494,8 +501,7 @@ button {
 }
 #boton-usuario {
 
-    font-size: 12px;
-
+   
     margin-top: 20px;
     float: right;
     width: 150px;

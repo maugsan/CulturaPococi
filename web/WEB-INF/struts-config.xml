@@ -10,7 +10,7 @@
     
     <form-beans>
         <form-bean name="PerfilForm" type="com.culturaPococi.accion.perfil.PerfilForm"/>
-         <form-bean name="CrearProgramaRadioForm" type="com.culturaPococi.accion.programaradio.CrearProgramaRadioForm"/>
+        <form-bean name="CrearProgramaRadioForm" type="com.culturaPococi.accion.programaradio.CrearProgramaRadioForm"/>
         <form-bean name="ArticuloForm" type="com.culturaPococi.accion.articulo.ArticuloForm"/>
         <form-bean name="FormularioCategoria" type="com.culturaPococi.accion.categoria.FormularioCategoria"/>
         <form-bean name="FormularioTipoPublicacion" type="com.culturaPococi.accion.publicacion.FormularioTipoPublicacion"/>
@@ -185,6 +185,13 @@
                
       
        </action>
+               <action path="/ver_eventos" 
+               input="/agenda.jsp" 
+               scope="request"
+               validate="false"
+                type="com.culturaPococi.accion.evento.verProximosEventosAction"
+        />
+     
         
          <action name="EventoForm" 
                  path="/actualizar_evento" 
@@ -473,7 +480,7 @@
         >
             <forward name="listar" path="/listar_programa_radio.do"/>
         </action>
-     
+
         
         
         <action path="/mostrar_articulo" 

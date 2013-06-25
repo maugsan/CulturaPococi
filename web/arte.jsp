@@ -13,8 +13,9 @@
     </head>
     <body>
         <div id="contendor">
-
-            <%@include file="includes/header.jsp"%>
+           
+            <%@include file="includes/header.jsp"%>ç
+            <div id="contendor-interno"> 
         <h1>Seleccione una categoria</h1>
          <ul>
                 <li><a href="./ver_perfiles.do?c=literatura">LITERATURA</a></li>
@@ -24,7 +25,10 @@
                 <li><a href="#">TEATRO</a></li>
                 <li><a href="#">ARTE URBANO</a></li>
             </ul>
+         </div>
+                </div>
         <%@include file="includes/footer.jsp"%>
-        </div>
+    
+       
     </body>
 </html>

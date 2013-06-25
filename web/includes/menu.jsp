@@ -6,7 +6,7 @@
 
             <ul>
 
-                <li><a href="<%=request.getContextPath()%>/ver_programas_radio.do">PROGRAMACIÓN</a></li>
+                <li><a href="<%=request.getContextPath()%>/ver_programas_radio.do">PROGRAMAS</a></li>
 
 
             </ul>
@@ -87,7 +87,7 @@
 
         </li>
 
-        <li><a href="<%=request.getContextPath()%>/agenda.jsp">AGENDA</a></li>
+        <li><a href="<%=request.getContextPath()%>/ver_eventos.do">AGENDA</a></li>
 
     </ul>
 
