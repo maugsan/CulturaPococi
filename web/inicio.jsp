@@ -31,8 +31,6 @@
                                 <li> <a href = "#">   <img src="./assets/img/banner1.jpg" > </a> </li>
                                 <li> <a href = "#">   <img src="./assets/img/banner2.jpg" > </a> </li>
 
-
-
                             </ul>
                         </div>
 
@@ -66,7 +64,7 @@
                     <div id="s-derecho">
 
                         <img src="./assets/img/idea-icon.png"/>
-                        <h1>Nosotros</h1>
+                        <h1>Ideas</h1>
 
 
                     </div> 

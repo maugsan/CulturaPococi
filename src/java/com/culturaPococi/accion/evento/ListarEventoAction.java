@@ -21,20 +21,8 @@ import org.apache.struts.actions.DispatchAction;
  */
 public class ListarEventoAction extends DispatchAction {
 
-    /* forward name="success" path="" */
-    private static final String SUCCESS = "success";
     NegocioEvento nEvento=new NegocioEvento();
 
-    /**
-     * This is the action called from the Struts framework.
-     *
-     * @param mapping The ActionMapping used to select this instance.
-     * @param form The optional ActionForm bean for this request.
-     * @param request The HTTP Request we are processing.
-     * @param response The HTTP Response we are processing.
-     * @throws java.lang.Exception
-     * @return
-     */
     
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
@@ -49,8 +37,3 @@ public class ListarEventoAction extends DispatchAction {
         return mapping.getInputForward();
     }
 }
-
-
-//<a href="./evento/"><section class="modulo">
-//<a href="./listar_evento.do?metodo=listarEventos"><section class="modulo">
-//input="/evento/index.jsp"
