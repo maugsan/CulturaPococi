@@ -36,15 +36,16 @@ public class verPerfilesAction extends org.apache.struts.action.Action {
         
         String categoria=""+request.getParameter("c");
         
+     
+        LinkedList<Perfil> listaPerfiles;
+        if(np.getListaPerfilPorCategoria(categoria)!=null)
+        {
+         listaPerfiles=np.getListaPerfilPorCategoria(categoria);
        
-        LinkedList<Perfil> listaPerfiles=new LinkedList<Perfil>();
-        
-        listaPerfiles=np.getListaPerfilPorCategoria(categoria);
-        JOptionPane.showMessageDialog(null,  listaPerfiles.getFirst());
         if(listaPerfiles==null){
-         
+          JOptionPane.showMessageDialog(null,  listaPerfiles.getFirst());
             
-            LinkedList<Categoria> listaCategorias = new LinkedList<Categoria>();
+            LinkedList<Categoria> listaCategorias ;
 
             listaCategorias = nCategoria.selectCategoriasDB();
             if (listaCategorias == null) {
@@ -54,8 +55,15 @@ public class verPerfilesAction extends org.apache.struts.action.Action {
         }
         
         request.setAttribute( "listaPerfil",listaPerfiles );
+         return mapping.getInputForward();
+        } else {
+              
+            response.sendRedirect(request.getContextPath());
+            return mapping.findForward(categoria);
+        }
+        
         
       
-        return mapping.getInputForward();
+       
     }
 }
