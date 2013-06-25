@@ -9,23 +9,25 @@
 <html>
     <head>
         <%@include file="includes/head.jsp"%>
-        <title>JSP Page</title>
+        <title>Arte</title>
     </head>
     <body>
         <div id="contendor">
            
-            <%@include file="includes/header.jsp"%>ç
+            <%@include file="includes/header.jsp"%>
+             <section  id="seccion-principal">
+           
             <div id="contendor-interno"> 
-        <h1>Seleccione una categoria</h1>
-         <ul>
-                <li><a href="./ver_perfiles.do?c=literatura">LITERATURA</a></li>
-                <li><a href="#">PLÁSTICAS</a></li>
-                <li><a href="./ver_perfiles.do?c=musica">MÚSICA</a></li>
-                <li><a href="#">DANZA</a></li>
-                <li><a href="#">TEATRO</a></li>
-                <li><a href="#">ARTE URBANO</a></li>
-            </ul>
+        <h1>Seleccione una opción</h1>
+        
+        <a href=" <%=request.getContextPath()%>/artistas.jsp"><div id="evento">Artistas</div></a>
+         <a href=" <%=request.getContextPath()%>/ver_nuestro_arte.do"><div id="evento">Nuestro Arte</div></a>  
+       
          </div>
+             </section>
+            
+            
+           
                 </div>
         <%@include file="includes/footer.jsp"%>
     

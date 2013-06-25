@@ -43,13 +43,7 @@
 
                                     
                                     </div></a>
-                                <input type="button" value="Borrar" id="test" onClick="eliminarPerfil('${perfilTemporal.nombreCategoria}');" />
-                                <a  href="./eliminar_perfil.do?nombrePerfil=${perfilTemporal.nombrePerfil}">
-                                    
-                                    <button id="boton-volver">
-                                        Eliminar
-                                    </button>
-                                </a>
+                               
                             </div>
                             <%-- FIN Elemento   ${perfilTemporal.nombrePerfil} --%> 
 

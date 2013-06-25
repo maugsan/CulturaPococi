@@ -20,15 +20,17 @@
   
                    
                 <div id="contendor-interno"> 
-               
+                    <h1>Bienvenido al Directorio</h1>
+                     
+               <div id="contendor-directorio"> 
 
-               <a href="./arte.jsp" ><div id="s-izquierdo">
+               <a href="<%=request.getContextPath()%>/arte.jsp" ><div id="s-izquierdo">
                        <img src="./assets/img/teatro-icon.png"/>
                         <h1>Arte</h1>
 
                     </div></a>
 
-                    <a href="#" ><div  id="s-centro">
+                    <a href="<%=request.getContextPath()%>/cultura.jsp" ><div  id="s-centro">
                         
                             <img src="./assets/img/category-icon.png" />
                         <h1>Cultura</h1>
@@ -36,15 +38,17 @@
                   
                     </div></a>
 
+                    <a href="<%=request.getContextPath()%>/ver_eventos.do" >
                     <div id="s-derecho">
 
-                        <img src="./assets/img/boletin-icon.png"/>
-                        <h1>Boletin</h1>
+                        <img src="./assets/img/evento-icon.png"/>
+                        <h1>Agenda</h1>
 
 
                     </div> 
+                    </a>
 
-
+                   </div> 
                 </div> 
 
             </section>
@@ -61,8 +65,6 @@
 
             </section>
 
-
-            <%@include file="includes/espacios.jsp" %> 
 
             <%@include file="includes/footer.jsp" %>
 

@@ -12,43 +12,37 @@
             </ul>
         </li>
 
-        <li id="cultura"><a href="">CULTURA</a>
+        <li id="cultura"><a href="<%=request.getContextPath()%>/cultura.jsp">CULTURA</a>
 
             <ul>
 
 
                 <li><a  href="<%=request.getContextPath()%>/ver_boletines.do">BOLETÍN</a>
+
+                </li>
+
+                <li><a href="<%=request.getContextPath()%>/ecologia.jsp">ECOLOGÍA</a>
+
+
                     <ul>
-
-
-                        <li><a href="#">ARTÍCULOS</a></li>
+                        <li><a href="<%=request.getContextPath()%>/ver_perfiles.do?c=reforestacion">REFORESTACIÓN</a></li>
+                        <li><a href="<%=request.getContextPath()%>/ver_perfiles.do?c=educacionambiental">EDUCACION AMBIENTAL</a></li>
+                        <li><a href="<%=request.getContextPath()%>/ver_perfiles.do?c=limpiezaderiosyplaya">LIMPIEZA DE RÍOS Y PLAYAS</a></li>
+                        <li><a href="<%=request.getContextPath()%>/ver_perfiles.do?c=vidasilvestre">VIDA SILVESTRE</a></li>
 
                     </ul>
 
                 </li>
-
-                <li><a href="#">ECOLOGÍA</a>
-
-
-                    <ul>
-                        <li><a href="#">REFORESTACIÓN</a></li>
-                        <li><a href="#">EDUCACION AMBIENTAL</a></li>
-                        <li><a href="#">LIMPIEZA DE RÍOS Y PLAYAS</a></li>
-                        <li><a href="#">VIDA SILVESTRE</a></li>
-
-                    </ul>
-
-                </li>
-                <li><a href="#">PUBLICIDAD</a></li>
-                <li><a href="#">BIEN SOCIAL</a></li>
-                <li><a href="#">RECREACIÓN</a>
+                <li><a href="<%=request.getContextPath()%>/publicidad.jsp">PUBLICIDAD</a></li>
+                <li><a href="<%=request.getContextPath()%>/bien_social.jsp">BIEN SOCIAL</a></li>
+                <li><a href="<%=request.getContextPath()%>/recreacion.jsp">RECREACIÓN</a>
 
                     <ul>
-                        <li><a href="#">DEPORTES</a></li>
-                        <li><a href="#">MONTAÑISMO</a></li>
-                        <li><a href="#">CAMINATAS</a></li>
-                        <li><a href="#">MOTORES</a></li>
-                        <li><a href="#">MONTAIN BIKE</a></li>
+                        <li><a href="<%=request.getContextPath()%>/ver_perfiles.do?c=deportes">DEPORTES</a></li>
+                        <li><a href="<%=request.getContextPath()%>/ver_perfiles.do?c=montanismo">MONTAÑISMO</a></li>
+                        <li><a href="<%=request.getContextPath()%>/ver_perfiles.do?c=caminatas">CAMINATAS</a></li>
+                        <li><a href="<%=request.getContextPath()%>/ver_perfiles.do?c=motores">MOTORES</a></li>
+                        <li><a href="<%=request.getContextPath()%>/ver_perfiles.do?c=montainbike">MONTAIN BIKE</a></li>
 
                     </ul>
 
@@ -62,25 +56,25 @@
 
 
 
-        <li><a href="#">ARTE</a>
+        <li><a href="<%=request.getContextPath()%>/arte.jsp">ARTE</a>
 
             <ul>
-                <li><a href="#">ARTISTAS</a>
+                <li><a href="<%=request.getContextPath()%>/artistas.jsp">ARTISTAS</a>
 
                     <ul>
-                        <li><a href="#">LITERATURA</a></li>
-                        <li><a href="#">PLÁSTICAS</a></li>
-                        <li><a href="#">MÚSICA</a></li>
-                        <li><a href="#">DANZA</a></li>
-                        <li><a href="#">TEATRO</a></li>
-                        <li><a href="#">ARTE URBANO</a></li>
+                        <li><a href="<%=request.getContextPath()%>/ver_perfiles.do?c=literatura">LITERATURA</a></li>
+                        <li><a href="<%=request.getContextPath()%>/ver_perfiles.do?c=plasticas">PLÁSTICAS</a></li>
+                        <li><a href="<%=request.getContextPath()%>/ver_perfiles.do?c=musica">MÚSICA</a></li>
+                        <li><a href="<%=request.getContextPath()%>/ver_perfiles.do?c=danza">DANZA</a></li>
+                        <li><a href="<%=request.getContextPath()%>/ver_perfiles.do?c=teatro">TEATRO</a></li>
+                        <li><a href="<%=request.getContextPath()%>/ver_perfiles.do?c=arteurbano">ARTE URBANO</a></li>
 
                     </ul>
                 </li>
 
 
 
-                <li><a href="<%=request.getContextPath()%>/portal.jsp">NUESTRO ARTE</a></li>
+                <li><a href="<%=request.getContextPath()%>/ver_nuestro_arte.do">NUESTRO ARTE</a></li>
 
 
             </ul>

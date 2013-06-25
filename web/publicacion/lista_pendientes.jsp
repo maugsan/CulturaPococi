@@ -22,8 +22,7 @@
 
         <%@include file="/includes/header.jsp" %>
         <div id="contendor">
-
-            
+        
             <section  id="seccion-principal">
 
                 

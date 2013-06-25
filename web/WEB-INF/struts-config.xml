@@ -90,7 +90,7 @@
            <action path="/ver_perfiles"
         
                 scope="request"
-                input="/perfil/index.jsp"
+                input="/perfil/ver_perfiles.jsp"
                 validate="false"
                 type="com.culturaPococi.accion.perfil.verPerfilesAction"
         
