@@ -1,8 +1,12 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="true">
     
     
+=======
+<html >
+
     <head>
         <%@include file="includes/head.jsp"%> 
         <title>El FrenteCR.org</title>
@@ -37,13 +41,9 @@
                         </div>
 
                     </div>
-
-
                 </div> 
 
             </section>
-
-
 
             <section id="seccion-inferior">
 
@@ -84,6 +84,7 @@
 
 
             </section>
+
 
 
             <%@include file="includes/espacios.jsp" %> 
