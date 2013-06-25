@@ -1,4 +1,12 @@
 
+<script type="text/javascript">
+           function sugerencias() {
+
+        NuevaVentana = window.open('', '', 'width=1350,height=700');
+        NuevaVentana.location.assign("http://localhost/RecuperacionContrasenia/web/app_dev.php/elfrente/");
+    }
+</script>
+                                    
             <section id="seccion-inferior">
 
                 <div id="contendor-interno">
@@ -19,10 +27,10 @@
 
                     <div id="s-derecho">
 
-                        <img src="./assets/img/idea-icon.png"/>
-                        <h1>Ideas</h1>
-
-
+                        <a  onclick="sugerencias()" > 
+                            <img src="./assets/img/idea-icon.png"/>
+                            <h1>Ideas</h1>
+                        </a>
                     </div> 
 
                     <p>Dedicado al bienestar y Crecimiento Cultural 
