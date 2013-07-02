@@ -8,7 +8,7 @@
 
     <head>
         <%@include file="includes/head.jsp"%> 
-        <title>ElFrenteCR.org</title>
+        <title>ElFrente</title>
   
     </head>
 

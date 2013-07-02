@@ -35,6 +35,6 @@ public class NegocioUsuarioNormal {
     }
     
     public void crearUsuariosDB(UsuarioNormal usuario) throws SQLException{
-        dusuario.crearUsuarioNormal();
+        dusuario.crearUsuarioNormal(usuario);
     }
 }

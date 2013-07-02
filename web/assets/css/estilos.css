@@ -25,6 +25,8 @@ body {
 a {
     
     color: #555;
+    text-decoration: none;
+    
 }
 #contendor {
     height: auto;
@@ -68,7 +70,7 @@ header {
     background-size: 80px;
     height: 40px;
     width: 200px;
-    font-size: 8px;
+    font-size: 6px;
 
     text-align: right;
     padding: 20px;

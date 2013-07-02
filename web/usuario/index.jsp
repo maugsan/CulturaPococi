@@ -56,7 +56,8 @@
 
 
                                 </div></a>
-                            <input type="button" value="Borrar" id="test" onClick="eliminarUsuario('${usuarioTemporal.correo}');" />
+                                    
+                            <input type="button" src="../assets/img/delete-icon.png" id="test" onClick="eliminarUsuario('${usuarioTemporal.correo}');" />
 
 
                         </div>

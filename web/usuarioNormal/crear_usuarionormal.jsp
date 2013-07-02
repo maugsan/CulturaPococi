@@ -30,7 +30,8 @@
                 <h2><bean:message key="usuario.normal.correo"/></h2>
                 <input type="text" id="correo" name="correo" ><br>
                 
-                
+                <h2><bean:message key="usuario.normal.nombre"/></h2>
+                <input type="text" id="nombre" name="nombre" ><br>
                 
                 <h2><bean:message key="usuario.normal.contrasenia"/></h2>
                 <input type="password" id="contrasenia" name="contrasenia" ><br>

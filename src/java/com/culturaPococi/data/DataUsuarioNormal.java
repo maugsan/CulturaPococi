@@ -5,7 +5,6 @@
 package com.culturaPococi.data;
 
 import com.culturaPococi.dominio.UsuarioNormal;
-import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -25,6 +24,7 @@ public class DataUsuarioNormal extends DataBase{
         boolean encontrado = false;
 
         String sql = "select correo, contrasenia from usuarioNormal;";
+        
         ResultSet resultado;
         Connection conexion = super.getConexion();
 
@@ -44,28 +44,35 @@ public class DataUsuarioNormal extends DataBase{
         return encontrado;
     }
      
-     public void crearUsuarioNormal() throws SQLException {
+     public void crearUsuarioNormal( UsuarioNormal usuario) throws SQLException {
          
-        String sql = "call pInsertarUsuarioNormal(?,?,?,?);";
+        String sql = "insert into usuarioNormal values ('"+usuario.getCorreo()+"','"
+                +usuario.getNombre()
+                +"','"+usuario.getContrasenia()+"','"+usuario.getColaborador()+"');";
         Connection conexion = super.getConexion();
         
-        CallableStatement call=conexion.prepareCall(sql);
+        Statement st=conexion.createStatement();
         
-        call.executeUpdate();
-        call.close();
+        st.executeUpdate(sql);
+        st.close();
         conexion.close();
     }
      
      /*Elimina a un usuario de la base de datos por medio del correo*/
     public void eliminarUsuarioNormal(String correo) throws SQLException {
          
-        String sql = "call pEliminarUsuarioNormal('"+correo+"');";
+        String sql = "delete from usuarioNormal where correo='"+correo+"';";
+                
+        String sql2 = "delete from perfil where correo='"+correo+"';";
+        
+
         Connection conexion = super.getConexion();
         
-        CallableStatement call=conexion.prepareCall(sql);
+        Statement st=conexion.createStatement();
         
-        call.executeUpdate();
-        call.close();
+        st.executeUpdate(sql);
+        st.executeUpdate(sql2);
+        st.close();
         conexion.close();
     }
     
@@ -74,7 +81,7 @@ public class DataUsuarioNormal extends DataBase{
      public LinkedList<UsuarioNormal> selectUsuarios() throws SQLException{
         LinkedList<UsuarioNormal> listaUsuarios=new LinkedList<UsuarioNormal>();
         UsuarioNormal usuario;
-        String sql = "call pListaUsuarios();" ;
+        String sql = "select * from usuarioNormal;" ;
         ResultSet resultado;
         Connection conexion = super.getConexion();
 

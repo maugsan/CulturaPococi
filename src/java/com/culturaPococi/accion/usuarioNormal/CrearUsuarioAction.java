@@ -1,12 +1,10 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.culturaPococi.accion.usuarioNormal;
 
 
-import com.culturaPococi.dominio.hibernate.UsuarioNormal;
-import com.culturaPococi.hibernate.helper.HelperUsuario;
+
+import com.culturaPococi.dominio.UsuarioNormal;
+import com.culturaPococi.negocio.NegocioUsuarioNormal;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.ActionForm;
@@ -23,22 +21,14 @@ public class CrearUsuarioAction extends DispatchAction {
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
 
-    /**
-     * This is the action called from the Struts framework.
-     *
-     * @param mapping The ActionMapping used to select this instance.
-     * @param form The optional ActionForm bean for this request.
-     * @param request The HTTP Request we are processing.
-     * @param response The HTTP Response we are processing.
-     * @throws java.lang.Exception
-     * @return
-     */
+  
     @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        HelperUsuario hu = new HelperUsuario();
+        NegocioUsuarioNormal nun = new NegocioUsuarioNormal();
         String correo = request.getParameter("correo");
+        String nombre = request.getParameter("nombre");
         String contrasenia = request.getParameter("contrasenia");
         String colaborador = request.getParameter("colaborador");
         String contraseniaComprobacion=request.getParameter("contraseniaComprobacion");
@@ -46,10 +36,15 @@ public class CrearUsuarioAction extends DispatchAction {
             colaborador = "n";
         }
 
-    UsuarioNormal nu = new UsuarioNormal(correo, "", contrasenia, contraseniaComprobacion , colaborador, "");    
-    hu.getInsertUsuario(nu);
-  
+    if(contrasenia.equalsIgnoreCase(contraseniaComprobacion)) {
+    nun.crearUsuariosDB(new UsuarioNormal(correo,  nombre,
+          contrasenia,  colaborador));
+    
+    }else {
+       // fallo crear forward
+    }
     return mapping.getInputForward();
+       
 
     }
 }

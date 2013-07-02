@@ -1,3 +1,5 @@
 /build/
 /dist/
 DataBase.java
+/nbproject/private/
+!/src/java/com/culturaPococi/data/DataBase.java

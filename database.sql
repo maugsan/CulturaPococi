@@ -196,6 +196,20 @@ select * from evenTieneCat;
 select * from perfil;
 select * from publicacion;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -- PROCEDIMIENTOS
 
 -- Inserta nuevos intereses
