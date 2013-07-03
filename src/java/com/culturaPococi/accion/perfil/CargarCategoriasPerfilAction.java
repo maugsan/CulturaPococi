@@ -21,29 +21,19 @@ import org.apache.struts.actions.DispatchAction;
  */
 public class CargarCategoriasPerfilAction extends DispatchAction {
 
-    /* forward name="success" path="" */
-    private static final String SUCCESS = "success";
+
     private NegocioCategoria nCategoria=new NegocioCategoria();
 
-    /**
-     * This is the action called from the Struts framework.
-     *
-     * @param mapping The ActionMapping used to select this instance.
-     * @param form The optional ActionForm bean for this request.
-     * @param request The HTTP Request we are processing.
-     * @param response The HTTP Response we are processing.
-     * @throws java.lang.Exception
-     * @return
-     */
+   
     @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         
         
-        LinkedList<Categoria>listaCategorias=new LinkedList<Categoria>();
+        LinkedList<Categoria> listaCategorias;
         
-        listaCategorias=nCategoria.selectCategoriasDB();
+        listaCategorias= nCategoria.selectCategoriasDB();
         if(listaCategorias==null){
             JOptionPane.showMessageDialog(null, "error al cargar los datos");
         }

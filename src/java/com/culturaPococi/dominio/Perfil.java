@@ -19,7 +19,9 @@ public class Perfil {
     private String correo;
     private String nombreDistrito;
     private int idCategoria;
-
+    private String facebook;
+    private String twiter;
+    
     public Perfil(String nombrePerfil, String nombreCategoria, String fechaDeCreacion, String biografia, String imagenDePortada, String correo, String nombreDistrito, int idCategoria) {
         this.nombrePerfil = nombrePerfil;
         this.nombreCategoria = nombreCategoria;

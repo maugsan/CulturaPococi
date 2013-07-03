@@ -713,7 +713,7 @@ input[type="submit"] {
     margin-top:20px;
     cursor: pointer;
     color: #fff; 
-    text-decoration: none;
+  
 
 }
 
@@ -782,7 +782,7 @@ input[type="textarea"] {
     word-wrap: break-word; 
     width: 600px; 
     min-height: 200px;
-    text-transform:capitalize;
+    text-transform: capitalize;
     color: #555;
     border: solid 1px #ccc;
     background: #f0f0f0;

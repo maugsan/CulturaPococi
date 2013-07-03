@@ -33,8 +33,6 @@
                             <%-- Inicio Elemento  --%>
                             <div id="elemento">
 
-                                <%-- href="../mostrar_perfil_seleccionado.do?idPerfil= ${perfilTemporal.idPerfil}" --%>
-                                
                                 <a href="./mostrar_perfil_seleccionado.do?nomPerfil=${perfilTemporal.nombrePerfil}"> <div id="link-detalle-elemento"><div id="elemento-imagen"><img src="<%=request.getContextPath()%>${perfilTemporal.imagenDePortada}" width="50"/></div>
                                         
                                         <h1> ${perfilTemporal.nombrePerfil}</h1> 
@@ -43,15 +41,13 @@
 
                                     
                                     </div></a>
-                                <input type="button" value="Borrar" id="test" onClick="eliminarPerfil('${perfilTemporal.nombreCategoria}');" />
-                                <a  href="./eliminar_perfil.do?nombrePerfil=${perfilTemporal.nombrePerfil}">
+                                   <input type="button" value="Borrar" id="test" onClick="eliminarPerfil('${perfilTemporal.nombreCategoria}');" />
+                                
                                     
-                                    <button id="boton-volver">
-                                        Eliminar
-                                    </button>
+                                   
                                 </a>
                             </div>
-                            <%-- FIN Elemento   ${perfilTemporal.nombrePerfil} --%> 
+                            
 
                         </logic:iterate>
                          

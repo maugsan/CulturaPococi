@@ -10,7 +10,7 @@
 <html>
     <head>
         <%@include file="/includes/head.jsp" %>
-        <title>Perfil</title>
+        <title>${perfil.nombrePerfil}</title>
 
     </head>
     <body>
@@ -32,7 +32,7 @@
 
                     <h2><bean:message key="perfil.biografia"/></h2>
 
-                    <h2>${perfil.biografia}</h2>
+                    <P>${perfil.biografia}</P>
                 </section>
 
 

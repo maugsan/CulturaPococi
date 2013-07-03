@@ -5,8 +5,7 @@
 package com.culturaPococi.data;
 
 import com.culturaPococi.dominio.Categoria;
-import com.culturaPococi.dominio.Evento;
-import java.sql.CallableStatement;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -24,7 +23,7 @@ public class DataCategoria extends DataBase{
     public LinkedList<Categoria> selectCategorias() throws SQLException {
         LinkedList<Categoria> listaCategorias = new LinkedList<Categoria>();
         Categoria categoria = new Categoria();
-        String sql = "call pListaCategorias();";
+        String sql = "select * from categoria;";
         ResultSet resultado;
         Connection conexion = super.getConexion();
 
@@ -71,17 +70,15 @@ public class DataCategoria extends DataBase{
     
     public boolean crearCategoria(String categoria) throws SQLException {
 
-        String sql = "call pCrearCategorias(?);";
+        String sql = "insert into categoria(`nombreCategoria`) values ('"+categoria+"');";
         boolean accionRealizada = true;
         Connection conexion = super.getConexion();
 
         try {
-            CallableStatement call = conexion.prepareCall(sql);
-
-            call.setString("pNombreCategoria", categoria);
-            
-            call.executeUpdate();
-            call.close();
+            Statement st = conexion.createStatement();
+  
+            st.executeUpdate(sql);
+            st.close();
         } catch (Exception e) {
             accionRealizada = false;
         } finally {
@@ -89,5 +86,19 @@ public class DataCategoria extends DataBase{
         }//fin try
 
         return accionRealizada;
+    }
+    
+     public void eliminarCategoria(String categoria) throws SQLException {
+         
+        String sql = "delete from categoria where nombreCategoria='"+categoria+"';";
+      
+        Connection conexion = super.getConexion();
+        
+        Statement st = conexion.createStatement();
+        
+        st.executeUpdate(sql);
+       
+        st.close();
+        conexion.close();
     }
 }

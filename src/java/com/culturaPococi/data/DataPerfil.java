@@ -5,7 +5,6 @@
 
 package com.culturaPococi.data;
 
-import com.culturaPococi.dominio.Evento;
 import com.culturaPococi.dominio.Perfil;
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -23,12 +22,14 @@ public class DataPerfil extends DataBase {
 
     public void eliminarPerfil(String nombrePerfil) throws SQLException {
 
-        String sql = "call pEliminar_perfiles('" + nombrePerfil + "');";
-                             
+        String sql = "delete from publicacion  where nombrePerfil='"+nombrePerfil+"';";
+        String sql2 = "delete from perfil  where nombrePerfil='"+nombrePerfil+"';";
+
         Connection conexion = super.getConexion();
         
         Statement statement = conexion.createStatement(); 
         statement.executeQuery(sql);
+        statement.executeQuery(sql2);
         
         statement.close();
         conexion.close();
@@ -49,7 +50,9 @@ public class DataPerfil extends DataBase {
         String nombreDistrito;
 
 
-        String sql = "call  pListaPerfil();";
+        String sql = "select p.nombrePerfil, p.fechaDeCreacion,p.biografia,p.imagenDePortada,p.correo,p.nombreDistrito,c.nombreCategoria\n" +
+"       from perfil p inner join categoria c\n" +
+"	where p.idCategoria=c.idCategoria;";
         ResultSet resultado;
         Connection conexion = super.getConexion();
 
@@ -99,8 +102,7 @@ public class DataPerfil extends DataBase {
         String nombreDistrito;
 
 
-        //String sql = "call pMostrarPerfil('" + nombreP + "');";
-        String sql = "call pListarUnPerfil('" + nombreP + "');";
+        String sql = "select * from perfil where nombrePerfil = '" + nombreP + "';";
         
         ResultSet resultado;
         Connection conexion = super.getConexion();
@@ -110,15 +112,15 @@ public class DataPerfil extends DataBase {
 
 
         while (resultado.next()) {
+            
             p = new Perfil("", "", "", "", "", "", "",0);
-
             nombrePerfil = resultado.getString(1);
-            fechaDeCreacion = resultado.getString(2);
-            biografia = resultado.getString(3);
-            imagenDePortada = resultado.getString(4);
-            correo = resultado.getString(5);
-            nombreDistrito = resultado.getString(6);
-            nombreCategoria = resultado.getString(7);
+            fechaDeCreacion = resultado.getString(3);
+            biografia = resultado.getString(4);
+            imagenDePortada = resultado.getString(5);
+            correo = resultado.getString(6);
+            nombreDistrito = resultado.getString(7);
+            nombreCategoria = resultado.getString(2);
    
             p.setNombrePerfil(nombrePerfil);
             p.setFechaDeCreacion(fechaDeCreacion);
