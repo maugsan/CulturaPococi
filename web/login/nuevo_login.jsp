@@ -27,7 +27,7 @@
 
             <div id="login-principal">
 
-                <form method="post" action="../nuevologin.do" id="validar-form">
+                <form method="post" action="<%=request.getContextPath()%>/nuevologin.do" id="validar-form">
                     <h1>Ingresar</h1>
                     <h2>Correo</h2>
                     <input type="text" id="correo" name="correo" size="16" value=""/>

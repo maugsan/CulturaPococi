@@ -8,7 +8,7 @@
 
     <head>
         <%@include file="includes/head.jsp"%> 
-        <title>ElFrente</title>
+        <title>Inicio</title>
   
     </head>
 

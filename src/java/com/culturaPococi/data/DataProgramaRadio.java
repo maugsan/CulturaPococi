@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.culturaPococi.data;
 
 import com.culturaPococi.dominio.programaRadio;
@@ -11,19 +8,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.LinkedList;
-//import javax.swing.JOptionPane;
 
-/**
- *
- * @author jonathan
- */
+
 public class DataProgramaRadio extends DataBase {
 
-    public LinkedList<programaRadio> listaProgramacionRadio() throws SQLException {
+    public LinkedList<programaRadio> listaProgramasRadio() throws SQLException {
 
         LinkedList<programaRadio> lista = new LinkedList<programaRadio>();
-        programaRadio programaR;
-        String sql = "call pListaProgramaRadio();";
+
+        String sql = "SELECT * FROM programaRadio;";
 
         ResultSet resultado;
         Connection conexion = super.getConexion();
@@ -33,27 +26,19 @@ public class DataProgramaRadio extends DataBase {
             resultado = statement.executeQuery(sql);
 
             while (resultado.next()) {
-                programaR = new programaRadio("", "", "", "");
+              
 
-                String nombre = resultado.getString("nombre");
-                String horario = resultado.getString("horario");
-                String descripcion = resultado.getString("descripcion");
-                String correo = resultado.getString("correo");
-
-                programaR.setNombre(nombre);
-                programaR.setHorario(horario);
-                programaR.setDescripcion(descripcion);
-                programaR.setCorreo(correo);
-
-                lista.add(programaR);
+                lista.add(new programaRadio(resultado.getString("nombre"), 
+                        resultado.getString("dia"), resultado.getString("descripcion"), 
+                        resultado.getString("correo")));
             }//fin while
-
             statement.close();
         } catch (Exception e) {
             lista = null;
         } finally {
             conexion.close();
         }
+
         return lista;
     }
 

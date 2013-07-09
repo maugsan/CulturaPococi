@@ -4,15 +4,19 @@
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/estilos.css" type="text/css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/normalize.css" type="text/css" />
 <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/estilosld.css" type="text/css" />
+<link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/style.css" type="text/css" />
 
 <script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/jq.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/jqcy.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/jqSlide.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/funciones.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/script.js"></script>
         
         <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/jquery-theme.css" />
         <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/jquery.modal.css" type="text/css" media="screen" />
@@ -31,6 +35,8 @@
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
 
 <script type="text/javascript" src="./assets/js/calendario.js"></script>
+
+	
 
 <noscript>
 <meta http-equiv="refresh" content="0; <%=request.getContextPath()%>/javascript.jsp">

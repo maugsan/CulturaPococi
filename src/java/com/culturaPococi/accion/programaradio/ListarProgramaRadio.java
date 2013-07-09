@@ -7,6 +7,7 @@ package com.culturaPococi.accion.programaradio;
 import com.culturaPococi.negocio.NegocioProgramaRadio;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
@@ -18,15 +19,18 @@ import org.apache.struts.actions.DispatchAction;
  */
 public class ListarProgramaRadio extends DispatchAction {
 
-    @Override
+    
+   NegocioProgramaRadio npr = new NegocioProgramaRadio();
+
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
 
+        JOptionPane.showMessageDialog(null, npr.listaProgramasRadio().getFirst());
+       
 
-        NegocioProgramaRadio npr = new NegocioProgramaRadio();
-
-        request.setAttribute("listaProgramas", npr.listaProgramacionRadio());
+        
+        request.setAttribute("listaProgramas", npr.listaProgramasRadio());
 
         return mapping.getInputForward();
 

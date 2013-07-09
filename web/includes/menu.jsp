@@ -1,12 +1,12 @@
 
-
+<!--
 <nav>
     <ul>
         <li ><a  href="#" id="radio">RADIO</a>
 
             <ul>
 
-                <li><a href="<%=request.getContextPath()%>/ver_programas_radio.do">PROGRAMAS</a></li>
+                <li><a href="<%=request.getContextPath()%>/listar_programas_radio.do">PROGRAMAS</a></li>
 
 
             </ul>
@@ -74,7 +74,7 @@
 
 
 
-              <!--  <li><a href="<%=request.getContextPath()%>/ver_nuestro_arte.do">NUESTRO ARTE</a></li> -->
+             <li><a href="<%=request.getContextPath()%>/ver_nuestro_arte.do">NUESTRO ARTE</a></li> 
 
 
             </ul>
@@ -85,4 +85,140 @@
 
     </ul>
 
+</nav> 
+        
+        
+
+<a class="toggleMenu" href="#">MENU</a>
+<ul class="nav">
+    
+
+         <li class="test">
+            
+               <a href="<%=request.getContextPath()%>">
+                 <b>ElFrenteCR.org</b>
+                  
+               </a>
+            
+
+         </li>
+    
+    
+    
+	<li  >
+		<a  href="#" id="radio">RADIO</a>
+		<ul>
+			<li>
+				<a href="<%=request.getContextPath()%>/listar_programas_radio.do">Programacion</a>
+				<ul>
+					<li><a href="#">Sandals</a></li>
+					<li><a href="#">Sneakers</a></li>
+					<li><a href="#">Wedges</a></li>
+					<li><a href="#">Heels</a></li>
+					<li><a href="#">Loafers</a></li>
+					<li><a href="#">Flats</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Mens</a>
+				<ul>
+					<li><a href="#">Loafers</a></li>
+					<li><a href="#">Sneakers</a></li>
+					<li><a href="#">Formal</a></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+        
+        
+      
+	<li>
+		<a href="<%=request.getContextPath()%>/arte.jsp">ARTE</a>
+		<ul>
+			<li>
+				<a href="#">Mens</a>
+				<ul>
+					<li><a href="#">T-Shirts</a></li>
+					<li><a href="#">Dress Shirts</a></li>
+					<li><a href="#">Tank Tops</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Womens</a>
+				<ul>
+					<li><a href="#">T-Shirts</a></li>
+					<li><a href="#">Blouses</a></li>
+					<li><a href="#">Dress Shirts</a></li>
+					<li><a href="#">Tunics</a></li>
+					<li><a href="#">Camisoles</a></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li>
+		<a href="<%=request.getContextPath()%>/cultura.jsp">CULTURA</a>
+		<ul>
+			<li>
+				<a href="#">Mens</a>
+				<ul>
+					<li><a href="#">Trousers</a></li>
+					<li><a href="#">Slacks</a></li>
+					<li><a href="#">Jeans</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Womens</a>
+				<ul>
+					<li><a href="#">Trousers</a></li>
+					<li><a href="#">Slacks</a></li>
+					<li><a href="#">Jeans</a></li>
+					<li><a href="#">Leggings</a></li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	
+	<li>
+		<a href="<%=request.getContextPath()%>/ver_eventos.do">AGENDA</a>
+		<ul>
+			<li>
+				<a href="#">Casual</a>
+			</li>
+			<li>
+				<a href="#">Formal</a>
+				<ul>
+					<li><a href="#">Wedding</a></li>
+					<li><a href="#">Party</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+	</li>
+        <li>
+            
+ <a href="<%=request.getContextPath()%>/usuarioNormal/crear_usuarionormal.jsp">ÚNETE</a>
+        </li>
+	   <li>
+            
+ <a href="<%=request.getContextPath()%>/login/nuevo_login.jsp">ENTRAR</a>
+        </li>
+        
+       
+</ul> -->
+        
+
+         
+<a  href="<%=request.getContextPath()%>"><img height="100" src="<%=request.getContextPath()%>/assets/img/logo.png"></a>   
+<nav class="clearfix">
+		<ul class="clearfix">
+                   
+                     <li><a  href="<%=request.getContextPath()%>">ELFRENTECR.ORG</a></li>
+	                <li><a  href="#" id="radio">RADIO</a></li>
+			<li><a href="<%=request.getContextPath()%>/arte.jsp">ARTE</a></li>
+			<li><a href="<%=request.getContextPath()%>/cultura.jsp">CULTURA</a></li>
+			<li><a href="<%=request.getContextPath()%>/ver_eventos.do">AGENDA</a></li>
+                        <li><a href="<%=request.getContextPath()%>/usuarioNormal/crear_usuarionormal.jsp">ÚNETE</a></li>
+                        <li><a href="<%=request.getContextPath()%>/login/nuevo_login.jsp">ENTRAR</a></li>
+		</ul>
+		<a href="#" id="pull">MENU</a>
 </nav>

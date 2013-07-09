@@ -1,8 +1,8 @@
 <footer> 
 
     <div id="contendor-interno">
-
-
+    
+        <div id="busqueda-contenedor">
         <form  method="post" id="busqueda" action="<%=request.getContextPath()%>/buscar.do">
 
             <input name="q" id="tags">
@@ -18,7 +18,7 @@
 
         </form>
 
-
+ </div> 
 
 
         <div id="footer-izquierdo">

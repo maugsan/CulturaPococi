@@ -1,18 +1,7 @@
-<%-- 
-    Document   : Programa de radio
-    Created on : 23/04/2013, 01:17:53 PM
-    Author     : Mac
---%>
 
 
-<%@page contentType="text/html"%>
-<%@page pageEncoding="UTF-8"%>
 
-<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
-<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
-<%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
-
-<html:html lang="true">
+<htmllang="true">
     <head>
         <%@include file="/includes/head.jsp" %>
         <title><bean:message key="welcome.title"/></title>
@@ -22,7 +11,7 @@
     </head>
     <body>
 
-        <%@include file="/includes/header_administrativo.jsp" %>
+        <%@include file="/includes/header.jsp" %>
         <div id="contendor">
 
             <section  id="seccion-principal">
@@ -41,7 +30,7 @@
                         <logic:iterate name="listaProgramas" id="numero" >
                             <div id="elemento">
                             <div id="elemento-imagen"><img src="../assets/img/radio-icon.png" width="30"/></div>
-                            <h1> ${numero.nombre}</h1>
+                            <h1>  ${numero.nombre}</h1>
                             <h2>  ${numero.horario}</h2>
                             <h3>  ${numero.descripcion}</h3>
 
@@ -77,4 +66,4 @@
 </div>
 
 </body>
-</html:html>
+</html>

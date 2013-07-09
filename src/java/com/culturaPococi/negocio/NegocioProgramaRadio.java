@@ -18,11 +18,11 @@ public class NegocioProgramaRadio {
     DataProgramaRadio dp;
     
     public NegocioProgramaRadio() {
-        dp=new DataProgramaRadio();
+        dp = new DataProgramaRadio();
     }
   
-    public LinkedList<programaRadio> listaProgramacionRadio() throws SQLException{ 
-        return dp.listaProgramacionRadio();
+    public LinkedList<programaRadio> listaProgramasRadio() throws SQLException{ 
+        return dp.listaProgramasRadio();
     }
     
     public void eliminar(String nombre) throws SQLException{

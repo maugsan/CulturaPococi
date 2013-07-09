@@ -473,7 +473,7 @@
                 input="/programaradio/index.jsp" 
                 validate="false"
         />      
-                        
+                  
         <action path="/eliminar_programa_radio" 
                 type="com.culturaPococi.accion.programaradio.EliminarProgramaRadioAction"
         

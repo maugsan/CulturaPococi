@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.culturaPococi.data;
 
 import com.culturaPococi.dominio.Boletin;
@@ -24,7 +21,7 @@ public class DataBoletin extends DataBase{
     public LinkedList<Boletin> selectCategorias() throws SQLException {
         LinkedList<Boletin> listaBoletines=new LinkedList<Boletin>();
         Boletin boletin;
-        String sql = "call pListarBoletines();";
+        String sql = "select * from boletin;";
         ResultSet resultado;
         Connection conexion = super.getConexion();
 

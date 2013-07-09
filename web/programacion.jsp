@@ -33,11 +33,7 @@
                                     <li id="contenedor-radio"> 
                                         <div id="programa"><img src="assets/img/radio-icon.png" width="100"/>
                                         <h1> ${numero.nombre}</h1>
-                                        <h2>  ${numero.horario}</h2>
-                                        <h3>  ${numero.descripcion}</h3>
-
-
-
+       
                                         <%-- FIN Elemento   ${perfilTemporal.nombrePerfil} --%> 
 
                                    </div>

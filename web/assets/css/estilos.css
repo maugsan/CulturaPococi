@@ -55,7 +55,7 @@ header {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#555555',GradientType=0 ); /* IE6-9 */
 
 
-    height: 80px;
+    height: 120px;
     width: 100%;
     z-index: 2;
     position: fixed;
@@ -399,124 +399,12 @@ footer ul {
 
     float: right;
 }
-/* 
-  ========================================= 
-        Menú Básico
-  ========================================= */
-
-nav {
-
-    float: right;
-    width: auto;
-    margin:  25px 0 0 0;
-    width: auto;
-    z-index: 10;
-    word-wrap: break-word; 
-    display: inline-block;
-}
-/* 
-   1 - Elimina todos los espacios entre elementos (especialmente entre li) reduciendo el texto
-   2 - Elimina todo el relleno de sobra que tienen las cajas de menú ul*/
-nav ul{
-    font-size: 0;
-    padding: 0;
-
-}
-
-/* Muestra en una sola lína todos los elementos li*/
-nav ul li {
-
-    display: inline-block;
-}
-
-/* 
-   1 - Deja el tamaño del texto en 18 pixeles 
-       2 - Quita la decoración del texto
-       3 - Presenta el texto en color blanco
-       4 - Muestra los elementos como una caja en forma de bloque (necesario para cambiar el tamaño de cada botón del menú)
-       5 - Cambia el tamaño de los botones del menú (requiere display: block)
-*/
-nav ul li a{
-    width: 100px;
-    font-size: 15px;
-    text-decoration: none;
-    color: whitesmoke;
-    display: block;
-    padding: 5px 3px;
+#busqueda-contenedor {
+    width: 100%;
+/*    border: solid 1px red;*/
     text-align: center;
-   
- 
-
-
-}
-/* 
-   Evento: Cuando el ratón pasa sobre un elemento a
-       1 - cambia el color del fondo de el botón */
-ul li a:hover{
-    background: #333;
-
-}
-
-
-/* 
-========================================= 
-      Submenús
-========================================= */
-
-/*
-        1 - Esconde todos los submenús
-  2 - Agrega color al submenú
-*/
-nav ul ul {
- 
+     padding: 20px;
     
-    width: auto;
-    display: none;
-    background: #333;
-    
-
-}
-
-nav ul ul li a:hover{
-
-    background: #000;
-    color: whitesmoke;
-
-}
-
-
-/* 
-      Evento: Cuando el ratón pasa sobre un elementó li
-      1 - Permite que el submenú quede sobre el menú principal
-  2 - Muestra la caja de submenú como un elemento de bloque
-*/
-nav ul li:hover > ul{
-    position: absolute;
-    display: block;
-}
-
-/* 
-      1 - Permite que el submenú se visualice vertical
-*/
-nav ul ul li{
-    display: block;
-
-}
-
-/* Permite que un submenú dentro de otro submenú se presente bien*/
-nav ul ul ul{
-   
-    font-size: 8px;
-    background: #333;
-    left: 100%; 
-    top:0px;
-}
-
-
-nav ul ul ul li a:hover{
-
-    background: black;
-
 }
 /* 
 ========================================= 
@@ -678,9 +566,9 @@ form {
 }
 #busqueda{
 
-    width: 900px;
+    
+    
     background: none;
-    padding: 20px;
     border-radius: 10px;
     border:none;
 }
@@ -692,7 +580,7 @@ form input {
     width:340px;
     height:40px;
     background:#fefefe;
-    margin-top:3px;
+   
     padding: 5px;
     margin-bottom: 4px;
     font-size:0.9em;
@@ -717,15 +605,6 @@ input[type="submit"] {
 
 }
 
-select { 
-    font-family: Georgia; 
-    font-size: 16px; 
-    color: #3a3a3a;
-    border: 0 none; 
-    padding: 5px; 
-    width:200px;
-    height: 30px;
-}
 
 
 input[type="file"]  {
@@ -1044,15 +923,18 @@ input[type="file"]  {
 
 select {
     
-    
+    border: solid 1px #ccc;
     font-size: 12px;
     width:auto;
-    height:50px;
+    height:40px;
     background:#fefefe;
-    margin-top:3px;
     padding: 5px;
     margin-bottom: 4px;
     font-size:0.9em;
     color:#3a3a3a;
+
+    -webkit-border-radius: 5px;
+
+    border-radius: 5px;
     
 }

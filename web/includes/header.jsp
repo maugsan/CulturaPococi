@@ -4,24 +4,13 @@
 
 
 
-
-
 <header>
+   <div id="aviso"><b>SITIO EN CONSTRUCCIÓN, CONSULTAS A SOPORTE@ELFRENTECR.ORG</b></div>
 
     <div id="contendor-interno">
+       
 
-        <a href="<%=request.getContextPath()%>"><div id="header-logo"><h1><b>ElFrenteCR.org</b></h1></div></a>
-
-
-        <div id="header-opciones">
-
-
-            <a href="<%=request.getContextPath()%>/usuarioNormal/crear_usuarionormal.jsp"><button id="boton-entrar">Únete</button></a>
-
-
-            <a href="<%=request.getContextPath()%>/login/nuevo_login.jsp"><button id="boton-entrar">ENTRAR</button></a>
-        </div>
-
+      
 
         <%@include file="../includes/menu.jsp" %>
 

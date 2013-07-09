@@ -22,7 +22,7 @@ public class DataEvento extends DataBase {
     public LinkedList<Evento> selectEventos() throws SQLException {
         LinkedList<Evento> listaEventos = new LinkedList<Evento>();
         Evento evento;
-        String sql = "call pListaEventos();";
+        String sql = "select * from evento;";
         ResultSet resultado;
         Connection conexion = super.getConexion();
 
