@@ -8,25 +8,18 @@
 <%@page pageEncoding="UTF-8"%>
 
 
-
+<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <html:html lang="true">
     <head>
-       
+        <%@include file="../includes/head.jsp" %>
         <title><bean:message key="welcome.title"/></title>
        
         <html:base/>
     </head>
     <body>
 
-        <%@include file="/includes/header_administrativo.jsp" %>
+        <%@include file="../includes/header.jsp" %>
         <div id="contendor">
-            
-            <div id="dialog-confirm" title="Desea eliminar?">
-            <p><span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;">
-
-                </span>Este item se borrara permanentemente, esta seguro?</p>
-        </div>
-
             
             <section  id="seccion-principal">
 

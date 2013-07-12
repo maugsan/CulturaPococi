@@ -3,6 +3,8 @@
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
+
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -17,6 +19,7 @@
 <script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/jqSlide.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/funciones.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/script.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/audio.min.js"></script>
         
         <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/jquery-theme.css" />
         <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/jquery.modal.css" type="text/css" media="screen" />

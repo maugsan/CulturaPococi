@@ -8,20 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
-        <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
-        <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-
-        <link rel="stylesheet" href="../assets/css/estilos.css" type="text/css" />
-        <link rel="stylesheet" href="../assets/css/normalize.css" type="text/css" />
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
-        
-         <script type="text/javascript" src="../assets/js/jquery-1.0.9.min.js"></script>
-        <script type="text/javascript" src="../assets/js/jquery.validate.js"></script>
-        <script type="text/javascript" src="../assets/js/validar.js"></script>
-    
+        <%@include file="/includes/head.jsp"%>
         <title>Crear Categoria</title>
     </head>
     <body>
@@ -30,13 +17,21 @@
     <section  id="seccion-principal">
 
         <div id="contendor-interno"> 
-        <form method="post" action="../crear_categorias.do" id="validar-form">
+             <a href="<%=request.getContextPath()%>/listar_categorias.do"><button id="boton-unir">Lista de Categorías</button></a>
+        <form method="post" action="./crear_categorias.do" id="validar-form">
                 
                 <h1><bean:message key="crear.categoria"/></h1>
                 
                 <h2><bean:message key="form.nombre.categoria"/></h2>
                 <input type="text" id="nombreCategoria" name="nombreCategoria"  size="16" value=""/><br>
-                           
+                <select name="super"> 
+                    
+                    <logic:iterate  name="listaSuper" id="categoriaTemporal" >
+                        <option value="${categoriaTemporal.idCategoria}"> 
+                    ${categoriaTemporal.nombreCategoria}
+                    </option> 
+                     </logic:iterate>
+                </select>       <br>
                 
                 <input type="submit" value="Crear"/><br>
  

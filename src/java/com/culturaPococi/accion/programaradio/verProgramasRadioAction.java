@@ -26,9 +26,7 @@ public class verProgramasRadioAction extends DispatchAction {
             throws Exception {
          NegocioProgramaRadio npr= new NegocioProgramaRadio();
          
-         
-         
-        JOptionPane.showMessageDialog(null, npr.listaProgramasRadio().getFirst());
+      
         request.setAttribute("listaProgramas", npr.listaProgramasRadio());
         
         

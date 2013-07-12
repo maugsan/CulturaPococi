@@ -12,6 +12,12 @@
         <title>Radio Frente Cultura</title>
     </head>
     <body>
-        <h1></h1>
+        <script>
+  audiojs.events.ready(function() {
+    var as = audiojs.createAll();
+  });
+</script>
+        <audio src="s23.myradiostream.com:3078/;" preload="auto" />
+
     </body>
 </html>

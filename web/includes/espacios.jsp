@@ -17,10 +17,10 @@
 
                     </div></a>
 
-                    <a href="#" id="radio"><div  id="s-centro">
+                    <a href="<%=request.getContextPath()%>/ver_programas.do"><div  id="s-centro">
                         
                         <img src="./assets/img/radio-icon.png" />
-                        <h1>Radio</h1>
+                        <h1>Programas</h1>
                            
                   
                     </div></a>
@@ -34,7 +34,7 @@
                     </div> 
 
                     <p>Dedicado al bienestar y Crecimiento Cultural 
-                        y Ambiental del Cantón de Pococi y otros aledaños para divulgar y extender proyectos de Crecimiento Humano , Expresión Artística de todo Ámbito y Entretenimiento Popular , Recreación , Familia y Arte..</p>
+                        y Ambiental del Cantón de Pococi y otros aledaños para divulgar y extender proyectos de Crecimiento Humano , Expresión Artística de todo Ámbito y Entretenimiento Popular , Recreación , Familia y Arte.</p>
                     <br><br>
 
                 </div>

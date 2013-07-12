@@ -48,7 +48,7 @@ public class ListarMisPerfilesAction extends DispatchAction{
         String jsp="mostrarPerfiles";
      
         
-        LinkedList<Perfil> listaPerfiles=new LinkedList<Perfil>();
+        LinkedList<Perfil> listaPerfiles;
         
         listaPerfiles=np.getListaMisPerfiles(correo);
         
@@ -56,9 +56,9 @@ public class ListarMisPerfilesAction extends DispatchAction{
             JOptionPane.showMessageDialog(null, "mostrar mensaje de que no tiene perfiles y redireccionar a crear perfil");
             jsp="crearPerfil";
             
-            LinkedList<Categoria> listaCategorias = new LinkedList<Categoria>();
+            LinkedList<Categoria> listaCategorias ;
 
-            listaCategorias = nCategoria.selectCategoriasDB();
+            listaCategorias = nCategoria.selectCategorias();
             if (listaCategorias == null) {
                 JOptionPane.showMessageDialog(null, "error al cargar los datos");
             }

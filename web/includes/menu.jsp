@@ -1,4 +1,7 @@
 
+<%String e = (String) request.getSession().getAttribute("c");
+    if (e == null) {%>
+
 <!--
 <nav>
     <ul>
@@ -208,17 +211,44 @@
         
 
          
-<a  href="<%=request.getContextPath()%>"><img height="100" src="<%=request.getContextPath()%>/assets/img/logo.png"></a>   
+<a  href="<%=request.getContextPath()%>"><div id="header-logo"></div></a>   
 <nav class="clearfix">
 		<ul class="clearfix">
                    
-                     <li><a  href="<%=request.getContextPath()%>">ELFRENTECR.ORG</a></li>
+                     <li><a  href="<%=request.getContextPath()%>"><b>ELFRENTECR</b>.ORG</a></li>
 	                <li><a  href="#" id="radio">RADIO</a></li>
-			<li><a href="<%=request.getContextPath()%>/arte.jsp">ARTE</a></li>
-			<li><a href="<%=request.getContextPath()%>/cultura.jsp">CULTURA</a></li>
+			<li><a href="<%=request.getContextPath()%>/ver_arte.do">ARTE</a></li>
+			<li><a href="<%=request.getContextPath()%>/ver_cultura.do">CULTURA</a></li>
 			<li><a href="<%=request.getContextPath()%>/ver_eventos.do">AGENDA</a></li>
-                        <li><a href="<%=request.getContextPath()%>/usuarioNormal/crear_usuarionormal.jsp">ÚNETE</a></li>
-                        <li><a href="<%=request.getContextPath()%>/login/nuevo_login.jsp">ENTRAR</a></li>
+                        <li><a id="boton" href="<%=request.getContextPath()%>/usuarioNormal/crear_usuarionormal.jsp">ÚNETE</a></li>
+                        <li ><a id="boton-entrar" href="<%=request.getContextPath()%>/login/nuevo_login.jsp">ENTRAR</a></li>
 		</ul>
 		<a href="#" id="pull">MENU</a>
 </nav>
+
+
+
+<%} else {%>
+
+
+         
+<a  href="<%=request.getContextPath()%>"><div id="header-logo"></div></a>   
+<nav class="clearfix">
+		<ul class="clearfix">
+                   
+                     <li><a  href="<%=request.getContextPath()%>/nuevologin.do"><b>ELFRENTECR</b>.ORG</a></li>
+	                <li><a  href="#" id="radio">RADIO</a></li>
+			<li><a href="<%=request.getContextPath()%>/ver_arte.do">ARTE</a></li>
+			<li><a href="<%=request.getContextPath()%>/ver_cultura.do">CULTURA</a></li>
+			<li><a href="<%=request.getContextPath()%>/ver_eventos.do">AGENDA</a></li>
+                        <li><a href="<%=request.getContextPath()%>/nuevologin.do">CONFIGURACIÓN</a></li>
+                        <li >    <a id="boton-entrar" href="<%=request.getContextPath()%>/invalidar.jsp">SALIR</a></li>
+		</ul>
+		<a href="#" id="pull">MENU</a>
+</nav>
+
+
+
+
+
+<%  }%>

@@ -24,7 +24,7 @@
                      
                <div id="contendor-directorio"> 
 
-               <a href="<%=request.getContextPath()%>/arte.jsp" ><div id="s-izquierdo">
+               <a href="<%=request.getContextPath()%>/ver_arte.do" ><div id="s-izquierdo">
                        <img src="./assets/img/teatro-icon.png"/>
                         <h1>Arte</h1>
 

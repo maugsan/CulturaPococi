@@ -63,7 +63,7 @@ public class CrearEventoAction extends DispatchAction {
             JOptionPane.showMessageDialog(null, "Se cayó la base");
         }
         request.setAttribute("listaEventos", listaEventos);
-        request.setAttribute("listaCategorias", nCategoria.selectCategoriasDB());
+        request.setAttribute("listaCategorias", nCategoria.selectCategorias());
 
         return mapping.getInputForward();
     }

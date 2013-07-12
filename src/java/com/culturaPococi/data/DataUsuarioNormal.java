@@ -60,18 +60,17 @@ public class DataUsuarioNormal extends DataBase{
      
      /*Elimina a un usuario de la base de datos por medio del correo*/
     public void eliminarUsuarioNormal(String correo) throws SQLException {
-         
+        Connection conexion = super.getConexion();
         String sql = "delete from usuarioNormal where correo='"+correo+"';";
-                
         String sql2 = "delete from perfil where correo='"+correo+"';";
         
 
-        Connection conexion = super.getConexion();
+        
         
         Statement st=conexion.createStatement();
-        
-        st.executeUpdate(sql);
-        st.executeUpdate(sql2);
+        st.execute(sql2);
+        st.execute(sql);
+       
         st.close();
         conexion.close();
     }

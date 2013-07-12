@@ -48,7 +48,7 @@ public class ListarCategoriasArticulo extends DispatchAction {
         LinkedList<Categoria> listaCategorias;
         String fecha=""+request.getParameter("fecha");
         
-        listaCategorias=nCategoria.selectCategoriasDB();
+        listaCategorias=nCategoria.selectCategorias();
         
         if(listaCategorias==null){
             JOptionPane.showMessageDialog(null, "Error en la base de datos listarCategoriasArticulosAction");

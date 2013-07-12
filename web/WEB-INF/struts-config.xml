@@ -329,27 +329,88 @@
        
        <!-- INICIO CATEGORIAS  -->
        
-       <action input="/categoria/index.jsp" 
+       <action 
                path="/listar_categorias" 
+               input="/categoria/index.jsp" 
                scope="request" 
                validate="false"
                type="com.culturaPococi.accion.categoria.ListarCategoriasAction"
        />
        
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
        <action path="/crear_categoria" 
-               input="/categoria/index.jsp" 
+               input="/categoria/crear_categoria.jsp" 
                scope="request" 
                validate="false"
                type="com.culturaPococi.accion.categoria.CrearCategoriaAction"
        />
        
        <action path="/crear_categorias" 
-               input="/categoria/index.jsp" 
+
                scope="request" 
                validate="false"
                name="FormularioCategoria"
                type="com.culturaPococi.accion.categoria.CrearCategoriasAction"
-       />
+       >
+       <forward name="exitoso" path="/correcto.jsp" />
+       <forward name="denegado" path="/incorrecto.jsp" />
+       </action>
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
        
       
         <!-- FIN CATEGORIAS  -->
@@ -449,9 +510,9 @@
           
           
      
-      <action path="/eliminar_usuario_normal" 
+      <action path="/eliminar_usuario" 
                 type="com.culturaPococi.accion.usuarioNormal.EliminarUsuarioNormalAction">
-        <forward name="success"  path="/usuario/index.jsp" />    
+       <forward name="exitoso" path="/correcto.jsp" />  
         </action>
         
         
@@ -472,14 +533,48 @@
                 scope="request" 
                 input="/programaradio/index.jsp" 
                 validate="false"
-        />      
+        />    
+        
+          
                   
         <action path="/eliminar_programa_radio" 
                 type="com.culturaPococi.accion.programaradio.EliminarProgramaRadioAction"
         
         >
-            <forward name="listar" path="/listar_programa_radio.do"/>
+        <forward name="exitoso" path="/correcto.jsp" />
         </action>
+        
+        
+        
+        <action path="/eliminar_categoria" 
+                type="com.culturaPococi.accion.categoria.EliminarCategoriaAction"
+                scope="request" 
+                validate="false"
+        >
+            
+        <forward name="exitoso" path="/correcto.jsp" />
+        <forward name="denegado" path="/incorrecto.jsp" />
+        </action>
+        
+        
+        <action path="/mis_perfiles" 
+                input="/perfil/mostrar_mis_perfiles.jsp" 
+                type="com.culturaPococi.accion.perfil.MostrarMisPerfilesAction"/>
+ 
+        <action path="/ver_arte" 
+                type="com.culturaPococi.accion.categoria.VerArteAction"
+                scope="request" 
+                input="/arte.jsp" 
+                validate="false"
+        />
+        
+        <action path="/ver_programas" 
+                type="com.culturaPococi.accion.programaradio.verProgramasAction"
+                scope="request" 
+                input="/programacion.jsp" 
+                validate="false"
+          
+        />
 
         
         
@@ -501,9 +596,7 @@
 
                 type="com.culturaPococi.accion.articulo.verArticulosAction"/>
        
-        <action input="/programacion.jsp" 
-                path="/ver_programas_radio"
-                type="com.culturaPococi.accion.programaradio.verProgramasRadioAction"/>
+        
         
         
        

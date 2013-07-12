@@ -4,6 +4,7 @@
     Author     : MAU
 --%>
 
+<%@page import="com.culturaPococi.dominio.URL"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -19,9 +20,19 @@
            
             <div id="contendor-interno"> 
         <h1>Seleccione una opción</h1>
-        
-        <a href=" <%=request.getContextPath()%>/artistas.jsp"><div id="evento">Artistas</div></a>
-        <!--  <a href=" <%=request.getContextPath()%>/ver_nuestro_arte.do"><div id="evento">Nuestro Arte</div></a>  -->
+          <logic:iterate  name="listaCategorias" id="categoriaTemporal" >
+                            <%-- Inicio Elemento  --%>
+                           <a href="<%=request.getContextPath()%>/ver_perfiles.do?c=${categoriaTemporal.idCategoria}"> <div id="evento">
+
+                               
+                                <h1>${categoriaTemporal.nombreCategoria}</h1>
+
+
+                            </div></a>
+                            <%-- FIN Elemento  --%>
+                        </logic:iterate>
+       
+        <a href=" <%=request.getContextPath()%>/ver_nuestro_arte.do"><div id="evento">Nuestro Arte</div></a> 
        
          </div>
              </section>

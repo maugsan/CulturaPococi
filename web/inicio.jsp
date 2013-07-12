@@ -32,9 +32,9 @@
                             </ul>
                             <ul id="slides">  
 
-                                <li> <a href = "#">  <img src="./assets/img/inicio.png" > </a> </li>
-                                <li> <a href = "#">   <img src="./assets/img/banner1.jpg" > </a> </li>
-                                <li> <a href = "#">   <img src="./assets/img/banner2.jpg" > </a> </li>
+                                <li> <a id="slide" href = "#">  <img src="./assets/img/inicio.png" > </a> </li>
+                                <li> <a id="slide" href = "#">   <img src="./assets/img/banner1.jpg" > </a> </li>
+                                <li> <a id="slide" href = "#">   <img src="./assets/img/banner2.jpg" > </a> </li>
 
                             </ul>
                         </div>

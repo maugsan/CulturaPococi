@@ -2,20 +2,16 @@
 <html:html lang="true">
     <head>
        
-        <%@include file="/includes/head.jsp" %>
+        <%@include file="../includes/head.jsp" %>
         <title><bean:message key="welcome.title"/></title>
       
     </head>
     <body>
 
-        <%@include file="/includes/header.jsp" %>
+        <%@include file="../includes/header.jsp" %>
         <div id="contendor">
             
-              <div id="dialog-confirm" title="Desea eliminar?">
-            <p><span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;">
-
-                </span>Este item se borrara permanentemente, esta seguro?</p>
-        </div>
+            
 
 
             <section  id="seccion-principal">

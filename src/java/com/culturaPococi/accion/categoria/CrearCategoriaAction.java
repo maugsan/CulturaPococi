@@ -38,26 +38,11 @@ public class CrearCategoriaAction extends org.apache.struts.action.Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        boolean accionRealizada;
-        LinkedList<Categoria> listaCategorias;
+     
    
-        
-        accionRealizada=nCategoria.crearCategoriaDB(request.getParameter("nombreCategoria"));
-        
-        if(!accionRealizada){
-            JOptionPane.showMessageDialog(null, "poblemas con la base de datos");
-        }
-        
-        
-        
-        listaCategorias=nCategoria.selectCategoriasDB();
-        
-        if(listaCategorias==null){
-            JOptionPane.showMessageDialog(null, "poblemas con la base de datos");
-        }
-        
-        request.setAttribute("listaCategorias", listaCategorias);
-        
-        return mapping.findForward(SUCCESS);
+         
+         request.setAttribute("listaSuper",nCategoria.selectSuperCategoriasDB());
+
+        return mapping.getInputForward();
     }
 }

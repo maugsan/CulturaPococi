@@ -19,11 +19,7 @@
 
                 <div id="contendor-interno"> 
 
-                    <script type="text/javascript">
-                                             var d = new Date();
-                                             document.write('<br>Hora: ' + d.getHours(), ':' + d.getMinutes());
-                    </script>
-
+                   
 
                     <section id="lista-elementos">
                         <a href="crear_programaradio.jsp"><button id="boton-unir">Nuevo Programa de Radio</button></a>

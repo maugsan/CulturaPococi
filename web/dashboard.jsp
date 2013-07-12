@@ -52,12 +52,19 @@
                 <div id="contendor-interno"> 
 
                     <h1>Sitio administrativo</h1>
+                      <h5>
+                               <script type="text/javascript">
+                                             var d = new Date();
+                                             document.write('<br>Hora: ' + d.getHours(), ':' + d.getMinutes());
+                    </script>
+                            </h5>
+                  
 
-                    <a <% if (sesion.getAttribute("tipo").equals("0"))                        { %>style="display: none;"<%}%> href="./mostrar_usuario.do"><section class="modulo">
+                    <a <% if (sesion.getAttribute("tipo").equals("0")) { %>style="display: none;"<%}%> href="./mostrar_usuario.do"><section class="modulo">
                             <img id="icono" src="assets/img/user-icon.png" width="60">
                             <h2>Usuarios</h2>
                         </section></a>
-                    <a href="./mostrarperfiles.do"><section class="modulo">
+                    <a <% if (sesion.getAttribute("tipo").equals("1")) { %>href="./mostrarperfiles.do"<%}else{%> href="./mis_perfiles.do"<%}%>><section class="modulo">
                             <img id="icono" src="assets/img/perfil-icon.png" width="60">
                             <h2>Perfiles</h2>
                         </section></a>
@@ -93,9 +100,11 @@
                             <a  onclick="sugerencias()" > <section class="modulo">
 
 
-                                    <img  id="icono" src="assets/img/images.png" width="60">
-                                    <h2>Sugerencias</h2>
+                                    <img  id="icono" src="assets/img/idea-icon.png" width="60">
+                                    <h2>Ideas</h2>
                                 </section></a>
+                          
+
 
                 </div> 
 

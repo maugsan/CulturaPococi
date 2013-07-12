@@ -150,7 +150,7 @@ public class EventoForm extends org.apache.struts.action.ActionForm {
             errors.add("efecha", new ActionMessage("evento.error.fecha"));  //arreglar
         }
         try {        
-            request.setAttribute("listaCategorias", nCategoria.selectCategoriasDB());
+            request.setAttribute("listaCategorias", nCategoria.selectCategorias());
             request.setAttribute("evento", nEvento.selectEventoDB(idEvento));
             request.setAttribute("listaEventos", nEvento.listarEventosDB());
         } catch (SQLException ex) {

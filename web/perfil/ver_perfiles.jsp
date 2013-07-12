@@ -1,3 +1,4 @@
+<%@page import="java.net.URLEncoder"%>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <html:html lang="true">
     <head>
@@ -10,21 +11,11 @@
 
         <%@include file="/includes/header.jsp" %>
         <div id="contendor">
-            
-              <div id="dialog-confirm" title="Desea eliminar?">
-            <p><span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;">
-
-                </span>Este item se borrara permanentemente, esta seguro?</p>
-        </div>
-
-
+ 
             <section  id="seccion-principal">
 
 
                 <div id="contendor-interno"> 
-
-                   
-              
 
                     <section id="lista-elementos">
                          <h1>Perfiles</h1>
@@ -35,7 +26,9 @@
 
                                 <%-- href="../mostrar_perfil_seleccionado.do?idPerfil= ${perfilTemporal.idPerfil}" --%>
                                 
-                                <a href="./mostrar_perfil_seleccionado.do?nomPerfil=${perfilTemporal.nombrePerfil}"> <div id="link-detalle-elemento"><div id="elemento-imagen"><img src="<%=request.getContextPath()%>${perfilTemporal.imagenDePortada}" width="50"/></div>
+                                <a href="./mostrar_perfil_seleccionado.do?nomPerfil=${perfilTemporal.nombrePerfil}"> 
+                                    <div id="link-detalle-elemento">
+                                        <div id="elemento-imagen"><img src="<%=request.getContextPath()%>${perfilTemporal.imagenDePortada}" width="50"/></div>
                                         
                                         <h1> ${perfilTemporal.nombrePerfil}</h1> 
                                      

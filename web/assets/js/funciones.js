@@ -8,26 +8,6 @@ function sleep(milliseconds) {
         }
     }
 }
-function eliminarUsuario(correo) {
-    $("#dialog-confirm").dialog({
-        resizable: false,
-        width: 500,
-        height: 250,
-        modal: true,
-        buttons: {
-            "Borrar": function() {
-                $(this).dialog("close");
-
-                location.href = './eliminar_usuario_normal.do?c=' + correo;
-            },
-            Cancel: function() {
-                $(this).dialog("close");
-
-            }
-        }
-    });
-
-}
 
 function eliminarPerfil(nombre) {
     $("#dialog-confirm").dialog({
@@ -52,35 +32,47 @@ function eliminarPerfil(nombre) {
     });
 
 }
+function cod(url) {
+    
+  
+
+document.write(escape(url));
+
+
+    
+}
 
 $(document).ready(function() {
 
     $("#radio").click(function() {
 
         NuevaVentana = window.open('', '', 'width=300,height=200');
-        NuevaVentana.document.write("Nueva Ventana PequeÃ±a");
-        NuevaVentana.location.assign("http://www.elfrentecr.org/player.html");
 
-    } );
+        NuevaVentana.location.assign("http://www.elfrentecr.org/player.jsp");
+
+    });
 
 
 });
 
-   
+
 $(function() {
-			var pull 		= $('#pull');
-				menu 		= $('nav ul');
-				menuHeight	= menu.height();
+    var pull = $('#pull');
+    menu = $('nav ul');
+    menuHeight = menu.height();
 
-			$(pull).on('click', function(e) {
-				e.preventDefault();
-				menu.slideToggle();
-			});
+    $(pull).on('click', function(e) {
+        e.preventDefault();
+        menu.slideToggle();
+    });
 
-			$(window).resize(function(){
-        		var w = $(window).width();
-        		if(w > 320 && menu.is(':hidden')) {
-        			menu.removeAttr('style');
-        		}
-    		});
-		});
+    $(window).resize(function() {
+        var w = $(window).width();
+        if (w > 320 && menu.is(':hidden')) {
+            menu.removeAttr('style');
+        }
+    });
+});
+
+
+

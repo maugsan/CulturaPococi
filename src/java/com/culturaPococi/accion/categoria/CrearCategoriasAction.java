@@ -21,43 +21,34 @@ import org.apache.struts.action.ActionMapping;
  */
 public class CrearCategoriasAction extends org.apache.struts.action.Action {
 
-    /* forward name="success" path="" */
-    private static final String SUCCESS = "success";
-    NegocioCategoria nCategoria=new NegocioCategoria();
+    private static final String EXITOSO = "exitoso";
+    private static final String DENEGADO = "denegado";
+    NegocioCategoria nCategoria = new NegocioCategoria();
+    LinkedList<Categoria> listaCategorias;
 
-    /**
-     * This is the action called from the Struts framework.
-     *
-     * @param mapping The ActionMapping used to select this instance.
-     * @param form The optional ActionForm bean for this request.
-     * @param request The HTTP Request we are processing.
-     * @param response The HTTP Response we are processing.
-     * @throws java.lang.Exception
-     * @return
-     */
     @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        boolean accionRealizada;
-        LinkedList<Categoria> listaCategorias;
-    
-        accionRealizada=nCategoria.crearCategoriaDB(request.getParameter("nombreCategoria"));
-        
-        if(!accionRealizada){
-            JOptionPane.showMessageDialog(null, "poblemas con la base de datos");
+
+
+        listaCategorias = nCategoria.selectCategorias();
+
+
+        for (Categoria c : listaCategorias) {
+
+            if (c.getNombreCategoria().equalsIgnoreCase(request.getParameter("nombreCategoria"))) {
+
+                return mapping.findForward(DENEGADO);
+
+            }
         }
-        
-        
-        
-        listaCategorias=nCategoria.selectCategoriasDB();
-        
-        if(listaCategorias==null){
-            JOptionPane.showMessageDialog(null, "poblemas con la base de datos");
-        }
-      
-        request.setAttribute("listaCategorias", listaCategorias);
-        
-        return mapping.getInputForward();
+
+        nCategoria.crearCategoriaDB(request.getParameter("nombreCategoria"),
+                request.getParameter("super"));
+
+
+                
+        return mapping.findForward(EXITOSO);
     }
 }

@@ -7,8 +7,13 @@ package com.culturaPococi.accion.perfil;
 import com.culturaPococi.dominio.Categoria;
 import com.culturaPococi.dominio.Perfil;
 import com.culturaPococi.negocio.NegocioCategoria;
+import com.culturaPococi.dominio.URL;
 import com.culturaPococi.negocio.NegocioPerfil;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.LinkedList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.swing.JOptionPane;
@@ -23,9 +28,7 @@ import org.apache.struts.action.ActionMapping;
 public class verPerfilesAction extends org.apache.struts.action.Action {
 
 
-    /* forward name="success" path="" */
-    private static final String SUCCESS = "success";
-
+   
     NegocioPerfil np=new NegocioPerfil();
     NegocioCategoria nCategoria=new NegocioCategoria();
 
@@ -33,21 +36,22 @@ public class verPerfilesAction extends org.apache.struts.action.Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        
-        String categoria=""+request.getParameter("c");
-        
+         
+        String categoria = ""+request.getParameter("c");
      
+       
+        
         LinkedList<Perfil> listaPerfiles;
         if(np.getListaPerfilPorCategoria(categoria)!=null)
         {
          listaPerfiles=np.getListaPerfilPorCategoria(categoria);
        
         if(listaPerfiles==null){
-          JOptionPane.showMessageDialog(null,  listaPerfiles.getFirst());
+          
             
             LinkedList<Categoria> listaCategorias ;
 
-            listaCategorias = nCategoria.selectCategoriasDB();
+            listaCategorias = nCategoria.selectCategorias();
             if (listaCategorias == null) {
                 JOptionPane.showMessageDialog(null, "error al cargar los datos");
             }

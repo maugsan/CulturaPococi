@@ -88,6 +88,66 @@ public class DataPerfil extends DataBase {
     }
     
     
+    
+    
+    
+    
+    
+    public LinkedList<Perfil> getMiListaPerfil(String c) throws SQLException {
+
+        LinkedList<Perfil> listaPerfil = new LinkedList<Perfil>();
+        
+        Perfil p;
+        
+        String nombrePerfil;
+        String nombreCategoria;
+        String fechaDeCreacion;
+        String biografia;
+        String imagenDePortada;
+        String correo;
+        String nombreDistrito;
+
+
+        String sql = "select p.nombrePerfil, p.fechaDeCreacion,p.biografia,p.imagenDePortada,p.correo,p.nombreDistrito,c.nombreCategoria\n" +
+"       from perfil p inner join categoria c\n" +
+"	on p.idCategoria=c.idCategoria where p.correo = '"+c+"';";
+        ResultSet resultado;
+        Connection conexion = super.getConexion();
+
+        Statement statement = conexion.createStatement();
+        resultado = statement.executeQuery(sql);
+
+
+        while (resultado.next()) {
+            p = new Perfil("", "", "", "", "", "", "",0);
+
+            nombrePerfil = resultado.getString(1);
+            fechaDeCreacion = resultado.getString(2);
+            biografia = resultado.getString(3);
+            imagenDePortada = resultado.getString(4);
+            correo = resultado.getString(5);
+            nombreDistrito = resultado.getString(6);
+            nombreCategoria = resultado.getString(7);
+
+            p.setNombrePerfil(nombrePerfil);
+            p.setFechaDeCreacion(fechaDeCreacion);
+            p.setBiografia(biografia);
+            p.setImagenDePortada(imagenDePortada);
+            p.setCorreo(correo);
+            p.setNombreDistrito(nombreDistrito);
+            p.setNombreCategoria(nombreCategoria);
+
+            listaPerfil.add(p);
+
+        }
+        resultado.close();
+
+        return listaPerfil;
+    }
+    
+    
+    
+    
     public Perfil mostrarPerfil(String nombreP) throws SQLException {
         
        
@@ -278,13 +338,13 @@ public class DataPerfil extends DataBase {
         String nombreDistrito;
 
 
-        String sql = "call pListaPerfilxCatgoria('"+categoria+"');";
-        ResultSet resultado;
+          String sql = "select p.nombrePerfil, p.fechaDeCreacion,p.biografia,p.imagenDePortada,p.correo,p.nombreDistrito,c.nombreCategoria\n" +
+"       from perfil p inner join categoria c\n" +
+"	on p.idCategoria=c.idCategoria where c.idCategoria = '"+categoria+"';";
+       ResultSet resultado;
         Connection conexion = super.getConexion();
 
-        try{
-            
-           Statement statement = conexion.createStatement();
+        Statement statement = conexion.createStatement();
         resultado = statement.executeQuery(sql);
 
 
@@ -309,22 +369,8 @@ public class DataPerfil extends DataBase {
 
             listaPerfil.add(p);
 
-        
-        }//fin while
-        
-            resultado.close();
-
-        
-        }catch(Exception e){
-            listaPerfil=null;
-        }finally{
-             conexion.close();
         }
-        
-        if(listaPerfil.size()==0){
-            listaPerfil=null;
-        }
-        
+        resultado.close();
         return listaPerfil;
     }
     

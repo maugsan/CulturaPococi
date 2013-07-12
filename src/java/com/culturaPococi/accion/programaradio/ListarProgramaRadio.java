@@ -26,7 +26,7 @@ public class ListarProgramaRadio extends DispatchAction {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
 
-        JOptionPane.showMessageDialog(null, npr.listaProgramasRadio().getFirst());
+        
        
 
         

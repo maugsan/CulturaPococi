@@ -43,6 +43,8 @@ a {
     position: relative;
 
 }
+
+
 header {
 
     background: #333333; /* Old browsers */
@@ -63,22 +65,43 @@ header {
     text-transform: uppercase;
 
 }
+
+
+
+
 #header-logo {
 
     background-image: url('../img/logo.png') ;
     background-repeat: no-repeat;
     background-size: 80px;
-    height: 40px;
-    width: 200px;
+    height: 80px;
+    width: 4%;
     font-size: 6px;
-
+   
     text-align: right;
     padding: 20px;
     color: whitesmoke;
 
-    /* border: solid 1px yellow; */
+
     float: left;
 
+}
+
+@media only screen and (max-width: 600px){
+    #contendor-interno { 
+        width: 100%; 
+    }
+    header {
+        
+        height: 150px;
+    }
+    #header-logo {
+
+   
+    min-width:  12%;
+    
+
+}
 }
 #header-opciones {
 
@@ -416,7 +439,7 @@ button {
     width: 80px;
     height: 30px;
     word-wrap: break-word; 
-    background-color: #684e24;
+    
     border: none;
     background-color: #0097ca;
     -webkit-border-radius: 5px;
@@ -424,9 +447,23 @@ button {
 
 }
 #boton-entrar {
+    
+    
+    -moz-border-radius: 10px;
 
-    margin: 20px 5px 0 5px;
-    float: left;
+    background-color: #609120;
+    
+
+}
+
+#boton {
+    
+/*     border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -moz-border-radius: 10px;*/
+    margin-right: 5px;
+    background-color: #0097ca;
     
 
 }
@@ -445,7 +482,7 @@ button {
     float: right;
     width: 60px;
     margin-left: 10px;
-    background-color: #609120;
+    background-color: #0097ca;
 }
 #boton-usuario {
 

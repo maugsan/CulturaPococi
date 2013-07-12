@@ -40,7 +40,7 @@ public class ListarCategoriasEventoAction extends DispatchAction {
             throws Exception {
         
         LinkedList<Categoria> listaCategorias;
-        listaCategorias=nCategoria.selectCategoriasDB();
+        listaCategorias=nCategoria.selectCategorias();
         
         
         

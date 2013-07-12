@@ -20,14 +20,6 @@
 
 
 
-
-        <div id="dialog-confirm" title="Desea eliminar?">
-            <p><span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;">
-
-                </span>Este item se borrara permanentemente, esta seguro?</p>
-        </div>
-
-
         <section  id="seccion-principal">
 
 
@@ -56,9 +48,10 @@
 
 
                                 </div></a>
-                                    
-                            <input type="button" src="../assets/img/delete-icon.png" id="test" onClick="eliminarUsuario('${usuarioTemporal.correo}');" />
-
+                             <a href="<%=request.getContextPath()%>/eliminar_usuario.do?c=${usuarioTemporal.correo}">
+                                    <div id="elemento-icon"><img src="<%=request.getContextPath()%>/assets/img/delete-icon.png" width="30"/>
+                                    </div></a>         
+                       
 
                         </div>
                         <%-- FIN Elemento  --%> 

@@ -14,16 +14,14 @@
 
 <html:html lang="true">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <%@include file="../includes/head.jsp" %>
         <title><bean:message key="welcome.title"/></title>
-        <link rel="stylesheet" href="./assets/css/estilos.css" type="text/css" />
-        <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
-        <html:base/>
+
     </head>
     <body>
 
-        <%@include file="/includes/header.jsp" %>
+        <%@include file="../includes/header.jsp" %>
         <div id="contendor">
 
             <section  id="seccion-principal">
@@ -34,19 +32,24 @@
                     <h1><bean:message key="form.categoria"/></h1>
 
                     <section id="lista-elementos">
-                            <a href="./crear_categoria.jsp"><button id="boton-unir"><bean:message key="boton.crear.categoria"/></button></a>
-                        <logic:iterate  name="listaCategorias" id="categoriaTemporal" >
+                        <a href="<%=request.getContextPath()%>/crear_categoria.do"><button id="boton-unir"><bean:message key="boton.crear.categoria"/></button></a>
+                            <logic:iterate  name="listaCategorias" id="categoriaTemporal" >
+
                             <%-- Inicio Elemento  --%>
                             <div id="elemento">
 
-                                <div id="elemento-imagen"><img src="../assets/img/category-icon.png" width="30"/></div>
+                                <div id="elemento-imagen"><img src="<%=request.getContextPath()%>/assets/img/category-icon.png" width="60"/></div>
                                 <h1>${categoriaTemporal.nombreCategoria}</h1>
 
+                                <a href="<%=request.getContextPath()%>/eliminar_categoria.do?id=${categoriaTemporal.idCategoria}">
+                                    <div id="elemento-icon"><img src="<%=request.getContextPath()%>/assets/img/delete-icon.png" width="30"/>
+                                    </div></a>   
 
                             </div>
                             <%-- FIN Elemento  --%>
+
                         </logic:iterate>
-                    
+
                     </section>
 
                 </div> 

@@ -33,7 +33,7 @@ public class CargarCategoriasPerfilAction extends DispatchAction {
         
         LinkedList<Categoria> listaCategorias;
         
-        listaCategorias= nCategoria.selectCategoriasDB();
+        listaCategorias= nCategoria.selectCategorias();
         if(listaCategorias==null){
             JOptionPane.showMessageDialog(null, "error al cargar los datos");
         }

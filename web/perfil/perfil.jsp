@@ -20,11 +20,7 @@
 
             <div id="contendor-interno"> 
 
-
-
                 <section id="perfil-foto">
-
-
 
                 </section>
                 <section id="perfil-informacion">
@@ -47,28 +43,17 @@
                     <h2><bean:message key="form.correo"/></h2>
 
                     <h2>${perfil.correo}</h2>
-
                     <h2>${perfil.nombreDistrito}</h2>
                     <h5><bean:message key="perfil.fecha.creacion"/></h5>
                     <h5>${perfil.fechaDeCreacion}</h5>
 
                 </section>
 
-
-
-
-
                 <br>
-
-
-
-
 
             </div> 
 
         </section>
-
-
         <%@include file="/includes/footer.jsp" %>
     </body>
 </html>
