@@ -29,7 +29,9 @@
                             <%-- Inicio Elemento  --%>
                             <div id="elemento">
 
-                                <a href="./mostrar_perfil_seleccionado.do?nomPerfil=${perfilTemporal.nombrePerfil}"> <div id="link-detalle-elemento"><div id="elemento-imagen"><img src="<%=request.getContextPath()%>${perfilTemporal.imagenDePortada}" width="50"/></div>
+                                <a href="./mostrar_perfil_seleccionado.do?idPerfil=${perfilTemporal.idPerfil}"> 
+                                    <div id="link-detalle-elemento"><div id="elemento-imagen">
+                                            <img src="<%=request.getContextPath()%>${perfilTemporal.imagenDePortada}" width="50"/></div>
                                         
                                         <h1> ${perfilTemporal.nombrePerfil}</h1> 
                                      
@@ -37,7 +39,7 @@
 
                                     
                                     </div></a>
-                                   <input type="button" value="Borrar" id="test" onClick="eliminarPerfil('${perfilTemporal.nombreCategoria}');" />
+                                
                                 
                                     
                                    

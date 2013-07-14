@@ -27,9 +27,9 @@ public class MostrarPerfilSeleccionadoAction extends DispatchAction{
             throws Exception {
         np = new NegocioPerfil();
 
-        String nombrePerfil = ""+request.getParameter("nomPerfil");
+        String idPerfil = ""+request.getParameter("idPerfil");
 
-        p = np.mostrarPerfil(nombrePerfil);
+        p = np.mostrarPerfil(idPerfil);
 
         request.setAttribute("perfil", p);
 

@@ -29,11 +29,11 @@ public class CargarCategoriasPerfilAction extends DispatchAction {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        
-        
+
         LinkedList<Categoria> listaCategorias;
         
-        listaCategorias= nCategoria.selectCategorias();
+        listaCategorias = nCategoria.selectCategorias();
+        
         if(listaCategorias==null){
             JOptionPane.showMessageDialog(null, "error al cargar los datos");
         }

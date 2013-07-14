@@ -26,40 +26,32 @@
 
                 <div id="contendor-interno"> 
 
-                   
-              
-
                     <section id="lista-elementos">
                          <h1>Perfiles</h1>
-
+                        <a href="<%=request.getContextPath()%>/crear_perfil.do"><button id="boton-unir">Nuevo</button></a> 
                         <logic:iterate  name="listaPerfil" id="perfilTemporal" >
 
                             <%-- Inicio Elemento  --%>
                             <div id="elemento">
 
-                                <%-- href="../mostrar_perfil_seleccionado.do?idPerfil= ${perfilTemporal.idPerfil}" --%>
+                             
                                 
-                                
-                                <a href="../mostrar_perfil_seleccionado.do?nomPerfil=${perfilTemporal.nombrePerfil}"> 
+                                <a href="<%=request.getContextPath()%>/mostrar_perfil_seleccionado.do?idPerfil=${perfilTemporal.idPerfil}"> 
                                     <div id="link-detalle-elemento">
                                         <div id="elemento-imagen">
-                                            <img src="../assets/img/perfil-icon.png" width="30"/>
+                                            <img src="<%=request.getContextPath()%>/assets/img/perfil-icon.png" width="30"/>
                                         </div>
                                         
                                         <h1> ${perfilTemporal.nombrePerfil}</h1> 
                                         <BR>
                                         <h2> ${perfilTemporal.nombreCategoria}</h2>
 
-                                        <%--  ${perfilTemporal.biografia}
-                                         ${perfilTemporal.fechaDeCreacion}
-                                         ${perfilTemporal.imagenDePortada}
-                                         ${perfilTemporal.correo}
-                                         ${perfilTemporal.nombreDistrito}--%>
+                                       
                                     </div></a>
                                 <input type="button" value="Borrar" id="test" onClick="eliminarPerfil('${perfilTemporal.nombreCategoria}');" />
 
                             </div>
-                            <%-- FIN Elemento   ${perfilTemporal.nombrePerfil} --%> 
+                            <%-- FIN Elemento   --%> 
 
                         </logic:iterate>
                          

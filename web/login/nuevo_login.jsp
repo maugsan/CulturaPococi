@@ -39,12 +39,12 @@
 
 
                 </form>
+                   
                 <html:errors/>
 
             </div>
             <aside id="aside-login">
-                <a href="/CulturaPococi/usuarioNormal/crear_usuarionormal.jsp"><button id="boton-unir">Únete</button></a>
-
+                
                 
             </aside>
         </div> 

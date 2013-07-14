@@ -18,9 +18,7 @@ import org.apache.struts.actions.DispatchAction;
  */
 public class CrearUsuarioAction extends DispatchAction {
 
-    /* forward name="success" path="" */
-    private static final String SUCCESS = "success";
-
+   
   
     @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form,

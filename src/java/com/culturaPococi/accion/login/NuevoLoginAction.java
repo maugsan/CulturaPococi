@@ -20,7 +20,7 @@ import org.apache.struts.actions.DispatchAction;
  */
 public class NuevoLoginAction extends DispatchAction {
 
-    /* forward name="success" path="" */
+ 
     private static final String EXITOSO = "exitoso";
     private static final String DENEGADO = "denegado";
     NegocioUsuarioAdministrador nua = new NegocioUsuarioAdministrador();

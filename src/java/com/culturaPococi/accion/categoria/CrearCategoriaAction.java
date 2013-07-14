@@ -6,6 +6,7 @@ package com.culturaPococi.accion.categoria;
 
 import com.culturaPococi.dominio.Categoria;
 import com.culturaPococi.negocio.NegocioCategoria;
+import com.culturaPococi.negocio.NegocioDistrito;
 import java.util.LinkedList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,28 +21,16 @@ import org.apache.struts.action.ActionMapping;
  */
 public class CrearCategoriaAction extends org.apache.struts.action.Action {
 
-    /* forward name="success" path="" */
-    private static final String SUCCESS = "success";
+
     NegocioCategoria nCategoria=new NegocioCategoria();
 
-    /**
-     * This is the action called from the Struts framework.
-     *
-     * @param mapping The ActionMapping used to select this instance.
-     * @param form The optional ActionForm bean for this request.
-     * @param request The HTTP Request we are processing.
-     * @param response The HTTP Response we are processing.
-     * @throws java.lang.Exception
-     * @return
-     */
+
     @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-     
-   
-         
-         request.setAttribute("listaSuper",nCategoria.selectSuperCategoriasDB());
+ 
+        request.setAttribute("listaSuper", nCategoria.selectSuperCategoriasDB());
 
         return mapping.getInputForward();
     }

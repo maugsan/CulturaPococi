@@ -21,30 +21,18 @@
 
         <div id="contendor-interno"> 
 
-            <form method="get" action="./crear_perfil.do">   
+            <form method="post" action="./guardar_perfil.do">   
 
                 
             <h1><bean:message key="perfil.crear.perfil"/></h1>
 
-                
+              
                 <h2><bean:message key="perfil.nombre"/></h2>
                 <input type="text" name="nombre">
-                
-                
-                <%--Hay que ver como verificar que el perfil no exista ya--%>
-                 <a href="../modificar_evento.do?nombrePerfil=${nombre}">
-                   <input type="submit" value="Comprobar disponibilidad">
-                 </a>
-                                
-                <br>
+
                 
                 <h2><bean:message key="form.nombre.categoria"/></h2>
-                <%-- <select name="idCategoria">
-                    <%for(Categoria categoriaTemp: listaCategorias){%>
-                   
-                      <option value=<%categoriaTemp.getIdCategoria();%>> <%=categoriaTemp.getIdCategoria()%> </option>
-                    <%}%>
-                </select>--%>
+              
                 
                 <select name="idCategoria">
                     <logic:iterate name="listaCategorias" id="numero" >
@@ -56,20 +44,33 @@
                  
        
                 <h2><bean:message key="perfil.biografia"/></h2>
-               <input type="text" name="biografia"><br>
+                <textarea  rows="4" cols="50" name="biografia"></textarea>
                               
                 <h2><bean:message key="perfil.imagen.portada"/></h2>
-                
+                <input type="file" name="imagen"><br>
                 <h2><bean:message key="perfil.distrito"/></h2>
                 
-                <select name="distrito">
-                     <option value="Cariari">Cariari</option>
-                     <option value="Colorado">Colorado</option>
-                     <option value="Guápiles">Guápiles</option>
-                     <option value="Jimenez">Jimenez</option>
-                     <option value="La Rita">La Rita</option>
-                     <option value="Roxana">Roxana</option>
-                </select><br>
+                 <select name="nombreDistrito">
+                    <logic:iterate name="listaDistritos" id="distrito" >
+                        <option value="${distrito.nombre}">
+                            ${distrito.nombre}
+                        </option>
+                    </logic:iterate>
+                </select>
+                
+            
+                
+                <h2>Email</h2>
+                <input type="text" name="email"><br>
+                
+                <h2>Facebook</h2>
+                <input type="text" name="facebook"><br>
+                
+                 <h2>Twiter</h2>
+                <input type="text" name="twiter"><br>
+                
+                 <h2>Youtube</h2>
+                <input type="text" name="youtube"><br>
 
                 <input type="submit" value="Crear">  
 
