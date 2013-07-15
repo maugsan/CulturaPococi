@@ -11,7 +11,6 @@
         <%@include file="/includes/head.jsp" %>
         <title>Ingresar al sistema</title>
 
-       
     </head>
 <body>
 
@@ -57,10 +56,7 @@
             String pageToForward = request.getContextPath();
             response.sendRedirect(pageToForward + "/nuevologin.do");
 
-
-
-
-                }%>
+     }%>
     <!--fin -->
 
 

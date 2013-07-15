@@ -24,24 +24,15 @@ public class EliminarPerfilAction extends DispatchAction {
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
 
-    /**
-     * This is the action called from the Struts framework.
-     *
-     * @param mapping The ActionMapping used to select this instance.
-     * @param form The optional ActionForm bean for this request.
-     * @param request The HTTP Request we are processing.
-     * @param response The HTTP Response we are processing.
-     * @throws java.lang.Exception
-     * @return
-     */
+    
     @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         np = new NegocioPerfil();
-        String nombre = request.getParameter("nombrePerfil");
+        String id = request.getParameter("id");
 
-        np.eliminarPerfil(nombre);
+        np.eliminarPerfil(id);
 
         return mapping.findForward(SUCCESS);
     }

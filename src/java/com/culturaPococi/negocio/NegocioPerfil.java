@@ -24,8 +24,8 @@ public class NegocioPerfil {
         dp = new DataPerfil();
     }
 
-    public void eliminarPerfil(String nombrePerfil) throws SQLException {
-        dp.eliminarPerfil(nombrePerfil);
+    public void eliminarPerfil(String id) throws SQLException {
+        dp.eliminarPerfil(id);
     }
 
     public LinkedList<Perfil> getListaPerfil() throws SQLException {

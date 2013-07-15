@@ -38,7 +38,7 @@
                      NuevaVentana = window.open('','','width=1350,height=700');
                      NuevaVentana.location.assign("http://localhost/RecuperacionContrasenia/web/app_dev.php/elfrente/"); 
              }
-                                    </script>
+        </script>
 
     </head>
     <body>
@@ -97,14 +97,12 @@
                                 </section></a>
 
 
-                            <a  onclick="sugerencias()" > <section class="modulo">
+                            <a  <% if (sesion.getAttribute("tipo").equals("0")) {%>style="display: none;"<%}%> href="./ver_banners.do" > <section class="modulo">
 
 
                                     <img  id="icono" src="assets/img/idea-icon.png" width="60">
-                                    <h2>Ideas</h2>
+                                    <h2>Banners</h2>
                                 </section></a>
-                          
-
 
                 </div> 
 

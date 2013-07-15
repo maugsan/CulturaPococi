@@ -23,14 +23,14 @@ public class DataPerfil extends DataBase {
 
     public void eliminarPerfil(String nombrePerfil) throws SQLException {
 
-        String sql = "delete from publicacion  where nombrePerfil='" + nombrePerfil + "';";
-        String sql2 = "delete from perfil  where nombrePerfil='" + nombrePerfil + "';";
+        String sql = "delete from publicacion  where idPerfil='" + nombrePerfil + "';";
+        String sql2 = "delete from perfil  where idPerfil='" + nombrePerfil + "';";
 
         Connection conexion = super.getConexion();
 
         Statement statement = conexion.createStatement();
-        statement.executeQuery(sql);
-        statement.executeQuery(sql2);
+        statement.execute(sql);
+        statement.execute(sql2);
 
         statement.close();
         conexion.close();

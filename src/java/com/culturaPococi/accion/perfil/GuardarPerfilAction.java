@@ -23,7 +23,8 @@ import org.apache.struts.actions.DispatchAction;
  */
 public class GuardarPerfilAction extends DispatchAction {
 
-    private static final String SUCCESS = "success";
+    private static final String EXITOSO = "exitoso";
+    private static final String DENEGADO = "denegado";
     private NegocioPerfil nPerfil = new NegocioPerfil();
 
     public ActionForward execute(ActionMapping mapping, ActionForm form,
@@ -45,11 +46,17 @@ public class GuardarPerfilAction extends DispatchAction {
         String facebook = request.getParameter("facebook");
         String twiter = request.getParameter("twiter");
         String youtube = request.getParameter("youtube");
-        String fecha = request.getParameter("fecha");
+      
 
-
-//        nombre=&idCategoria=1&biografia=&imagen=&distrito=Cariari&email=&facebook=&twiter=&youtube=
-
+        for (Perfil p : nPerfil.getListaPerfil() ) {
+        
+           if (nombre.equalsIgnoreCase(p.getNombrePerfil())) {
+               
+                JOptionPane.showMessageDialog(null, "Ya Existe");
+                 return mapping.findForward(DENEGADO);
+           
+           }
+        }
 
 
         Date dNow = new Date();
@@ -62,6 +69,6 @@ public class GuardarPerfilAction extends DispatchAction {
                 imagen, correo, correoPerfil,
                 distrito, facebook,
                 twiter, youtube));
-        return mapping.findForward(SUCCESS);
+        return mapping.findForward(EXITOSO);
     }
 }

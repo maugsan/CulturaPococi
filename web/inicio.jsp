@@ -1,50 +1,47 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
-<html >
-    
-
-<html >
+<html>
 
     <head>
         <%@include file="includes/head.jsp"%> 
         <title>Inicio</title>
-  
+
     </head>
 
     <body>
+
         <div id="contendor">
 
             <%@include file="includes/header.jsp"%>
-          
+
             <section  id="seccion-principal-inicio">
-  
-                   
+
+
                 <div id="contendor-interno"> 
-               
 
-                    <div id="contentSlide">
-
-                        <div id="slideshow">
-                            <ul id="controles">  	
-                                <li id="cAtras"> <a href = "#" ></a> </li>
-                                <li id="cAdelante"> <a href = "#" ></a> </li>
-                            </ul>
-                            <ul id="slides">  
-
-                                <li> <a id="slide" href = "#">  <img src="./assets/img/inicio.png" > </a> </li>
-                                <li> <a id="slide" href = "#">   <img src="./assets/img/banner1.jpg" > </a> </li>
-                                <li> <a id="slide" href = "#">   <img src="./assets/img/banner2.jpg" > </a> </li>
-
+                    <div id="wrapper">
+                        <div class="callbacks_container">
+                            <ul class="rslides" id="slider4">
+                                <li>
+                                    <img src="<%=request.getContextPath()%>/assets/img/1.jpg" alt="">
+                                    <p class="caption">This is a caption</p>
+                                </li>
+                                <li>
+                                    <img src="<%=request.getContextPath()%>/assets/img/2.jpg" alt="">
+                                    <p class="caption">This is another caption</p>
+                                </li>
+                                <li>
+                                    <img src="<%=request.getContextPath()%>/assets/img/3.jpg" alt="">
+                                    <p class="caption">The third caption</p>
+                                </li>
                             </ul>
                         </div>
-
-                    </div>
-                </div> 
+                    </div> </div> 
 
             </section>
 
-            
+
 
 
 

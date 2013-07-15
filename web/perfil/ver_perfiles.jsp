@@ -2,7 +2,7 @@
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <html:html lang="true">
     <head>
-       
+         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <%@include file="/includes/head.jsp" %>
         <title><bean:message key="welcome.title"/></title>
       
@@ -26,7 +26,7 @@
 
                                 <%-- href="../mostrar_perfil_seleccionado.do?idPerfil= ${perfilTemporal.idPerfil}" --%>
                                 
-                                <a href="./mostrar_perfil_seleccionado.do?nomPerfil=${perfilTemporal.nombrePerfil}"> 
+                                <a href="./mostrar_perfil_seleccionado.do?idPerfil=${perfilTemporal.idPerfil}"> 
                                     <div id="link-detalle-elemento">
                                         <div id="elemento-imagen"><img src="<%=request.getContextPath()%>${perfilTemporal.imagenDePortada}" width="50"/></div>
                                         

@@ -75,4 +75,19 @@ $(function() {
 });
 
 
-
+ $(function() {
+    $(".rslides").responsiveSlides();
+  });
+   // Slideshow 4
+      $("#slider4").responsiveSlides({
+       auto: false,
+        pager: false,
+        nav: true,
+        speed: 500,
+        maxwidth: 940, 
+        manualControls: "true", 
+        namespace: "large-btns"    
+        
+       
+      });
+ 

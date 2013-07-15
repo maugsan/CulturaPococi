@@ -9,6 +9,7 @@
     
     
     <form-beans>
+        <form-bean name="BannerForm" type="com.culturaPococi.accion.banner.BannerForm"/>
         <form-bean name="PerfilForm" type="com.culturaPococi.accion.perfil.PerfilForm"/>
         <form-bean name="CrearProgramaRadioForm" type="com.culturaPococi.accion.programaradio.CrearProgramaRadioForm"/>
         <form-bean name="ArticuloForm" type="com.culturaPococi.accion.articulo.ArticuloForm"/>
@@ -83,7 +84,8 @@
                 type="com.culturaPococi.accion.perfil.GuardarPerfilAction"
             
         >
-            <forward name="success" path="/correcto.jsp" />  
+            <forward name="denegado" path="/incorrecto.jsp" /> 
+            <forward name="exitoso" path="/correcto.jsp" />  
         </action>    
         
         <action path="/mostrar_perfil_seleccionado"
@@ -578,10 +580,31 @@
         </action>
         
         
+        <action path="/ver_banners" 
+                type="com.culturaPococi.accion.banner.verBannersAction"
+                input="/banner/index.jsp"
+        />
+        <action path="/crear_banner" 
+                 scope="request" 
+                validate="false"
+                name="BannerForm"
+                type="com.culturaPococi.accion.banner.crearBannerAction"
+                input="/banner/index.jsp">
+                
+            <forward name="exitoso" path="/correcto.jsp" />
+            <forward name="denegado" path="/incorrecto.jsp" />
+        </action>
+        <action path="/crear_banners" 
+                 
+                input="/banner/crear_banner.jsp"
+                type="com.culturaPococi.accion.banner.CrearBannersAction"/>
+        
+        
         
         <action path="/mis_perfiles" 
                 input="/perfil/mostrar_mis_perfiles.jsp" 
-                type="com.culturaPococi.accion.perfil.MostrarMisPerfilesAction"/>
+                type="com.culturaPococi.accion.perfil.MostrarMisPerfilesAction"
+        />
  
         <action path="/ver_arte" 
                 type="com.culturaPococi.accion.categoria.VerArteAction"
@@ -652,10 +675,12 @@
         />
         
         
+
+        <action path="/Inicio"
+                forward="/inicio.jsp"
         
-       
-       
-        <action path="/Inicio" forward="/inicio.jsp"/>
+        
+        />
     </action-mappings>
     
     <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>

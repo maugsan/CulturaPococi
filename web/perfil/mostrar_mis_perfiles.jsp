@@ -4,12 +4,11 @@
     Author     : Personal
 --%>
 
-<%@page contentType="text/html"%>
-<%@page pageEncoding="UTF-8"%>
 
 
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <html:html lang="true">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <head>
         <%@include file="../includes/head.jsp" %>
         <title><bean:message key="welcome.title"/></title>
@@ -48,7 +47,10 @@
 
                                        
                                     </div></a>
-                                <input type="button" value="Borrar" id="test" onClick="eliminarPerfil('${perfilTemporal.nombreCategoria}');" />
+                                          <a href="<%=request.getContextPath()%>/eliminar_perfil.do?id=${categoriaTemporal.idCategoria}">
+                                    <div id="elemento-icon"><img src="<%=request.getContextPath()%>/assets/img/delete-icon.png" width="30"/>
+                                    </div></a>   
+                             
 
                             </div>
                             <%-- FIN Elemento   --%> 
