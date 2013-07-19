@@ -1,4 +1,5 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html"%>
+<%@page pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
 <html>
@@ -10,46 +11,60 @@
     </head>
 
     <body>
+         <script> $(function() {
+    $(".rslides").responsiveSlides();
+  });
+   // Slideshow 4
+      $("#slider4").responsiveSlides({
+       auto: false,
+        pager: false,
+        nav: true,
+        speed: 500,
+        maxwidth: 940, 
+        manualControls: "true", 
+        namespace: "large-btns"    
+        
+       
+            });
+               
+         </script>
 
         <div id="contendor">
+           
 
             <%@include file="includes/header.jsp"%>
 
             <section  id="seccion-principal-inicio">
-
+          
 
                 <div id="contendor-interno"> 
-
-                    <div id="wrapper">
+                  
+                  
                         <div class="callbacks_container">
                             <ul class="rslides" id="slider4">
-                                <li>
-                                    <img src="<%=request.getContextPath()%>/assets/img/1.jpg" alt="">
-                                    <p class="caption">This is a caption</p>
-                                </li>
-                                <li>
-                                    <img src="<%=request.getContextPath()%>/assets/img/2.jpg" alt="">
-                                    <p class="caption">This is another caption</p>
-                                </li>
-                                <li>
-                                    <img src="<%=request.getContextPath()%>/assets/img/3.jpg" alt="">
-                                    <p class="caption">The third caption</p>
-                                </li>
+
+                                <logic:iterate name="listaBanners" id="b" >
+
+                                    <li>
+                                        <img src="<%=request.getContextPath()%>/assets/img/banners/${b.nombreBanner}" alt="">
+                                        <p class="caption">${b.descripcionBanner}</p>
+                                    </li>
+
+                                </logic:iterate>
+                       
                             </ul>
                         </div>
-                    </div> </div> 
+                    </div> 
+                
 
             </section>
-
-
-
-
 
             <%@include file="includes/espacios.jsp" %> 
 
             <%@include file="includes/footer.jsp" %>
 
         </div>
+           
 
     </body>
 </html>

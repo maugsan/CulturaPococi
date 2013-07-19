@@ -61,8 +61,8 @@ public class DataCategoria extends DataBase{
             resultado = statement.executeQuery(sql);
 
             while (resultado.next()) {
-                categoria = new Categoria(resultado.getString("nombreCategoria"), 
-                        resultado.getInt("idCategoria"), resultado.getInt("superID"));
+                categoria = new Categoria(resultado.getString(1), 
+                        resultado.getInt(2), resultado.getInt(3));
                 listaCategorias.add(categoria);
             }//fin while
 

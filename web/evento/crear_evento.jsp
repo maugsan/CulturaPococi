@@ -21,17 +21,21 @@
 
             <div id="contendor-interno"> 
 
+                <html:form action="/guardar_evento"  method="post" enctype="multipart/form-data" >
 
-
-                <form enctype="multipart/form-data"  action="./cargarImagen/cargarImagen.jsp" method="post" id="validar-form">
-                   
-                    <input type="hidden" name="accion" value="/crear_evento.do"/>
+                    <h1>Crear Evento</h1>
                     
-                    <input type="file" name="file"/>
-                    <h1><bean:message key="form.hora"/></h1>
-
-                    <select name='hora' id="select-hora"> 
-                        <option value='${hora}' > ${hora} </option>
+                    <h2><bean:message key="form.nombre"/></h2>
+                    <html:text  property="nombre" size="16" /><br>
+                    <html:errors property="enombre"/> 
+                    
+                    <h2>Flyer</h2>
+                    <html:file  property="file" size="16" /><br>
+                    <html:errors property="file"/> 
+                    
+                    <h2>Hora:</h2>
+                    <select name='hora'> 
+                       
                         <option value='1' > 1 </option>
                         <option value='2'> 2 </option>
                         <option value='3'> 3 </option>
@@ -46,8 +50,8 @@
                         <option value='12'> 12 </option>
                     </select>
 
-                    <select name='minutos' id="select-hora">
-                        <option value='${minutos}'>${minutos} </option>
+                    <select name='minutos'>
+                      
                         <option value='00'> 00 </option>
                         <option value='05'> 05 </option>
                         <option value='10'> 10 </option>
@@ -62,48 +66,43 @@
                         <option value='55'> 55 </option>
 
                     </select>
-
-                    <select name='tiempo' id="select-hora">
-                        <option value='${tiempo}'>${tiempo} </option>
+                      
+                    <select name='tiempo'>
+                        
                         <option value='am'> am </option>
                         <option value='pm'> pm </option>
 
                     </select>
 
+                    <h2><bean:message key="articulo.fecha"/></h2>
+                    <input type="text" name="fecha" id="datepicker" readonly="readonly" size="12"/>
 
-
-                    <h2><bean:message key="form.nombre"/></h2>
-                    <input type="text" id="nombre" name="nombre" size="16" value=""/>
-
-                    <h2><bean:message key="form.fecha"/></h2>
-                    <input type="text" name="fecha" id="datepicker" id="fecha"   readonly="readonly" size="12" />
-
-
+                    
 
                     <h2><bean:message key="form.categoria"/></h2>
-                    <select name="idCategoria">
+                    <html:select property="idCategoria">
                         <logic:iterate name="listaCategorias" id="numero" >
-                            <option value="${numero.idCategoria}"> <!-- esto es para que cuando elija el nombre me envie el numero !-->
-                                ${numero.nombreCategoria}
-                            </option>
+                            <html:option value="${numero.idCategoria}">
+                                <bean:write name="numero" property="nombreCategoria"/>
+                            </html:option>
                         </logic:iterate>
-                    </select>
+                    </html:select>
 
                     <h2><bean:message key="form.lugar"/></h2>
-                    <input type="text" id="lugar" name="lugar" size="16" value=""/>
+                    <html:text   property="lugar" size="16" /><br>
+                    <html:errors property="elugar"/> 
 
                     <h2><bean:message key="form.informacion"/></h2>
-                    <textarea ROWS="5" id="texto-grande" id="informacion"  name="informacion" size="16" value=""></textarea>
+                    <html:textarea  property="informacion" cols="44" rows="5" /><br>
+                    <html:errors property="einformacion"/> 
 
-                    <input type="submit" value="Crear"/>
+                
+                  
 
-                </form>
-                <a href="./listar_evento.do">
-                    <button id="boton-volver">
-                        <bean:message key="boton.volver"/>
-                    </button>
-                </a>
+                    <html:submit value="Crear" />
 
+                </html:form>
+                
             </div> 
 
         </section>

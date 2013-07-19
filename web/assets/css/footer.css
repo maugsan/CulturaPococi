@@ -1,0 +1,115 @@
+/* 
+    Document   : footer
+    Created on : 17-jul-2013, 11:43:42
+    Author     : Pedro
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+footer {
+
+    margin-top: 100px;
+    /*    background-image: url("../img/textura1.png");*/
+    position: relative;
+    background: #333333; /* Old browsers */
+    background: -moz-linear-gradient(top,  #333333 0%, #555555 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#333333), color-stop(100%,#555555)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #333333 0%,#555555 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #333333 0%,#555555 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #333333 0%,#555555 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #333333 0%,#555555 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#555555',GradientType=0 ); /* IE6-9 */
+
+    color: white;
+    width: 100%;
+    height: 700px;
+
+
+}
+
+footer a {
+    list-style: none;
+    color: white;
+    text-decoration: none;
+    line-height: 30px;
+
+}
+footer ul {
+    list-style: none;
+
+
+}
+
+
+
+#footer-izquierdo {
+
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+    float: left;
+    text-align: center;
+    position: relative;
+
+}
+
+#footer-centro {
+
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+    float: left;
+    margin: 0 15px 0 15px;
+    text-align: center;
+    position: relative;
+
+}
+
+#footer-derecho {
+
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+    float: left;
+    text-align: center;
+    position: relative;
+
+
+}
+
+#footer-inferior {
+
+    width: 100%;
+    height: 50px;
+    background: #333;
+    color: whitesmoke;
+    float: left;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -moz-border-radius: 20px;
+    padding: 10px;
+
+
+}
+#footer-terms {
+
+    float: right;
+}
+
+#busqueda-contenedor {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+
+}
+
+
+@media only screen and (max-width : 600px) {
+    
+    #busqueda-contenedor {
+   
+    padding: 0;
+
+}
+}

@@ -223,9 +223,9 @@
                         <li><a id="boton" href="<%=request.getContextPath()%>/usuarioNormal/crear_usuarionormal.jsp">ÚNETE</a></li>
                         <li ><a id="boton-entrar" href="<%=request.getContextPath()%>/login/nuevo_login.jsp">ENTRAR</a></li>
 		</ul>
-		<a href="#" id="pull">MENU</a>
+		
 </nav>
-
+<a  id="pull"></a>
 
 
 <%} else {%>
@@ -241,14 +241,13 @@
 			<li><a href="<%=request.getContextPath()%>/ver_arte.do">ARTE</a></li>
 			<li><a href="<%=request.getContextPath()%>/ver_cultura.do">CULTURA</a></li>
 			<li><a href="<%=request.getContextPath()%>/ver_eventos.do">AGENDA</a></li>
-                        <li><a href="<%=request.getContextPath()%>/nuevologin.do">CONFIGURACIÓN</a></li>
+                        <li><a href="<%=request.getContextPath()%>/nuevologin.do">PANEL</a></li>
                         <li >    <a id="boton-entrar" href="<%=request.getContextPath()%>/invalidar.jsp">SALIR</a></li>
 		</ul>
-		<a href="#" id="pull">MENU</a>
+		
 </nav>
 
-
-
+<a  id="pull"></a>
 
 
 <%  }%>

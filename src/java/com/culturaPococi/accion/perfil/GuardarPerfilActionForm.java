@@ -2,17 +2,25 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.culturaPococi.dominio;
+package com.culturaPococi.accion.perfil;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts.action.ActionErrors;
+import org.apache.struts.action.ActionMapping;
+import org.apache.struts.action.ActionMessage;
+import org.apache.struts.upload.FormFile;
 
 /**
  *
- * @author jonathan
+ * @author Pedro
  */
-public class Perfil {
-    
+public class GuardarPerfilActionForm extends org.apache.struts.action.ActionForm {
 
+    private FormFile file;
     private String nombrePerfil;
     private String idPerfil;
+    private String idCategoria;
     private String nombreCategoria;
     private String fechaDeCreacion;
     private String biografia;
@@ -25,19 +33,20 @@ public class Perfil {
     private String youtube;
     private int votos;
 
-    public Perfil(String nombrePerfil, String idPerfil, String nombreCategoria, String fechaDeCreacion, String biografia, String imagenDePortada, String correo, String correoPerfil, String nombreDistrito, String facebook, String twiter, String youtube) {
-        this.nombrePerfil = nombrePerfil;
-        this.idPerfil = idPerfil;
-        this.nombreCategoria = nombreCategoria;
-        this.fechaDeCreacion = fechaDeCreacion;
-        this.biografia = biografia;
-        this.imagenDePortada = imagenDePortada;
-        this.correo = correo;
-        this.correoPerfil = correoPerfil;
-        this.nombreDistrito = nombreDistrito;
-        this.facebook = facebook;
-        this.twiter = twiter;
-        this.youtube = youtube;
+    public String getIdCategoria() {
+        return idCategoria;
+    }
+
+    public void setIdCategoria(String idCategoria) {
+        this.idCategoria = idCategoria;
+    }
+
+    public FormFile getFile() {
+        return file;
+    }
+
+    public void setFile(FormFile file) {
+        this.file = file;
     }
 
     public String getNombrePerfil() {
@@ -88,6 +97,10 @@ public class Perfil {
         return youtube;
     }
 
+    public int getVotos() {
+        return votos;
+    }
+
     public void setNombrePerfil(String nombrePerfil) {
         this.nombrePerfil = nombrePerfil;
     }
@@ -135,9 +148,45 @@ public class Perfil {
     public void setYoutube(String youtube) {
         this.youtube = youtube;
     }
-    
-    
-    
-    
-    
+
+    public void setVotos(int votos) {
+        this.votos = votos;
+    }
+
+    public GuardarPerfilActionForm() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+    public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
+        ActionErrors errors = new ActionErrors();
+        if (getNombrePerfil() == null || getNombrePerfil().length() < 1) {
+            errors.add("name", new ActionMessage("error.name.required"));
+            // TODO: add 'error.name.required' key to your resources
+        }
+
+
+        if (getFile().getFileSize() == 0) {
+            errors.add("common.file.err",
+                    new ActionMessage("error.common.file.required"));
+            return errors;
+        }
+
+        //only allow textfile to upload
+        if (!"text/plain".equals(getFile().getContentType())) {
+            errors.add("common.file.err.ext",
+                    new ActionMessage("error.common.file.textfile.only"));
+            return errors;
+        }
+
+        //file size cant larger than 2kb
+        System.out.println(getFile().getFileSize());
+        if (getFile().getFileSize() > 2048) { //2kb
+            errors.add("common.file.err.size",
+                    new ActionMessage("error.common.file.size.limit", 10240));
+            return errors;
+        }
+
+        return errors;
+    }
 }

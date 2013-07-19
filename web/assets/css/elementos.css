@@ -1,0 +1,397 @@
+/* 
+    Document   : elementos
+    Created on : 17-jul-2013, 12:13:57
+    Author     : Pedro
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+  ========================================= 
+       Lista de elementos
+  ========================================= */
+
+#lista-elementos {
+
+    border: solid 1px #ccc;
+    position: relative;
+    background-color: #e1e1e1;
+    padding: 20px;
+
+}
+
+#elemento {
+    word-wrap: break-word; 
+    width: 600px; 
+    min-height: 200px;
+    text-transform: capitalize;
+    color: #555;
+    border: solid 1px #ccc;
+    background: #f0f0f0;
+    margin:  10px;
+    padding: 10px;
+
+}
+
+#listaPublicacion {
+    width:600px; 
+    height: 40px;
+    color: #333;
+    border: solid 1px #ccc;
+    background: #f0f0f0;
+    margin:  10px;
+    padding: 10px;
+    font-size: 22px;
+}
+#listaTipoPublicacion {
+    width:600px; 
+    height: 80px;
+    color: #333;
+    border: solid 1px #ccc;
+    background: #f0f0f0;
+    margin:  10px;
+    padding: 10px;
+    font-size: 22px;
+}
+
+
+
+#link-detalle-elemento{
+    width: 400px;
+    height:50px;
+    float: left;
+
+}
+
+#elemento-listaPublicacion {
+    width:600px; 
+    height: 120px;
+    color: #333;
+    border: solid 1px #ccc;
+    background: #00FFFF;
+    margin:  10px;
+    padding: 10px;
+    font-size: 22px;
+}
+
+#elemento-publicacion-musica {
+    width:600px; 
+    height: 250px;
+    color: #333;
+    border: solid 1px #ccc;
+    background: #00FFFF;
+    margin:  10px;
+    padding: 10px;
+    font-size: 22px;
+}
+
+
+
+#elemento-icon {
+    width: 30px;
+    height: 30px;
+    float: right;
+    opacity: 0.9;
+
+}
+#elemento-icon:hover {
+
+    width: 30px;
+    height: 30px;
+    float: right;
+    opacity: 1;
+
+
+}
+#elemento-banner {
+    word-wrap: break-word; 
+    width: 500px; 
+    height: 250px;
+    text-transform: capitalize;
+    color: #555;
+    border: solid 1px #ccc;
+    background: #f0f0f0;
+    margin:  10px;
+    padding: 10px;
+
+
+}
+#elemento-banner #bnn {
+
+    width: 400px;
+
+    float: left;
+
+}
+#elemento-imagen {
+
+    width: 70px;
+    height: 70px;
+    float: left;
+
+}
+#elemento-nombre {
+
+    width: 300px;
+    font-size: 20px;
+    margin-top: 0;
+    color: #333;
+    text-decoration: none;
+
+
+}
+
+
+@media only screen and (max-width: 600px){
+
+   
+#lista-elementos {
+
+       width: 100%; 
+      
+
+}
+    #elemento {
+
+        width: 80%; 
+ 
+    }
+
+
+}
+
+designs do visit Web Design UK
+Advertise HereAdvertise HereAdvertise HereAdvertise Here
+
+Signazon
+
+#circle { 
+   width: 140px;
+   height: 140px;
+   background: red; 
+   -moz-border-radius: 70px; 
+   -webkit-border-radius: 70px; 
+   border-radius: 70px;
+}
+
+#square {
+   width: 140px; 
+   height: 140px; 
+   background: blue; 
+}
+
+
+#oval {
+   width: 200px; 
+   height: 100px; 
+   background: purple; 
+   -moz-border-radius: 100px / 50px; 
+   -webkit-border-radius: 100px / 50px; 
+   border-radius: 100px / 50px;
+}
+
+
+#up-triangle {
+   width: 0; 
+   height: 0; 
+   border-bottom: 120px solid green; 
+   border-left: 60px solid transparent; 
+   border-right: 60px solid transparent; 
+}
+
+
+#down-triangle { 
+   width: 0; 
+   height: 0;
+   border-top: 80px solid pink;
+   border-left: 60px solid transparent; 
+   border-right: 60px solid transparent; 
+}
+
+ 
+
+#left-triangle {
+   width: 0;
+   height: 0;
+   border-right: 100px solid orange;
+   border-top: 50px solid transparent;
+   border-bottom: 50px solid transparent;
+}
+
+
+#right-triangle {
+   width: 0;
+   height: 0;
+   border-left: 100px solid red;
+   border-top: 50px solid transparent;
+   border-bottom: 50px solid transparent;
+}
+
+
+#trapezium {
+   height: 0; 
+   width: 80px;
+   border-bottom: 80px solid blue;
+   border-left: 40px solid transparent;
+   border-right: 40px solid transparent;
+}
+
+
+#diamond {
+   width: 80px; 
+   height: 80px; 
+   background: purple;
+   margin: 3px 0 0 30px;
+   /* Rotate */
+   -webkit-transform: rotate(-45deg);
+   -moz-transform: rotate(-45deg);
+   -ms-transform: rotate(-45deg);
+   -o-transform: rotate(-45deg);
+   transform: rotate(-45deg);
+   /* Rotate Origin */
+   -webkit-transform-origin: 0 100%;
+   -moz-transform-origin: 0 100%;
+   -ms-transform-origin: 0 100%;
+   -o-transform-origin: 0 100%;
+   transform-origin: 0 100%;
+}
+
+
+#rectangle {
+   width: 140px; 
+   height: 80px;
+   background: green;
+}
+
+
+#parallelogram {
+   width: 130px; 
+   height: 75px;
+   background: pink;
+   /* Skew */
+   -webkit-transform: skew(20deg); 
+   -moz-transform: skew(20deg); 
+   -o-transform: skew(20deg);
+   transform: skew(20deg);
+}
+
+
+#twelve-point-star {
+   height: 100px;
+   width: 100px;
+   background: orange;
+   position: absolute;
+}
+#twelve-point-star:before {
+   height: 100px;
+   width: 100px;
+   background: orange;
+   content:"";
+   position: absolute;
+   /* Rotate */
+   -moz-transform: rotate(30deg);
+   -webkit-transform: rotate(30deg);
+   -ms-transform: rotate(30deg);
+   -o-transform: rotate(30deg);
+   transform: rotate(30deg);
+}
+#twelve-point-star:after {
+   height: 100px;
+   width: 100px;
+   background: orange;
+   content:"";
+   position: absolute;
+   /* Rotate */
+   -moz-transform: rotate(-30deg);
+   -webkit-transform: rotate(-30deg);
+   -ms-transform: rotate(-30deg);
+   -o-transform: rotate(-30deg);
+   transform: rotate(-30deg);
+}
+
+
+#six-point-star {
+   position: absolute;
+   width: 0; 
+   height: 0; 
+   border-left: 50px solid transparent; 
+   border-right: 50px solid transparent; 
+   border-bottom: 80px solid red;
+}
+#six-point-star:after {
+   content:"";
+   position: absolute;
+   width: 0; 
+   height: 0; 
+   border-left: 50px solid transparent; 
+   border-right: 50px solid transparent; 
+   border-top: 80px solid red;
+   margin: 30px 0 0 -50px;
+}
+
+
+#octagon {
+   width: 100px; 
+   height: 100px; 
+   background: blue;
+}
+#octagon:before {
+   height: 0;
+   width: 40px;
+   content:"";
+   position: absolute; 
+   border-bottom: 30px solid blue;
+   border-left: 30px solid white; 
+   border-right: 30px solid white; 
+}
+#octagon:after {
+   height: 0;
+   width: 40px;
+   content:"";
+   position: absolute; 
+   border-top: 30px solid blue; 
+   border-left: 30px solid white;  
+   border-right: 30px solid white; 
+   margin: 70px 0 0 0;
+}
+
+#evento {
+
+    width: 600px;
+    height:  auto;
+    border: 1px solid #ccc;
+    background-color: white;
+    padding: 9px;
+    text-align: center;
+    margin: 7px;
+    display: block;
+    float: left;
+
+
+}
+#evento:hover {
+
+    background: #f9f9f9;
+}
+#fecha-evento {
+   width: 10%; 
+   height: 70px; 
+   color: whitesmoke;
+   background: #609120;
+   position: absolute;
+   -moz-border-radius: 10px; 
+   -webkit-border-radius: 10px; 
+   border-radius: 10px;
+}
+#nombre-evento {
+   width: 80%; 
+   float: right;
+   text-align: center;
+   height: auto; 
+  
+ 
+}
+
+
+
+   

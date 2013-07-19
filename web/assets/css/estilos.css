@@ -17,17 +17,23 @@ root {
 body {
 
     font-family: 'Open Sans', sans-serif;
-    text-transform:uppercase;
+   
     color: #555;
-    background: #f0f0f0;
+    /*background: #f0f0f0;*/
 
 }
+
 a {
 
     color: #555;
     text-decoration: none;
+    
 
 }
+h1, h2,h3,h4,h5 {
+   text-transform:uppercase;  
+}
+
 #contendor {
     height: auto;
     font-size: 15px;
@@ -56,7 +62,7 @@ header {
     background: linear-gradient(to bottom,  #333333 0%,#555555 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#555555',GradientType=0 ); /* IE6-9 */
 
-
+   
     height: 120px;
     width: 100%;
     z-index: 2;
@@ -87,30 +93,7 @@ header {
 
 }
 
-@media only screen and (max-width: 600px){
 
-    #contendor-interno { 
-        width: 100%; 
-    }
-    header {
-
-        height: 150px;
-    }
-    #header-logo {
-
-
-        min-width:  12%;
-
-
-    }
-    #publicidad {
-
-        width: 100%;
-
-
-    }
-
-}
 #header-opciones {
 
 
@@ -194,33 +177,26 @@ header {
 }   
 
 #seccion-principal-inicio {
-
-    padding: 150px 0 30px 0 ;
+   
+    padding: 110px 0 110px 0 ;
     min-height: 400px;
-    text-align: center;
+ 
 }
 
-@media only screen and (max-width: 600px){
-    body { 
-        width: 100%; 
-        display:inline-block;
-    }
-    #contendor {
-
-        width: 100%; 
-        display:inline-block;
-    }
-    #seccion-principal-inicio{
-
-        width: 100%; 
-    }
-}
 
 #seccion-principal-perfil {
 
-    padding: 150px 0 30px 0 ;
+     padding: 110px 0 110px 0 ;
     min-height: 850px;
 
+}
+
+#fondo {
+
+     position: fixed;
+     z-index: 0;
+     width: 100%;
+     
 }
 
 
@@ -262,15 +238,12 @@ header {
 }
 #publicidad {
 
-    width: 580px;
+    width: 590px;
     height: 60px;
     margin: 20px;
     float: left;
     padding: 10px;
     background-color: #0097ca;
-    text-align: center;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
     position: relative;
 
 }
@@ -284,18 +257,22 @@ header {
     padding: 10px;
     background-color: #609120;
     text-align: center;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
+   
     position: relative;
 
 
 }
 
+
+
+
+
+
 #perfil-creacion {
 
     border: solid #ccc 1px;
     width: 280px;
-    height: 180px;
+    height: 60px;
     margin-bottom: 20px;
     float: left;
     padding: 10px;
@@ -357,216 +334,9 @@ aside {
 }
 
 
-footer {
-
-    /*    background-image: url("../img/textura1.png");*/
-
-    background: #333333; /* Old browsers */
-    background: -moz-linear-gradient(top,  #333333 0%, #555555 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#333333), color-stop(100%,#555555)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #333333 0%,#555555 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #333333 0%,#555555 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #333333 0%,#555555 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  #333333 0%,#555555 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#555555',GradientType=0 ); /* IE6-9 */
-
-    color: white;
-    width: 100%;
-    height: 700px;
 
 
-}
-
-footer a {
-    list-style: none;
-    color: white;
-    text-decoration: none;
-    line-height: 30px;
-
-}
-footer ul {
-    list-style: none;
-
-
-}
-
-
-
-#footer-izquierdo {
-
-    width: 300px;
-    height: 300px;
-    display: inline-block;
-    float: left;
-    text-align: center;
-    position: relative;
-
-}
-
-#footer-centro {
-
-    width: 300px;
-    height: 300px;
-    display: inline-block;
-    float: left;
-    margin: 0 15px 0 15px;
-    text-align: center;
-    position: relative;
-
-}
-
-#footer-derecho {
-
-    width: 300px;
-    height: 300px;
-    display: inline-block;
-    float: left;
-    text-align: center;
-    position: relative;
-
-
-}
-
-#footer-inferior {
-
-    width: 100%;
-    height: 50px;
-    background: #333;
-    color: whitesmoke;
-    float: left;
-    border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -moz-border-radius: 20px;
-    padding: 10px;
-
-
-}
-#footer-terms {
-
-    float: right;
-}
-#busqueda-contenedor {
-    width: 100%;
-    /*    border: solid 1px red;*/
-    text-align: center;
-    padding: 20px;
-
-}
-/* 
-========================================= 
-  Botones
-========================================= */
-
-button {
-
-    width: 80px;
-    height: 30px;
-    word-wrap: break-word; 
-
-    border: none;
-    background-color: #0097ca;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-
-}
-#boton-entrar {
-
-
-    -moz-border-radius: 10px;
-
-    background-color: #609120;
-
-
-}
-
-#boton {
-
-    /*     border-radius: 10px;
-        -webkit-border-radius: 10px;
-        -ms-border-radius: 10px;
-        -moz-border-radius: 10px;*/
-    margin-right: 5px;
-    background-color: #0097ca;
-
-
-}
-
-#boton-buscar {
-
-    margin-top: 20px;
-    float: right;
-    width: 60px;
-    margin-left: 10px;
-    background-color: #609120;
-}
-#boton-salir {
-
-    margin-top: 20px;
-    float: right;
-    width: 60px;
-    margin-left: 10px;
-    background-color: #0097ca;
-}
-#boton-usuario {
-
-
-    margin-top: 20px;
-    float: right;
-    width: 150px;
-    color: white;
-    margin-left: 10px;
-    background-color: #333;
-}
-#boton-unir {
-    margin: 20px ;
-    float: right;
-    width: 200px;
-    margin-left: 25px;
-    height: 80px;
-    background-color: #333;
-    color: whitesmoke;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-
-}
-
-#boton-volver {
-    margin-top: 20px;
-    float: left;
-    width: 127px;
-    margin-left: 25px;
-    height: 45px;
-    background-color: #99CCFF;
-    color: #FFFFFF;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    border: 1px solid #99CCFF;
-    cursor: pointer;
-}
-
-
-#select {
-    margin-top: 20px;
-    float: left;
-    width: 127px;
-    height: 45px;
-    background-color: #99CCFF;
-    color: #FFFFFF;
-
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    cursor: pointer;
-}
-/* 
-========================================= 
-  Formularios
-========================================= */
-
-
-/* 
-========================================= 
+/* ========================================= 
   Sitio administrativo
 ========================================= */
 
@@ -614,212 +384,19 @@ button {
 ========================================= */
 
 
-form {
 
-    background: whitesmoke;  
-    width: auto;
-    height: auto;
-    padding: 20px;
-    border-radius: 5px;
-    border:2px solid #eee;
-    margin-bottom: 20px;
-    border: solid 1px #ccc;
-}
 #busqueda{
 
 
-
+    
     background: none;
     border-radius: 10px;
     border:none;
 }
 
 
-form input {
-    border: solid 1px #ccc;
-    font-size: 12px;
-    width:340px;
-    height:40px;
-    background:#fefefe;
-
-    padding: 5px;
-    margin-bottom: 4px;
-    font-size:0.9em;
-    color:#3a3a3a;
-
-    -webkit-border-radius: 5px;
-
-    border-radius: 5px;
-
-}
-
-input[type="submit"] {
-
-    width:127px;
-    height: 45px;
-    border: 1px solid #1ba9df;
-    background-color: #1397c9;
-    margin-top:20px;
-    cursor: pointer;
-    color: #fff; 
 
 
-}
-
-
-
-input[type="file"]  {
-
-    height: 45px;
-    border: none;
-    background: none;
-    margin-top:20px;
-    cursor: pointer;
-    color: #ccc; 
-
-    /* In IE7, the height of the select element cannot be changed by height, only font-size */
-
-    *margin-top: 4px;
-    /* For IE7, add top margin to align select with labels */
-
-    line-height: 30px;
-
-
-}
-
-input[type="textarea"] {
-
-
-}
-/* 
-  ========================================= 
-        Errores
-  ========================================= */
-
-#error1 { 
-
-    width: 100%;
-    color: red;
-
-
-}
-
-/* 
-  ========================================= 
-       Lista de elementos
-  ========================================= */
-
-#lista-elementos {
-
-    border: solid 1px #ccc;
-    position: relative;
-    background-color: #e1e1e1;
-    padding: 20px;
-
-}
-
-#elemento {
-    word-wrap: break-word; 
-    width: 600px; 
-    min-height: 200px;
-    text-transform: capitalize;
-    color: #555;
-    border: solid 1px #ccc;
-    background: #f0f0f0;
-    margin:  10px;
-    padding: 10px;
-
-
-
-}
-
-#listaPublicacion {
-    width:600px; 
-    height: 40px;
-    color: #333;
-    border: solid 1px #ccc;
-    background: #f0f0f0;
-    margin:  10px;
-    padding: 10px;
-    font-size: 22px;
-}
-#listaTipoPublicacion {
-    width:600px; 
-    height: 80px;
-    color: #333;
-    border: solid 1px #ccc;
-    background: #f0f0f0;
-    margin:  10px;
-    padding: 10px;
-    font-size: 22px;
-}
-
-#elemento-listaPublicacion {
-    width:600px; 
-    height: 120px;
-    color: #333;
-    border: solid 1px #ccc;
-    background: #00FFFF;
-    margin:  10px;
-    padding: 10px;
-    font-size: 22px;
-}
-
-#elemento-publicacion-musica {
-    width:600px; 
-    height: 250px;
-    color: #333;
-    border: solid 1px #ccc;
-    background: #00FFFF;
-    margin:  10px;
-    padding: 10px;
-    font-size: 22px;
-}
-
-
-
-#elemento-icon {
-    width: 30px;
-    height: 30px;
-    float: right;
-    opacity: 0.9;
-
-}
-#elemento-icon:hover {
-
-    width: 30px;
-    height: 30px;
-    float: right;
-    opacity: 1;
-
-
-}
-
-
-#elemento-imagen {
-
-    width: 70px;
-    height: 70px;
-    float: left;
-
-}
-#elemento-nombre {
-
-    width: 300px;
-    font-size: 20px;
-    margin-top: 0;
-    color: #333;
-    text-decoration: none;
-
-
-}
-
-#link-detalle-elemento{
-    width: 400px;
-    height:50px;
-    float: left;
-
-}
 
 /* 
   ========================================= 
@@ -828,7 +405,7 @@ input[type="textarea"] {
 
 #exitoso {
 
-
+    
     border: solid 2px green;
     background: #CDF296;
     color: green;
@@ -862,23 +439,7 @@ input[type="textarea"] {
     text-align: center;
 }
 
-#evento {
 
-    width: 550px;
-    height:  auto;
-    border: 1px solid #ccc;
-    background-color: white;
-    padding: 9px;
-    margin: 7px;
-    display: block;
-    float: left;
-
-
-}
-#evento:hover {
-
-    background: #f9f9f9;
-}
 #social {
 
     width: 300px;
@@ -958,44 +519,131 @@ label.error {
     -webkit-border-radius: 5px;
 
     border-radius: 10px;
+}
+
+
+@media only screen and (max-width: 600px){
+
+    #contendor-interno { 
+        width: 100%; 
+        margin: 0 auto;
+    }
+    header {
+
+        height: 150px;
+    }
+    
+    #fondo {
+
+    
+     width: 100%;
+     
+}
+
+    #header-logo {
+
+
+        min-width:  12%;
+
+
+    }
+    #eventos {
+
+           
+       display: none;
+}
+
+    #publicidad {
+
+        width: 100%;
+         margin: 0;
+
+
+    }
+    footer {
+        height: 100%;
+    }
+    
+    body {
+        height: 100%;
+    }
+    
+
+    #contendor {
+
+      
+        width: 100%; 
+        
+        text-align: center;
+        display:inline-block;
+    }
+    
+    #seccion-principal {
+        margin: 0 5% 0 5%;
+        width: 90%; 
+
+    }
+    #seccion-principal-inicio{
+
+        width: 90%; 
+         padding: 0;
+       
+         padding: 110px 0 110px 0 ;
+        
+    }
+    #seccion-media {
+
+    padding: 0;
+   
+
+
+
+}
+#login-principal {
+
+    padding-top: 150px;
+    width: 90%;
+  
+    margin: 0 auto;
+  
+}
+
 
 
 }
 
-
-input[type="file"]  {
-
-    height: 45px;
-    border: none;
-    background: none;
-    margin-top:20px;
-    cursor: pointer;
-    color: #ccc; 
-
-    /* In IE7, the height of the select element cannot be changed by height, only font-size */
-
-    *margin-top: 4px;
-    /* For IE7, add top margin to align select with labels */
-
-    line-height: 30px;
-
+#mensaje {
+    
+    
+   
+    margin: 0 auto;
+    width: 100%;
+    padding: 10px;
+    
+   
+    
+}
+#mensaje #incorrecto {
+    
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: red;
+    color: whitesmoke;
+    margin: 0 auto;
+    width: 90%;
+    padding: 0 5% 0 5%;
 
 }
 
-select {
-
-    border: solid 1px #ccc;
-    font-size: 12px;
-    width:auto;
-    height:40px;
-    background:#fefefe;
-    padding: 5px;
-    margin-bottom: 4px;
-    font-size:0.9em;
-    color:#3a3a3a;
-
-    -webkit-border-radius: 5px;
-
-    border-radius: 5px;
-
+#mensaje #correcto {
+    
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #0097ca;
+    color: whitesmoke;
+    margin: 0 auto;
+    width: 100%;
+   padding: 0 5% 0 5%;
+   
+    
 }

@@ -24,7 +24,7 @@
 
         <div id="contendor-interno"> 
 
-            <div id="login-principal">
+           
 
                 <form method="post" action="<%=request.getContextPath()%>/nuevologin.do" id="validar-form">
                     <h1>Ingresar</h1>
@@ -33,7 +33,7 @@
 
                     <h2>Contraseña</h2>
 
-                    <input type="password" id="contrasenia" name="contrasenia" size="16" value=""/>
+                    <input type="password" id="contrasenia" name="contrasenia" size="16" value=""/><br>
                     <input type="submit" value="Entrar"/>
 
 
@@ -46,7 +46,7 @@
                 
                 
             </aside>
-        </div> 
+       
     </section>
 
 

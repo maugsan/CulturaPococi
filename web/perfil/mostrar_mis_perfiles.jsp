@@ -47,7 +47,7 @@
 
                                        
                                     </div></a>
-                                          <a href="<%=request.getContextPath()%>/eliminar_perfil.do?id=${categoriaTemporal.idCategoria}">
+                                          <a href="<%=request.getContextPath()%>/eliminar_perfil.do?idPerfil=${perfilTemporal.idPerfil}">
                                     <div id="elemento-icon"><img src="<%=request.getContextPath()%>/assets/img/delete-icon.png" width="30"/>
                                     </div></a>   
                              

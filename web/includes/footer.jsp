@@ -1,24 +1,26 @@
 <footer> 
 
     <div id="contendor-interno">
-    
+
         <div id="busqueda-contenedor">
-        <form  method="post" id="busqueda" action="<%=request.getContextPath()%>/buscar.do">
 
-            <input name="q" id="tags">
-            <select name="tipo">
-        <form  method="post" id="busqueda" action="<%=request.getContextPath()%>/buscar.do">
-                
-                <option value="1">Perfiles</option>
-                 <option value="2">Articulos</option>
-                  <option value="3">Eventos</option>
-            </select>
-            <input type="submit" value="Buscar">
+            <h3>Búsqueda</h3>
+            <form  method="post" id="busqueda" action="<%=request.getContextPath()%>/buscar.do">
+
+                <input type="text" name="q" id="tags">
+                <select name="tipo">
 
 
-        </form>
+                    <option value="1">Perfiles</option>
+                    <option value="2">Articulos</option>
+                    <option value="3">Eventos</option>
+                </select>
+                <input type="submit" value="Buscar">
 
- </div> 
+
+            </form>
+
+        </div> 
 
 
         <div id="footer-izquierdo">

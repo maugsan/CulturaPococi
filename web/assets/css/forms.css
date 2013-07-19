@@ -1,0 +1,235 @@
+/* 
+    Document   : foms
+    Created on : 16-jul-2013, 11:28:27
+    Author     : Pedro
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+/* 
+========================================= 
+  Formularios
+========================================= */
+
+
+form {
+
+    background: whitesmoke;  
+    width: auto;
+    height: auto;
+    padding: 20px;
+    border-radius: 5px;
+    border:2px solid #eee;
+    margin-bottom: 20px;
+    border: solid 1px #ccc;
+}
+
+
+
+
+input[type="submit"] {
+
+    width:127px;
+    height: 45px;
+    border: 1px solid #1ba9df;
+    background-color: #1397c9;
+    margin-top:20px;
+    cursor: pointer;
+    color: #fff; 
+
+
+}
+
+
+textarea {
+    border: solid 1px #ccc;
+    font-size: 12px;
+    width: 350px;
+
+    background:#fefefe;
+    padding: 5px 0 5px 0 ;
+    margin-bottom: 4px;
+    font-size:0.9em;
+    color:#3a3a3a;
+
+    -webkit-border-radius: 5px;
+
+    border-radius: 5px;
+
+
+}
+
+
+input[type="text"] {
+
+
+    border: solid 1px #ccc;
+    font-size: 12px;
+    width: 350px;
+    height: 40px;
+    background:#fefefe;
+     padding: 5px 0 5px 0 ;
+    margin-bottom: 4px;
+    font-size:0.9em;
+    color:#3a3a3a;
+
+    -webkit-border-radius: 5px;
+
+    border-radius: 5px;
+
+
+}
+input[type="password"] {
+
+
+    border: solid 1px #ccc;
+    font-size: 12px;
+    width: 350px;
+    height: 40px;
+    background:#fefefe;
+     padding: 5px 0 5px 0 ;
+    margin-bottom: 4px;
+    font-size:0.9em;
+    color:#3a3a3a;
+
+    -webkit-border-radius: 5px;
+
+    border-radius: 5px;
+
+
+}
+/* 
+  ========================================= 
+        Errores
+  ========================================= */
+
+#error1 { 
+
+    width: 100%;
+    color: red;
+
+}
+
+
+input[type="file"]  {
+
+    border: solid 1px #ccc;
+    font-size: 12px;
+    width:auto;
+
+    background:#fefefe;
+    padding: 5px 0 5px 0 ;
+    margin-bottom: 4px;
+    font-size:0.9em;
+    color:#3a3a3a;
+
+    -webkit-border-radius: 5px;
+
+    border-radius: 5px;
+
+    /* In IE7, the height of the select element cannot be changed by height, only font-size */
+
+    *margin-top: 4px;
+    /* For IE7, add top margin to align select with labels */
+
+    line-height: 30px;
+
+
+}
+
+select {
+
+    border: solid 1px #ccc;
+    font-size: 12px;
+    width:auto;
+    height:40px;
+    background:#fefefe;
+    padding: 5px 0 5px 0 ;
+    margin-bottom: 4px;
+    font-size:0.9em;
+    color:#3a3a3a;
+
+    -webkit-border-radius: 5px;
+
+    border-radius: 5px;
+
+}
+
+@media only screen and (max-width: 600px){
+    form {
+
+
+        width: 90%;
+        padding: 20% 5% 20% 5%;
+
+
+
+    }
+    input {
+        width: 100%;
+        margin: 0 auto;
+
+
+    }
+
+    input[type="submit"] {
+
+        width: 100%;
+        margin: 0 auto;
+
+
+    }
+
+
+    textarea {
+        width: 100%;
+        margin: 0 auto;
+
+
+    }
+
+
+    input[type="text"] {
+
+        width: 100%;
+        margin: 0 auto;
+
+
+    }
+    input[type="password"] {
+
+
+        width: 100%;
+        margin: 0 auto;
+
+
+    }
+    /* 
+      ========================================= 
+            Errores
+      ========================================= */
+
+    #error1 { 
+
+        width: 90%;
+        margin: 0 auto;
+        color: red;
+
+    }
+
+
+    input[type="file"]  {
+        width: 100%;
+        margin: 0 auto;
+
+
+    }
+
+    select {
+        width: 100%;
+        margin: 0 auto;
+
+    }
+
+}

@@ -1,4 +1,4 @@
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 
-<jsp:forward page="nuevologin.do"/>
+<jsp:forward page="/nuevologin.do"/>

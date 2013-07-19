@@ -9,6 +9,7 @@
     
     
     <form-beans>
+        <form-bean name="GuardarPerfilActionForm" type="com.culturaPococi.accion.perfil.GuardarPerfilActionForm"/>
         <form-bean name="BannerForm" type="com.culturaPococi.accion.banner.BannerForm"/>
         <form-bean name="PerfilForm" type="com.culturaPococi.accion.perfil.PerfilForm"/>
         <form-bean name="CrearProgramaRadioForm" type="com.culturaPococi.accion.programaradio.CrearProgramaRadioForm"/>
@@ -39,9 +40,10 @@
 
     <global-forwards>
         
-        <forward name="inicio"  path="/Inicio.do"/>
+       
         <forward name="dashboard"  path="/dashboard.jsp" />
         <forward name="login"  path="/login/index.jsp"/>
+        <forward name="Inicio.do"  path="/Inicio.do"/>
 
         
     </global-forwards>
@@ -76,11 +78,19 @@
        
       <action path="/eliminar_perfil" 
                 type="com.culturaPococi.accion.perfil.EliminarPerfilAction" >        
-            <forward name="success" path="/mostrarperfiles.do"/>
+          <forward name="denegado" path="/incorrecto.jsp" /> 
+            <forward name="exitoso" path="/correcto.jsp" />  
+            
+            
                 
         </action>
         
-        <action path="/guardar_perfil" 
+        <action path="/guardar_perfil"
+                     name="GuardarPerfilActionForm"
+                
+                 scope="request"
+                
+                validate="false"
                 type="com.culturaPococi.accion.perfil.GuardarPerfilAction"
             
         >
@@ -104,30 +114,18 @@
                 type="com.culturaPococi.accion.perfil.verPerfilesAction"
         
         />
-        
-        
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
-           
+    
         <action input="/perfil/crear_perfil.jsp" 
                 path="/crear_perfil" 
                 scope="request" 
+             
+                 validate="false"
                 type="com.culturaPococi.accion.perfil.CrearPerfilAction"/>
         
         <action input="/perfil/crear_perfil.jsp"
                 path="/cargar_categorias_perfil" 
                 scope="request" 
+                
                 type="com.culturaPococi.accion.perfil.CargarCategoriasPerfilAction"/>
         
         <action input="/"
@@ -142,7 +140,7 @@
         
          <action input="/perfil/crear_perfil.jsp"
                  path="/confirmar_nombre_perfil" 
-                 scope="request" 
+                
                  type="com.culturaPococi.accion.perfil.ConfirmarNombrePerfilAction"/>
         
         <action input="/perfil/mostrar_mis_perfiles.jsp"
@@ -183,8 +181,8 @@
                 scope="request"
                 parameter="metodo"
                 validate="false" >
-                
-                <forward name="denegado" path="/includes/denegado.jsp" />
+                   <forward name="exitoso" path="/correcto.jsp" />
+            <forward name="denegado" path="/incorrecto.jsp" />
        
         </action>
         
@@ -196,23 +194,35 @@
                 validate="false" 
                 name="EventoForm">
                 
-                <forward name="exitoso" path="/includes/exitoso.jsp" />
-                <forward name="denegado" path="/includes/denegado.jsp" />
+                   <forward name="exitoso" path="/correcto.jsp" />
+            <forward name="denegado" path="/incorrecto.jsp" />
        
         </action>
+        
        <action path="/crear_evento" 
                type="com.culturaPococi.accion.evento.CrearEventoAction"
-               input="/evento/index.jsp" 
+               input="/evento/crear_evento.jsp" 
                scope="request"
-               validate="false">
-               
-      
-       </action>
+               name="EventoForm" 
+               validate="false"
+       />
+       
+          <action path="/guardar_evento" 
+                  scope="request"
+                   name="EventoForm" 
+                  validate="false"
+                  type="com.culturaPococi.accion.evento.GuardarEventoAction"
+          >
+                
+            <forward name="correcto" path="/correcto.jsp" />
+            <forward name="incorrecto" path="/incorrecto.jsp" />
+       
+        </action>
                <action path="/ver_eventos" 
                input="/agenda.jsp" 
                scope="request"
                validate="false"
-                type="com.culturaPococi.accion.evento.verProximosEventosAction"
+               type="com.culturaPococi.accion.evento.verProximosEventosAction"
         />
      
         
@@ -227,8 +237,7 @@
          
         
         <action path="/listar_categorias_evento" 
-                input="/evento/crear_evento.jsp" 
-                name="EventoForm"
+                input="/evento/index.jsp"
                 scope="request" 
                 validate="false" 
                 type="com.culturaPococi.accion.evento.ListarCategoriasEventoAction"
@@ -415,21 +424,7 @@
        
        
        
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
+
        
        
        
@@ -594,6 +589,29 @@
             <forward name="exitoso" path="/correcto.jsp" />
             <forward name="denegado" path="/incorrecto.jsp" />
         </action>
+        <action path="/eliminar_banner"
+         scope="request" 
+                validate="false"
+              
+                type="com.culturaPococi.accion.banner.EliminarBannerAction">
+            
+             <forward name="exitoso" path="/correcto.jsp" />
+            <forward name="denegado" path="/incorrecto.jsp" />
+            </action>
+            
+         
+            <action path="/ver_cultura"
+                    type="com.culturaPococi.accion.categoria.VerCulturaAction"
+             scope="request" 
+                validate="false"
+                input="/cultura.jsp"
+            />
+        <action path="/ver_inicio" 
+                scope="request" 
+                validate="false"
+                input="/inicio.jsp"
+                type="com.culturaPococi.accion.pagina.VerInicioAction"/>
+        
         <action path="/crear_banners" 
                  
                 input="/banner/crear_banner.jsp"
@@ -676,11 +694,6 @@
         
         
 
-        <action path="/Inicio"
-                forward="/inicio.jsp"
-        
-        
-        />
     </action-mappings>
     
     <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>

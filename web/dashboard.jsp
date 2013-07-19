@@ -51,15 +51,11 @@
 
                 <div id="contendor-interno"> 
 
-                    <h1>Sitio administrativo</h1>
-                      <h5>
-                               <script type="text/javascript">
-                                             var d = new Date();
-                                             document.write('<br>Hora: ' + d.getHours(), ':' + d.getMinutes());
-                    </script>
-                            </h5>
                   
-
+                    <h1>Sitio administrativo</h1>
+                      <div id="mensaje">${mensaje}</div>
+                    
+         
                     <a <% if (sesion.getAttribute("tipo").equals("0")) { %>style="display: none;"<%}%> href="./mostrar_usuario.do"><section class="modulo">
                             <img id="icono" src="assets/img/user-icon.png" width="60">
                             <h2>Usuarios</h2>
@@ -103,9 +99,11 @@
                                     <img  id="icono" src="assets/img/idea-icon.png" width="60">
                                     <h2>Banners</h2>
                                 </section></a>
+                              
 
                 </div> 
-
+                             
+                           
             </section>
 
             <%@include file="/includes/footer.jsp" %>

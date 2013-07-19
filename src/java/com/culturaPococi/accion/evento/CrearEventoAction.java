@@ -22,7 +22,7 @@ import org.apache.struts.actions.DispatchAction;
  */
 public class CrearEventoAction extends DispatchAction {
 
-    private static final String SUCCESS = "success";
+   
     NegocioEvento nEvento=new NegocioEvento();
     NegocioCategoria nCategoria=new NegocioCategoria();
 
@@ -30,31 +30,9 @@ public class CrearEventoAction extends DispatchAction {
       public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        boolean accionRealizada;
+       
 
-        String datos = request.getParameter("datos");
-
-        String datosSeparados[] = datos.split("-");
-        String email = (String) request.getSession().getAttribute("c");
-        String nombrejsp = "";
-        nEvento.selectIdEventoDB();
-        Evento evento = new Evento(0, Integer.parseInt(datosSeparados[7]), "", datosSeparados[8], datosSeparados[5], datosSeparados[6], datosSeparados[2], datosSeparados[3], datosSeparados[4], datosSeparados[9], email, datosSeparados[1]);
-
-        accionRealizada = nEvento.crearEventosDB(evento);
-        if (!accionRealizada) {
-            //si la accion es false es que no se pudo crear el nuevo evento por loq ue hay que mostrar un mensaje
-            JOptionPane.showMessageDialog(null, "Se cayó la base");
-        }//fin if
-
-
-        LinkedList<Evento> listaEventos;
-        listaEventos = nEvento.listarEventosDB();
-        //si la lista es null se debe de mostrar un mensaje porque ocurre un error
-        if (listaEventos == null) {
-            JOptionPane.showMessageDialog(null, "Se cayó la base");
-        }
-        request.setAttribute("listaEventos", listaEventos);
-        request.setAttribute("listaCategorias", nCategoria.selectCategorias());
+       request.setAttribute("listaCategorias", nCategoria.selectCategorias());
 
         return mapping.getInputForward();
     }

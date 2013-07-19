@@ -21,10 +21,10 @@ import javax.swing.JOptionPane;
  */
 public class DataPerfil extends DataBase {
 
-    public void eliminarPerfil(String nombrePerfil) throws SQLException {
+    public void eliminarPerfil(String idPerfil) throws SQLException {
 
-        String sql = "delete from publicacion  where idPerfil='" + nombrePerfil + "';";
-        String sql2 = "delete from perfil  where idPerfil='" + nombrePerfil + "';";
+        String sql = "delete from publicacion  where idPerfil='" + idPerfil + "';";
+        String sql2 = "delete from perfil  where idPerfil='" + idPerfil + "';";
 
         Connection conexion = super.getConexion();
 
@@ -313,6 +313,15 @@ public class DataPerfil extends DataBase {
 
         return accionRealizada;
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     public LinkedList<Perfil> getListaMisPerfilesPorCategoria(String categoria) throws SQLException {
 
@@ -320,16 +329,21 @@ public class DataPerfil extends DataBase {
 
         Perfil p;
 
-        String nombrePerfil;
+         String nombrePerfil;
         String nombreCategoria;
         String fechaDeCreacion;
         String biografia;
         String imagenDePortada;
         String correo;
+        String correoPerfil;
         String nombreDistrito;
+        String facebook;
+        String youtube;
+        String twiter;
+        String idPerfil;
 
 
-        String sql = "select p.nombrePerfil, p.fechaDeCreacion,p.biografia,p.imagenDePortada,p.correo,p.nombreDistrito,c.nombreCategoria\n"
+        String sql = "select p.nombrePerfil,p.idPerfil,c.nombreCategoria, p.fechaDeCreacion,p.biografia,p.imagenDePortada,p.correo ,p.correoPerfil,p.nombreDistrito,p.facebook,p.twiter,p.youtube\n"
                 + "       from perfil p inner join categoria c\n"
                 + "	on p.idCategoria=c.idCategoria where c.idCategoria = '" + categoria + "';";
         ResultSet resultado;
@@ -342,21 +356,34 @@ public class DataPerfil extends DataBase {
         while (resultado.next()) {
             p = new Perfil("", "", "", "", "", "", "", "", "", "", "", "");
 
-            nombrePerfil = resultado.getString(1);
-            fechaDeCreacion = resultado.getString(2);
-            biografia = resultado.getString(3);
-            imagenDePortada = resultado.getString(4);
-            correo = resultado.getString(5);
-            nombreDistrito = resultado.getString(6);
-            nombreCategoria = resultado.getString(7);
+             nombrePerfil = resultado.getString(1);
+            idPerfil = resultado.getString(2);
+            nombreCategoria = resultado.getString(3);
+            fechaDeCreacion = resultado.getString(4);
+            biografia = resultado.getString(5);
+            imagenDePortada = resultado.getString(6);
+            correo = resultado.getString(7);
+            correoPerfil = resultado.getString(8);
+            nombreDistrito = resultado.getString(9);
+            facebook = resultado.getString(10);
+            youtube = resultado.getString(11);
+            twiter = resultado.getString(12);
+
+
+
 
             p.setNombrePerfil(nombrePerfil);
+            p.setIdPerfil(idPerfil);
             p.setFechaDeCreacion(fechaDeCreacion);
             p.setBiografia(biografia);
             p.setImagenDePortada(imagenDePortada);
             p.setCorreo(correo);
+            p.setCorreoPerfil(correoPerfil);
             p.setNombreDistrito(nombreDistrito);
             p.setNombreCategoria(nombreCategoria);
+            p.setFacebook(facebook);
+            p.setTwiter(twiter);
+            p.setYoutube(youtube);
 
             listaPerfil.add(p);
 

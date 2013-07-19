@@ -28,9 +28,10 @@ jQuery(function($) {
 
 $(document).ready(function() {
     $("#datepicker").datepicker({
-        showOn: 'button',
-        buttonImageOnly: true,
-        buttonImage: './assets/img/evento-icon.png'
+        showOn: 'button'
+//        ,
+//        buttonImageOnly: true,
+//        buttonImage: './assets/img/evento-icon.png'
       
     });
 });

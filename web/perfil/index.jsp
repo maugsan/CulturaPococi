@@ -10,17 +10,10 @@
 
         <%@include file="../includes/header.jsp" %>
         <div id="contendor">
-            
-            
-
 
             <section  id="seccion-principal">
 
-
                 <div id="contendor-interno"> 
-
-                   
-              
 
                     <section id="lista-elementos">
                          <h1>Perfiles</h1>
@@ -29,9 +22,9 @@
                             <%-- Inicio Elemento  --%>
                             <div id="elemento">
 
-                                <a href="./mostrar_perfil_seleccionado.do?idPerfil=${perfilTemporal.idPerfil}"> 
+                                <a href="<%=request.getContextPath()%>/mostrar_perfil_seleccionado.do?idPerfil=${perfilTemporal.idPerfil}"> 
                                     <div id="link-detalle-elemento"><div id="elemento-imagen">
-                                            <img src="<%=request.getContextPath()%>${perfilTemporal.imagenDePortada}" width="50"/></div>
+                                            <img src="<%=request.getContextPath()%>/assets/img/perfil-icon.png" width="50"/></div>
                                         
                                         <h1> ${perfilTemporal.nombrePerfil}</h1> 
                                      

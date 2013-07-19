@@ -1,0 +1,105 @@
+/* 
+    Document   : buttons
+    Created on : 17-jul-2013, 11:37:50
+    Author     : Pedro
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+========================================= 
+  Botones
+========================================= */
+
+button {
+
+    width: 80px;
+    height: 30px;
+    word-wrap: break-word; 
+
+    border: none;
+    background-color: #0097ca;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+
+}
+#boton-entrar {
+
+
+    -moz-border-radius: 10px;
+
+    background-color: #609120;
+
+
+}
+
+#boton {
+
+    /*     border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -moz-border-radius: 10px;*/
+    margin-right: 5px;
+    background-color: #0097ca;
+
+
+}
+
+#boton-buscar {
+
+    margin-top: 20px;
+    float: right;
+    width: 60px;
+    margin-left: 10px;
+    background-color: #609120;
+}
+#boton-salir {
+
+    margin-top: 20px;
+    float: right;
+    width: 60px;
+    margin-left: 10px;
+    background-color: #0097ca;
+}
+#boton-usuario {
+
+
+    margin-top: 20px;
+    float: right;
+    width: 150px;
+    color: white;
+    margin-left: 10px;
+    background-color: #333;
+}
+#boton-unir {
+    margin: 20px ;
+    float: right;
+    width: 200px;
+    margin-left: 25px;
+    height: 80px;
+    background-color: #333;
+    color: whitesmoke;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+
+}
+
+#boton-volver {
+    margin-top: 20px;
+    float: left;
+    width: 127px;
+    margin-left: 25px;
+    height: 45px;
+    background-color: #99CCFF;
+    color: #FFFFFF;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid #99CCFF;
+    cursor: pointer;
+}
+
+
+ #boton {
+            
+            margin: 0;
+        }

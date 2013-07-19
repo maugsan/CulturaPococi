@@ -24,11 +24,10 @@
                             <%-- Inicio Elemento  --%>
                             <div id="elemento">
 
-                                <%-- href="../mostrar_perfil_seleccionado.do?idPerfil= ${perfilTemporal.idPerfil}" --%>
                                 
-                                <a href="./mostrar_perfil_seleccionado.do?idPerfil=${perfilTemporal.idPerfil}"> 
+                                <a href="<%=request.getContextPath()%>/mostrar_perfil_seleccionado.do?idPerfil=${perfilTemporal.idPerfil}"> 
                                     <div id="link-detalle-elemento">
-                                        <div id="elemento-imagen"><img src="<%=request.getContextPath()%>${perfilTemporal.imagenDePortada}" width="50"/></div>
+                                        <div id="elemento-imagen"><img src="<%=request.getContextPath()%>/assets/img/perfil-icon.png" width="50"/></div>
                                         
                                         <h1> ${perfilTemporal.nombrePerfil}</h1> 
                                      

@@ -21,7 +21,7 @@
             <div id="contendor-interno"> 
 
                 <section id="perfil-foto">
-
+                    <img width="300"src="<%=request.getContextPath()%>/assets/img/perfiles/${perfil.imagenDePortada}" >
                 </section>
                 <section id="perfil-informacion">
 

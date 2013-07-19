@@ -10,11 +10,10 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
-import javax.swing.JOptionPane;
-
 import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.action.ActionMessage;
+import org.apache.struts.upload.FormFile;
 
 /**
  *
@@ -22,30 +21,37 @@ import org.apache.struts.action.ActionMessage;
  */
 public class EventoForm extends org.apache.struts.action.ActionForm {
     
+    private FormFile file;
     private String nombre;
     private int idCategoria;
     private String lugar;
     private String  fecha;
     private String hora;
+    private String minutos;
     private String informacion;
     private String correo;
     private int idEvento;
-    //private String nombreCategoria;
 
-    private String imagen;
-    
     NegocioCategoria nCategoria=new NegocioCategoria();
     NegocioEvento nEvento=new NegocioEvento();
+
+     public String getMinutos() {
+        return minutos;
+    }
+
+    public void setMinutos(String  minutos) {
+        this.minutos = minutos;
+    }
     
-//    public String getNombreCategoria() {
-//        return nombreCategoria;
-//    }
-//
-//    public void setNombreCategoria(String nombreCategoria) {
-//        this.nombreCategoria = nombreCategoria;
-//    }
-//    
-//    
+    
+    public FormFile getFile() {
+        return file;
+    }
+
+    public void setFile(FormFile file) {
+        this.file = file;
+    }
+
     
     public String getFecha() {
         return fecha;
@@ -63,13 +69,7 @@ public class EventoForm extends org.apache.struts.action.ActionForm {
         this.hora = hora;
     }
 
-    public String getImagen() {
-        return imagen;
-    }
-
-    public void setImagen(String imagen) {
-        this.imagen = imagen;
-    }
+ 
     
     public int getIdEvento() {
         return idEvento;
@@ -128,13 +128,7 @@ public class EventoForm extends org.apache.struts.action.ActionForm {
         // TODO Auto-generated constructor stub
     }
 
-    /**
-     * This is the action called from the Struts framework.
-     *
-     * @param mapping The ActionMapping used to select this instance.
-     * @param request The HTTP Request we are processing.
-     * @return
-     */
+   
     public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
         ActionErrors errors = new ActionErrors();
         if (getNombre() == null || getNombre().length() < 1) {
@@ -155,6 +149,27 @@ public class EventoForm extends org.apache.struts.action.ActionForm {
             request.setAttribute("listaEventos", nEvento.listarEventosDB());
         } catch (SQLException ex) {
             Logger.getLogger(EventoForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+            if (getFile().getFileSize() == 0) {
+            errors.add("common.file.err",
+                    new ActionMessage("error.common.file.required"));
+            return errors;
+        }
+
+        //only allow textfile to upload
+        if (!"text/plain".equals(getFile().getContentType())) {
+            errors.add("common.file.err.ext",
+                    new ActionMessage("error.common.file.textfile.only"));
+            return errors;
+        }
+
+        //file size cant larger than 2kb
+        System.out.println(getFile().getFileSize());
+        if (getFile().getFileSize() > 2048) { //2kb
+            errors.add("common.file.err.size",
+                    new ActionMessage("error.common.file.size.limit", 2048));
+            return errors;
         }
         return errors;
     }

@@ -1,13 +1,4 @@
-/* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
-
-/* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
 jQuery(function($) {
     $.datepicker.regional['es'] = {
@@ -34,9 +25,9 @@ jQuery(function($) {
 
 $(document).ready(function() {
     $("#datepicker").datepicker({
-        showOn: 'button',
-        buttonImageOnly: true,
-        buttonImage: '../assets/img/evento-icon.png'
+        showOn: 'button'
+//        buttonImageOnly: true,
+//        buttonImage: '../assets/img/evento-icon.png'
       
     });
-})
+});

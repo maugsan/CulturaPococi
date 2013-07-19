@@ -4,8 +4,7 @@
     Author     : Mac
 --%>
 
-<%@page import="java.util.LinkedList"%>
-<%@page import="com.culturaPococi.dominio.Categoria"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -20,61 +19,55 @@
     <section  id="seccion-principal">
 
         <div id="contendor-interno"> 
-
-            <form method="post" action="./guardar_perfil.do">   
-
-                
+            <html:form action="/guardar_perfil" method="post" enctype="multipart/form-data">
+   
             <h1><bean:message key="perfil.crear.perfil"/></h1>
 
-              
                 <h2><bean:message key="perfil.nombre"/></h2>
-                <input type="text" name="nombre">
+                 <html:text property="nombrePerfil" size="50" />
 
-                
                 <h2><bean:message key="form.nombre.categoria"/></h2>
-              
-                
-                <select name="idCategoria">
+ 
+                <html:select property="idCategoria">
                     <logic:iterate name="listaCategorias" id="numero" >
                         <option value="${numero.idCategoria}"> <!-- esto es para que cuando elija el nombre me envie el numero !-->
                             ${numero.nombreCategoria}
                         </option>
                     </logic:iterate>
-                </select>
-                 
-       
+                </html:select>
+
                 <h2><bean:message key="perfil.biografia"/></h2>
-                <textarea  rows="4" cols="50" name="biografia"></textarea>
+                <html:textarea  rows="4" cols="40" property="biografia"></html:textarea>
                               
                 <h2><bean:message key="perfil.imagen.portada"/></h2>
-                <input type="file" name="imagen"><br>
+                <html:file property="file" size="50" /><br>
                 <h2><bean:message key="perfil.distrito"/></h2>
                 
-                 <select name="nombreDistrito">
+                 <html:select property="nombreDistrito">
                     <logic:iterate name="listaDistritos" id="distrito" >
                         <option value="${distrito.nombre}">
                             ${distrito.nombre}
                         </option>
                     </logic:iterate>
-                </select>
+                </html:select>
                 
             
                 
                 <h2>Email</h2>
-                <input type="text" name="email"><br>
+                <html:text property="correoPerfil" size="50" /><br>
                 
                 <h2>Facebook</h2>
-                <input type="text" name="facebook"><br>
+                <html:text property="facebook" size="50" /><br>
                 
                  <h2>Twiter</h2>
-                <input type="text" name="twiter"><br>
+                <html:text property="twiter" size="50" /><br>
                 
                  <h2>Youtube</h2>
-                <input type="text" name="youtube"><br>
+               <html:text property="youtube" size="50" /><br>
 
-                <input type="submit" value="Crear">  
+                <html:submit value="Crear" />
 
-            </form>
+             </html:form>
                  
 
         </div> 

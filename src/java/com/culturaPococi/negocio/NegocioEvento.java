@@ -18,9 +18,13 @@ public class NegocioEvento {
     DataEvento dEvento=new DataEvento();
     
     public LinkedList<Evento> listarEventosDB() throws SQLException{
-        LinkedList <Evento> listaEventos;
-        listaEventos=dEvento.selectEventos();
-        return listaEventos;
+       
+        return dEvento.selectEventos();
+    }//fin listarEventos
+    
+      public LinkedList<Evento> listarEventosDB(String correo) throws SQLException{
+       
+        return dEvento.selectEventos(correo);
     }//fin listarEventos
     
     public boolean eliminarEventosDB(int idEvento) throws SQLException{

@@ -20,8 +20,21 @@
                
                 <div id="contendor-interno"> 
                     
-                   <a href="<%=request.getContextPath()%>/banner/crear_banner.jsp"><button id="boton-unir">Crear Banners</button></a>
+                  
                     
+                   <section id="lista-elementos">
+                        <a href="<%=request.getContextPath()%>/banner/crear_banner.jsp"><button id="boton-unir">Crear Banners</button></a>
+                   <logic:iterate name="listaBanners" id="b" >
+
+                                    <div id="elemento-banner">
+                                        <img id="bnn"src="<%=request.getContextPath()%>/assets/img/banners/${b.nombreBanner}" alt="">
+                                         <a href="<%=request.getContextPath()%>/eliminar_banner.do?id=${b.idBanner}">
+                                        <div id="elemento-icon"><img src="<%=request.getContextPath()%>/assets/img/delete-icon.png" width="30"/></div>
+                                         </a>
+                                    </div>
+
+                                </logic:iterate>
+                                        </section>
                 </div>
                 
             </section>

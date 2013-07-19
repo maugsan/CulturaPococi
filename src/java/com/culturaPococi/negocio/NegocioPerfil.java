@@ -32,7 +32,7 @@ public class NegocioPerfil {
         return dp.getListaPerfil();
     }
     public LinkedList<Perfil> getMiListaPerfil(String c) throws SQLException {
-        return dp.getMiListaPerfil( c);
+        return dp.getMiListaPerfil(c);
     }
 
     public LinkedList<Perfil> getListaPerfilPorCategoria(String categoria) throws SQLException {

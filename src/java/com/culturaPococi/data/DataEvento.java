@@ -7,6 +7,7 @@ package com.culturaPococi.data;
 import com.culturaPococi.dominio.Evento;
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -22,7 +23,9 @@ public class DataEvento extends DataBase {
     public LinkedList<Evento> selectEventos() throws SQLException {
         LinkedList<Evento> listaEventos = new LinkedList<Evento>();
         Evento evento;
-        String sql = "select * from evento;";
+        String sql = "select * from evento e inner join evenTieneCat c "
+                + "on e.idEvento = c.idEvento inner join categoria o "
+                + "on o.idCategoria = c.idCategoria order by fecha;";
         ResultSet resultado;
         Connection conexion = super.getConexion();
 
@@ -32,11 +35,15 @@ public class DataEvento extends DataBase {
             resultado = statement.executeQuery(sql);
 
             while (resultado.next()) {
-                evento = new Evento(resultado.getInt("idEvento"), resultado.getInt("idCategoria"),
+                
+   
+                evento = new Evento(resultado.getInt("idEvento"), 
+                        resultado.getInt("idCategoria"),
                         resultado.getString("nombreCategoria"),
-                        resultado.getString("lugar"), resultado.getString("nombre"),
-                        resultado.getString("fecha"), resultado.getString("hora"),
-                        resultado.getString("minutos"), resultado.getString("tiempo"),
+                        resultado.getString("lugar"), 
+                        resultado.getString("nombre"), 
+                        resultado.getTime("hora"),
+                        resultado.getString("fecha"), 
                         resultado.getString("informacion"),
                         resultado.getString("correo"), 
                         resultado.getString("imagen"));
@@ -46,6 +53,49 @@ public class DataEvento extends DataBase {
 
             statement.close();
         } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+            listaEventos = null;
+        } finally {
+            conexion.close();
+        }
+
+        return listaEventos;
+    }//fin selectEventos
+    
+    public LinkedList<Evento> selectEventos(String correo) throws SQLException {
+        LinkedList<Evento> listaEventos = new LinkedList<Evento>();
+        Evento evento;
+        String sql = "select * from evento e inner join evenTieneCat c "
+                + "on e.idEvento = c.idEvento inner join categoria o "
+                + "on o.idCategoria = c.idCategoria where correo = '"+correo+"' order by fecha;";
+        ResultSet resultado;
+        Connection conexion = super.getConexion();
+
+        try {
+
+            Statement statement = conexion.createStatement();
+            resultado = statement.executeQuery(sql);
+
+            while (resultado.next()) {
+                
+   
+                evento = new Evento(resultado.getInt("idEvento"), 
+                        resultado.getInt("idCategoria"),
+                        resultado.getString("nombreCategoria"),
+                        resultado.getString("lugar"), 
+                        resultado.getString("nombre"), 
+                        resultado.getTime("hora"),
+                        resultado.getString("fecha"), 
+                        resultado.getString("informacion"),
+                        resultado.getString("correo"), 
+                        resultado.getString("imagen"));
+
+                listaEventos.add(evento);
+            }//fin while
+
+            statement.close();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
             listaEventos = null;
         } finally {
             conexion.close();
@@ -66,10 +116,10 @@ public class DataEvento extends DataBase {
             call.setInt("pidEvento", evento.getIdEvento());
             call.setString("pnombre", evento.getNombre());
             call.setString("plugar", evento.getLugar());
-            call.setString("phora", evento.getHora());
-            call.setString("pminutos", evento.getMinutos());
-            call.setString("ptiempo", evento.getTiempo());
-            call.setString("pfecha", evento.getFecha());
+//            call.setString("phora", evento.getHora());
+//            call.setString("pminutos", evento.getMinutos());
+//            call.setString("ptiempo", evento.getTiempo());
+//            call.setString("pfecha", evento.getFecha());
             call.setString("pinformacion", evento.getInformacion());
             call.setString("pcorreo", evento.getCorreo());
             call.setString("pimagen", evento.getImagen());
@@ -90,29 +140,38 @@ public class DataEvento extends DataBase {
 
     public boolean crearEvento(Evento evento) throws SQLException {
 
-        String sql = "call pCrearEventos(?,?,?,?,?,?,?,?,?,?);";
-
+      
+        String sql1 = " insert into evento (correo,fecha,hora,informacion,lugar,nombre, imagen)"
+                + " values (?, ?, ?, ?, ?, ?, ?);";
+        
+         String sql2 = "insert into evenTieneCat (idCategoria,idEvento)"
+                 + "values (?,LAST_INSERT_ID ());";
+       
+		
         boolean accionRealizada = true;
         Connection conexion = super.getConexion();
 
         try {
-            CallableStatement call = conexion.prepareCall(sql);
+            PreparedStatement st1 = conexion.prepareStatement(sql1);
+            PreparedStatement st2 = conexion.prepareStatement(sql2);
 
-            call.setString("pnombre", evento.getNombre());
-            call.setString("plugar", evento.getLugar());
-            call.setString("phora", evento.getHora());
-            call.setString("pminutos", evento.getMinutos());
-            call.setString("ptiempo", evento.getTiempo());
-            call.setString("pfecha", evento.getFecha());
-            call.setString("pinformacion", evento.getInformacion());
-            call.setString("pcorreo", evento.getCorreo());
-            call.setInt("pidCategoria", evento.getIdCategoria());
-            call.setString("pimagen", evento.getImagen());
+            st1.setString(6, evento.getNombre());
+            st1.setString(5, evento.getLugar());
+            st1.setTime(3, evento.getTiempo());
+            st1.setString(2, evento.getFecha());
+            st1.setString(4, evento.getInformacion());
+            st1.setString(1, evento.getCorreo());
+            st2.setInt(1, evento.getIdCategoria());
+            st1.setString(7, evento.getImagen());
 
 
-            call.executeUpdate();
-            call.close();
+            st1.execute();
+            st1.close();
+            
+            st2.execute();
+            st2.close();
         } catch (Exception e) {
+               JOptionPane.showMessageDialog(null, e.getMessage());
             accionRealizada = false;
         } finally {
             conexion.close();
@@ -123,7 +182,7 @@ public class DataEvento extends DataBase {
 
     public Evento selectEvento(int idEvento) throws SQLException {
         LinkedList<Evento> listaEventos = new LinkedList<Evento>();
-        Evento evento = new Evento();
+        Evento evento = null;
         String sql = "call pListaEventos();";
         ResultSet resultado;
         Connection conexion = super.getConexion();
@@ -134,13 +193,13 @@ public class DataEvento extends DataBase {
             resultado = statement.executeQuery(sql);
 
             while (resultado.next()) {
-                evento = new Evento(resultado.getInt("idEvento"), resultado.getInt("idCategoria"),
+                 evento = new Evento(resultado.getInt("idEvento"),
+                        resultado.getInt("idCategoria"),
                         resultado.getString("nombreCategoria"),
-                        resultado.getString("lugar"), resultado.getString("nombre"),
-                        resultado.getString("fecha"), resultado.getString("hora"),
-                        resultado.getString("minutos"), resultado.getString("tiempo"),
+                        resultado.getString("lugar"), resultado.getString("nombre"), resultado.getTime("tiempo"),
+                        resultado.getString("fecha"), 
                         resultado.getString("informacion"),
-                        resultado.getString("correo"),
+                        resultado.getString("correo"), 
                         resultado.getString("imagen"));
                 listaEventos.add(evento);
             }//fin while
@@ -164,26 +223,30 @@ public class DataEvento extends DataBase {
     }//fin selectEventos
 
     public boolean eliminarEvento(int idEvento) throws SQLException {
-        String sqlEliminarEvento = "call pEliminarEvento(?);";
-        String sqlEliminarEventienenCat = "call pEliminarEventienecat(?);";
+        
+        
+		
+        String sqlEliminarEvento = "delete from evento where idEvento=?;";
+        String sqlEliminarEventienenCat = "delete from evenTieneCat where idEvento=?;";
         boolean accionRealizada = true;
 
         Connection conexion = super.getConexion();
         try {
             conexion.setAutoCommit(false);
 
-            CallableStatement cStateEventienecat = conexion.prepareCall(sqlEliminarEventienenCat);
-            cStateEventienecat.setInt("pidEvento", idEvento);
+            PreparedStatement cStateEventienecat = conexion.prepareStatement(sqlEliminarEventienenCat);
+            cStateEventienecat.setInt(1, idEvento);
             cStateEventienecat.executeUpdate();
 
-            CallableStatement cStateEvento = conexion.prepareCall(sqlEliminarEvento);
-            cStateEvento.setInt("pidEvento", idEvento);
+            PreparedStatement cStateEvento = conexion.prepareStatement(sqlEliminarEvento);
+            cStateEvento.setInt(1, idEvento);
             cStateEvento.executeUpdate();
 
             conexion.commit();
             cStateEventienecat.close();
             cStateEvento.close();
         } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
             accionRealizada = false;
             if (conexion != null) {
                 conexion.rollback();

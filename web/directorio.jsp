@@ -30,7 +30,7 @@
 
                     </div></a>
 
-                    <a href="<%=request.getContextPath()%>/cultura.jsp" ><div  id="s-centro">
+                    <a href="<%=request.getContextPath()%>/ver_cultura.do" ><div  id="s-centro">
                         
                             <img src="./assets/img/category-icon.png" />
                         <h1>Cultura</h1>

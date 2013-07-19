@@ -15,22 +15,17 @@ import org.apache.struts.action.ActionMapping;
  *
  * @author Pedro
  */
-public class verBannersAction extends org.apache.struts.action.Action {
+public class EliminarBannerAction extends org.apache.struts.action.Action {
 
-    /* forward name="success" path="" */
-    private static final String SUCCESS = "success";
-
-    
+    NegocioBanner nb = new NegocioBanner();
+    private static final String EXITOSO = "exitoso";
+    private static final String DENEGADO = "denegado";
     @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        
-        NegocioBanner nb = new NegocioBanner(); 
-        nb.selectBanners();
-        
-        request.setAttribute("listaBanners",nb.selectBanners());
-        
-        return mapping.getInputForward();
+         String id = (String)request.getParameter("id");
+        nb.eliminarBanner(id);
+        return mapping.findForward(EXITOSO);
     }
 }

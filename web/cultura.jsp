@@ -19,12 +19,17 @@
             <div id="contendor-interno"> 
         <h1>Seleccione una opción</h1>
         
-        <a href=" <%=request.getContextPath()%>/ver_boletines.do"><div id="evento">Boletin</div></a>
-         <a href=" <%=request.getContextPath()%>/ecologia.jsp"><div id="evento">Ecologia</div></a>  
-         <a href=" <%=request.getContextPath()%>/recreacion.jsp"><div id="evento">Recreacion</div></a>
-         <a href=" <%=request.getContextPath()%>/bien_social.jsp"><div id="evento">Bien Social</div></a>
-         <a href=" <%=request.getContextPath()%>/publicidad.jsp"><div id="evento">Publicidad</div></a>
-         </div>
+        <logic:iterate  name="listaCategorias" id="categoriaTemporal" >
+                            <%-- Inicio Elemento  --%>
+                           <a href="<%=request.getContextPath()%>/ver_perfiles.do?c=${categoriaTemporal.idCategoria}"> <div id="evento">
+
+                               
+                                <h1>${categoriaTemporal.nombreCategoria}</h1>
+
+
+                            </div></a>
+                            <%-- FIN Elemento  --%>
+                        </logic:iterate>
              </section>
             </div>
         
