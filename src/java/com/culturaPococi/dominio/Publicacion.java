@@ -19,8 +19,13 @@ public class Publicacion {
     private String imagen;
     private String nombreCategoria;
     private int idCategoria;
+    
+    private int tipo;
 
-    public Publicacion(String nombrePerfil, int idPublicacion, String fechaPublicacion, String correo, String descripcion, int verificacion, String musica, String video, String texto, String imagen, String nombreCategoria, int idCategoria) {
+    public Publicacion(String nombrePerfil, int idPublicacion,
+            String fechaPublicacion, String correo, String descripcion,
+            int verificacion, String musica, String video, String texto,
+            String imagen, String nombreCategoria, int idCategoria, int tipo) {
         this.nombrePerfil = nombrePerfil;
         this.idPublicacion = idPublicacion;
         this.fechaPublicacion = fechaPublicacion;
@@ -33,6 +38,7 @@ public class Publicacion {
         this.imagen = imagen;
         this.nombreCategoria = nombreCategoria;
         this.idCategoria = idCategoria;
+        this.tipo = tipo;
     }
 
     
@@ -49,6 +55,13 @@ public class Publicacion {
     }
     
     
+     public int getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
+    }
     
     
 

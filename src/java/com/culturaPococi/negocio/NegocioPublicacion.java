@@ -60,4 +60,10 @@ public class NegocioPublicacion {
         return listaPublicacionesPorPerfil;
     }
     
+      public LinkedList<Publicacion> getListaPublicacionesPorUsuario( String correo ) throws SQLException {
+  
+        return dp.selectPublicacionPorCorreo( correo);
+    }
+    
+    
 }

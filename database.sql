@@ -199,17 +199,6 @@ select * from publicacion;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 -- PROCEDIMIENTOS
 
 -- Inserta nuevos intereses

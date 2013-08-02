@@ -284,6 +284,10 @@
         <!-- FIN ANUNCIOS  -->
         
         <!-- Publicaciones  -->
+        
+         
+        <action path="/guardar_publicacion" 
+                    type="com.culturaPococi.accion.publicacion.GuardarPublicacionAction"/>
      
         <action input="/publicacion/elegir_tipo_publicacion.jsp" 
                 name="AnuncioForm" 
@@ -334,29 +338,20 @@
                 type="com.culturaPococi.accion.publicacion.EliminarPublicacionPendienteAction"/>
         
         
-       <action input="/"
-               path="/listar_mis_publicaciones" 
-               scope="request" 
-               type="com.culturaPococi.accion.publicacion.ListarMisPublicacionesAction">
-                
-                <forward name="miMusica" path="/publicacion/mi_publicacion_musica.jsp" />
-                <forward name="miTexto" path="/publicacion/mi_publicacion_texto.jsp" />
-                <forward name="miImagen" path="/publicacion/mi_publicacion_imagen.jsp" />
-                <forward name="miVideo" path="/publicacion/mi_publicacion_video.jsp" />
-       
-        </action>
+       <action path="/mis_publicaciones" 
+               input="/publicacion/index.jsp"
+               scope="request"  
+               validate="false"
+               type="com.culturaPococi.accion.publicacion.ListarMisPublicacionesAction"/>
         
-        <action input="/"
+        <action input="/publicacion/crear_publicacion.jsp"
                 path="/crear_publicacion" 
                 scope="request" 
-                type="com.culturaPococi.accion.publicacion.CrearPublicacionAction">
+                validate="false"
+                type="com.culturaPococi.accion.publicacion.CrearPublicacionAction"
+        />
                 
-                <forward name="miMusica" path="/publicacion/mi_publicacion_musica.jsp" />
-                <forward name="miTexto" path="/publicacion/mi_publicacion_texto.jsp" />
-                <forward name="miImagen" path="/publicacion/mi_publicacion_imagen.jsp" />
-                <forward name="miVideo" path="/publicacion/mi_publicacion_video.jsp" />
        
-        </action>
        <!-- FIN Publicaciones  -->
        
        <!-- INICIO CATEGORIAS  -->
@@ -534,7 +529,7 @@
         </action>
         
         
-        <action input="/inicio.jsp" 
+        <action input="/login/nuevo_login.jsp" 
                 path="/crear_usuario" 
                 scope="request" 
                 type="com.culturaPococi.accion.usuarioNormal.CrearUsuarioAction"/>
@@ -598,6 +593,9 @@
              <forward name="exitoso" path="/correcto.jsp" />
             <forward name="denegado" path="/incorrecto.jsp" />
             </action>
+            
+            
+           
             
          
             <action path="/ver_cultura"

@@ -20,8 +20,6 @@
         <div id="contendor-interno"> 
 
             <html:form action="/crear_evento" >
-                
-                  
 
                 
                 <h1><bean:message key="form.hora"/></h1>

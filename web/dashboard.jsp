@@ -86,7 +86,7 @@
                             <h2>Programas de Radio</h2>
                         </section></a>
 
-                            <a  href="./publicacion/index.jsp"> <section class="modulo">
+                            <a <% if (sesion.getAttribute("tipo").equals("1")) { %>href="./mostrarpublicaciones.do"<%}else{%> href="./mis_publicaciones.do"<%}%>> <section class="modulo">
 
                                     <img id="icono" src="assets/img/publicacion-icon.png" width="60">
                                     <h2>Publicaciones</h2>

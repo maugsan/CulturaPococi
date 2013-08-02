@@ -1,10 +1,8 @@
-<%@page contentType="text/html"%>
-<%@page pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
 
-<html>
-
-    <head>
         <%@include file="includes/head.jsp"%> 
         <title>Inicio</title>
 

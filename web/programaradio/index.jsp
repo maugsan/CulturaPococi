@@ -1,7 +1,7 @@
 
 
 
-<htmllang="true">
+<html lang="true">
     <head>
         <%@include file="/includes/head.jsp" %>
         <title><bean:message key="welcome.title"/></title>

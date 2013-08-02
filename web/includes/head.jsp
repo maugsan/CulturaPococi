@@ -5,20 +5,7 @@
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
 
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-<script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/jq.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/funciones.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/script.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/audio.min.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/jquery.validate.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/validar.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/calendario.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/jquery-ui.js"></script>
-
-  <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/responsiveslides.css">
-
-
+<link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/responsiveslides.css">
 <script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/responsiveslides.min.js"></script>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/estilos.css" type="text/css" >
 <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/forms.css" type="text/css" >
@@ -35,6 +22,19 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/assets/css/jquery.ui.all.css">
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
 
+
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/funciones.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/script.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/audio.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/jquery.validate.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/validar.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/calendario.js"></script>
+
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/assets/css/jquery.realperson.css"> 
+<script type="text/javascript" src="<%=request.getContextPath()%>/assets/js/jquery.realperson.js"></script>
+        
 
 <noscript>
 <meta http-equiv="refresh" content="0; <%=request.getContextPath()%>/javascript.jsp">

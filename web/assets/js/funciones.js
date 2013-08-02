@@ -35,6 +35,11 @@
 
 
 $(document).ready(function() {
+    
+    
+     
+    $("#capcha").realperson();
+                
 
     $("#radio").click(function() {
 
@@ -69,6 +74,8 @@ $(function() {
         }
     });
 });
+
+
 
 
 

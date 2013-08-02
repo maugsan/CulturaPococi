@@ -9,8 +9,7 @@
 <html>
     <head>
         
-        
-        
+
        <%@include file="/includes/head.jsp"%> 
 
         <title>Registrarse</title>
@@ -22,7 +21,7 @@
 
         <div id="contendor-interno"> 
 
-            <form method="get" action="../crear_usuario.do"  id="validar-form">   
+            <form method="post" action="<%=request.getContextPath()%>/crear_usuario.do"  id="validar-form">   
                 
             <h1>Crear Nuevo Usuario</h1>
 
@@ -41,17 +40,22 @@
                 <input type="password" id="contraseniaComprobacion" name="contraseniaComprobacion" ><br>
                 
                 <h2><bean:message key="usuario.normal.colaborador"/></h2>
-                <input type="checkbox" name="colaborador" value="s">
-                
+                <input type="checkbox" name="colaborador" value="s"><br>
+                 <h2>Digite el Capcha</h2>
+                <input type="text" id="capcha" name="capcha" ><br>
+  
                 <input type="submit" value="Crear"/> 
 
             </form>
+                
+               
                  
 
         </div> 
 
     </section>
 
+   
 
     <%@include file="/includes/footer.jsp" %>
     </body>
