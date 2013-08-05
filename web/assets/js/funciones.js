@@ -36,9 +36,9 @@
 
 $(document).ready(function() {
     
-    
+  
      
-    $("#capcha").realperson();
+    $("#defaultReal").realperson();
                 
 
     $("#radio").click(function() {
@@ -49,7 +49,7 @@ $(document).ready(function() {
 
     });
     
-     $('#mensaje').delay(1000).fadeOut(200, function() {
+     $('#mensaje').delay(3000).fadeOut(200, function() {
 
 });
 

@@ -4,6 +4,7 @@
  */
 package com.culturaPococi.accion.login;
 
+import com.culturaPococi.dominio.UsuarioNormal;
 import com.culturaPococi.negocio.NegocioUsuarioAdministrador;
 import com.culturaPococi.negocio.NegocioUsuarioNormal;
 import javax.servlet.http.HttpServletRequest;
@@ -31,10 +32,24 @@ public class NuevoLoginAction extends DispatchAction {
             throws Exception {
 
 
+        
         NuevoLoginForm login = (NuevoLoginForm) form;
         String correo = login.getCorreo();
 
-
+              for ( UsuarioNormal uN: nu.listarUsuariosDB()) {
+       
+               if( correo.equalsIgnoreCase( uN.getCorreo())) {
+                   
+                   if(uN.isVerificado() == 0 ) {
+                 
+                    request.setAttribute("correo", null);
+                   request.setAttribute("mensaje", "<h2 id='incorrecto'>Oops!, Debe ingresar a su correo y finalizar con "
+                           + " la comprobación de cuenta!</h2>");
+                         return mapping.findForward(DENEGADO);
+                   }
+               
+               }
+       }
         if (nu.verificarUsuarioNormal(login.getCorreo(), login.getContrasenia())
                 || nua.verificarUsuarioAdministrador(login.getCorreo(), login.getContrasenia())) {
 

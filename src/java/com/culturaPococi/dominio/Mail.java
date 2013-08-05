@@ -22,9 +22,9 @@ import java.io.*;
  */
 public class Mail {
 
-    private static final String SMTP_HOST_NAME = "198.38.82.84"; //or simply "localhost"
+    private static final String SMTP_HOST_NAME = "mail.elfrentecr.org"; //or simply "localhost"
     private static final String SMTP_AUTH_USER = "info@elfrentecr.org";
-    private static final String SMTP_AUTH_PWD = "secret";
+    private static final String SMTP_AUTH_PWD = "INFOINFO";
     private static final String emailFromAddress = "info@elfrentecr.org";
     // Recipient's email ID needs to be mentioned.
     String to;
@@ -32,18 +32,22 @@ public class Mail {
     String from;
     // Assuming you are sending email from localhost
     String host;
-    private static final String[] emailList = {"maugsan@gmail.com"};
+   
 
 // smtpMailSender.postMail( emailList, emailSubjectTxt, emailMsgTxt, emailFromAddress); 
 //     System.out.println("Sucessfully Sent mail to All Users");
     public void postMail(String[] recipients, String subject, String message, String from)
             throws MessagingException, AuthenticationFailedException {
         boolean debug = false; //Set the host smtp address
+        
+      
+        
         Properties props = new Properties();
-    //    props.put("mail.smtp.host", SMTP_HOST_NAME);
-      //  props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.host", SMTP_HOST_NAME);
+        props.put("mail.smtp.port", "2525");
+        props.put("mail.smtp.auth", "true");
         Authenticator auth = new SMTPAuthenticator();
-        Session session = Session.getDefaultInstance(props);
+        Session session = Session.getDefaultInstance(props, auth);
         session.setDebug(debug); // create a message 
         Message msg = new MimeMessage(session); // set the from and to address 
         InternetAddress addressFrom = new InternetAddress(from);
@@ -64,6 +68,7 @@ public class Mail {
 
     private class SMTPAuthenticator extends javax.mail.Authenticator {
 
+        @Override
         public PasswordAuthentication getPasswordAuthentication() {
             String username = SMTP_AUTH_USER;
             String password = SMTP_AUTH_PWD;
@@ -79,45 +84,12 @@ public class Mail {
     }
 
     public void enviar( String to, String emailMsgTxt, String emailSubjectTxt) throws MessagingException {
+       String[] emailList = {to};
+        
         postMail( emailList, emailSubjectTxt, emailMsgTxt, emailFromAddress); 
 
-//
-//        // Get system properties
-//        Properties properties = System.getProperties();
-//
-//        // Setup mail server
-//        properties.setProperty("mail.smtp.host", host);
-//
-//        // Get the default Session object.
-//        Session session = Session.getDefaultInstance(properties);
-//
-//        try {
-//            // Create a default MimeMessage object.
-//            MimeMessage message = new MimeMessage(session);
-//
-//            // Set From: header field of the header.
-//            message.setFrom(new InternetAddress(from));
-//
-//            // Set To: header field of the header.
-//            message.addRecipient(Message.RecipientType.TO,
-//                    new InternetAddress(to));
-//
-//            // Set Subject: header field
-//            message.setSubject("This is the Subject Line!");
-//
-//            // Now set the actual message
-//            message.setText("This is actual message");
-//
-//            // Send message
-//            Transport.send(message);
-//            JOptionPane.showMessageDialog(null, "Sent message successfully....");
-//
-//
-//
-//        } catch (MessagingException mex) {
-//
-//            JOptionPane.showMessageDialog(null, mex.getMessage());
-//
-//        }
+
     }
+
+
 }

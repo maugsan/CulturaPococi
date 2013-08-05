@@ -20,6 +20,8 @@
     <%@include file="../includes/header.jsp"%>
 
     <section  id="seccion-principal">
+        <div id="mensaje">${mensaje}</div>
+        
 
 
         <div id="contendor-interno"> 

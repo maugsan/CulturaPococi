@@ -5,10 +5,8 @@
 package com.culturaPococi.accion.anuncio;
 
 import com.culturaPococi.dominio.Anuncio;
-import com.culturaPococi.dominio.Evento;
 import com.culturaPococi.negocio.NegocioAnuncio;
 import java.util.LinkedList;
-import javax.print.DocFlavor;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.swing.JOptionPane;
@@ -23,8 +21,7 @@ import org.apache.struts.actions.DispatchAction;
  */
 public class CrearAnuncioAction extends DispatchAction {
 
-    /* forward name="success" path="" */
-    private static final String SUCCESS = "success";
+
     NegocioAnuncio nAnuncio = new NegocioAnuncio();
 
    

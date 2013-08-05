@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.LinkedList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -44,11 +45,31 @@ public class DataUsuarioNormal extends DataBase{
         return encontrado;
     }
      
-     public void crearUsuarioNormal( UsuarioNormal usuario) throws SQLException {
+     
+     
+      public boolean confirmarUsuarioNormal(String url) throws SQLException {
+       
+ 
+        String sql = "UPDATE `usuarioNormal` SET `verificado` = '1' WHERE url = '"+ url +"';";
+ 
+        Connection conexion = super.getConexion();
+
+        Statement statement = conexion.createStatement();
+        statement.executeUpdate(sql);
+        
+        return true;
+
+    }
+     
+     public void crearUsuarioNormal(UsuarioNormal usuario) throws SQLException {
          
-        String sql = "insert into usuarioNormal values ('"+usuario.getCorreo()+"','"
-                +usuario.getNombre()
-                +"','"+usuario.getContrasenia()+"','"+usuario.getColaborador()+"');";
+        String sql = "insert into usuarioNormal values ('"+usuario.getCorreo() +"', ENCRYPT('"+usuario.getCorreo()
+                +"'),'"
+                +"','"
+                +usuario.getContrasenia()
+                +"','"
+                +usuario.getColaborador()+"', '"+ 0 +"', NOW() );";
+
         Connection conexion = super.getConexion();
         
         Statement st=conexion.createStatement();
@@ -89,8 +110,8 @@ public class DataUsuarioNormal extends DataBase{
 
         while (resultado.next()) { 
             
-           usuario = new UsuarioNormal(resultado.getString("correo"), resultado.getString("nombre"),
-                   resultado.getString("contrasenia"),  resultado.getString("colaborador"));
+            usuario = new UsuarioNormal(resultado.getString("correo"),resultado.getString("url"), resultado.getString("nombre"),
+                   resultado.getString("contrasenia"),  resultado.getString("colaborador"), resultado.getString("fecha"), resultado.getInt("verificado"));
            
             listaUsuarios.add(usuario);
         }//fin while

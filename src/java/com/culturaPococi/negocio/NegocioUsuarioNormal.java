@@ -37,4 +37,11 @@ public class NegocioUsuarioNormal {
     public void crearUsuariosDB(UsuarioNormal usuario) throws SQLException{
         dusuario.crearUsuarioNormal(usuario);
     }
+    
+    
+    // 
+    public void confirmarCuenta(String url) throws SQLException {
+
+        dusuario.confirmarUsuarioNormal(url);
+    }
 }

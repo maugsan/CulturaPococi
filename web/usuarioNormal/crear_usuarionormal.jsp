@@ -14,10 +14,13 @@
 
         <title>Registrarse</title>
     </head>
+    
     <body>
         <%@include file="/includes/header.jsp" %>
 
     <section  id="seccion-principal">
+        
+        <div id="mensaje">${mensaje}</div>
 
         <div id="contendor-interno"> 
 
@@ -42,7 +45,7 @@
                 <h2><bean:message key="usuario.normal.colaborador"/></h2>
                 <input type="checkbox" name="colaborador" value="s"><br>
                  <h2>Digite el Capcha</h2>
-                <input type="text" id="capcha" name="capcha" ><br>
+                <input type="text" id="defaultReal" name="defaultReal" ><br>
   
                 <input type="submit" value="Crear"/> 
 

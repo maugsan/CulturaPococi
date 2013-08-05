@@ -62,7 +62,7 @@ header {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#555555',GradientType=0 ); /* IE6-9 */
 
    
-    height: 120px;
+    height: 100px;
     width: 100%;
     z-index: 2;
     position: fixed;
@@ -633,7 +633,12 @@ label.error {
     margin: 0 auto;
     width: 100%;
     padding: 10px;
-    
+    font-size: 5px;
+    z-index: 5;
+    -moz-box-shadow: 0 0 5px #888;
+-webkit-box-shadow: 0 0 5px#888;
+box-shadow: 0 0 5px #888;
+        
    
     
 }
@@ -641,8 +646,8 @@ label.error {
     
     -webkit-border-radius: 10px;
     border-radius: 10px;
-    background: red;
-    color: whitesmoke;
+   color: #D8000C;
+background-color: #FFBABA;
     margin: 0 auto;
     width: 90%;
     padding: 0 5% 0 5%;
@@ -653,8 +658,8 @@ label.error {
     
     -webkit-border-radius: 10px;
     border-radius: 10px;
-    background: #0097ca;
-    color: whitesmoke;
+    color: #4F8A10;
+background-color: #DFF2BF;
     margin: 0 auto;
     width: 100%;
    padding: 0 5% 0 5%;

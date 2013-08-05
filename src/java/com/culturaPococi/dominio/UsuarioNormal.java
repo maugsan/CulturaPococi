@@ -11,20 +11,51 @@ package com.culturaPococi.dominio;
 public class UsuarioNormal {
 
     private String correo;
+    private String url;
     private String nombre;
     private String contrasenia;
     private String colaborador;
+    private String fecha;
+    private int verificado;
 
-    public UsuarioNormal(String correo, String nombre,
-            String contrasenia, String colaborador) {
-        this.correo = correo;
-        this.nombre = nombre;
-        this.contrasenia = contrasenia;
-        this.colaborador = colaborador;
-    }
+
+    
 
     public UsuarioNormal() {
     }
+
+    public UsuarioNormal(String correo, String url, String nombre, String contrasenia, String colaborador, String fecha, int verificado) {
+        this.correo = correo;
+         this.url = url;
+        this.nombre = nombre;
+        this.contrasenia = contrasenia;
+        this.colaborador = colaborador;
+        this.fecha = fecha;
+        this.verificado = verificado;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+    public int isVerificado() {
+        return verificado;
+    }
+
+     public void setUrl(String url) {
+        this.url = url;
+    }
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public void setVerificado(int verificado) {
+        this.verificado = verificado;
+    }
+    
     
     
 

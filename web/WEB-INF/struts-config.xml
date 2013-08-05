@@ -86,10 +86,8 @@
         </action>
         
         <action path="/guardar_perfil"
-                     name="GuardarPerfilActionForm"
-                
-                 scope="request"
-                
+                name="GuardarPerfilActionForm"
+                scope="request"
                 validate="false"
                 type="com.culturaPococi.accion.perfil.GuardarPerfilAction"
             
@@ -532,7 +530,13 @@
         <action input="/login/nuevo_login.jsp" 
                 path="/crear_usuario" 
                 scope="request" 
-                type="com.culturaPococi.accion.usuarioNormal.CrearUsuarioAction"/>
+                type="com.culturaPococi.accion.usuarioNormal.CrearUsuarioAction"
+        
+        >
+            
+            <forward name="denegado" path="/usuarioNormal/crear_usuarionormal.jsp" /> 
+            <forward name="exitoso" path="/login/nuevo_login.jsp" />  
+        </action>
         
         <action input="/" 
                 path="/cambiar_contrasenia_usuario_normal" 
@@ -595,8 +599,16 @@
             </action>
             
             
-           
             
+            <action path="/confirmar_cuenta" 
+            
+                    type="com.culturaPococi.accion.usuarioNormal.ConfirmarCuentaAction"
+           >
+            
+             <forward name="exitoso" path="/login/nuevo_login.jsp" />
+            <forward name="denegado" path="/login/nuevo_login.jsp" />
+            </action>
+
          
             <action path="/ver_cultura"
                     type="com.culturaPococi.accion.categoria.VerCulturaAction"
